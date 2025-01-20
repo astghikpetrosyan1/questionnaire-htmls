@@ -1,0 +1,3403 @@
+{
+  "resourceType": "QuestionnaireResponse",
+  "status": "in-progress",
+  "item": [
+    {
+      "linkId": "2af27fe0-c9a9-43d4-eb4c-2512f1b542ce",
+      "text": "Fijn dat u deze vragenlijst over uw leefstijl wilt invullen! Het kost u ongeveer 10 minuten om de vragenlijst in te vullen. Indien gewenst, kunt u daarna ook nog een uitgebreidere vragenlijst invullen rondom overgewicht."
+    },
+    {
+      "linkId": "b7773184-4ca8-4c9d-8c5e-acc2768cc0de",
+      "text": "Dagelijkse gewoonten",
+      "item": [
+        {
+          "linkId": "af297004-fabe-4b25-8a30-70c8ace66113",
+          "text": "De volgende vragen gaan over uw gewoonten in het dagelijks leven."
+        },
+        {
+          "linkId": "ee7933e9-6be1-4656-f73d-e29746a85bdb",
+          "text": "De volgende vragen gaan over uw gewoonten in het dagelijks leven."
+        },
+        {
+          "linkId": "ad8d6818-ff61-43de-991c-ea51f9d7f706",
+          "text": "Eten",
+          "item": [
+            {
+              "linkId": "3f325f93-1c4f-4d42-9f5e-0c81c6ff8229",
+              "text": "Welke soorten brood of bolletjes eet u meestal?",
+              "answer": [
+                {
+                  "valueCoding": {
+                    "code": "1",
+                    "display": "Ik eet geen brood of bolletjes.",
+                    "system": "urn:uuid:84688443-83b6-4e14-b396-4bdea396ce15"
+                  }
+                }
+              ]
+            },
+            {
+              "linkId": "34fd5266-8bdf-473c-8849-512b3c58a41a",
+              "text": "Welke soorten pasta, rijst, bulgur of couscous eet u meestal?",
+              "answer": [
+                {
+                  "valueCoding": {
+                    "code": "2",
+                    "display": "Ik eet volkoren soorten",
+                    "system": "urn:uuid:84688443-83b6-4e14-b396-4bdea396ce15"
+                  }
+                }
+              ]
+            },
+            {
+              "linkId": "0281b855-e736-44a0-88c2-bd66fc9c6b2f",
+              "text": "Hoeveel dagen per week eet u groente?",
+              "answer": [
+                {
+                  "valueCoding": {
+                    "code": "1",
+                    "display": "0 of 1 dagen per week",
+                    "system": "urn:uuid:84688443-83b6-4e14-b396-4bdea396ce15"
+                  }
+                }
+              ]
+            },
+            {
+              "linkId": "535b8973-0f9a-4ea2-9e25-711e2a844bfd",
+              "text": "Hoeveel dagen per week eet u minstens 1 stuk fruit?",
+              "answer": [
+                {
+                  "valueCoding": {
+                    "code": "1",
+                    "display": "0 of 1 dagen per week",
+                    "system": "urn:uuid:84688443-83b6-4e14-b396-4bdea396ce15"
+                  }
+                }
+              ]
+            },
+            {
+              "linkId": "4086d570-a762-40f4-91ba-0e3bb35b8eb5",
+              "text": "Hoe vaak drinkt u vruchtensap, vruchtendrank, limonade, frisdrank of energiedrank?",
+              "answer": [
+                {
+                  "valueCoding": {
+                    "code": "1",
+                    "display": "Nooit",
+                    "system": "urn:uuid:84688443-83b6-4e14-b396-4bdea396ce15"
+                  }
+                }
+              ]
+            },
+            {
+              "linkId": "0036b81c-bae8-4117-83e8-330761fe6757",
+              "text": "Hoeveel dagen per week eet u chips, zoutjes of kaasblokjes?",
+              "answer": [
+                {
+                  "valueCoding": {
+                    "code": "1",
+                    "display": "Nooit",
+                    "system": "urn:uuid:84688443-83b6-4e14-b396-4bdea396ce15"
+                  }
+                }
+              ]
+            },
+            {
+              "linkId": "f7a6c74d-d4ee-42cf-ed1f-d1634584eac0",
+              "text": "Hoe vaak eet u hartige of gefrituurde snacks?",
+              "answer": [
+                {
+                  "valueCoding": {
+                    "code": "1",
+                    "display": "Nooit",
+                    "system": "urn:uuid:2e01da65-98cf-436a-826e-411d05a6021f"
+                  }
+                }
+              ]
+            },
+            {
+              "linkId": "e6ba8522-ef31-43c7-9a60-96a78ba48cb0",
+              "text": "Hoeveel dagen per week eet u een portie koekjes, chocolade, bonbons, cake of taart?\n\nEen portie is 1 grote koek (zoals stroopwafel), 1 punt taart, 4 kleine koekjes of 4 blokjes chocola.",
+              "answer": [
+                {
+                  "valueCoding": {
+                    "code": "1",
+                    "display": "Nooit",
+                    "system": "urn:uuid:2e01da65-98cf-436a-826e-411d05a6021f"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "linkId": "00ec61ba-c31e-4632-dea2-494a12969437",
+          "text": "Beweging",
+          "item": [
+            {
+              "linkId": "b3e5ea1c-2943-4422-9660-2402a58e499e",
+              "text": "Hoeveel minuten beweegt u per week?",
+              "answer": [
+                {
+                  "valueCoding": {
+                    "code": "0",
+                    "display": "Minder dan 1 uur per week",
+                    "system": "urn:uuid:b4785eae-d6d6-4de6-81b8-9af07db076fe"
+                  }
+                }
+              ]
+            },
+            {
+              "linkId": "600f828c-5601-476d-f897-652921c24669",
+              "text": "Hoeveel keer per week doet u spierversterkende oefeningen? Bijvoorbeeld met krachttraining?",
+              "answer": [
+                {
+                  "valueCoding": {
+                    "code": "0",
+                    "display": "Nooit",
+                    "system": "urn:uuid:e24f15ae-d90b-486e-f75f-0494742419cb"
+                  }
+                }
+              ]
+            },
+            {
+              "linkId": "f82c1eb9-1ccb-4a39-aef3-34b971b2f670",
+              "text": "Kunt u minder goed bewegen?",
+              "answer": [
+                {
+                  "valueCoding": {
+                    "code": "0",
+                    "display": "Nee, ik heb geen problemen met bewegen",
+                    "system": "urn:uuid:82382f94-2f39-4a23-8ebf-bd9e43f4ddde"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "linkId": "bbfc83c9-bda0-4262-81c0-4cc1f842df1f",
+          "text": "Slapen",
+          "item": [
+            {
+              "linkId": "7ea3f22e-1b2c-4350-9459-139a91ec0c55",
+              "text": "Heeft u problemen met slapen?",
+              "answer": [
+                {
+                  "valueCoding": {
+                    "code": "0",
+                    "display": "Nee",
+                    "system": "urn:uuid:fe025096-ad17-4c5a-9287-94b82e60463e"
+                  }
+                }
+              ]
+            },
+            {
+              "linkId": "88e12046-783f-423a-8350-e4a341ecd148",
+              "text": "Snurkt u hard? Met hard bedoelen we dat iemand u door een dichte deur hoort snurken.",
+              "answer": [
+                {
+                  "valueCoding": {
+                    "code": "0",
+                    "display": "Nee",
+                    "system": "urn:uuid:fe025096-ad17-4c5a-9287-94b82e60463e"
+                  }
+                }
+              ]
+            },
+            {
+              "linkId": "222d37fb-dd6d-4e1a-881f-59db56e30252",
+              "text": "Stopt u tijdens het slapen wel eens kort met ademhalen?",
+              "answer": [
+                {
+                  "valueCoding": {
+                    "code": "0",
+                    "display": "Nee",
+                    "system": "urn:uuid:fe025096-ad17-4c5a-9287-94b82e60463e"
+                  }
+                }
+              ]
+            },
+            {
+              "linkId": "d01c114a-5c20-4601-80f8-46a9d89ee5f0",
+              "text": "Voelt u zich overdag vaak moe?",
+              "answer": [
+                {
+                  "valueCoding": {
+                    "code": "0",
+                    "display": "Nee",
+                    "system": "urn:uuid:fe025096-ad17-4c5a-9287-94b82e60463e"
+                  }
+                }
+              ]
+            },
+            {
+              "linkId": "69703718-667b-4220-b340-4867fbf0d80e",
+              "text": "Meet met een meetlint rondom uw nek. Hoeveel centimeter is de omtrek van uw nek? Weet u het niet? Vul dan een 0 in.",
+              "answer": [
+                {
+                  "valueInteger": 4
+                }
+              ]
+            },
+            {
+              "linkId": "7b366d4f-336a-4c63-84be-7919dda44107",
+              "text": "Moet u weleens ’s avonds of ’s nachts werken?",
+              "answer": [
+                {
+                  "valueCoding": {
+                    "code": "1",
+                    "display": "Ja",
+                    "system": "urn:uuid:8c719226-a792-4ad8-817d-aa4958c700c8"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "linkId": "9e71626f-075c-4b18-83fe-cf5cea9a3913",
+      "text": "Alcohol, roken en drugs",
+      "item": [
+        {
+          "linkId": "ee8542e1-2e29-40c8-81b9-b1d868a223d6",
+          "text": "Hoe vaak dronk u het afgelopen jaar alcohol?",
+          "answer": [
+            {
+              "item": [
+                {
+                  "linkId": "7e85dda8-2da4-4bdf-985b-096ee6c44dd6",
+                  "text": "Hoeveel glazen alcohol dronk u op een normale dag in het afgelopen jaar?",
+                  "answer": [
+                    {
+                      "valueCoding": {
+                        "code": "4",
+                        "display": "7 tot 9",
+                        "system": "urn:uuid:0bc7a24d-0b47-417b-8242-1324ec216f95"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "linkId": "e2dc68bf-5e77-405f-c4ea-af6c7e752c7f",
+                  "text": "Hoe vaak heeft u het afgelopen jaar 6 of meer glazen alcohol gedronken op één dag?",
+                  "answer": [
+                    {
+                      "valueCoding": {
+                        "code": "2",
+                        "display": "Minder dan 1 keer per maand",
+                        "system": "urn:uuid:0bc7a24d-0b47-417b-8242-1324ec216f95"
+                      }
+                    }
+                  ]
+                }
+              ],
+              "valueCoding": {
+                "code": "2",
+                "display": "1 keer per maand of minder",
+                "system": "urn:uuid:8ad98e12-a0b2-4b79-a35a-4dc7ff6d58a7"
+              }
+            }
+          ]
+        },
+        {
+          "linkId": "8cf5226c-d88f-4896-8daf-f3dfe0453e16",
+          "text": "Rookt u?",
+          "answer": [
+            {
+              "item": [
+                {
+                  "linkId": "b473b783-0b3a-4259-85db-cbf3a1092e91",
+                  "text": "Wanneer bent u gestopt met roken?"
+                }
+              ],
+              "valueCoding": {
+                "code": "0",
+                "display": "Nee, ik heb nooit gerookt",
+                "system": "urn:uuid:8ad98e12-a0b2-4b79-a35a-4dc7ff6d58a7"
+              }
+            }
+          ]
+        },
+        {
+          "linkId": "78d353b6-5549-4039-8c38-c4421f72784e",
+          "text": "Gebruikt u drugs?",
+          "answer": [
+            {
+              "item": [
+                {
+                  "linkId": "86b49531-d1f0-4247-aead-4af4c1d441b3",
+                  "text": "Welke drugs gebruikt u?",
+                  "answer": [
+                    {
+                      "valueString": "123"
+                    }
+                  ]
+                },
+                {
+                  "linkId": "130db4ac-7d64-42b6-a46e-d9ed030a495e",
+                  "text": "Hoevaak gebruikt u drugs?",
+                  "answer": [
+                    {
+                      "valueCoding": {
+                        "code": "1",
+                        "display": "1 keer per maand of vaker maand",
+                        "system": "urn:uuid:e01af6ea-eb2d-47c8-bece-a8e2e639a81f"
+                      }
+                    }
+                  ]
+                }
+              ],
+              "valueCoding": {
+                "code": "1",
+                "display": "Ja",
+                "system": "urn:uuid:8ad98e12-a0b2-4b79-a35a-4dc7ff6d58a7"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "linkId": "7b19461c-108c-4236-9f86-c86f81388958",
+      "text": "Vragen over uzelf",
+      "item": [
+        {
+          "linkId": "34c51f7b-5e50-4228-83bf-f6acaa4afc2c",
+          "text": "Wat geldt voor u?",
+          "answer": [
+            {
+              "item": [
+                {
+                  "linkId": "43ffaa3c-bf5b-4477-8117-57a25e5b8404",
+                  "text": "Als u anders heeft aangevinkt, kunt u dat toelichten?"
+                }
+              ],
+              "valueCoding": {
+                "code": "2",
+                "display": "Ik ben een vrouw",
+                "system": "urn:uuid:e1801442-b054-457f-fce3-6690c84098c6"
+              }
+            }
+          ]
+        },
+        {
+          "linkId": "393f6794-db68-4901-ef3c-727abcb46c2f",
+          "text": "In welk jaar bent u geboren?",
+          "answer": [
+            {
+              "valueDate": "2000"
+            }
+          ]
+        },
+        {
+          "linkId": "b40d6835-7a14-4e37-e199-802592385924",
+          "text": "Hoe lang bent u?",
+          "answer": [
+            {
+              "valueDecimal": 2
+            }
+          ]
+        },
+        {
+          "linkId": "891561c6-f3f3-49c8-9d2d-457cc75ee83d",
+          "text": "Wat is uw gewicht?",
+          "answer": [
+            {
+              "valueInteger": 200
+            }
+          ]
+        },
+        {
+          "linkId": "0d4544ba-cfe0-443a-8928-c41b06ea10ce",
+          "text": "Wat is uw postcode?",
+          "answer": [
+            {
+              "valueString": "123"
+            }
+          ]
+        },
+        {
+          "linkId": "6618131f-160d-476d-8b7f-7bc56e74155f",
+          "text": "Wat is de hoogste opleiding die u heeft afgerond?",
+          "answer": [
+            {
+              "item": [
+                {
+                  "linkId": "dbc7ce92-9a9a-4edf-8d1e-59a2bac04f79",
+                  "text": "Kunt u dit toelichten?"
+                }
+              ],
+              "valueCoding": {
+                "code": "4",
+                "display": "VMBO of MAVO",
+                "system": "urn:uuid:103aa5c4-e79c-4e5a-89c1-57e0541f984a"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "linkId": "d8f38e72-6522-469b-b855-42400d73d33c",
+      "text": "Mentale gezondheid",
+      "item": [
+        {
+          "linkId": "5abdd6ef-4566-4b5e-8d8b-b16386212efb",
+          "text": "De volgende vragen gaan over hoe u zich voelt: uw mentale gezondheid."
+        },
+        {
+          "linkId": "17c56cfa-9cdd-481d-acca-78428c628711",
+          "text": "Bent u vaak somber?",
+          "answer": [
+            {
+              "valueCoding": {
+                "code": "0",
+                "display": "Nee",
+                "system": "urn:uuid:78a57256-a310-4bfa-805c-4d001131f372"
+              }
+            }
+          ]
+        },
+        {
+          "linkId": "cc33177c-dd9d-4346-fb45-b263f930fa62",
+          "text": "Bent u vaak erg bang?",
+          "answer": [
+            {
+              "valueCoding": {
+                "code": "0",
+                "display": "Nee",
+                "system": "urn:uuid:20770940-140c-49a4-8e27-fbfbaad11c51"
+              }
+            }
+          ]
+        },
+        {
+          "linkId": "beb8063f-0e39-4ec8-e261-81d1417d0a2c",
+          "text": "Heeft u vaak stress?",
+          "answer": [
+            {
+              "item": [
+                {
+                  "linkId": "1a9c2cb5-30ad-424c-fa82-1221e02e743e",
+                  "text": "Waardoor heeft u stress, denkt u?",
+                  "answer": [
+                    {
+                      "valueString": "sdsa"
+                    }
+                  ]
+                }
+              ],
+              "valueCoding": {
+                "code": "1",
+                "display": "Ja",
+                "system": "urn:uuid:78a57256-a310-4bfa-805c-4d001131f372"
+              }
+            }
+          ]
+        },
+        {
+          "linkId": "692435e0-c013-4d67-825c-cc01a74e3ed7",
+          "text": "Heeft u iets ergs meegemaakt? Bent u bijvoorbeeld mishandeld of misbruikt? Of een andere traumatische ervaring?",
+          "answer": [
+            {
+              "valueCoding": {
+                "code": "0",
+                "display": "Nee",
+                "system": "urn:uuid:78a57256-a310-4bfa-805c-4d001131f372"
+              }
+            }
+          ]
+        },
+        {
+          "linkId": "22285eca-6541-4017-86cc-6566849c7794",
+          "text": "Heeft u momenteel gedragsproblemen ?",
+          "answer": [
+            {
+              "item": [
+                {
+                  "linkId": "2537edc9-1d77-43f2-fe9f-3945435011e2",
+                  "text": "Kunt u dat toelichten?"
+                }
+              ],
+              "valueCoding": {
+                "code": "0",
+                "display": "Nee",
+                "system": "urn:uuid:ab6d84c0-4ca3-4fa5-8b6c-16b2ae2a35a2"
+              }
+            }
+          ]
+        },
+        {
+          "linkId": "63e89417-bba4-4859-8758-8e9050099d79",
+          "text": "Heeft u autisme, ADD of ADHD?",
+          "answer": [
+            {
+              "valueCoding": {
+                "code": "0",
+                "display": "Nee",
+                "system": "urn:uuid:098b3dd0-1c0e-4a7f-97af-9eea3d890fb9"
+              }
+            }
+          ]
+        },
+        {
+          "linkId": "abd0ad7c-6e00-4596-877a-7d12d5640ac6",
+          "text": "Werkt u momenteel?",
+          "answer": [
+            {
+              "item": [
+                {
+                  "linkId": "afc8655a-88e9-4915-e44f-8af9f8b130d7",
+                  "text": "Onderstaande 2 vragen hebben betrekking op uw werkvermogen. Met 'werkvermogen' bedoelen we de mate waarin u zowel lichamelijk als geestelijk (psychisch) in staat bent om te werken.",
+                  "item": [
+                    {
+                      "linkId": "eb0342fa-3a56-470d-b508-65f6844e3997",
+                      "text": "Hoe goed lukt het u op dit moment om te werken?"
+                    },
+                    {
+                      "linkId": "d0027049-4d30-48a9-96ee-b341c39d00cf",
+                      "text": "Hoeveel werk kunt u doen op een normale werkdag?"
+                    }
+                  ]
+                }
+              ],
+              "valueCoding": {
+                "code": "0",
+                "display": "Nee",
+                "system": "urn:uuid:b66b7bd1-085f-480e-f1f0-e005978d304f"
+              }
+            }
+          ]
+        },
+        {
+          "linkId": "d758a76c-9675-47da-925b-ebea3420ef16",
+          "text": "Heeft u geldproblemen?",
+          "answer": [
+            {
+              "valueCoding": {
+                "code": "0",
+                "display": "Nee",
+                "system": "urn:uuid:2411de1f-8b51-429e-b533-459a8cecad8f"
+              }
+            }
+          ]
+        },
+        {
+          "linkId": "b741e8ef-b957-4f2c-d617-77aafb0affc7",
+          "text": "Voelt u zich eenzaam?",
+          "answer": [
+            {
+              "valueCoding": {
+                "code": "0",
+                "display": "Nee",
+                "system": "urn:uuid:39879bb1-e6c9-4723-9d0e-17235a2e5a64"
+              }
+            }
+          ]
+        },
+        {
+          "linkId": "e485683d-61b9-4b74-91de-8aea4429c49d",
+          "text": "Vindt u uw leven zinvol?",
+          "answer": [
+            {
+              "valueCoding": {
+                "code": "0",
+                "display": "Nee",
+                "system": "urn:uuid:4faed2c2-8c4c-4011-90a2-caa38f3e8f1d"
+              }
+            }
+          ]
+        },
+        {
+          "linkId": "d39854ed-f21d-45cb-e26f-e6852e975ed1",
+          "text": "Hoeveel steun voelt u van mensen om u heen?",
+          "answer": [
+            {
+              "valueInteger": 2
+            }
+          ]
+        },
+        {
+          "linkId": "f2ec0cc5-524a-4e44-8a82-83d4f1462b12",
+          "text": "Welk cijfer geeft u uw leven?",
+          "answer": [
+            {
+              "valueInteger": 5
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "linkId": "3e5a743b-42fd-4e92-dfe0-4d696a0cbd08",
+      "text": "Hulpvraag",
+      "item": [
+        {
+          "linkId": "7826ab9f-2ff2-49a7-f759-f1296d4f59d9",
+          "text": "Wilt u ergens hulp bij? Dan kunt u dat hier opschrijven",
+          "answer": [
+            {
+              "valueString": "123"
+            }
+          ]
+        },
+        {
+          "linkId": "8dbee26e-9b42-47f7-8390-5c126b8dfb27",
+          "text": "Heeft u overgewicht of ernstig overgewicht (obesitas)?",
+          "answer": [
+            {
+              "valueCoding": {
+                "code": "1",
+                "display": "Ja",
+                "system": "urn:uuid:0ebba9da-88b2-4f6a-8d71-fedb36f4d1c7"
+              }
+            }
+          ]
+        },
+        {
+          "linkId": "f2f153f4-e8e0-45af-8939-f113086ff35e",
+          "text": "Zou u aanvullende vragen over uw overgewicht willen beantwoorden?",
+          "answer": [
+            {
+              "valueCoding": {
+                "code": "1",
+                "display": "Ja",
+                "system": "urn:uuid:0ebba9da-88b2-4f6a-8d71-fedb36f4d1c7"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "linkId": "84261908-a7ca-401c-87dd-2ebad47b0e44",
+      "text": "Vragen over overgewicht",
+      "item": [
+        {
+          "linkId": "0c578226-0d1a-4f7c-874b-1b923649ba94",
+          "text": "Hoe oud was u ongeveer toen u overgewicht kreeg?",
+          "answer": [
+            {
+              "valueInteger": 2
+            }
+          ]
+        },
+        {
+          "linkId": "70a0ab78-5b36-4926-94ba-4e972d58415e",
+          "text": "Bent u weleens in korte tijd veel zwaarder geworden?",
+          "answer": [
+            {
+              "valueCoding": {
+                "code": "0",
+                "display": "Nee",
+                "system": "urn:uuid:f9f4360b-2bd0-4941-89ee-16e4cf12953e"
+              }
+            }
+          ]
+        },
+        {
+          "linkId": "86f1eb64-9b15-4dab-886c-3ac4bcb7af9d",
+          "text": "Hoe komt het dat u overgewicht heeft, volgens u?",
+          "answer": [
+            {
+              "valueCoding": {
+                "code": "1",
+                "display": "Ik ben zwaarder geworden door mijn medicijnen",
+                "system": "urn:uuid:910f2e7e-cb90-4a9d-862b-c7201e8e1384"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "3",
+                "display": "Ik ben zwaarder geworden doordat ik zelfstandig ben gaan wonen",
+                "system": "urn:uuid:910f2e7e-cb90-4a9d-862b-c7201e8e1384"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "linkId": "d3cdb041-8820-4aaf-8380-e92dce632705",
+      "text": "Proberen om af te vallen",
+      "item": [
+        {
+          "linkId": "b37259f0-5097-41b9-831c-c5ce95a0eaf6",
+          "text": "Wat heeft u tot nu toe geprobeerd om af te vallen? Dat kunt u hieronder aankruisen. U mag meer dan één antwoord kiezen.",
+          "answer": [
+            {
+              "item": [
+                {
+                  "linkId": "8d137c7d-c6cd-4586-87cd-706fcc1fecdf",
+                  "text": "Welke medicijnen voor uw gewicht heeft u gehad?",
+                  "answer": [
+                    {
+                      "item": [
+                        {
+                          "linkId": "530e1be5-ff7b-47b1-8983-9435c90ad178",
+                          "text": "Welk ander medicijn heeft u gekregen voor uw gewicht?"
+                        },
+                        {
+                          "linkId": "6551c2ca-77be-4510-8cb3-5a97deb30afd",
+                          "text": "Welke andere manier heeft u geprobeerd om af te vallen?"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "linkId": "bcbd05f2-7b9b-4e5b-963a-c7502033e86e",
+                  "text": "Welke andere manier heeft u geprobeerd?"
+                }
+              ]
+            },
+            {
+              "valueCoding": {
+                "code": "2",
+                "display": "Ik ben minder calorieën gaan eten",
+                "system": "urn:uuid:a2b0961b-ff24-4337-9372-f6fd70d1a524"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "6",
+                "display": "Ik heb hulp gekregen van de huisarts of praktijkondersteuner",
+                "system": "urn:uuid:a2b0961b-ff24-4337-9372-f6fd70d1a524"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "linkId": "53f5a4bc-a675-4e05-8945-0304276cc102",
+      "text": "Uw kindertijd",
+      "item": [
+        {
+          "linkId": "90461648-092c-4728-814c-6e27aa1ee649",
+          "text": "De volgende vragen gaan over u als kind"
+        },
+        {
+          "linkId": "11b441e8-1f4d-41a4-8ed5-3d4a04e93424",
+          "text": "Hoe was uw gewicht als kind?",
+          "answer": [
+            {
+              "valueCoding": {
+                "code": "1",
+                "display": "Ik was licht",
+                "system": "urn:uuid:466185b8-73cb-4fa3-c8ce-68e9afd32d9d"
+              }
+            }
+          ]
+        },
+        {
+          "linkId": "42b2899e-6f10-4fb8-8c9c-0bbee574f5ba",
+          "text": "Hoe was uw gewicht als puber?",
+          "answer": [
+            {
+              "valueCoding": {
+                "code": "1",
+                "display": "Ik was licht",
+                "system": "urn:uuid:9d668493-70bc-42fd-a2e9-9120357ffaf8"
+              }
+            }
+          ]
+        },
+        {
+          "linkId": "fae58b19-2c49-4c10-9bbc-cd92096b9ee1",
+          "text": "U krijgt nu vragen over uw ontwikkeling als kind"
+        },
+        {
+          "linkId": "474da474-994f-4d3c-887d-65b60deb4cf1",
+          "text": "Hoe snel leerde u als kind lopen?",
+          "answer": [
+            {
+              "valueCoding": {
+                "code": "1",
+                "display": "Sneller dan andere kinderen",
+                "system": "urn:uuid:6712e797-d474-4440-aea4-9f85be7a7b55"
+              }
+            }
+          ]
+        },
+        {
+          "linkId": "df1df2ae-240d-41a6-955f-c8e2d656dd30",
+          "text": "Hoe snel leerde u als kind praten?",
+          "answer": [
+            {
+              "valueCoding": {
+                "code": "1",
+                "display": "Sneller dan andere kinderen",
+                "system": "urn:uuid:00e93a1f-c530-4400-bda7-4131be9d3d3a"
+              }
+            }
+          ]
+        },
+        {
+          "linkId": "63490071-738d-4c27-a16a-5ef45a53048a",
+          "text": "Hoe goed kon u op school leren?",
+          "answer": [
+            {
+              "valueCoding": {
+                "code": "1",
+                "display": "Beter dan andere kinderen",
+                "system": "urn:uuid:ae7a3f34-9b74-4b38-c74a-66f8b5482009"
+              }
+            }
+          ]
+        },
+        {
+          "linkId": "b2ea8bec-bd1d-45db-8a82-68b5761b6b2e",
+          "text": "Wanneer begon bij u de puberteit?",
+          "answer": [
+            {
+              "valueCoding": {
+                "code": "2",
+                "display": "Veel vroeger dan bij andere kinderen",
+                "system": "urn:uuid:8c673bde-6902-45fa-883a-dd60f6e9525e"
+              }
+            }
+          ]
+        },
+        {
+          "linkId": "aacccdf7-bf3d-49d5-c88d-f725821b8ccf",
+          "text": "Had u als kind gedragsproblemen?",
+          "answer": [
+            {
+              "item": [
+                {
+                  "linkId": "1b29be64-4e9a-432e-a765-67a75c5ec127",
+                  "text": "Kunt u dat toelichten?"
+                }
+              ],
+              "valueCoding": {
+                "code": "0",
+                "display": "Nee",
+                "system": "urn:uuid:e04d24ba-6cd0-4016-c9a6-c11ebbf49ba9"
+              }
+            }
+          ]
+        },
+        {
+          "linkId": "2f979c02-8f08-4904-e7c1-64cd3a4b5ca0",
+          "text": "U krijgt nu vragen over het gezin uit uw kindertijd. Met uw gezin bedoelen we uw vader, moeder, broers en zussen.",
+          "item": [
+            {
+              "linkId": "ce50a247-e3cc-422e-8f37-24461d6e5b77",
+              "text": "Wat was de samenstelling van uw gezin toen u een kind was?"
+            },
+            {
+              "linkId": "b3e1b336-eb45-42f6-a8c9-fb8e57fedabf",
+              "text": "Vader",
+              "answer": [
+                {
+                  "valueBoolean": false
+                }
+              ]
+            },
+            {
+              "linkId": "785e0ec9-719c-4bf1-d552-5a727922a505",
+              "text": "Moeder",
+              "answer": [
+                {
+                  "valueBoolean": true
+                }
+              ]
+            },
+            {
+              "linkId": "711e8c80-73a5-48a7-a640-554aa271fddf",
+              "text": "Broer(s)",
+              "answer": [
+                {
+                  "valueBoolean": false,
+                  "item": [
+                    {
+                      "linkId": "6e207a9e-b724-4ae8-c2ef-aa971c074b7f",
+                      "text": "Hoeveel broers heeft u?"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "linkId": "0bb45df5-53c2-483e-8413-df527bf97939",
+              "text": "Zus(sen)",
+              "answer": [
+                {
+                  "valueBoolean": true,
+                  "item": [
+                    {
+                      "linkId": "af8d129e-d6d2-4d22-8139-a69dd5876fa6",
+                      "text": "Hoeveel zussen heeft u?",
+                      "answer": [
+                        {
+                          "valueInteger": 2
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "linkId": "b082390e-f32e-4e8c-8003-d6a0d1972041",
+          "text": "Was u als kind de enige in het gezin met obesitas?",
+          "answer": [
+            {
+              "item": [
+                {
+                  "linkId": "9524aed5-60a5-4b73-ddbe-28bd30fbf58a",
+                  "text": "Welke gezinsleden hadden obesitas?"
+                },
+                {
+                  "linkId": "0605e34d-3c5d-4b82-8d2b-4b37ac6fa65e",
+                  "text": "Vader",
+                  "answer": [
+                    {
+                      "valueBoolean": false
+                    }
+                  ]
+                },
+                {
+                  "linkId": "9989ae4f-e863-427f-fb2d-4c426758da96",
+                  "text": "Moeder",
+                  "answer": [
+                    {
+                      "valueBoolean": false
+                    }
+                  ]
+                },
+                {
+                  "linkId": "1b99ee23-57e7-4e5e-ee36-6199923e629b",
+                  "text": "Broer(s)",
+                  "answer": [
+                    {
+                      "valueBoolean": false,
+                      "item": [
+                        {
+                          "linkId": "71797204-bc7c-4464-8edd-8f5b3d7a264e",
+                          "text": "Hoeveel van uw broers hadden obesitas?"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "linkId": "5494c51b-f6f6-4aba-ccc3-042954788ecc",
+                  "text": "Zus(sen)",
+                  "answer": [
+                    {
+                      "valueBoolean": false,
+                      "item": [
+                        {
+                          "linkId": "7d10b45a-e91c-4221-ab18-31994e591c0f",
+                          "text": "Hoeveel van uw zussen hadden obesitas?"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "valueCoding": {
+                "code": "1",
+                "display": "Ja",
+                "system": "urn:uuid:d27016af-9f93-442f-c3b9-85d600bfca63"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "linkId": "bbsc83c9-bca0-4262-81c0-4ccaf843df1f",
+      "text": "Dagelijkse gewoonten",
+      "item": [
+        {
+          "linkId": "4dc9552f-f557-409b-c633-67d47944f14f",
+          "text": "De volgende vragen gaan over uw eetlust"
+        },
+        {
+          "linkId": "1425eea1-e493-400e-8c34-6d3dcda5b866",
+          "text": "Hoeveel trek in eten heeft u op een gemiddelde dag?",
+          "answer": [
+            {
+              "valueCoding": {
+                "code": "1",
+                "display": "Ik heb minder trek in eten dan anderen.",
+                "system": "urn:uuid:a6e8a5d5-ae99-4a63-954b-120ee16aac0b"
+              }
+            }
+          ]
+        },
+        {
+          "linkId": "95dc8e9e-652b-415d-80e8-a0fbeb997382",
+          "text": "Stel, u eet een normale maaltijd. Zit u dan vol?",
+          "answer": [
+            {
+              "valueCoding": {
+                "code": "0",
+                "display": "Ja",
+                "system": "urn:uuid:a6e8a5d5-ae99-4a63-954b-120ee16aac0b"
+              }
+            }
+          ]
+        },
+        {
+          "linkId": "aaed5624-92ce-41d7-bd2e-4c6535e42b67",
+          "text": "Stel, u eet een normale maaltijd. Hoe lang daarna heeft u weer trek in eten?",
+          "answer": [
+            {
+              "valueCoding": {
+                "code": "1",
+                "display": "Na minder dan 1 uur",
+                "system": "urn:uuid:a6e8a5d5-ae99-4a63-954b-120ee16aac0b"
+              }
+            }
+          ]
+        },
+        {
+          "linkId": "e72e2850-de58-4258-8073-b356e9718082",
+          "text": "Hoe vaak komt u ’s nachts uit bed om te eten?",
+          "answer": [
+            {
+              "valueCoding": {
+                "code": "1",
+                "display": "Nooit",
+                "system": "urn:uuid:a6e8a5d5-ae99-4a63-954b-120ee16aac0b"
+              }
+            }
+          ]
+        },
+        {
+          "linkId": "fd02bbf0-2c95-49a2-856d-42f9beb55c7a",
+          "text": "Heeft u soms last van eetbuien? Dus eet u soms heel snel en veel tegelijk?",
+          "answer": [
+            {
+              "item": [
+                {
+                  "linkId": "eaea0f70-3fa6-4125-83b1-f025db1fe9af",
+                  "text": "Hoe vaak heeft u deze eetbuien?",
+                  "answer": [
+                    {
+                      "item": [
+                        {
+                          "linkId": "bf4ea2fb-daf6-42f1-830a-d31144a7298b",
+                          "text": "Hoelang heeft u al last van eetbuien?"
+                        },
+                        {
+                          "linkId": "5ad251b1-6440-416f-88e4-661b37f55aba",
+                          "text": "Voelt het alsof u daar niets aan kunt doen?"
+                        },
+                        {
+                          "linkId": "1c07c445-a789-42ae-ba56-b0a9a8997f77",
+                          "text": "Voelt u zich daarna slecht over uzelf?"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "valueCoding": {
+                "code": "0",
+                "display": "Nee",
+                "system": "urn:uuid:a6e8a5d5-ae99-4a63-954b-120ee16aac0b"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "linkId": "0d25c2e5-1b72-4c49-8208-0e57a09533e8",
+      "text": "Lichamelijke gezondheid",
+      "item": [
+        {
+          "linkId": "b4b7eba8-6bc8-441e-ca1f-242eb9630e63",
+          "text": "U krijgt nu vragen over uw gezondheid. We stellen nu enkele vragen over uw gezondheid. En of u bijzondere kenmerken heeft. Deze kunnen soms passen bij bepaalde oorzaken van obesitas."
+        },
+        {
+          "linkId": "5d77699f-966c-4267-84d8-2bde0940fff3",
+          "text": "Bent u doof geboren?",
+          "answer": [
+            {
+              "valueCoding": {
+                "code": "1",
+                "display": "Ja",
+                "system": "urn:uuid:7b5c50e4-e7ef-4549-8635-4fe800fab7ef"
+              }
+            }
+          ]
+        },
+        {
+          "linkId": "50c4089c-bcca-426a-edfa-2d6103492e4a",
+          "text": "Heeft u volgens de dokter een probleem met het netvlies van uw oog?",
+          "answer": [
+            {
+              "item": [
+                {
+                  "linkId": "2d7ede1a-011a-48b3-9320-621d1b5f87d2",
+                  "text": "Namelijk"
+                }
+              ],
+              "valueCoding": {
+                "code": "0",
+                "display": "Nee",
+                "system": "urn:uuid:b0366067-4842-4fde-8f3e-e7a3007cdc10"
+              }
+            }
+          ]
+        },
+        {
+          "linkId": "52bcbee9-ef0f-4820-8b01-7193bec43002",
+          "text": "Heeft u aan elkaar gegroeide vingers of tenen? Of had u die vroeger?",
+          "answer": [
+            {
+              "valueCoding": {
+                "code": "0",
+                "display": "Nee",
+                "system": "urn:uuid:6dbf97dd-7df8-4dfc-db01-37dccb1cb421"
+              }
+            }
+          ]
+        },
+        {
+          "linkId": "35cdad3e-d9d9-482a-e431-267a799a004c",
+          "text": "Heeft u een extra teen of vinger? Of had u die vroeger?",
+          "answer": [
+            {
+              "valueCoding": {
+                "code": "0",
+                "display": "Nee",
+                "system": "urn:uuid:a0085a86-238e-4fc2-9438-f5f472239567"
+              }
+            }
+          ]
+        },
+        {
+          "linkId": "3778616c-4ece-4d0a-e86e-f0048690c90e",
+          "text": "Heeft u een hoge bloeddruk?",
+          "answer": [
+            {
+              "valueCoding": {
+                "code": "0",
+                "display": "Nee",
+                "system": "urn:uuid:8024f187-8ec0-4bbf-ae7a-3e08d110317c"
+              }
+            }
+          ]
+        },
+        {
+          "linkId": "a59827f9-03ee-44ca-9df6-479e5f291783",
+          "text": "Heeft u suikerziekte (ook wel type 2 diabetes genoemd)?",
+          "answer": [
+            {
+              "valueCoding": {
+                "code": "0",
+                "display": "Nee",
+                "system": "urn:uuid:72ee1c5c-5f8b-4a75-8373-2eb1de66ddec"
+              }
+            }
+          ]
+        },
+        {
+          "linkId": "69accfe9-f5c1-4b3b-8afa-028eb5c40f0a",
+          "text": "Heeft u nu of vroeger medicijnen gebruikt voor een te trage schildklier?",
+          "answer": [
+            {
+              "valueCoding": {
+                "code": "1",
+                "display": "Ja, die gebruik ik nu",
+                "system": "urn:uuid:b33ab785-eb88-467f-89c8-9486563210b2"
+              }
+            }
+          ]
+        },
+        {
+          "linkId": "b0b3ba42-70d2-41b4-c3d7-75b552f8502a",
+          "text": "Heeft u weleens één van de volgende problemen gehad met uw hoofd?",
+          "answer": [
+            {
+              "item": [
+                {
+                  "linkId": "6e68d5aa-0184-4ec9-ada2-c2644732369f",
+                  "text": "Raakte u daarbij bewusteloos?",
+                  "answer": [
+                    {
+                      "valueCoding": {
+                        "code": "1",
+                        "display": "Ja",
+                        "system": "urn:uuid:df1e8381-7bf0-4a43-ce71-06f274a96d5e"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "linkId": "a649c86f-2ac7-4ca0-f77c-39e4fbdfa51e",
+                  "text": "Heeft u ten minste 1 keer ‘ja’ geantwoord? Vul dan ook deze vragen in:",
+                  "item": [
+                    {
+                      "linkId": "ba0c7314-4daf-4efd-d4e4-08badc6fb0ce",
+                      "text": "Heeft u sinds die tijd extra veel trek in eten gekregen?",
+                      "answer": [
+                        {
+                          "valueCoding": {
+                            "code": "0",
+                            "display": "Nee",
+                            "system": "urn:uuid:f7ee2fb0-c0ed-499e-81de-1836d0784ad0"
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "linkId": "bf6d56b9-e19a-4f00-b77a-4610b1b1bbad",
+                      "text": "Zit u sinds die tijd minder snel vol na een maaltijd?",
+                      "answer": [
+                        {
+                          "valueCoding": {
+                            "code": "0",
+                            "display": "Nee",
+                            "system": "urn:uuid:f7ee2fb0-c0ed-499e-81de-1836d0784ad0"
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "linkId": "c67b40b3-3276-4825-88ba-1ac70b0e489d",
+                      "text": "Bent u sinds die tijd veel zwaarder geworden?",
+                      "answer": [
+                        {
+                          "valueCoding": {
+                            "code": "0",
+                            "display": "Nee",
+                            "system": "urn:uuid:f7ee2fb0-c0ed-499e-81de-1836d0784ad0"
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "valueCoding": {
+                "code": "2",
+                "display": "Een gezwel in uw hersenen",
+                "system": "urn:uuid:b1c48ca0-fb3a-411a-d8a7-5941eca6afd5"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "3",
+                "display": "Een ontsteking in uw hersenen",
+                "system": "urn:uuid:b1c48ca0-fb3a-411a-d8a7-5941eca6afd5"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "1",
+                "display": "Ernstig gewond geraakt aan uw hoofd",
+                "system": "urn:uuid:b1c48ca0-fb3a-411a-d8a7-5941eca6afd5"
+              }
+            }
+          ]
+        },
+        {
+          "linkId": "c99f3efc-0cf7-42a8-8408-e8dd3dab0d3e",
+          "text": "Heeft u last van opvallend veel haaruitval?",
+          "answer": [
+            {
+              "valueCoding": {
+                "code": "0",
+                "display": "Nee",
+                "system": "urn:uuid:d08eb0d8-5d7c-4d01-f756-46e802148228"
+              }
+            }
+          ]
+        },
+        {
+          "linkId": "2def9a1d-27c1-4d2a-8ba3-b1ccd2020c80",
+          "text": "Heeft u een extreem droge huid?",
+          "answer": [
+            {
+              "valueCoding": {
+                "code": "0",
+                "display": "Nee",
+                "system": "urn:uuid:d08eb0d8-5d7c-4d01-f756-46e802148228"
+              }
+            }
+          ]
+        },
+        {
+          "linkId": "132b855c-8fe9-417d-8a00-4909467b1b38",
+          "text": "Heeft u het erg snel koud?",
+          "answer": [
+            {
+              "valueCoding": {
+                "code": "0",
+                "display": "Nee",
+                "system": "urn:uuid:d08eb0d8-5d7c-4d01-f756-46e802148228"
+              }
+            }
+          ]
+        },
+        {
+          "linkId": "8dcb0379-98cc-41f4-880a-af4f202b1b82",
+          "text": "Kunt u moeilijk poepen?",
+          "answer": [
+            {
+              "valueCoding": {
+                "code": "0",
+                "display": "Nee",
+                "system": "urn:uuid:d08eb0d8-5d7c-4d01-f756-46e802148228"
+              }
+            }
+          ]
+        },
+        {
+          "linkId": "a3e7fa96-3ddf-46a9-8d63-783af75044c0",
+          "text": "Heeft u paarse of rode strepen op uw huid?\nOf indien u een donkere huid heeft: heeft u strepen op uw huid die donkerder zijn dan uw huidskleur?",
+          "answer": [
+            {
+              "valueCoding": {
+                "code": "0",
+                "display": "Nee",
+                "system": "urn:uuid:d08eb0d8-5d7c-4d01-f756-46e802148228"
+              }
+            }
+          ]
+        },
+        {
+          "linkId": "4306ded1-deee-44c5-90a5-f891ab6ffed6",
+          "text": "Heeft u vaak zomaar blauwe plekken?",
+          "answer": [
+            {
+              "valueCoding": {
+                "code": "0",
+                "display": "Nee",
+                "system": "urn:uuid:d08eb0d8-5d7c-4d01-f756-46e802148228"
+              }
+            }
+          ]
+        },
+        {
+          "linkId": "02b85788-ee0b-4b90-81e0-e53461a6a13b",
+          "text": "Heeft u te weinig spierkracht?",
+          "answer": [
+            {
+              "valueCoding": {
+                "code": "0",
+                "display": "Nee",
+                "system": "urn:uuid:d08eb0d8-5d7c-4d01-f756-46e802148228"
+              }
+            }
+          ]
+        },
+        {
+          "linkId": "6d927b77-dfc8-4342-a215-8d9918e76f31",
+          "text": "Worden uw armen en benen dunner of zijn deze dunner geworden?",
+          "answer": [
+            {
+              "valueCoding": {
+                "code": "0",
+                "display": "Nee",
+                "system": "urn:uuid:d08eb0d8-5d7c-4d01-f756-46e802148228"
+              }
+            }
+          ]
+        },
+        {
+          "linkId": "0515abf9-e44b-41fa-a6b2-d553a6f5d619",
+          "text": "Heeft u veel last van puistjes?",
+          "answer": [
+            {
+              "valueCoding": {
+                "code": "0",
+                "display": "Nee",
+                "system": "urn:uuid:d08eb0d8-5d7c-4d01-f756-46e802148228"
+              }
+            }
+          ]
+        },
+        {
+          "linkId": "5145036c-62dd-41b5-f0b3-7e9da69c50cb",
+          "text": "Heeft u minder zin in seks?",
+          "answer": [
+            {
+              "valueCoding": {
+                "code": "0",
+                "display": "Nee",
+                "system": "urn:uuid:d08eb0d8-5d7c-4d01-f756-46e802148228"
+              }
+            }
+          ]
+        },
+        {
+          "linkId": "87c4a81c-9e5f-4cf1-cb4f-d94a047463e8",
+          "text": "Heeft u erectieproblemen?"
+        },
+        {
+          "linkId": "46167094-67d5-43c0-8ea3-b9d8cbfdeed2",
+          "text": "Heeft u in de ochtend een minder sterke erectie?"
+        },
+        {
+          "linkId": "54a1a72d-a7d2-453e-8f20-0317fbd8ea06",
+          "text": "Heeft u langdurig last van storende pijn?",
+          "answer": [
+            {
+              "valueCoding": {
+                "code": "0",
+                "display": "Nee",
+                "system": "urn:uuid:d08eb0d8-5d7c-4d01-f756-46e802148228"
+              }
+            }
+          ]
+        },
+        {
+          "linkId": "687d5486-707f-4e75-dd37-7268687f38b8",
+          "text": "Heeft u last van epilepsie?",
+          "answer": [
+            {
+              "valueCoding": {
+                "code": "0",
+                "display": "Nee",
+                "system": "urn:uuid:78a57256-a310-4bfa-805c-4d001131f372"
+              }
+            }
+          ]
+        },
+        {
+          "linkId": "6547dad4-171b-44a8-8c34-4ef8ff3bdab6",
+          "text": "Heeft u pijn in uw knie of heup tijdens het bewegen?",
+          "answer": [
+            {
+              "item": [
+                {
+                  "linkId": "b8caa3cc-74c5-4eab-e7a4-0dacf6020af2",
+                  "text": "Waar heeft u dan pijn?"
+                }
+              ],
+              "valueCoding": {
+                "code": "0",
+                "display": "Nee",
+                "system": "urn:uuid:c3a09fc9-a3a0-4735-c8f5-3a2f6b50b081"
+              }
+            }
+          ]
+        },
+        {
+          "linkId": "7efdbc81-c53f-4d3e-b20d-a6ad1634ecce",
+          "text": "Voelt u ochtendstijfheid in uw knie of heup?",
+          "answer": [
+            {
+              "item": [
+                {
+                  "linkId": "941883f0-60b5-4f6e-aa10-8afb6a786c20",
+                  "text": "Hoe lang heeft u daar dan last van?"
+                },
+                {
+                  "linkId": "71358a2e-4693-44bf-8b15-ad9039749c94",
+                  "text": "En waar heeft u dan last?"
+                }
+              ],
+              "valueCoding": {
+                "code": "0",
+                "display": "Nee",
+                "system": "urn:uuid:c3a09fc9-a3a0-4735-c8f5-3a2f6b50b081"
+              }
+            }
+          ]
+        },
+        {
+          "linkId": "8cf8a900-3ee3-44f4-c581-769a37f2b555",
+          "text": "Vragen specifiek voor vrouwen",
+          "item": [
+            {
+              "linkId": "3036079e-28ea-482c-d04c-37ae21651146",
+              "text": "We hebben nu een vraag over de overgang (= menopauze). De overgang kan op een natuurlijke manier ontstaan. Of u kunt na de overgang zijn door medische redenen, zoals eierstokken die weggehaald zijn. \nWat geldt voor u?",
+              "answer": [
+                {
+                  "valueCoding": {
+                    "code": "1",
+                    "display": "Ik ben nog niet in de overgang",
+                    "system": "urn:uuid:1ed073f2-6e92-4fb8-85ca-0b2401142b69"
+                  }
+                }
+              ]
+            },
+            {
+              "linkId": "2d56749d-8716-4692-f2cf-e4d84b71384d",
+              "text": "Gebruikt u anticonceptie?",
+              "answer": [
+                {
+                  "item": [
+                    {
+                      "linkId": "3238d231-e3a9-4b6a-83c3-296cb644349a",
+                      "text": "Welke anticonceptie gebruikt u?"
+                    }
+                  ],
+                  "valueCoding": {
+                    "code": "0",
+                    "display": "Nee",
+                    "system": "urn:uuid:fa3e469b-ea98-482f-aa73-f896add9989e"
+                  }
+                }
+              ]
+            },
+            {
+              "linkId": "dd72a8ee-8a5b-40b7-f9b8-61611c411df8",
+              "text": "Is uw menstruatie regelmatig?",
+              "answer": [
+                {
+                  "item": [
+                    {
+                      "linkId": "fe856ea3-7e51-4974-aba5-cb725e496326",
+                      "text": "Kunt u dit toelichten?"
+                    }
+                  ],
+                  "valueCoding": {
+                    "code": "1",
+                    "display": "Ja",
+                    "system": "urn:uuid:41c93e7a-122b-4a83-8a24-409487cfd346"
+                  }
+                }
+              ]
+            },
+            {
+              "linkId": "3ca98657-3ca2-4cac-8c2a-34974c84fd63",
+              "text": "Is er ooit bij u een PCOS (polycysteus-ovariumsyndroom) geconstateerd?",
+              "answer": [
+                {
+                  "valueCoding": {
+                    "code": "1",
+                    "display": "Ja",
+                    "system": "urn:uuid:7b06fdbd-cb61-4415-b571-781ef3312456"
+                  }
+                }
+              ]
+            },
+            {
+              "linkId": "d6137549-9d62-49f5-f71a-8c543fd0fe08",
+              "text": "Groeit er veel haar op uw gezicht, borst, rug of buik, of doet u regelmatig ontharingsbehandelingen op deze plaatsen?",
+              "answer": [
+                {
+                  "valueCoding": {
+                    "code": "0",
+                    "display": "Nee",
+                    "system": "urn:uuid:7b06fdbd-cb61-4415-b571-781ef3312456"
+                  }
+                }
+              ]
+            },
+            {
+              "linkId": "57bf1ce7-c8f3-44bc-914e-0115ce609e2d",
+              "text": "Wie vult deze vragenlijst voor u in?",
+              "answer": [
+                {
+                  "item": [
+                    {
+                      "linkId": "0a2d98ae-7921-478a-ac96-281523e7533d",
+                      "text": "Waarom vult iemand anders de vragenlijst voor u in?",
+                      "answer": [
+                        {
+                          "item": [
+                            {
+                              "linkId": "38e846f0-fe2e-4e6c-884b-cfdd273a02bb",
+                              "text": "namelijk",
+                              "answer": [
+                                {
+                                  "valueString": "213"
+                                }
+                              ]
+                            }
+                          ],
+                          "valueCoding": {
+                            "code": "0",
+                            "display": "Ik kan niet goed zien.",
+                            "system": "urn:uuid:7b06fdbd-cb61-4415-b571-781ef3312456"
+                          }
+                        }
+                      ]
+                    }
+                  ],
+                  "valueCoding": {
+                    "code": "0",
+                    "display": "Ikzelf",
+                    "system": "urn:uuid:7b06fdbd-cb61-4415-b571-781ef3312456"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "linkId": "ac74e06b-7adc-475a-810b-22d4434276b4",
+      "text": "Medicatie",
+      "item": [
+        {
+          "linkId": "5b8ebf22-c4fb-444f-c57e-e6ae301be0db",
+          "text": "Gebruikt u op dit moment medicijnen?  Denk ook aan crèmes, neusspray, puffers, oogdruppels, injecties, vitamines of anticonceptie."
+        },
+        {
+          "linkId": "07b45d43-5157-47a6-8319-38095914bb1e",
+          "text": "Heeft u in het verleden medicatie gebruikt OF gebruikt u nu medicatie?",
+          "answer": [
+            {
+              "valueCoding": {
+                "code": "0",
+                "display": "Nee, ik heb nog nooit medicatie gebruikt",
+                "system": "urn:uuid:b76c1113-9c2f-4e9e-d968-7f0dd3467812"
+              }
+            }
+          ]
+        },
+        {
+          "linkId": "90a84d50-d04d-410a-afc1-2bbcde30230c",
+          "text": "Medicijnen tegen epilepsie?",
+          "answer": [
+            {
+              "item": [
+                {
+                  "linkId": "45e2a2e7-ec89-4f71-87b0-3447b72fdaa7",
+                  "text": "Gebruikt u nu of gebruikte u vroeger 1 van onderstaande middelen?",
+                  "answer": [
+                    {
+                      "item": [
+                        {
+                          "linkId": "80b24803-10f6-40bd-e1f6-d74df960aeeb",
+                          "text": "Welk ander medicament gebruikt u?"
+                        },
+                        {
+                          "linkId": "66384fb2-f034-4f63-910c-8a3926adaeba",
+                          "text": "Hoe lang gebruikt u Gabapentine (Gabapentine OF Neurontin) al?"
+                        },
+                        {
+                          "linkId": "255061bb-631d-4ec6-8286-2e9fbe5000f3",
+                          "text": "Hoe lang gebruikt u Pregabaline (Lyrica OF Pregabaline) al?"
+                        },
+                        {
+                          "linkId": "87a14e28-615a-4b61-9ca9-27468e96710c",
+                          "text": "Hoe lang gebruikt u Valproinezuur (Depakine OF Natriumvalproaat OF Orfiril OF Valproïnezuur zetpillen) al?"
+                        },
+                        {
+                          "linkId": "b3c0d77f-de93-4882-8788-1eb6dfef16e0",
+                          "text": "Hoe lang gebruikt u het andere anti-epileptica medicijn al?"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "linkId": "7b7aa6dd-cb55-4785-8235-4eda2a98552d",
+          "text": "Medicijnen tegen depressie/angststoornissen?",
+          "answer": [
+            {
+              "item": [
+                {
+                  "linkId": "937e0117-465e-48ed-f02f-3fdbcc5d3f22",
+                  "text": "Gebruikt u nu of gebruikte u vroeger 1 van onderstaande middelen?",
+                  "answer": [
+                    {
+                      "item": [
+                        {
+                          "linkId": "319dfb6b-c67d-433a-8612-fcf1973e49a4",
+                          "text": "Welk ander medicament gebruikt u?"
+                        },
+                        {
+                          "linkId": "b7ea61bc-f85d-4dd5-80b4-b022560ffb1b",
+                          "text": "Hoe lang gebruikt u Amitriptyline al?"
+                        },
+                        {
+                          "linkId": "0a85c4e6-897e-4095-8d57-6272f544bfbe",
+                          "text": "Hoe lang gebruikt u Citalopram (Cipramil OF Citalopram) al?"
+                        },
+                        {
+                          "linkId": "a9f0e2fc-e5f1-4d03-852b-fb0c598b0ebb",
+                          "text": "Hoe lang gebruikt u Clomipramine al?"
+                        },
+                        {
+                          "linkId": "a6b43c80-b4ba-4175-850b-168c05ec903e",
+                          "text": "Hoe lang gebruikt u Duloxetine (Cymbalta OF Duloxetine OF Xeristar) al?"
+                        },
+                        {
+                          "linkId": "39a61dbb-c33e-4235-ccbe-15fa14e0e804",
+                          "text": "Hoe lang gebruikt u Escitalopram (Escitalopram OF Lexapro) al?"
+                        },
+                        {
+                          "linkId": "38f07eee-8aa5-4b89-e84d-1d2ed2bdfd8a",
+                          "text": "Hoe lang gebruikt u Fluvoxamine (Fevarin OF Fluvoxamine) al?"
+                        },
+                        {
+                          "linkId": "c733c467-8a94-476e-dcfd-a763beec0f15",
+                          "text": "Hoe lang gebruikt u Imipramine al?"
+                        },
+                        {
+                          "linkId": "edafab37-1bc9-4b25-8d34-65c186369831",
+                          "text": "Hoe lang gebruikt u Lithium (Camcolit OF Lithiumcarbonaat OF Lithiumcitraat OF Priadel) al?"
+                        },
+                        {
+                          "linkId": "a29e0cdf-0ac8-4f13-a8ee-491a07e9b56d",
+                          "text": "Hoe lang gebruikt u Mirtazapine (Mirtazapine OF Remeron) al?"
+                        },
+                        {
+                          "linkId": "a20aa098-2fe4-4d6d-968c-194c130d6339",
+                          "text": "Hoe lang gebruikt u Nortriptyline (Nortrilen OF Nortriptyline) al?"
+                        },
+                        {
+                          "linkId": "19701031-12f0-442b-82f0-f7819660cc48",
+                          "text": "Hoe lang gebruikt u Paroxetine (Paroxetine OF Seroxat) al?"
+                        },
+                        {
+                          "linkId": "6be07f5d-1f53-4b0d-857d-26e0eb42b6d2",
+                          "text": "Hoe lang gebruikt u Fenelzine (Nardil) al?"
+                        },
+                        {
+                          "linkId": "2bdd5c0b-f7c2-4cb9-83f6-5c410d4eacf6",
+                          "text": "Hoe lang gebruikt u Tranylcypromine (Tracydal OF Tranylcypromine) al?"
+                        },
+                        {
+                          "linkId": "539baae4-ad36-4ff0-da4e-f1041e7a79f8",
+                          "text": "Hoe lang gebruikt u Venlafaxine (Venlafaxine OF Efexor) al?"
+                        },
+                        {
+                          "linkId": "d2f260a5-d2c0-47fa-b625-1cf3a6a1a64d",
+                          "text": "Hoe lang gebruikt u het andere antidepressiva-medicijn al?"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "linkId": "c9887b09-5c9b-454d-8412-cacfef949403",
+          "text": "Medicijnen tegen allergie?",
+          "answer": [
+            {
+              "item": [
+                {
+                  "linkId": "06992b73-8ac3-48c0-94dc-b075993b8c9f",
+                  "text": "Gebruikt u nu of gebruikte u vroeger 1 van onderstaande middelen?",
+                  "answer": [
+                    {
+                      "item": [
+                        {
+                          "linkId": "d28ec229-de01-40aa-ff2b-244327d14d76",
+                          "text": "Welk ander medicament gebruikt u?"
+                        },
+                        {
+                          "linkId": "8e6e419c-7a05-4100-92d5-e598087e89af",
+                          "text": "Hoe lang gebruikt u Cetirizine (Cetirizine OF Prevalin allerstop OF Reactine OF Zyrtec) al?"
+                        },
+                        {
+                          "linkId": "970d9e5b-3fd7-4d2a-f426-11d150088268",
+                          "text": "Hoe lang gebruikt u (Des)loratadine (Aerius OF Desloratadine OF Neoclarityn) al?"
+                        },
+                        {
+                          "linkId": "828faf8e-4bca-4a50-b7b4-0681ca9bf0b0",
+                          "text": "Hoe lang gebruikt u Fexofenadine (Allegra fexotabs OF Fexofenadine OF Telfast) al?"
+                        },
+                        {
+                          "linkId": "05ef86d0-1016-4fda-90bd-df1bda143b62",
+                          "text": "Hoe lang gebruikt u het andere anti-allergie-medicijn al?"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "linkId": "4f216e2d-7dae-450b-a039-082ae6330a10",
+          "text": "Medicijnen tegen psychoses/schizofrenie?",
+          "answer": [
+            {
+              "item": [
+                {
+                  "linkId": "e0f12284-221f-4d9e-8176-978be5a9738d",
+                  "text": "Gebruikt u nu of gebruikte u vroeger 1 van onderstaande middelen?",
+                  "answer": [
+                    {
+                      "item": [
+                        {
+                          "linkId": "80700ccf-1568-4333-83ab-05ec2828632c",
+                          "text": "Welk ander medicament gebruikt u?"
+                        },
+                        {
+                          "linkId": "d4b8bcec-55dc-4020-84fc-0db8373a0c21",
+                          "text": "Hoe lang gebruikt u Chloorpromazine al?"
+                        },
+                        {
+                          "linkId": "bf1d8638-ecee-4620-a42f-d4d38b007adc",
+                          "text": "Hoe lang gebruikt u Clozapine (Clozapine OF Leponex OF Zaponex) al?"
+                        },
+                        {
+                          "linkId": "4c00b207-0b7d-4de5-9237-d0342f67f2a2",
+                          "text": "Hoe lang gebruikt u Haloperidol (Haldol OF Haloperidol) al?"
+                        },
+                        {
+                          "linkId": "deea26eb-bfcd-40d5-8e51-46b029fe7c82",
+                          "text": "Hoe lang gebruikt u Olanzapine (Olanzapine OF Zypadhera OF Zyprexa) al?"
+                        },
+                        {
+                          "linkId": "07957913-63ba-47eb-8d40-1cf6eec5a8d6",
+                          "text": "Hoe lang gebruikt u Paliperidon (Invega OF Paliperidon OF Trevicta OF Xeplion) al?"
+                        },
+                        {
+                          "linkId": "35172843-3347-4621-8291-5a3e26092007",
+                          "text": "Hoe lang gebruikt u Quetiapine (Quetiapine OF Seroquel) al?"
+                        },
+                        {
+                          "linkId": "c0dbd975-40f8-4e55-b8d0-c92fba365802",
+                          "text": "Hoe lang gebruikt u Risperidon (Risperdal OF Risperidon) al?"
+                        },
+                        {
+                          "linkId": "cdd9cc2c-aed8-4c92-8907-b4c90e9ec593",
+                          "text": "Hoe lang gebruikt u Sertindol (Sertindol OF Serdolect) al?"
+                        },
+                        {
+                          "linkId": "b3d81e01-2d61-4197-8a68-ac5fa5fa1d0c",
+                          "text": "Hoe lang gebruikt u het andere medicijn tegen psychoses/schizofrenie al?"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "linkId": "151992ee-46a3-4bb4-8939-c12987e2a975",
+          "text": "Medicijnen tegen diabetes?",
+          "answer": [
+            {
+              "item": [
+                {
+                  "linkId": "95010df8-9894-4454-8efd-a4076bb2e763",
+                  "text": "Gebruikt u nu of gebruikte u vroeger 1 van onderstaande middelen?",
+                  "answer": [
+                    {
+                      "item": [
+                        {
+                          "linkId": "afa51967-4cd5-418b-eee1-ba7aa8646759",
+                          "text": "Welk ander medicament gebruikt u?"
+                        },
+                        {
+                          "linkId": "116dbdb4-a5eb-46a3-d386-73ec70de8ec6",
+                          "text": "Hoe lang gebruikt u Insuline al?"
+                        },
+                        {
+                          "linkId": "a7c437c9-3954-42bb-8d78-c3fd73ecb44a",
+                          "text": "Hoe lang gebruikt u Gliclazide (Gliclazide OF Diamicron) al?"
+                        },
+                        {
+                          "linkId": "972c6a17-5ef8-46aa-e4bd-3c738b81cf7f",
+                          "text": "Hoe lang gebruikt u Tolbutamide al?"
+                        },
+                        {
+                          "linkId": "40a665cf-0d88-4b22-913f-018d5de56bba",
+                          "text": "Hoe lang gebruikt u Repaglinide (Repaglinide OF Novonorm) al?"
+                        },
+                        {
+                          "linkId": "eb650b3c-ab9c-4004-f75c-1248960daea0",
+                          "text": "Hoe lang gebruikt u Glibenclamide (Glibenclamide OF Glucovance) al?"
+                        },
+                        {
+                          "linkId": "f799fbef-f132-48a8-815e-a8b1a7630d48",
+                          "text": "Hoe lang gebruikt u Glimepiride (Amaryl OF Glimepridide) al?"
+                        },
+                        {
+                          "linkId": "367a5e29-616d-4f3d-f23f-c2ba1311b723",
+                          "text": "Hoe lang gebruikt u Pioglitazone (Actos OF Pioglitazon OF pioglitazon/meformine OF Competact) al?"
+                        },
+                        {
+                          "linkId": "ee078252-ac0f-4cc6-e8a4-761b3f3ca19d",
+                          "text": "Hoe lang gebruikt u het andere medicijn tegen diabetes al?"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "linkId": "1229d9de-6106-4dc9-8af0-917a59e91d0e",
+          "text": "Medicijnen tegen hoge bloeddruk?",
+          "answer": [
+            {
+              "item": [
+                {
+                  "linkId": "40f88b89-bf1f-41d5-8e11-1c31ebac1d92",
+                  "text": "Gebruikt u nu of gebruikte u vroeger 1 van onderstaande middelen?",
+                  "answer": [
+                    {
+                      "item": [
+                        {
+                          "linkId": "8555a05a-1067-4fcf-8dd8-544258b70c20",
+                          "text": "Welk ander medicament gebruikt u?"
+                        },
+                        {
+                          "linkId": "fb05e39c-27a7-4f32-8615-63d52e8246cd",
+                          "text": "Hoe lang gebruikt u Atenolol (Atenolol OF atenolol/chloorthalidon) al?"
+                        },
+                        {
+                          "linkId": "4a7034a6-c860-4400-8c5f-3ad54e44ac33",
+                          "text": "Hoe lang gebruikt u Clonidine (Clonidine OF Catapresan) al?"
+                        },
+                        {
+                          "linkId": "e4b7149e-5f87-40f5-8a96-e45eb62b1fff",
+                          "text": "Hoe lang gebruikt u Metoprolol (Metoprolol OF Selokeen OF metoprolol/hydrochloorthiazide OF Selokomb) al?"
+                        },
+                        {
+                          "linkId": "54661b7e-74e5-41f6-840d-c0514c4f10d6",
+                          "text": "Hoe lang gebruikt u Propranolol al?"
+                        },
+                        {
+                          "linkId": "38030529-0ca6-4011-8623-2559d2b8011a",
+                          "text": "Hoe lang gebruikt u Terazosine (Hytrin OF Terazosine) al?"
+                        },
+                        {
+                          "linkId": "c1b607bc-187e-4a98-fa29-84edebb550b8",
+                          "text": "Hoe lang gebruikt u Valsartan (Valsartsan OF Diovan OF amlodipine/valsartan OF Exforge OF Copalia of valsartan/hydrochlorothiazide of Co-Diovan OF amlodipine/valsartan/hydrochlorothiazide OF Exforge HCT) al?"
+                        },
+                        {
+                          "linkId": "33e84c91-c8d1-49b4-db71-e27bac2e4f9c",
+                          "text": "Hoe lang gebruikt u het andere bloeddrukverlagende medicijn al?"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "linkId": "890d6076-8292-4ed7-892c-596fcafa791a",
+          "text": "Maagzuurremmers?",
+          "answer": [
+            {
+              "item": [
+                {
+                  "linkId": "74975026-e9f1-4f62-87c9-8b976ac0b5ca",
+                  "text": "Gebruikt u nu of gebruikte u vroeger 1 van onderstaande middelen?",
+                  "answer": [
+                    {
+                      "item": [
+                        {
+                          "linkId": "5572c6c8-d596-400c-f310-f55006307800",
+                          "text": "Welk ander medicament gebruikt u?"
+                        },
+                        {
+                          "linkId": "f29fba19-a708-44c2-8dd5-7e38d7f7a2b2",
+                          "text": "Hoe lang gebruikt u Lansoprazol (Lansoprazol OF Prezal) al?"
+                        },
+                        {
+                          "linkId": "8096c4a7-b8f1-461c-80d3-7ba6d1f940b9",
+                          "text": "Hoe lang gebruikt u Omeprazol (Losec OF Losecosan OF Omecat OF Omeprazol OF Pedippi) al?"
+                        },
+                        {
+                          "linkId": "6ff620aa-3519-4daf-883a-906f56b5bb5f",
+                          "text": "Hoe lang gebruikt u Rabeprazol (Pariet OF Rabeprazol) al?"
+                        },
+                        {
+                          "linkId": "62d00347-f5a1-4c17-9056-983ebe372430",
+                          "text": "Hoe lang gebruikt u de andere maagzuurremmer al?"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "linkId": "ac4f758e-7e89-4eba-99a5-008483a86cb2",
+          "text": "Pijnstillers tegen zenuwpijn?",
+          "answer": [
+            {
+              "item": [
+                {
+                  "linkId": "fb561d19-1f6f-4491-8694-53302915b0c3",
+                  "text": "Gebruikt u 1 van onderstaande middelen?",
+                  "answer": [
+                    {
+                      "item": [
+                        {
+                          "linkId": "b1499b74-71d7-46bb-85f4-f91f94b71190",
+                          "text": "Welk ander medicament gebruikt u?"
+                        },
+                        {
+                          "linkId": "27153177-a0e2-4ce9-ce40-ef19d5102351",
+                          "text": "Hoe lang gebruikt u Gabapentine (Gabapentine OF Neurontin) al?"
+                        },
+                        {
+                          "linkId": "cacda058-3cc9-48bc-835b-6db58cd4fed3",
+                          "text": "Hoe lang gebruikt u Pregabaline (Lyrica OF Pregabaline) al?"
+                        },
+                        {
+                          "linkId": "708d749b-d385-4f2e-8f50-054941987bde",
+                          "text": "Hoe lang gebruikt u Amitriptyline al?"
+                        },
+                        {
+                          "linkId": "e190de08-f00d-4486-90ba-a4f622c6f7ec",
+                          "text": "Hoe lang gebruikt u de andere pijnstiller al?"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "linkId": "9a1993d4-3f69-412c-9743-67878b266039",
+          "text": "Corticosteroïden?",
+          "answer": [
+            {
+              "item": [
+                {
+                  "linkId": "842fe200-7484-4858-a307-9be552705cd5",
+                  "text": "Welke corticosteroïden gebruikt u momenteel?"
+                },
+                {
+                  "linkId": "66343175-53c6-4cbb-ead9-3508110d979a",
+                  "text": "Welke corticosteroïden heeft u de afgelopen 3 maanden gebruikt?"
+                },
+                {
+                  "linkId": "264e823c-d920-44cf-8152-373a8bfb6381",
+                  "text": "Welke corticosteroïden heeft u vroeger gebruikt?"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "linkId": "395faf6d-5087-4990-8a89-4833242c8855",
+          "text": "Overige medicatie?",
+          "answer": [
+            {
+              "item": [
+                {
+                  "linkId": "2ca5a191-2360-4eb2-8f47-8f93e331e9df",
+                  "text": "Welke andere medicatie gebruikt u of heeft u in het verleden gebruikt?",
+                  "answer": [
+                    {
+                      "item": [
+                        {
+                          "linkId": "0bc45087-a20f-4ec9-ce4f-8b51c5fede72",
+                          "text": "Welke anticonceptie heeft gebruikt u of heeft u in het verleden gebruikt?"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "linkId": "76d39354-78bd-40d2-8733-87519650d96b",
+                  "text": "Kunt u noteren welke overige medicatie u (heeft) gebruikt?"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "linkId": "2a2398da-f91b-4d4b-d152-fa06defaf0d5",
+      "text": "Wie vult deze vragenlijst voor u in?",
+      "answer": [
+        {
+          "item": [
+            {
+              "linkId": "f00c6065-4ef6-4f9e-e62b-b0a3d11c37cf",
+              "text": "Waarom vult iemand anders de vragenlijst voor u in?",
+              "answer": [
+                {
+                  "item": [
+                    {
+                      "linkId": "14dcb253-66af-4ac3-85b0-10ea6949bb46",
+                      "text": "namelijk"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "valueCoding": {
+            "code": "0",
+            "display": "Ikzelf",
+            "system": "urn:uuid:94ed54fa-0a01-4867-84ee-298a9dc38cd7"
+          }
+        }
+      ]
+    },
+    {
+      "linkId": "e7051fbc-8070-4487-8bc4-e59d856ff6a7",
+      "text": "Data opslag",
+      "item": [
+        {
+          "linkId": "decfe1e1-4585-4da5-8858-96c9e4e640bf",
+          "text": "Bent u akkoord met het opslaan van uw gegevens? Uw gegevens kunnen dan in de toekomst gebruikt worden voor wetenschappelijk onderzoek. Meer informatie over data opslag kunt u hier vinden: Informatie opslaan gegevens Informatie opslaan gegeven voor wilsonbekwame volwassenen",
+          "answer": [
+            {
+              "item": [
+                {
+                  "linkId": "fb36b76f-16fc-4b94-a9c7-a63cee4f28ba",
+                  "text": "e-mailadres"
+                }
+              ],
+              "valueCoding": {
+                "code": "0",
+                "display": "Nee, ik ben niet akkoord",
+                "system": "urn:uuid:f3e4ad7d-aadd-49da-8543-31ab335d0562"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "linkId": "77e8d82b-2f43-41ec-b837-79c7bd6bf5e9",
+      "text": "Feedback op de vragenlijst",
+      "item": [
+        {
+          "linkId": "5809ce0b-673f-4669-edb9-bd3bd1707a4b",
+          "text": "Feedback op de vragenlijst wordt zeer gewaardeerd. Mocht u feedback willen geven - zowel positief als negatief - dan kunt u een mail sturen naar COO@erasmusmc.nl Alvast veel dank!"
+        },
+        {
+          "linkId": "5692f61e-2b65-4503-882b-19ddd5456f88",
+          "text": "U kunt onderaan deze pagina op 'Ga naar de uitslag' drukken. U krijgt dan een samenvatting van de door u ingevulde vragenlijst te zien. Op de volgende pagina kunt u de 'Export PDF' knop gebruiken om de vragenlijst zelf op te slaan. Let op! Het kan even duren voordat de samenvatting geladen is. Klik de pagina niet weg!"
+        }
+      ]
+    },
+    {
+      "linkId": "d072921e-0c09-49e7-8cd0-77cb29252632",
+      "text": "Calchormonaal",
+      "answer": [
+        {
+          "item": [
+            {
+              "linkId": "04696b50-38f7-462e-8f0f-b95355823949",
+              "text": "Hypothyreoïdie (= te traag werkende schildklier)"
+            },
+            {
+              "linkId": "3e943ed6-d8cc-4aa3-8101-dac3f9b71906",
+              "text": "Hypogonadisme (= te weinig mannelijk geslachtshormoon bij mannen)"
+            },
+            {
+              "linkId": "2b058f12-0f46-430d-819a-5211d871de01",
+              "text": "Polycysteus ovariumsyndroom (PCOS)/hyperandrogenisme (= te veel mannelijk geslachtshormoon bij vrouwen)"
+            },
+            {
+              "linkId": "b7f019ae-1ba8-441f-8b1a-bf92f22ff94e",
+              "text": "Syndroom of ziekte van Cushing (= te grote aanwezigheid van stresshormoon cortisol)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "linkId": "3ebc8b6b-3ca0-4482-9d95-1925d0ffcfac",
+      "text": "Calchypothalaam",
+      "answer": [
+        {
+          "item": [
+            {
+              "linkId": "c0bcf743-21d8-46d5-81ce-cac57bb8f175",
+              "text": "U heeft ernstig hoofdletsel",
+              "answer": [
+                {
+                  "item": [
+                    {
+                      "linkId": "c05cbbf5-4a13-41f7-8b3e-67a715376f8f",
+                      "text": "Sinds het hoofdletsel heeft u een verhoogde eetlust"
+                    },
+                    {
+                      "linkId": "61ad30d7-573e-471b-965e-6e8bb7e76f15",
+                      "text": "Sinds het hoofdletsel heeft u een verminderd verzadigingsgevoel"
+                    },
+                    {
+                      "linkId": "e2c98b53-f2db-449f-a2cd-300fa3867fee",
+                      "text": "Sinds het hoofdletsel heeft u gewichtstoename"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "linkId": "484080fe-420a-4061-bf9b-a72d1e573c9f",
+      "text": "Calcgenetisch",
+      "answer": [
+        {
+          "item": [
+            {
+              "linkId": "6c23c600-7581-4c99-8980-ad60d5c3f5f0",
+              "text": "Obesitas vanaf kinderleeftijd"
+            },
+            {
+              "linkId": "9d725d9b-4005-44f4-9a1d-c47a4f33d644",
+              "text": "U heeft hyperfagie (=extreme eetlust)"
+            },
+            {
+              "linkId": "987f1b23-f1bd-46a7-8fc8-1091b2443d28",
+              "text": "Er is een opvallend verschil met uw gezinsleden (u bent bijvoorbeeld de enige met obesitas)"
+            },
+            {
+              "linkId": "8cfa1a6e-f0f5-4da8-f541-72f0e9be33bf",
+              "text": "U heeft moeite met lezen en/of schrijven"
+            },
+            {
+              "linkId": "22b2f5d0-c94c-4179-9dc9-00b27824e55c",
+              "text": "U heeft een netvliesafwijking"
+            },
+            {
+              "linkId": "4cb753a2-3463-4f0f-8050-3f7f67d500e6",
+              "text": "U heeft aangeboren doofheid"
+            },
+            {
+              "linkId": "9c25e0a5-5092-4a43-85b6-24c7f2fae264",
+              "text": "U heeft/had aan elkaar gegroeide vingers en/of tenen of u heeft/had een extra vinger en/of tenen"
+            },
+            {
+              "linkId": "19164415-0cba-4936-8948-6ebbd84a7ae1",
+              "text": "U heeft of had ontwikkelings- of gedragsproblemen (zoals autisme)"
+            },
+            {
+              "linkId": "ae710f8a-adfb-446e-8caf-807d526720d4",
+              "text": "U heeft epilepsie"
+            },
+            {
+              "linkId": "0fccd9e7-8d65-44aa-9378-ee054a057632",
+              "text": "U had een zeer vroege of zeer late start van de puberteit"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "linkId": "2c46d10c-2a5a-4c0f-f7af-ec69afee30e7",
+      "text": "Calculation-5",
+      "answer": [
+        {
+          "item": [
+            {
+              "linkId": "30a93571-7490-40b0-e042-694ec4f5a4e7",
+              "text": "Medicamenteuze obesitas",
+              "answer": [
+                {
+                  "item": [
+                    {
+                      "linkId": "f63bfe2e-f7ec-49de-99cd-d677f1d812c0",
+                      "text": "Overig",
+                      "answer": [
+                        {
+                          "item": [
+                            {
+                              "linkId": "67bd4cb0-b1a5-4f06-86be-df6a64819bf4",
+                              "text": "Leuprolide"
+                            },
+                            {
+                              "linkId": "67e0c810-4d03-48b3-8ed7-815a0bd189b5",
+                              "text": "Medroxyprogesterone"
+                            },
+                            {
+                              "linkId": "26c337d6-80af-400c-9eef-8aa7302549de",
+                              "text": "Pizofiteen"
+                            },
+                            {
+                              "linkId": "d10e4756-d71c-4315-b7aa-76b887cbaa67",
+                              "text": "Flunarizine"
+                            },
+                            {
+                              "linkId": "9c4681b7-2a0d-469e-8516-0acaa4e70b80",
+                              "text": "Protease inhibitor"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "linkId": "69bf3151-c047-4690-b3b6-30a06b74d6f3",
+                      "text": "Anti epileptica",
+                      "answer": [
+                        {
+                          "item": [
+                            {
+                              "linkId": "ad5ce915-4d60-40c4-822c-a752aa9424c2",
+                              "text": "Gabapentine"
+                            },
+                            {
+                              "linkId": "8f812e63-b510-45de-8800-05d72d3fc389",
+                              "text": "Pregabaline"
+                            },
+                            {
+                              "linkId": "77677f67-cc84-44d7-daf9-2cd9813171bd",
+                              "text": "Valproinezur"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "linkId": "685af0f3-8f53-4f96-8c8b-fa9f14fc9306",
+                      "text": "Antidepressiva",
+                      "answer": [
+                        {
+                          "item": [
+                            {
+                              "linkId": "8a02cbd3-fb52-48e3-87bb-a0fb52683bbf",
+                              "text": "Amitriptyline"
+                            },
+                            {
+                              "linkId": "7e0b755d-0a3d-4199-8f5d-856c242cbe4c",
+                              "text": "Citalopram"
+                            },
+                            {
+                              "linkId": "90462d7a-b75a-40bb-e37e-32a0777034b8",
+                              "text": "Clomipramine"
+                            },
+                            {
+                              "linkId": "cecf3df2-b1ac-467a-882e-14f4f66cac7d",
+                              "text": "Duloxetine"
+                            },
+                            {
+                              "linkId": "05874123-5987-4ddc-8705-b2cf29cb7c84",
+                              "text": "Escitalopram"
+                            },
+                            {
+                              "linkId": "370cc78a-a246-42f0-c6c1-62a5dae79102",
+                              "text": "Fluvoxamine"
+                            },
+                            {
+                              "linkId": "d3c94ed9-aca0-4a3f-89d7-c801adafaf87",
+                              "text": "Imipramine"
+                            },
+                            {
+                              "linkId": "011ceb5e-f8d3-4e7a-f1bf-a71f0422b354",
+                              "text": "Lithium"
+                            },
+                            {
+                              "linkId": "59d71377-6c9a-40ab-8dea-0c887885d0db",
+                              "text": "Mirtazapine"
+                            },
+                            {
+                              "linkId": "230b7c19-ad5a-4592-c59f-56fe6c1b3600",
+                              "text": "Nortriptyline"
+                            },
+                            {
+                              "linkId": "466f0a1f-304a-4904-f710-2a99bd1929c0",
+                              "text": "Paroxetine"
+                            },
+                            {
+                              "linkId": "c5a9d0d1-150c-478c-d524-14135d2c97f4",
+                              "text": "Fenelzine"
+                            },
+                            {
+                              "linkId": "6b5001c5-f42d-4077-b3a1-2c8625ba45d2",
+                              "text": "Trancylcypromine"
+                            },
+                            {
+                              "linkId": "def2f949-f7da-42f9-c6d4-be3b49a1e64e",
+                              "text": "Venlafaxine"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "linkId": "42c450d3-af21-405d-8f9d-c499a1840541",
+                      "text": "Antihistaminica",
+                      "answer": [
+                        {
+                          "item": [
+                            {
+                              "linkId": "853c4ec9-9c41-413e-81e5-cb65b2490d77",
+                              "text": "Cetirizine"
+                            },
+                            {
+                              "linkId": "5404ecbf-921c-4bf7-c97e-77581a791461",
+                              "text": "(des)loratadine"
+                            },
+                            {
+                              "linkId": "4b03bdf4-4839-466d-ad11-6a1b9312713b",
+                              "text": "Fexofenadine"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "linkId": "81f69efc-52ee-41ab-9220-969868034552",
+                      "text": "Antipsychotica",
+                      "answer": [
+                        {
+                          "item": [
+                            {
+                              "linkId": "91293f5d-65b4-4351-8dd9-9e33a7ba2dcf",
+                              "text": "Chloorpromaxine"
+                            },
+                            {
+                              "linkId": "273596aa-c8c6-4b69-9883-ce24604303f3",
+                              "text": "Clozapine"
+                            },
+                            {
+                              "linkId": "bc611334-b58c-46cb-9a64-71bcd147258e",
+                              "text": "Haloperidol"
+                            },
+                            {
+                              "linkId": "20e020af-5bdf-4994-8c7a-6486bc01ecea",
+                              "text": "Olanzapine"
+                            },
+                            {
+                              "linkId": "c4087c01-1996-4019-84c5-8b89726c42c6",
+                              "text": "Paliperidon"
+                            },
+                            {
+                              "linkId": "e2ac16c1-979a-4e3c-8569-25059c1ed324",
+                              "text": "Quetiapine"
+                            },
+                            {
+                              "linkId": "5f363d19-907e-4fbf-8988-b8a4a379aeed",
+                              "text": "Risperidon"
+                            },
+                            {
+                              "linkId": "0e7ee37b-e391-43fa-f700-1654f17d9aaf",
+                              "text": "Sertindol"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "linkId": "4ea07c2c-e7c5-4d07-e900-a3529d81a9e9",
+                      "text": "Antidiabetica",
+                      "answer": [
+                        {
+                          "item": [
+                            {
+                              "linkId": "918866e0-4ae1-44f7-82a8-0dfe22c4017e",
+                              "text": "Insuline"
+                            },
+                            {
+                              "linkId": "e9903a54-8f83-454a-93fb-786bfd950e74",
+                              "text": "Gliclazide"
+                            },
+                            {
+                              "linkId": "c9d64a91-b695-465c-a488-a5b6edd496f3",
+                              "text": "Tolbutamide"
+                            },
+                            {
+                              "linkId": "a6474011-3b80-49fa-f70e-bbefffd33933",
+                              "text": "Repaglinide"
+                            },
+                            {
+                              "linkId": "6ac6548d-dd21-422c-d943-8e307c1d5d80",
+                              "text": "Glibenclamide"
+                            },
+                            {
+                              "linkId": "973b6206-0fc8-44fe-9165-37ad992b0d8a",
+                              "text": "Glimepiride"
+                            },
+                            {
+                              "linkId": "4b5b516f-9c27-49a7-c2d7-e744bef35a81",
+                              "text": "Pioglatazone"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "linkId": "9398c543-9918-4228-8f2b-6605adad6c5e",
+                      "text": "Antihypertensiva",
+                      "answer": [
+                        {
+                          "item": [
+                            {
+                              "linkId": "3d5ea2ad-8790-4c76-8be0-aebdee0eb98b",
+                              "text": "Atenolol"
+                            },
+                            {
+                              "linkId": "02f7a22f-e728-4892-9392-a4825806ced6",
+                              "text": "Clonidine"
+                            },
+                            {
+                              "linkId": "c3eee9c4-89af-4596-83c7-e79447cbeaa0",
+                              "text": "Metoprolol"
+                            },
+                            {
+                              "linkId": "c8fb8370-2d0a-454e-fa2b-83dc5a02bb15",
+                              "text": "Propranolol"
+                            },
+                            {
+                              "linkId": "462080f7-6768-4f14-d02f-3a753d13cf72",
+                              "text": "Terazosine"
+                            },
+                            {
+                              "linkId": "7f1b6453-0769-4e74-864e-65cdadbfe28a",
+                              "text": "Valsartan"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "linkId": "dfddda25-2675-40bb-b256-46a158cb78b6",
+                      "text": "Maagzuurremmers",
+                      "answer": [
+                        {
+                          "item": [
+                            {
+                              "linkId": "08fe61e0-38c2-4276-87cd-f3e7fd68c883",
+                              "text": "Lansoprazol"
+                            },
+                            {
+                              "linkId": "fb0b6eeb-090c-4868-bf9b-09376b85aa94",
+                              "text": "Omeprazol"
+                            },
+                            {
+                              "linkId": "d5380af0-d0c4-4d7b-8940-11d2a9048f45",
+                              "text": "Rabeprazol"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "linkId": "8e91f51c-69e6-4994-846f-48d62b9f2693",
+                      "text": "Pijnstillers",
+                      "answer": [
+                        {
+                          "item": [
+                            {
+                              "linkId": "fd19425d-03e4-4d9f-fbc1-53cd39d5617b",
+                              "text": "Gabapentine"
+                            },
+                            {
+                              "linkId": "61ba848a-caec-43d6-bb40-a00a15090503",
+                              "text": "Pregabaline"
+                            },
+                            {
+                              "linkId": "ef78f3a0-fe84-45b3-862f-e21fedd41271",
+                              "text": "Amitriptyline"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "linkId": "bab90224-c3f9-447d-9b2a-b052a5018494",
+                      "text": "Corticosteroïden",
+                      "answer": [
+                        {
+                          "item": [
+                            {
+                              "linkId": "658475d4-4462-4047-864c-a9bf7c399393",
+                              "text": "Andere corticosteroïden"
+                            },
+                            {
+                              "linkId": "134a28f5-35e6-4ad8-eeb9-f83d2950eb65",
+                              "text": "Corticosteroïden: crème"
+                            },
+                            {
+                              "linkId": "6fe65a35-9c5d-473c-8642-c83e368ce026",
+                              "text": "Corticosteroïden: neusspray"
+                            },
+                            {
+                              "linkId": "c3d6076c-ef09-4325-8a55-89a1224625b7",
+                              "text": "Corticosteroïden: infuus"
+                            },
+                            {
+                              "linkId": "6eeb1dcf-b68c-4d9c-8e82-5b230a23445b",
+                              "text": "Corticosteroïden: tabletten"
+                            },
+                            {
+                              "linkId": "e9bfdb8b-58b0-4ec0-83b9-06a4360477c7",
+                              "text": "Corticosteroïden: injecties (bijvoorbeeld voor in het gewricht of litteken)"
+                            },
+                            {
+                              "linkId": "77fb1282-9736-4772-ed43-2a3fd1fdc4ef",
+                              "text": "Corticosteroïden: puffers / longinhalatiemiddelen"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "linkId": "dfdeaefb-783c-4498-815e-276ca2acfd85",
+      "text": "Calculation6",
+      "answer": [
+        {
+          "item": [
+            {
+              "linkId": "a46c8994-acd8-4164-8ab3-fd1f6dbc7f4c",
+              "text": "Mentale en psychosociale factoren die een rol kunnen spelen bij overgewicht",
+              "answer": [
+                {
+                  "item": [
+                    {
+                      "linkId": "ff308a73-5835-4915-8b2e-d6eba2539cd5",
+                      "text": "U geeft aan last te hebben van stress. U denkt zelf dat de oorzaak/oorzaken hiervan zijn:",
+                      "answer": [
+                        {
+                          "item": [
+                            {
+                              "linkId": "38321262-31bf-4e7e-9dc9-58150ef592ed",
+                              "text": "Stress_cause"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "linkId": "287561ae-30c9-48fe-d6e8-cf80e543decf",
+                      "text": "U heeft een stressvolle gebeurtenis meegemaakt"
+                    },
+                    {
+                      "linkId": "6d03f1d1-51a6-4284-da72-3e1563b453d5",
+                      "text": "U heeft een traumatische ervaring meegemaakt"
+                    },
+                    {
+                      "linkId": "2ecd3047-f64c-45d1-8bac-ad5bc109ed8b",
+                      "text": "U heeft eetbuien die mogelijk kunnen passen bij een eetbuistoornis"
+                    },
+                    {
+                      "linkId": "19200af5-f195-4096-d501-eeca18e2c527",
+                      "text": "U geeft aan dat u vaak somber bent"
+                    },
+                    {
+                      "linkId": "ce731fc7-8669-4253-b7d3-5570b479b2cc",
+                      "text": "U geeft aan langdurig last te hebben van storende pijn"
+                    },
+                    {
+                      "linkId": "d672778b-30a7-4564-8b0c-f555da7e8742",
+                      "text": "U geeft aan dat u zich eenzaam voelt"
+                    },
+                    {
+                      "linkId": "09fbe46e-378d-4a77-8dcf-ec058de273f8",
+                      "text": "U geeft aan dat u het leven niet zinvol vindt"
+                    },
+                    {
+                      "linkId": "2bbb3789-723f-41cf-d0a2-096a10511f0d",
+                      "text": "U geeft aan dat u (te) weinig steun van mensen uit de omgeving voelt"
+                    },
+                    {
+                      "linkId": "ea56ec36-3b65-45dd-be70-653ed1a44887",
+                      "text": "U beoordeelt het leven als matig of slecht"
+                    },
+                    {
+                      "linkId": "0df6b201-4edd-4fa9-8509-543127cfaa6f",
+                      "text": "U heeft geen opleiding gevolgd, of basisschool/huishoudsschool/vbo/lts afgemaakt"
+                    },
+                    {
+                      "linkId": "efd86e3b-418c-4143-9659-33bfe015cccb",
+                      "text": "U heeft moeite met lezen en/of schrijven"
+                    },
+                    {
+                      "linkId": "d9f53773-a476-472e-8a24-2f882f51eac7",
+                      "text": "U geeft aan dat u geldproblemen heeft"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "linkId": "0888139e-a1eb-47df-87a7-1eca6392c2df",
+      "text": "Calculation7",
+      "answer": [
+        {
+          "item": [
+            {
+              "linkId": "4d38a079-7bd4-409f-c9e8-d1b9c0a8ee5f",
+              "text": "Leefstijl factoren test",
+              "answer": [
+                {
+                  "item": [
+                    {
+                      "linkId": "e9253898-f917-4258-8799-0c576feb6b6f",
+                      "text": "Alcohol",
+                      "answer": [
+                        {
+                          "item": [
+                            {
+                              "linkId": "a09cff98-f2b4-4202-8946-fdb3668c0035",
+                              "text": "U drinkt meer dan de aanbevolen hoeveelheid alcohol per week.\n\nMeer informatie over het verminderen van alcoholgebruik vindt u op: www.allesoverdrinken.nl"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "linkId": "b1a40889-8c64-40f0-8479-4eb899dad301",
+                      "text": "Roken",
+                      "answer": [
+                        {
+                          "item": [
+                            {
+                              "linkId": "d8e1e929-bb25-4490-ffb5-99b8acacb7eb",
+                              "text": "U rookt"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "linkId": "5e5e6e9b-589a-4f4f-d341-cd4a77b1c00d",
+                      "text": "Drugs",
+                      "answer": [
+                        {
+                          "item": [
+                            {
+                              "linkId": "e354c3d9-1f8a-4924-839a-4756709739b3",
+                              "text": "U gebruikt vaker dan 1 keer per maand drugs"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "linkId": "a43ab45d-624f-4e5c-9a8f-fbe7534e0d9c",
+                      "text": "Regelmaat",
+                      "answer": [
+                        {
+                          "item": [
+                            {
+                              "linkId": "760b404a-8519-4680-818d-45e9ebc32358",
+                              "text": "U werkt in ploegendiensten"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "linkId": "2febeec3-a5a4-4041-fdd2-2251479d13f4",
+                      "text": "Voeding",
+                      "answer": [
+                        {
+                          "item": [
+                            {
+                              "linkId": "df5ce87c-adb0-4dcc-d61b-cca5c8c6215a",
+                              "text": "U eet vooral witte soorten brood of bolletjes"
+                            },
+                            {
+                              "linkId": "5dd15f5b-4569-40cd-a61e-56878b1cb8e3",
+                              "text": "U eet vooral witte soorten pasta, rijst, bulgur of couscous"
+                            },
+                            {
+                              "linkId": "8a9c0987-5fe0-42ee-8c44-47b14acdf396",
+                              "text": "U eet minder dan 5 dagen per week groente"
+                            },
+                            {
+                              "linkId": "d269e0dc-6f2d-40ca-8bc0-c715fd45132a",
+                              "text": "U eet minder dan 5 dagen per week fruit"
+                            },
+                            {
+                              "linkId": "3a2184d3-9f71-4339-9288-960f623a0cba",
+                              "text": "U drinkt minimaal 2 dagen per week suikerhoudende dranken (zoals vruchtensap of limonade)"
+                            },
+                            {
+                              "linkId": "4a7b2db6-d0ef-4ca0-8040-963655cb78da",
+                              "text": "U eet minimaal 2 dagen per week chips, zoutjes of blokjes kaas"
+                            },
+                            {
+                              "linkId": "2519c55b-9fc7-478c-9192-505b43cdbf36",
+                              "text": "U eet minimaal 2 dagen per week hartige of gefrituurde snacks"
+                            },
+                            {
+                              "linkId": "e38b62e4-b0f3-4e53-8600-4168ed2ac592",
+                              "text": "U eet minimaal 2 dagen per week een zoete snack zoals portie koekjes, chocolade of taart"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "linkId": "b72cd644-bf6e-40f5-ad56-c4521b447c2d",
+                      "text": "Beweging",
+                      "answer": [
+                        {
+                          "item": [
+                            {
+                              "linkId": "a252c90c-d453-415d-8614-3be4a728f4d1",
+                              "text": "U doet minder dan 150 minuten per week aan matig intensieve beweging (zoals stevig doorwandelen)"
+                            },
+                            {
+                              "linkId": "07bd7bfa-3dc7-4fd1-87be-86193c113b1d",
+                              "text": "U doet minder dan 2 keer per week aan spier- en botversterkende oefeningen"
+                            },
+                            {
+                              "linkId": "cbf2d6e3-e0e6-4fe8-d323-be00c611229c",
+                              "text": "U kunt minder goed bewegen"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "linkId": "169e21f9-13ee-43e8-8e0f-f435e692b5eb",
+      "text": "Calculation8",
+      "answer": [
+        {
+          "item": [
+            {
+              "linkId": "7f10eafb-d179-458a-9e16-e4e011def582",
+              "text": "Mogelijke gevolgen van overgewicht",
+              "answer": [
+                {
+                  "item": [
+                    {
+                      "linkId": "8d76e02e-6e19-48ec-86f7-c53ef268c293",
+                      "text": "Type 2 diabetes",
+                      "answer": [
+                        {
+                          "item": [
+                            {
+                              "linkId": "7fc047ab-5ebe-43eb-814d-6de592010137",
+                              "text": "U geeft aan dat u type 2 diabetes (suikerziekte) heeft. Dit kan een gevolg zijn van overgewicht."
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "linkId": "24e50623-736d-48cc-f114-bca477fea89c",
+                      "text": "Slaapapneu (OSAS)",
+                      "answer": [
+                        {
+                          "item": [
+                            {
+                              "linkId": "644d7779-7713-470c-888a-dc4f456c7320",
+                              "text": "STOP score"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "linkId": "b014c0b9-ec96-4b79-d87f-1478ec7eb787",
+                      "text": "Artrose"
+                    },
+                    {
+                      "linkId": "c3c22d52-b8c1-4e5a-87d2-0f53ccf96248",
+                      "text": "Angstklachten",
+                      "answer": [
+                        {
+                          "item": [
+                            {
+                              "linkId": "18640bef-2f24-4989-99be-646800087019",
+                              "text": "U geeft aan dat u last heeft van angstklachten. Angstklachten kunnen een gevolg zijn van overgewicht."
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "linkId": "cec9053d-8c2a-4658-e6e5-103e1e5e0ce7",
+      "text": "Calcsupporting",
+      "answer": [
+        {
+          "item": [
+            {
+              "linkId": "3f658f0e-0a55-4c23-828b-0b5313f74a05",
+              "text": "Genetische obesitas"
+            },
+            {
+              "linkId": "31480e65-fb86-4726-829a-87b0acf90006",
+              "text": "Monogenetische obesitas - sp_monogen_box1"
+            },
+            {
+              "linkId": "da346320-f299-4b92-b7d6-d9f09f883b29",
+              "text": "Monogenetische obesitas - sp_monogen_box2"
+            },
+            {
+              "linkId": "1319dd8c-b74d-4f41-8241-c4ca7b24a4e8",
+              "text": "Syndromale box (box 3) - sp_syndr_box3"
+            },
+            {
+              "linkId": "20d7bde3-62ab-4737-808a-ceed7db523b3",
+              "text": "Nekomtrek / boordmaat > 40 cm score - calcsp_sleep_neckcircumference_score"
+            },
+            {
+              "linkId": "79f1da93-beee-4f9f-80fd-22a0be9fad30",
+              "text": "Geslacht is man score - calcsp_gender_male_score"
+            },
+            {
+              "linkId": "4ff0d2cf-0602-4e4f-8bce-516c521f0b52",
+              "text": "BMI score - calcsp_bmi_score"
+            },
+            {
+              "linkId": "994a0aa1-4ac6-4e1d-84e8-faede495c65c",
+              "text": "test berekening"
+            },
+            {
+              "linkId": "57bf9461-acb4-4387-c32f-fbbecb21568a",
+              "text": "test2 - gabapentine"
+            },
+            {
+              "linkId": "84030534-5faa-4edb-e206-ad3a752ed2fb",
+              "text": "test3 - gabapentine"
+            },
+            {
+              "linkId": "b1854d62-1c6c-4197-8f47-98f11b06e3d9",
+              "text": "test4"
+            },
+            {
+              "linkId": "d2b0d05e-23e0-4a07-c80c-f47e1adc15ac",
+              "text": "test5"
+            },
+            {
+              "linkId": "c80c6445-6b0b-474d-8dde-1ebc76fb4536",
+              "text": "test6"
+            },
+            {
+              "linkId": "5b702758-7919-4b77-a496-f96de0f7bf3f",
+              "text": "test7"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "linkId": "e759b4ae-b6b3-4121-d665-e5f690fb7973",
+      "text": "calculationtests",
+      "answer": [
+        {
+          "item": [
+            {
+              "linkId": "99e0fe7d-26ec-44b4-8b79-788d64b6c8ce",
+              "text": "alcohol"
+            },
+            {
+              "linkId": "8fa4641f-95ea-4496-a648-5a5a03104fa3",
+              "text": "alcohol2"
+            },
+            {
+              "linkId": "6f4e5277-b754-4feb-90ae-d5800fe0f4e4",
+              "text": "alcohol3"
+            },
+            {
+              "linkId": "d6725fa1-a236-455b-bf08-39640ee007db",
+              "text": "alcohol4"
+            },
+            {
+              "linkId": "a1516622-83fc-4219-8bbc-8b83e095a999",
+              "text": "alcohol 5"
+            },
+            {
+              "linkId": "155f2d7f-31dc-4f7b-94f5-b1fdd6775f3f",
+              "text": "box 2 compare"
+            },
+            {
+              "linkId": "5aaf5dc2-8c10-4047-8544-9e815d89afbc",
+              "text": "box 2 compare string"
+            },
+            {
+              "linkId": "c1c20e93-4c5d-4d13-8abd-b3913c85f8f7",
+              "text": "hypotheoride"
+            },
+            {
+              "linkId": "dd5cd7fa-1b16-4480-f4f8-8ee27d1945ac",
+              "text": "hypo comp >= 4"
+            },
+            {
+              "linkId": "59a11ef7-b09d-4a76-8975-513faafe38d5",
+              "text": "faeces"
+            },
+            {
+              "linkId": "18ed57a4-252c-4692-dd68-f087a531366f",
+              "text": "hair loss"
+            },
+            {
+              "linkId": "c6a267d3-12f9-4a02-800b-8e2fa19a3aa9",
+              "text": "dryskin"
+            },
+            {
+              "linkId": "a1039966-4dc3-4b8e-fc40-52ba2bdf8733",
+              "text": "cold"
+            },
+            {
+              "linkId": "204db70f-9f15-43ea-f423-9a6117925911",
+              "text": "sleep tired"
+            },
+            {
+              "linkId": "75e2c4ab-eb0d-47d8-839a-b41b8a5dd746",
+              "text": "sleep tired to integer"
+            },
+            {
+              "linkId": "9c4597d8-6fce-4c41-8936-cf8ed0b13708",
+              "text": "sleep tired to int"
+            },
+            {
+              "linkId": "aa5e2a38-d027-4005-c56f-56f849714313",
+              "text": "Sleep_tired"
+            },
+            {
+              "linkId": "da8abda3-d224-4e09-b9b9-e66d0b19f498",
+              "text": "Sleep_tired = false2"
+            },
+            {
+              "linkId": "2ea0e431-31ab-4bf2-9db3-d88ddf4a6b8a",
+              "text": "empty"
+            },
+            {
+              "linkId": "61f3673e-169c-4bb9-8eb3-74016b357e0a",
+              "text": "exists"
+            },
+            {
+              "linkId": "eb38c597-3a10-4ee7-e48b-cbc4598d42c3",
+              "text": "empt2"
+            },
+            {
+              "linkId": "2c674955-8636-445f-8e34-1d3012f33b24",
+              "text": "exists2"
+            },
+            {
+              "linkId": "82fc8f0c-2260-4da9-fa68-67e6be0879c0",
+              "text": "iif sleep tired"
+            },
+            {
+              "linkId": "5495a9d9-584b-44d8-84d2-d164ad932b7a",
+              "text": "iif Sleep_tired"
+            },
+            {
+              "linkId": "c51b5029-10b9-49ac-afc8-08fa50fabc3d",
+              "text": "full form"
+            },
+            {
+              "linkId": "e8cd10d0-9960-4d9e-8009-52e22f808f28",
+              "text": "binge_eating"
+            },
+            {
+              "linkId": "f6b153f6-41d7-407b-c55b-69f66a25f781",
+              "text": "frequency"
+            },
+            {
+              "linkId": "79a61231-6974-40a4-d188-31a69310dee0",
+              "text": "3months"
+            },
+            {
+              "linkId": "4a4b4c14-bd2f-49d7-f9ff-afa7875ceb21",
+              "text": "eating_contr"
+            },
+            {
+              "linkId": "1dd038f6-53af-4d0f-9818-4a4ee630ee70",
+              "text": "eating_suffering"
+            },
+            {
+              "linkId": "96db3f8d-9118-49d2-db2b-02e1996d12b5",
+              "text": "monogen_box2"
+            },
+            {
+              "linkId": "36e9670d-c551-44bf-8edb-8ae8a37edac7",
+              "text": "monogen box 2 part 1"
+            },
+            {
+              "linkId": "73810215-d601-433c-875c-073e32776626",
+              "text": "monogen box 2 part 2"
+            },
+            {
+              "linkId": "225f3ac6-0f98-4b02-8fb6-9b459a6eb51b",
+              "text": "monogen box 2 part 3"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "linkId": "6e62b484-401b-468a-97e4-50f2ed7b7334",
+      "text": "Calculation13",
+      "answer": [
+        {
+          "item": [
+            {
+              "linkId": "9bf44488-b216-4811-9caa-738989e84efa",
+              "text": "U denkt zelf dat de oorzaak van uw overgewicht of gewichtstoename is:",
+              "answer": [
+                {
+                  "item": [
+                    {
+                      "linkId": "856324ec-cc2d-447e-876c-58319983dc04",
+                      "text": "Patient_question"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "linkId": "b1b43366-1ce1-4e24-8ead-b8d5f385c91b",
+              "text": "U heeft tot nu toe het volgende geprobeerd om af te vallen:",
+              "answer": [
+                {
+                  "item": [
+                    {
+                      "linkId": "ea9551e6-61da-4cf5-8031-1f36c69f1582",
+                      "text": "Ik ben gezonder gaan eten"
+                    },
+                    {
+                      "linkId": "d5489f53-e5a4-409c-8b14-647d25780091",
+                      "text": "Ik ben minder calorieën gaan eten"
+                    },
+                    {
+                      "linkId": "809298ef-110f-41bd-c8cf-7b05e671ff93",
+                      "text": "Ik ben meer gaan bewegen"
+                    },
+                    {
+                      "linkId": "72274695-7206-4bd7-bb03-a457ae17bc4b",
+                      "text": "Ik heb hulp gekregen van een diëtist"
+                    },
+                    {
+                      "linkId": "9ab5e5fa-2117-4a64-973b-988197e94f60",
+                      "text": "Ik heb hulp gekregen van een fysiotherapeut"
+                    },
+                    {
+                      "linkId": "8be48f58-8d36-4774-8f7a-850269f19421",
+                      "text": "Ik heb hulp gekregen van de huisarts of praktijkondersteuner (POH)"
+                    },
+                    {
+                      "linkId": "ec97dcec-af3f-4acd-9a8a-5dde73db9543",
+                      "text": "Ik heb hulp gekregen van een psycholoog"
+                    },
+                    {
+                      "linkId": "d066618c-34ec-48ba-83cf-7ddc2bacac07",
+                      "text": "Ik heb hulp gekregen van een leefstijlcoach"
+                    },
+                    {
+                      "linkId": "0b0a3af5-cf6d-4415-acf0-3779698cc485",
+                      "text": "Ik heb hulp gekregen van iemand anders"
+                    },
+                    {
+                      "linkId": "f3844382-c6e4-4f57-a8e1-58598c470e01",
+                      "text": "Ik heb een maagoperatie gehad"
+                    },
+                    {
+                      "linkId": "9abc1e40-6f3d-4d49-aefa-96697ffd2604",
+                      "text": "Ik heb medicijnen gekregen voor mijn gewicht",
+                      "answer": [
+                        {
+                          "item": [
+                            {
+                              "linkId": "1b435221-7bf3-40fe-e733-44f0e11070e5",
+                              "text": "Liraglutide 1.8mg (Victoza®)"
+                            },
+                            {
+                              "linkId": "28f4a093-3a37-40d3-f72c-997a597106a8",
+                              "text": "Liraglutide 3.0mg (Saxenda®)"
+                            },
+                            {
+                              "linkId": "080e9d76-b1ae-4758-8832-653c3d75534e",
+                              "text": "Metformine"
+                            },
+                            {
+                              "linkId": "01e055ed-c94c-4ff2-fa90-a116c987b364",
+                              "text": "Metformine-langwerkend (Glucient)"
+                            },
+                            {
+                              "linkId": "db3bc4e5-336c-4d46-80e0-37450455037c",
+                              "text": "Naltrexon / Bupropion (Mysimba ®)"
+                            },
+                            {
+                              "linkId": "f8997b78-a6ef-499b-892e-6e3f54aa0310",
+                              "text": "Orlistat 60 mg (Alli ®)"
+                            },
+                            {
+                              "linkId": "bc7ffc2d-0b29-4c1c-e2c3-398b629d9ff9",
+                              "text": "Orlistat 120 mg (Xenical ®)"
+                            },
+                            {
+                              "linkId": "b729774a-64b9-4d20-b6c9-a46c39859948",
+                              "text": "Semaglutide 1.0 mg (Ozempic ®)"
+                            },
+                            {
+                              "linkId": "4977b186-6fdd-4a25-8391-61935a5e224f",
+                              "text": "Semaglutide 2.4 mg (Wegovy ®)"
+                            },
+                            {
+                              "linkId": "8b6b9069-f8d9-492c-8a8d-2144dcd542b2",
+                              "text": "Setmelanotide (Imcrivee ®)"
+                            },
+                            {
+                              "linkId": "85e955bf-25e1-46ce-9807-7a9541908401",
+                              "text": "Ander middel",
+                              "answer": [
+                                {
+                                  "item": [
+                                    {
+                                      "linkId": "f9cb3be3-1745-49be-efeb-a4c5a1472c82",
+                                      "text": "Ander middel:"
+                                    },
+                                    {
+                                      "linkId": "d7fd9bec-1982-4de4-8e85-bc641f3f6306",
+                                      "text": "Nog steeds in gebruik?"
+                                    },
+                                    {
+                                      "linkId": "f3353f63-d667-4ec8-d800-a5b2c3cf005b",
+                                      "text": "Effect:"
+                                    },
+                                    {
+                                      "linkId": "848b3776-8e6c-4c6a-b83a-32aca5148291",
+                                      "text": "Wanneer:"
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "linkId": "d81e26dd-23a2-4727-874f-bc01a84d53be",
+                      "text": "Andere manier",
+                      "answer": [
+                        {
+                          "item": [
+                            {
+                              "linkId": "8e864d5d-82c3-4a16-dccc-e011bf19bd0b",
+                              "text": "Welke manier:"
+                            },
+                            {
+                              "linkId": "3ecc13df-5255-4332-81e8-73678e9d727d",
+                              "text": "Effect:"
+                            },
+                            {
+                              "linkId": "ce989fae-e297-4238-9813-8a7c6cb62176",
+                              "text": "Wanneer:"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "linkId": "81423c0a-8492-4fe2-b5d6-a62d3bf38098",
+              "text": "U wil graag hulp bij:",
+              "answer": [
+                {
+                  "item": [
+                    {
+                      "linkId": "ca6db224-317a-4bb0-8c6d-703e39af56bf",
+                      "text": "Patient_question"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "linkId": "5b6f10b6-f886-4fc9-a683-5fe7bb961325",
+      "text": "BMI",
+      "answer": [
+        {
+          "item": [
+            {
+              "linkId": "1c1eebb0-01fc-4549-b1c1-2c551536c52c",
+              "text": "test 01"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "linkId": "0ef99271-66d5-4795-8597-b1e032d9ac44",
+      "text": "isdietstarch"
+    },
+    {
+      "linkId": "c23c306d-b198-411b-8373-c843a8e74dc0",
+      "text": "isdietvegetables"
+    },
+    {
+      "linkId": "80a15dd3-8ce7-4248-8484-24c65a6cad78",
+      "text": "isdietfruit"
+    },
+    {
+      "linkId": "e8be74fd-5ba8-4a4e-8533-5992bd7e464c",
+      "text": "isdietbeverages"
+    },
+    {
+      "linkId": "ed5bfc14-d8c9-470f-8bb7-a0d9d633583a",
+      "text": "isdietsavory"
+    },
+    {
+      "linkId": "48057427-35e7-4a64-97ea-954d7d9edd4b",
+      "text": "isdietchips"
+    },
+    {
+      "linkId": "958b995b-1ac2-4870-ced4-98d911fff2a2",
+      "text": "isdietsweets"
+    },
+    {
+      "linkId": "11d1da35-6aa6-4af1-8768-00e486bc3008",
+      "text": "ispa"
+    },
+    {
+      "linkId": "5951791d-750c-4fd4-89cf-4d4cd0aa8df2",
+      "text": "isvoeding"
+    },
+    {
+      "linkId": "e281fb01-3e14-4249-86e4-da77080fa1d5",
+      "text": "ispamuscle"
+    },
+    {
+      "linkId": "7b8fb83c-aac1-49ea-8004-34579151d45b",
+      "text": "isbeweging"
+    },
+    {
+      "linkId": "cfa3cbef-d69f-40b8-8fa9-831f1108f8e7",
+      "text": "isoverwheighshow"
+    }
+  ]
+}

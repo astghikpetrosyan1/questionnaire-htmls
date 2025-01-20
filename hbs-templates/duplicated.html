@@ -1,0 +1,114 @@
+<div class="alogaritmh-html">
+    {{! Attention text}}
+    <style type="text/css">
+        .title-subcase {
+            margin-top: 10px;
+        }
+
+        .output-list li {
+            padding:0px !important;
+            font-size:14px !important;
+        }
+    </style>
+    <div class="header-title-con" style="text-align: justify; width: 100%; background-color: #fff; font-size: 20px; font-weight: 600; overflow: hidden; color: #000000; margin: 15px 0; box-shadow: 1px 2px 9px rgba(0,0,0,0.3); border-radius: 10px; padding: 100px 30px 30px 30px">
+        <div style="color: #1399EC;width: 100%; margin-bottom: 20px;">
+            <h2 style="font-weight: 600">
+                Uitslag checkoorzakenovergewicht.nl
+            </h2>
+        </div>
+        <div style="font-size: 19px;width:100%; font-weight: 400; color: #101011; line-height: normal">
+            Deze vragenlijst is gemaakt voor mensen met overgewicht of ernstig overgewicht (obesitas).
+            Het doel van het invullen van de vragenlijst is om meer inzicht te krijgen in de mogelijke
+            onderliggende oorzaken van uw overgewicht. De uitslag kunt u delen met uw
+            arts/zorgverlener. Dit kan uw zorgverlener helpen om de juiste diagnose te stellen en u
+            daarbij van het juiste advies te voorzien.
+        </div>
+    </div>
+
+    <div>
+        <div style="font-size: 30px; color: #0070a8; font-weight: 500; margin: 20px 0; text-align: left">
+            Samenvatting
+        </div>
+        {{#if bmi}}
+        {{#if isBMILow}}
+        <div style="display: block; text-align: left; font-size: 18px; margin-bottom: 10px">
+            Er is wat betreft uw BMI sprake van ondergewicht. Deze vragenlijst is voor u niet van toepassing.
+        </div>
+        {{/if}}
+
+        {{#if isBMIMidium}}
+        <div style="display: block; text-align: left; font-size: 18px">
+            Er is sprake van een normaal gewicht <span style="font-weight: bold; margin-left: 0px; margin-right: 0px">(BMI {{#if bmi}}{{value}}{{else}}-{{/if}} kg/m<sup>2</sup>)</span>. Er zijn de volgende aandachtspunten waarvan bekend is dat ze het gewicht kunnen verhogen:
+        </div>
+        {{/if}}
+
+        {{#if isBMIHigh}}
+        <div style="display: block; text-align: left; font-size: 18px">
+            Er is sprake van <b style="font-weight: bold; margin-left: 5px; margin-right: 5px">obesitas (BMI {{#if bmi}}{{value}}{{else}}-{{/if}} kg/m<sup>2</sup>)</b> met de volgende <b style="margin-left: 5px; margin-right: 5px">mogelijke</b> onderliggende oorzaken:
+
+        </div>
+        {{/if}}
+
+        {{#unless isBMILow}}
+        <ul>
+            <li style="font-size: 18px; padding-left: 10px; font-weight: 400">
+                {{#if summary.calchormonaal.value}}
+                Hormonale: aanwijzingen die kunnen passen bij {{summary.calchormonaal.concatenateValues}}
+                {{else}}
+                Hormonale: geen aanwijzingen voor
+                {{/if}}
+            </li>
+            <li style="font-size: 18px; padding-left: 10px; font-weight: 400">
+                {{#if summary.calculation5.value}}
+                Medicamenteuze: gebruik van {{summary.calculation5.concatenateValues}}
+                {{else}}
+                Medicamenteuze: geen aanwijzingen voor
+                {{/if}}
+            </li>
+            <li style="font-size: 18px; padding-left: 10px; font-weight: 400">
+                {{#if summary.calculation6.value}}
+                Psychische of sociaal: aanwijzingen voor
+                {{else}}
+                Psychische of sociaal: geen aanwijzingen voor
+                {{/if}}
+            </li>
+            <li style="font-size: 18px; padding-left: 10px; font-weight: 400">
+                {{#if summary.calculation7.value}}
+                Leefstijlfactoren: op het gebied van {{summary.calculation7.concatenateValues}}
+                {{else}}
+                Leefstijlfactoren: geen aanwijzingen voor
+                {{/if}}
+            </li>
+            <li style="font-size: 18px; padding-left: 10px; font-weight: 400">
+                {{#if summary.calchypothalaam.value}}
+                Hypothalame oorzaak: aanwijzingen voor
+                {{else}}
+                Hypothalame oorzaak: geen aanwijzingen voor
+                {{/if}}
+            </li>
+            <li style="font-size: 18px; padding-left: 10px; font-weight: 400">
+                {{#if summary.calcgenetisch.value}}
+                Genetische oorzaak: aanwijzingen voor
+                {{else}}
+                Genetische oorzaak: geen aanwijzingen voor
+                {{/if}}
+            </li>
+        </ul>
+        {{/unless}}
+
+        {{#if calculation8.value}}
+        <div style="display: flex; align-items: center; font-size: 18px">
+            Met de volgende mogelijke gevolgen:
+        </div>
+        <ul>
+            {{#each calculation8.item.[0].item.[0].item}}
+            {{#if value}}
+            <li style="font-size: 18px; padding-left: 10px; font-weight: 400">{{text}}</li>
+            {{/if}}
+            {{/each}}
+        </ul>
+        {{/if}}
+        {{/if}}
+    </div>
+
+</div>

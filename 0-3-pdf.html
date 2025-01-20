@@ -1,0 +1,783 @@
+
+{{! Supported helper:
+- date: get today date with format (DD-MM-YYYY)
+}}
+
+{{! Supported data object:
+- data.calchormonaal => Hormonale oorzaken
+- data.calchypothalaam => Hyphothalam
+- data.calcgenetisch => Syndromale obesitas
+- data.calculation5 => Medicamentus
+- data.calculation6 => PSYCHISCH
+- data.calculation7 => LEEFSTIJL GERELATEERD
+- data.calculation8 => Mogelijke
+}}
+
+<style type="text/css">
+    .normal-text {
+        font-size: 18px
+    }
+
+    .header-text {
+        font-weight: 700;
+        font-size: 20px;
+        margin-top: 20px;
+        letter-spacing: 0.01px;
+        background-color: #EAF2F8;
+        padding: 10px 20px;
+    }
+
+    .header-text,
+    .summary-container {
+        page-break-inside: avoid;
+    }
+
+
+    .summary-container {
+        background-color: #F3F7FA;
+        padding: 10px 20px;
+        font-weight: 500;
+        width: 100%;
+        overflow: visible !important;
+        font-size: 18px
+    }
+
+    .list-container {
+        display: flex;
+        flex: 1;
+        flex-direction: row;
+        width: 100%;
+        gap: 5px;
+        align-items: flex-start;
+        font-size: 18px;
+    }
+
+    .list-container > img {
+        margin-top: 2px;
+        display: block;
+        page-break-inside: avoid;
+    }
+
+    table {
+        width: 100%;
+    }
+
+    th,
+    td {
+        padding: 8px;
+        border: 0.5px solid black;
+        font-weight: 500;
+    }
+
+    tr {
+        page-break-inside: avoid;
+        break-inside: avoid;
+    }
+
+    thead tr {
+        page-break-inside: avoid;
+        break-inside: avoid;
+    }
+
+    .questions-table tr {
+        page-break-inside: avoid;
+    }
+
+</style>
+
+<div style="display: flex; justify-content:flex-end">
+    <b>Ingevuld op: {{#helper}}{{date}}{{/helper}}</b>
+</div>
+
+{{! HEADER }}
+<div style="display: flex; flex-direction: row; justify-content: center; padding: 0 20px; overflow: hidden; flex-wrap: wrap; letter-spacing: 0.01px;">
+    <div style="display: flex; flex: 0.3;min-width: 200px; max-width: 280px; align-items: center; justify-content: flex-start;">
+        <img src="images/coo_new.png" alt="coologo" style="max-width: 100%; height: auto; padding: 20px" />
+    </div>
+    <div style="display: flex; flex: 1.7; flex-direction: column; align-items: flex-start; justify-content: center; padding-left: 10px; flex-wrap: wrap;width:100%;">
+        <div style="font-size: 26px; color: #0070a8; font-weight: 600; word-wrap: break-word; overflow-wrap: break-word; white-space: normal;width:100%;text-align: left;">
+            UITSLAG CheckOorzakenOvergewicht.nl
+        </div>
+    </div>
+</div>
+
+
+{{! BODY PARAGRAPH }}
+<div style="text-align: left; margin-top: 20px; letter-spacing: 0.01px; font-family: sans-serif;">
+
+    <div style="font-size: 18px">
+        Deze vragenlijst is gemaakt voor kinderen met overgewicht of ernstig overgewicht (obesitas). Het doel van het invullen van de vragenlijst is om meer inzicht te krijgen in de mogelijke onderliggende oorzaken van het overgewicht van uw kind.  Deze uitslag is slechts het resultaat van een screening en stelt GEEN diagnose. Dit resultaat kunt u delen met de arts of zorgverlener van uw kind. Dit kan hen helpen om uw kind beter te adviseren en te behandelen. En om eventueel extra onderzoek in te zetten.
+    </div>
+
+
+    {{! HORIZONTAL LINE }}
+    <div style="border-top: 1px solid #0070a8; width: 100%; margin: 40px 0" />
+
+
+    {{! Samenvatting }}
+    <div>
+        <div style="font-size: 30px; color: #0070a8; font-weight: 500; margin: 20px 0; text-align: left">
+            Samenvatting
+        </div>
+
+        {{#data.calcsamenvatting.value}}
+        {{#data.calcsamenvatting.item}}
+        {{#value}}
+        <div style="display: block; text-align: left; font-size: 18px">
+            {{subTitle}}
+        </div>
+        {{/value}}
+        {{/data.calcsamenvatting.item}}
+        {{/data.calcsamenvatting.value}}
+
+        {{^data.calcsamenvatting.value}}
+        <div style="display: block; text-align: left; font-size: 18px">
+            Er kan geen uitspraak gedaan worden of uw kind overgewicht of obesitas heeft, omdat u niet heeft aangegeven of uw kind een jongen of meisje is. Als uw kind overgewicht of obesitas heeft,  is er sprake van de volgende mogelijke onderliggende oorzaken of bijdragende factoren:
+        </div>
+        {{/data.calcsamenvatting.value}}
+
+        <ul>
+            <li style="font-size: 18px; padding-left: 10px; font-weight: 400">
+                {{#data.summary.calchormonaal.value}}
+                Hormonale oorzaken {{summary.calchormonaal.concatenateValues}}
+                {{/data.summary.calchormonaal.value}}
+                {{^data.summary.calchormonaal.value}}
+                Geen aanwijzingen voor hormonale oorzaken
+                {{/data.summary.calchormonaal.value}}
+            </li>
+            <li style="font-size: 18px; padding-left: 10px; font-weight: 400">
+                {{#data.summary.calculation5.value}}
+                Medicamenteuze oorzaken: gebruik van {{summary.calculation5.concatenateValues}}
+                {{/data.summary.calculation5.value}}
+                {{^data.summary.calculation5.value}}
+                Geen aanwijzingen voor medicamenteuze oorzaken
+                {{/data.summary.calculation5.value}}
+            </li>
+            <li style="font-size: 18px; padding-left: 10px; font-weight: 400">
+                {{#data.summary.calculation6.value}}
+                Mentale en psychosociale oorzaken
+                {{/data.summary.calculation6.value}}
+                {{^data.summary.calculation6.value}}
+                Geen aanwijzingen voor mentale en psychosociale oorzaken
+                {{/data.summary.calculation6.value}}
+            </li>
+            <li style="font-size: 18px; padding-left: 10px; font-weight: 400">
+                {{#data.summary.calculation7.value}}
+                Leefstijl-gerelateerde oorzaken: op het gebied van {{summary.calculation7.concatenateValues}}
+                {{/data.summary.calculation7.value}}
+                {{^data.summary.calculation7.value}}
+                Geen aanwijzingen voor leefstijl-gerelateerde oorzaken
+                {{/data.summary.calculation7.value}}
+            </li>
+            <li style="font-size: 18px; padding-left: 10px; font-weight: 400">
+                {{#data.summary.calchypothalaam.value}}
+                Hypothalame oorzaken
+                {{/data.summary.calchypothalaam.value}}
+                {{^data.summary.calchypothalaam.value}}
+                Geen aanwijzingen voor hypothalame oorzaken
+                {{/data.summary.calchypothalaam.value}}
+            </li>
+            <li style="font-size: 18px; padding-left: 10px; font-weight: 400">
+                {{#data.summary.calcgenetisch.value}}
+                Genetische oorzaken
+                {{/data.summary.calcgenetisch.value}}
+                {{^data.summary.calcgenetisch.value}}
+                Geen aanwijzingen voor genetische oorzaken
+                {{/data.summary.calcgenetisch.value}}
+            </li>
+        </ul>
+    </div>
+
+    {{#data.calculation8.value}}
+    <div class="normal-text" style="display: flex; align-items: center;">
+        Met de volgende mogelijke gevolgen:
+    </div>
+    <ul>
+        {{#data.calculation8.item.0.item.0.item}}
+        {{#value}}
+        <li class="normal-text" style="padding-left: 10px">{{text}}</li>
+        {{/value}}
+        {{/data.calculation8.item.0.item.0.item}}
+    </ul>
+    {{/data.calculation8.value}}
+
+
+    <div style="border-top: 1px solid #0070a8; width: 100%; margin: 40px 0" />
+
+    {{! Uitgebreide resultaten}}
+    <div style="font-size: 30px; color: #0070a8; font-weight: 500; margin: 20px 0">
+        Uitgebreide resultaten
+    </div>
+
+    {{ ! Algemene kenmerken }}
+    {{#data.calculation13.value}}
+    <div class="header-text">Algemene kenmerken</div>
+
+    <div class="summary-container">
+        {{#data.calculation13.item}}
+        {{#valueInteger}}
+
+        <div class="row">
+            <div class="title-subcase">
+                {{text}}
+            </div>
+        </div>
+
+        {{#text=U denkt zelf dat de oorzaak van het overgewicht of gewichtstoename van uw kind is}}
+        {{#valueInteger}}
+        <div>
+            {{#answer.0.item.length}}
+            {{#valueInteger}}
+            <div>
+                {{#answer.0.item}}
+                {{#valueInteger}}
+                <div class="row">
+                    <div class="title-subcase-child">
+                        <span class="checked-icon"></span>
+
+                        {{text}}
+
+                        {{#text=Anders:}}
+                        {{#answer.0.item}}
+                        {{#text=Weightgain_cause_other}}
+                        <i>{{valueInteger}}</i>
+                        {{/text=Weightgain_cause_other}}
+                        {{/answer.0.item}}
+                        {{/text=Anders:}}
+
+                        {{#text=Medicatie:}}
+                        {{#answer.0.item}}
+                        {{#text=Weightgain_cause_medication}}
+                        <i>{{valueInteger}}</i>
+                        {{/text=Weightgain_cause_medication}}
+                        {{/answer.0.item}}
+                        {{/text=Medicatie:}}
+
+                    </div>
+                </div>
+                {{/valueInteger}}
+                {{/answer.0.item}}
+            </div>
+            {{/valueInteger}}
+            {{/answer.0.item.length}}
+        </div>
+        {{/valueInteger}}
+        {{/text=U denkt zelf dat de oorzaak van het overgewicht of gewichtstoename van uw kind is}}
+
+        {{! sub calculations html (i.e hyperfagie subs) }}
+        {{#text=Uw kind heeft tot nu toe het volgende geprobeerd om af te vallen}}
+        {{#valueInteger}}
+        <div>
+            {{#answer.0.item.length}}
+            {{#valueInteger}}
+            <div>
+                {{#answer.0.item}}
+                {{#valueInteger}}
+                <div class="row">
+                    <div class="title-subcase-child" style="display: flex; flex-direction: column; align-items: flex-start">
+                        {{#valueInteger}}
+                        <div><span class="checked-icon"></span> {{text}}</div>
+                        {{/valueInteger}}
+
+                        {{#text=Mijn kind heeft medicijnen gekregen voor het gewicht}}
+                        <ul class="output-list" >
+                            {{#answer.0.item}}
+                            {{#valueInteger}}
+                            <li>-{{text}}</li>
+                            {{/valueInteger}}
+                            {{/answer.0.item}}
+                        </ul>
+                        {{/text=Mijn kind heeft medicijnen gekregen voor het gewicht}}
+                    </div>
+                </div>
+                {{/valueInteger}}
+                {{/answer.0.item}}
+            </div>
+            {{/valueInteger}}
+            {{/answer.0.item.length}}
+        </div>
+        {{/valueInteger}}
+        {{/text=Uw kind heeft tot nu toe het volgende geprobeerd om af te vallen}}
+
+        {{#text=U wilt graag hulp hebben voor uw kind bij}}
+        {{#answer.0.item}}
+        {{#text=Patient_question}}
+        <i>{{valueInteger}}</i>
+        {{/text=Patient_question}}
+        {{/answer.0.item}}
+        {{/text=U wilt graag hulp hebben voor uw kind bij}}
+
+        {{/valueInteger}}
+        {{/data.calculation13.item}}
+    </div>
+    {{/data.calculation13.value}}
+
+
+    {{! Hormonale oorzaken }}
+    {{#data.calchormonaal.value}}
+    <div class="header-text">
+        Hormonale oorzaken
+    </div>
+    <div class="summary-container" style="font-size: 18px">
+        Een traag werkende schildklier is bijna nooit de oorzaak van gewichtstoename. Soms kan het toch zinvol zijn om hierop te testen. Op basis van uw antwoorden zou dit mogelijk zinvol kunnen zijn bij uw kind.
+    </div>
+    {{/data.calchormonaal.value}}
+    {{^data.calchormonaal.value}}
+    <div class="header-text">
+        Hormonale oorzaken
+    </div>
+    <div class="summary-container">
+        Op basis van uw antwoorden zijn er geen aanwijzingen voor traag werkende schildklier als oorzaak van gewichtstoename bij uw kind.
+    </div>
+    {{/data.calchormonaal.value}}
+
+
+    {{! Medicamenteuze oorzaken}}
+    {{#data.calculation5.value}}
+    <div class="header-text">
+        Medicamenteuze oorzaken
+    </div>
+    {{#data.calculation5.item}}
+    <div class="summary-container">
+
+        <div>
+
+            <div>
+                <p style="font-size: 18px">Sommige medicijnen kunnen bijdragen aan een toename in gewicht. Uw kind gebruikt de volgende
+                    medicijnen waarvan bekend is dat ze een gewichtsverhogende bijwerking kunnen hebben:</p>
+            </div>
+
+            {{! sub calculations html (i.e hyperfagie subs) }}
+            <div>
+                {{#answer.0.item.length}}
+                {{#valueInteger}}
+                <ul style="margin-left: -30px">
+                    {{#answer.0.item}}
+                    {{#valueInteger}}
+                    <div style="font-size: 18px">
+                        <div class="list-container">
+                            {{#valueInteger}}
+                            <img src="images/rightIconSvg.png"/>
+                            <div>
+                                {{text}}
+                            </div>
+                            {{/valueInteger}}
+                        </div>
+                        {{#answer.0.item}}
+                        <div>
+                            <div class="list-container" style="margin-left: 20px">
+                                {{#valueInteger}}
+                                <img src="images/rightIconSvg.png"/>
+                                <div>
+                                    {{text}}
+                                </div>
+                                {{/valueInteger}}
+                            </div>
+                        </div>
+                        {{/answer.0.item}}
+                    </div>
+                    {{/valueInteger}}
+                    {{/answer.0.item}}
+                </ul>
+                {{/valueInteger}}
+                {{/answer.0.item.length}}
+            </div>
+
+            <div class="subTitle">
+                <p class="normal-text">
+                    Let op dat u nooit zonder overleg met de arts iets aan de medicatie van uw kind (zoals de dosering) wijzigt
+                </p>
+            </div>
+        </div>
+    </div>
+    {{/data.calculation5.item}}
+    {{/data.calculation5.value}}
+    {{^data.calculation5.value}}
+    <div class="header-text">
+        Medicamenteuze oorzaken
+    </div>
+    <div class="summary-container">
+        Sommige medicijnen kunnen bijdragen aan een toename in gewicht. U heeft geen medicijnen voor uw kind genoteerd waarvan bekend is dat die een gewicht verhogende bijwerking kunnen hebben.
+    </div>
+    {{/data.calculation5.value}}
+
+
+
+    {{! Mentale en psychosociale factoren}}
+    {{#data.calculation6.value}}
+    <div class="header-text">
+        Mentale en psychosociale factoren
+    </div>
+    {{#data.calculation6.item}}
+    <div class="summary-container">
+        <div>
+
+            {{#subTitle}}
+            <div class="subTitle">
+                <p style="font-size: 18px">Op basis van uw antwoorden kan het zinvol zijn om met uw (huis)arts te bespreken of u baat
+                    Mentale en psychosociale factoren kunnen een rol spelen bij het ontstaan van obesitas.
+                    Dit zijn factoren die u in de vragenlijst heeft aangegeven die bij uw kind aanwezig zijn:
+                </p>
+            </div>
+            {{/subTitle}}
+            {{! sub calculations html (i.e hyperfagie subs) }}
+            <div>
+                {{#answer.0.item.length}}
+                {{#valueInteger}}
+                <ul style="margin-left: -30px">
+                    {{#answer.0.item}}
+                    {{#valueInteger}}
+                    <div>
+                        <div class="list-container">
+                            {{#valueInteger}}
+                            <img src="images/rightIconSvg.png"/>
+                            <div>
+                                {{text}}
+                            </div>
+                            {{/valueInteger}}
+                        </div>
+                        {{#answer.0.item}}
+                        <div>
+                            <div class="list-container" style="margin-left: 20px">
+                                {{#valueInteger}}
+                                <div>
+                                    {{#text=Stress_cause}}
+                                    {{formulaResult}}
+                                    {{/text=Stress_cause}}
+                                </div>
+                                {{/valueInteger}}
+                            </div>
+                        </div>
+                        {{/answer.0.item}}
+                    </div>
+                    {{/valueInteger}}
+                    {{/answer.0.item}}
+                </ul>
+
+                {{/valueInteger}}
+                {{/answer.0.item.length}}
+            </div>
+        </div>
+    </div>
+    {{/data.calculation6.item}}
+    {{/data.calculation6.value}}
+    {{^data.calculation6.value}}
+    <div class="header-text">
+        Mentale en psychosociale factoren
+    </div>
+    <div class="summary-container">
+        Op basis van uw antwoorden zijn er geen bijzonderheden op het gebied van mentale en psychosociale factoren bij uw kind
+    </div>
+    {{/data.calculation6.value}}
+
+
+    {{! LEEFSTIJLFACTOREN}}
+    {{#data.calculation7.value}}
+    <div class="header-text">
+        Leefstijlfactoren
+    </div>
+
+    <div class="summary-container">
+
+        <div>
+
+            <div style="margin-top: 0 !important;">
+                <p class="normal-text">Een ongezonde leefstijl kan een rol spelen bij het ontstaan van obesitas. Ook kunnen leefstijlfactoren de kans op bepaalde ziektes verhogen. De volgende factoren die een negatief effect kunnen hebben op de gezondheid van uw kind komen uit de vragenlijst:
+                </p>
+            </div>
+
+
+            {{#data.calculation7.item}}
+            {{! sub calculations html (i.e hyperfagie subs) }}
+            <div class="normal-text">
+                {{#answer.0.item.length}}
+                {{#answer.0.item}}
+
+                {{#text=Voeding}}
+                {{^valueInteger}}
+                <div>
+                    <p style="text-decoration: underline">{{text}}</p>
+                    <div style="margin-left: 20px">
+                        <div>Er zijn op het gebied van voeding bij uw kind geen bijzonderheden</div>
+                    </div>
+                </div>
+                {{/valueInteger}}
+                {{/text=Voeding}}
+
+                {{#text=Beweging}}
+                {{^valueInteger}}
+                <div>
+                    <p style="text-decoration: underline">{{text}}</p>
+                    <div class="row" style="margin-left: 20px">
+                        <p>Er zijn op het gebied van beweging bij uw kind geen bijzonderheden, uw kind haalt de wekelijkse
+                            beweegnorm.</p>
+                    </div>
+                </div>
+                {{/valueInteger}}
+                {{/text=Beweging}}
+
+                {{#text=Alcohol}}
+                {{^valueInteger}}
+                <div>
+                    <div>
+                        <p>Er zijn op het gebied van alcohol bij u geen bijzonderheden.</p>
+                    </div>
+                </div>
+                {{/valueInteger}}
+                {{/text=Alcohol}}
+
+
+                {{#valueInteger}}
+                <div>
+                    <div style="text-decoration: underline">
+                        {{text}}
+                    </div>
+                    {{#answer.0.item}}
+                    {{#valueInteger}}
+                    <div class="row">
+                        <div>
+                            {{#valueInteger}}
+                            <span class="checked-icon"></span>
+                            {{/valueInteger}}
+                            {{^valueInteger}}
+                            <span class="unchecked-icon"></span>
+                            {{/valueInteger}}
+                            {{#text=Stress_cause}}
+                            {{formulaResult}}
+                            {{/text=Stress_cause}}
+                            {{^text=Stress_cause}}
+                            {{text}}
+                            {{/text=Stress_cause}}
+                        </div>
+                    </div>
+                    {{/valueInteger}}
+                    {{/answer.0.item}}
+
+                    {{#text=Voeding}}
+                    <div style="font-weight: 400; margin: 10px 0">Meer informatie over gezonde voeding vindt u op:<div  style="color: rgb(50, 31, 219); text-decoration: underline;" role="link" data-href="https://www.voedingscentrum.nl" data-target="_blank">www.voedingscentrum.nl</div> en de app ‘Kies Ik Gezond?’</div>
+                    {{/text=Voeding}}
+
+                    {{#text=Alcohol}}
+                    <div style="font-weight: 400; margin: 10px 0">Meer informatie over het verminderen van alcoholgebruik vindt u op: <div  style="color: rgb(50, 31, 219); text-decoration: underline;" role="link" data-href="https://www.allesoverdrinken.nl" data-target="_blank">www.allesoverdrinken.nl</div></div>
+                    {{/text=Alcohol}}
+                </div>
+                {{/valueInteger}}
+
+                {{/answer.0.item}}
+                {{/answer.0.item.length}}
+            </div>
+            {{/data.calculation7.item}}
+
+        </div>
+    </div>
+
+    {{/data.calculation7.value}}
+    {{^data.calculation7.value}}
+
+    <div class="header-text">
+        Leefstijlfactoren
+    </div>
+    <div class="summary-container">
+        <div style="margin-top: 0 !important;">
+            <p class="normal-text">Een ongezonde leefstijl kan een rol spelen bij het ontstaan van obesitas. Ook kunnen leefstijlfactoren de kans op bepaalde ziektes verhogen. De volgende factoren die een negatief effect kunnen hebben op de gezondheid van uw kind komen uit de vragenlijst:
+            </p>
+        </div>
+    </div>
+
+    {{/data.calculation7.value}}
+
+
+    {{! HYPOTHALAME OBESITAS}}
+    <div>
+        <div class="header-text">Hypothalame obesitas</div>
+
+        <div class="summary-container">
+            <div>
+                <div>
+                    {{#data.calchypothalaam.value}}
+                    <p>Een hypothalame obesitas is een zeldzame vorm van obesitas. Dit wordt veroorzaakt door schade aan hersengebieden die belangrijk zijn voor honger en verzadiging. Op basis van uw antwoorden kan het zinvol zijn om met de arts van uw kind te bespreken of uw kind baat heeft bij verder onderzoek naar een hypothalame oorzaak van obesitas.</p>
+                    {{/data.calchypothalaam.value}}
+                    {{^data.calchypothalaam.value}}
+                    <p>Op basis van uw antwoorden zijn er geen aanwijzingen dat er sprake is van een hypothalame oorzaak van obesitas (= een vorm van obesitas als gevolg van schade aan een gebied in de hersenen) bij uw kind.<p>
+                    {{/data.calchypothalaam.value}}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {{! GENETISCHE OBESITAS}}
+    <div>
+        <div class="header-text">Genetische obesitas</div>
+
+        <div class="summary-container">
+            <div>
+                <div>
+                    {{#data.calcgenetisch.value}}
+                    <p>Een genetische obesitas is een zeldzame vorm van obesitas. Op basis van uw antwoorden kan het zinvol zijn om met de arts van uw kind te bespreken of uw kind baat heeft bij verder onderzoek naar een genetische vorm van obesitas. Bij uw kind kunnen de volgende kenmerken passen bij een genetische obesitas:</p>
+                    {{/data.calcgenetisch.value}}
+                    {{^data.calcgenetisch.value}}
+                    <p>Op basis van uw antwoorden zijn er geen aanwijzingen dat er sprake is van een genetische vorm van obesitas.</p>
+                    {{/data.calcgenetisch.value}}
+                </div>
+                <div>
+                    <ul>
+                        {{#data.calcgenetisch.value}}
+                        {{#data.calcgenetisch.item}}
+                        {{#valueInteger}}
+                        <div>
+                            <div class="list-container">
+                                {{#valueInteger}}
+                                <img src="images/rightIconSvg.png"/>
+                                <div>
+                                    {{text}}
+                                </div>
+                                {{/valueInteger}}
+                            </div>
+                        </div>
+                        {{/valueInteger}}
+                        {{/data.calcgenetisch.item}}
+                        {{/data.calcgenetisch.value}}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    {{! MOGELIJKE GEVOLGEN OVERGEWICHT}}
+    {{#data.calculation8.value}}
+    <div>
+        <div class="header-text">Mogelijke gevolgen overgewicht</div>
+        {{#data.calculation8.item}}
+        <div  class="summary-container">
+            <div>
+
+                <div>
+                    {{subTitle}}
+                </div>
+
+                {{! sub calculations html (i.e hyperfagie subs) }}
+                <div>
+                    {{#answer.0.item.length}}
+                    {{#valueInteger}}
+                    <div>
+                        {{#answer.0.item}}
+                        {{#valueInteger}}
+
+                        <div>
+                            {{#text=Slaapapneu (OSAS)}}
+                            <div>
+                                <div style="text-decoration: underline">{{text}}</div>
+                                <div style="margin-left: 20px">Op basis van de combinatie van uw antwoorden zou de kans op slaapapneu verhoogd kunnen zijn.</div>
+                            </div>
+                            {{/text=Slaapapneu (OSAS)}}
+                            {{#text=Artose}}
+                            <div>
+                                <div style="text-decoration: underline">{{text}}</div>
+                                <div style="margin-left: 20px">Uw antwoorden zouden kunnen passen bij artrose. Bij artrose is sprake van slijtage van een of meerdere gewrichten. Artrose kan een gevolg zijn van obesitas.</div>
+                            </div>
+                            {{/text=Artose}}
+                            {{^text=Slaapapneu (OSAS)}}
+                            {{^text=Artose}}
+                            <div>
+                                <div style="text-decoration: underline">{{text}}</div>
+                            </div>
+                            {{#answer.0.item}}
+                            <div>
+                                <div class="list-container" style="margin-left: 20px">
+                                    {{#valueInteger}}
+                                    <img src="images/rightIconSvg.png"/>
+                                    <div>
+                                        {{text}}
+                                    </div>
+                                    {{/valueInteger}}
+                                </div>
+                            </div>
+                            {{/answer.0.item}}
+                            {{/text=Artose}}
+                            {{/text=Slaapapneu (OSAS)}}
+                        </div>
+                        {{/valueInteger}}
+                        {{/answer.0.item}}
+                    </div>
+                    {{/valueInteger}}
+                    {{/answer.0.item.length}}
+                </div>
+            </div>
+            {{/data.calculation8.item}}
+        </div>
+        {{/data.calculation8.value}}
+
+        {{#questions}}
+        <p style="font-weight: 700; font-size: 20px; margin-top: 20px">
+            {{question}}
+        </p>
+
+        {{#item}}
+        <div class="questions-table">
+
+            <table style="width: 100%;">
+                <tbody>
+                <tr>
+                    <th style="padding: 8px; font-weight: 500; width: 300px; max-width: 300px;">
+                        {{question}}
+                    </th>
+                    <td style="padding: 8px;">
+                        {{#answer}}
+                        {{answer}}
+                        {{/answer}}
+                        {{^answer}}
+                        N/A
+                        {{/answer}}
+                    </td>
+                </tr>
+                {{#item}}
+                <tr>
+                    <th style="padding: 8px; font-weight: 500; width: 300px; max-width: 300px;">
+                        <div style="margin-left: 20px; border-left: 1px solid gray;">
+                            {{question}}
+                        </div>
+                    </th>
+                    <td style="padding: 8px;">
+                        {{#answer}}
+                        {{answer}}
+                        {{/answer}}
+                        {{^answer}}
+                        N/A
+                        {{/answer}}
+                    </td>
+                </tr>
+                {{#item}}
+                <tr>
+                    <th style="padding: 8px; font-weight: 500; width: 300px; max-width: 300px">
+                        <div style="margin-left: 40px; border-left: 1px solid gray;">
+                            {{question}}
+                        </div>
+                    </th>
+                    <td style="padding: 8px;">
+                        {{#answer}}
+                        {{answer}}
+                        {{/answer}}
+                        {{^answer}}
+                        N/A
+                        {{/answer}}
+                    </td>
+                </tr>
+                {{/item}}
+                {{/item}}
+                </tbody>
+            </table>
+        </div>
+        {{/item}}
+        {{/questions}}
+
+        <div style="border-bottom:1px solid; width:100%"></div>
+
+        <div style="padding: 10px; font-size:20px; font-weight: 500; width: 100%;">
+            <span style="font-weight:700">Disclaimer:</span>
+            <span style="font-size:18px;">De uitkomsten van deze vragenlijst geven geen diagnose. De vragenlijst is alleen bedoeld om op basis van de ingevulde informatie te laten zien bij welke mogelijke onderliggende oorzaken van overgewicht bij uw kind uw combinatie van antwoorden zou kunnen passen. Dit dient verder besproken te worden met de arts/zorgverlener van uw kind.  Stop nooit zonder overleg met de arts van uw kind met zijn/haar medicatie. Erasmus MC verstrekt op geen enkele wijze expliciete of impliciete garanties dat de vragenlijst, delen of inhoud hiervan volledig, nauwkeurig zijn, of geschikt zijn voor bepaalde doeleinden of voor het behalen van bepaalde resultaten, of dat de vragenlijst, delen of inhoud hiervan geen inbreuk maken op de rechten van de derden. Erasmus MC is op geen enkele wijze verantwoordelijk of aansprakelijk voor het gebruik van de  vragenlijst door een organisatie of een instelling en/of voor de geschiktheid, volledigheid of nauwkeurigheid van de informatie, resultaten of data verkregen door het gebruik maken van de vragenlijst.</span>
+        </div>
+
+    </div>
+</div>
