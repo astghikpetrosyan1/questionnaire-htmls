@@ -1,6 +1,7 @@
-<div class="alogaritmh-html">
+"
+<div class= 'alogaritmh-html '>
     {{! Attention text}}
-    <style type="text/css">
+    <style type= 'text/css '>
         .title-subcase {
             margin-top: 10px;
         }
@@ -48,14 +49,14 @@
             }
         }
     </style>
-    <div class="header-title-con"
-         style="text-align: justify; width: 100%; background-color: #fff; font-size: 20px; font-weight: 600; overflow: hidden; color: #000000; margin: 15px 0; box-shadow: 1px 2px 9px rgba(0,0,0,0.3); border-radius: 10px; padding: 100px 30px 30px 30px">
-        <div style="color: #1399EC;width: 100%; margin-bottom: 20px;">
-            <h2 style="font-weight: 600">
+    <div class= 'header-title-con '
+         style= 'text-align: justify; width: 100%; background-color: #fff; font-size: 20px; font-weight: 600; overflow: hidden; color: #000000; margin: 15px 0; box-shadow: 1px 2px 9px rgba(0,0,0,0.3); border-radius: 10px; padding: 100px 30px 30px 30px '>
+        <div style= 'color: #1399EC;width: 100%; margin-bottom: 20px; '>
+            <h2 style= 'font-weight: 600 '>
                 Uitslag checkoorzakenovergewicht.nl
             </h2>
         </div>
-        <div style="font-size: 19px;width:100%; font-weight: 400; color: #101011; line-height: normal">
+        <div style= 'font-size: 19px;width:100%; font-weight: 400; color: #101011; line-height: normal '>
             Deze vragenlijst is gemaakt voor mensen met overgewicht of ernstig overgewicht (obesitas).
             Het doel van het invullen van de vragenlijst is om meer inzicht te krijgen in de mogelijke
             onderliggende oorzaken van uw overgewicht. De uitslag kunt u delen met uw
@@ -66,34 +67,34 @@
 
     {{! Samenvatting }}
     <div>
-        <div style="font-size: 30px; color: #0070a8; font-weight: 500; margin: 20px 0; text-align: left">
+        <div style= 'font-size: 30px; color: #0070a8; font-weight: 500; margin: 20px 0; text-align: left '>
             Samenvatting
         </div>
         {{#bmi}}
         {{#isBMILow}}
-        <div style="display: block; text-align: left; font-size: 18px; margin-bottom: 10px">
+        <div style= 'display: block; text-align: left; font-size: 18px; margin-bottom: 10px '>
             Er is wat betreft uw BMI sprake van ondergewicht. Deze vragenlijst is voor u niet van toepassing.
         </div>
         {{/isBMILow}}
 
         {{#isBMIMidium}}
-        <div style="display: block; text-align: left; font-size: 18px">
-            Er is sprake van een normaal gewicht <span style="font-weight: bold; margin-left: 0px; margin-right: 0px">(BMI {{#bmi}}{{value}}{{/bmi}}{{^bmi}}-{{/bmi}} kg/m<sup>2</sup>)</span>.
+        <div style= 'display: block; text-align: left; font-size: 18px '>
+            Er is sprake van een normaal gewicht <span style= 'font-weight: bold; margin-left: 0px; margin-right: 0px '>(BMI {{#bmi}}{{value}}{{/bmi}}{{^bmi}}-{{/bmi}} kg/m<sup>2</sup>)</span>.
             Er zijn de volgende aandachtspunten waarvan bekend is dat ze het gewicht kunnen verhogen:
         </div>
         {{/isBMIMidium}}
 
         {{#isBMIHigh}}
-        <div style="display: block; text-align: left; font-size: 18px">
-            Er is sprake van <b style="font-weight: bold; margin-left: 5px; margin-right: 5px">overgewicht (BMI
+        <div style= 'display: block; text-align: left; font-size: 18px '>
+            Er is sprake van <b style= 'font-weight: bold; margin-left: 5px; margin-right: 5px '>overgewicht (BMI
             {{#bmi}}{{value}}{{/bmi}}{{^bmi}}-{{/bmi}} kg/m<sup>2</sup>)</b> met de volgende <b
-                style="margin-left: 5px; margin-right: 5px">mogelijke</b> onderliggende oorzaken:
+                style= 'margin-left: 5px; margin-right: 5px '>mogelijke</b> onderliggende oorzaken:
         </div>
         {{/isBMIHigh}}
 
         {{#isBMIObese}}
-        <div style="display: block; text-align: left; font-size: 18px">
-            Er is sprake van <b style="font-weight: bold; margin-left: 5px; margin-right: 5px">obesitas (BMI
+        <div style= 'display: block; text-align: left; font-size: 18px '>
+            Er is sprake van <b style= 'font-weight: bold; margin-left: 5px; margin-right: 5px '>obesitas (BMI
             {{#bmi}}{{value}}{{/bmi}}{{^bmi}}-{{/bmi}} kg/m<sup>2</sup>)</b> met de volgende mogelijke onderliggende oorzaken:
         </div>
         {{/isBMIObese}}
@@ -101,7 +102,7 @@
 
         {{^isBMILow}}
         <ul>
-            <li style="font-size: 18px; padding-left: 10px; font-weight: 400">
+            <li style= 'font-size: 18px; padding-left: 10px; font-weight: 400 '>
                 {{#summary.calchormonaal.value}}
                 Hormonale oorzaken: aanwijzingen die kunnen passen bij {{summary.calchormonaal.concatenateValues}}
                 {{/summary.calchormonaal.value}}
@@ -109,7 +110,7 @@
                 Geen aanwijzingen voor hormonale oorzaken
                 {{/summary.calchormonaal.value}}
             </li>
-            <li style="font-size: 18px; padding-left: 10px; font-weight: 400">
+            <li style= 'font-size: 18px; padding-left: 10px; font-weight: 400 '>
                 {{#summary.calculation5.value}}
                 Medicamenteuze oorzaken: gebruik van {{summary.calculation5.concatenateValues}}
                 {{/summary.calculation5.value}}
@@ -117,7 +118,7 @@
                 Geen aanwijzingen voor medicamenteuze oorzaken
                 {{/summary.calculation5.value}}
             </li>
-            <li style="font-size: 18px; padding-left: 10px; font-weight: 400">
+            <li style= 'font-size: 18px; padding-left: 10px; font-weight: 400 '>
                 {{#summary.calculation6.value}}
                 Psychische of sociale oorzaken: aanwijzingen voor:
                 {{/summary.calculation6.value}}
@@ -125,7 +126,7 @@
                 Geen aanwijzingen voor psychische of sociale oorzaken
                 {{/summary.calculation6.value}}
             </li>
-            <li style="font-size: 18px; padding-left: 10px; font-weight: 400">
+            <li style= 'font-size: 18px; padding-left: 10px; font-weight: 400 '>
                 {{#summary.calculation7.value}}
                 Leefstijl-gerelateerde oorzaken: op het gebied van {{summary.calculation7.concatenateValues}}
                 {{/summary.calculation7.value}}
@@ -133,7 +134,7 @@
                 Geen aanwijzingen voor leefstijl-gerelateerde oorzaken
                 {{/summary.calculation7.value}}
             </li>
-            <li style="font-size: 18px; padding-left: 10px; font-weight: 400">
+            <li style= 'font-size: 18px; padding-left: 10px; font-weight: 400 '>
                 {{#summary.calchypothalaam.value}}
                 Hypothalame oorzaken
                 {{/summary.calchypothalaam.value}}
@@ -141,7 +142,7 @@
                 Geen aanwijzingen voor hypothalame oorzaken
                 {{/summary.calchypothalaam.value}}
             </li>
-            <li style="font-size: 18px; padding-left: 10px; font-weight: 400">
+            <li style= 'font-size: 18px; padding-left: 10px; font-weight: 400 '>
                 {{#summary.calcgenetisch.value}}
                 Genetische oorzaken
                 {{/summary.calcgenetisch.value}}
@@ -154,13 +155,13 @@
         {{/bmi}}
 
         {{#calculation8.value}}
-        <div style="display: flex; align-items: center; font-size: 18px">
+        <div style= 'display: flex; align-items: center; font-size: 18px '>
             Met de volgende mogelijke gevolgen:
         </div>
         <ul>
             {{#calculation8.item.0.item.0.item}}
             {{#value}}
-            <li style="font-size: 18px; padding-left: 10px; font-weight: 400">{{text}}</li>
+            <li style= 'font-size: 18px; padding-left: 10px; font-weight: 400 '>{{text}}</li>
             {{/value}}
             {{/calculation8.item.0.item.0.item}}
         </ul>
@@ -168,21 +169,21 @@
     </div>
 
     {{! render each case calculations }}
-    <div class="grouped-containers">
+    <div class= 'grouped-containers '>
         {{#calculation13.value}}
-        <div class="container">
+        <div class= 'container '>
             <div
-                    style="display: flex; align-items: center; justify-content: space-between; background-color: #F3F7FA; padding: 10px 20px; border-radius: 15px 15px 0px 0px;">
-            <span class="case-title"
-                  style="color: #101011;width: 100%;padding: 10px 20px 10px 20px;">ALGEMENE KENMERKEN</span>
+                    style= 'display: flex; align-items: center; justify-content: space-between; background-color: #F3F7FA; padding: 10px 20px; border-radius: 15px 15px 0px 0px; '>
+            <span class= 'case-title '
+                  style= 'color: #101011;width: 100%;padding: 10px 20px 10px 20px; '>ALGEMENE KENMERKEN</span>
             </div>
-            <div class="container-text">
-                <div class="dark-blue-container" style="background-color: #F3F7FA;">
+            <div class= 'container-text '>
+                <div class= 'dark-blue-container ' style= 'background-color: #F3F7FA; '>
                     {{#calculation13.item}}
                     {{#valueInteger}}
 
-                    <div class="row">
-                        <div class="title-subcase">
+                    <div class= 'row '>
+                        <div class= 'title-subcase '>
                             {{text}}
                         </div>
                     </div>
@@ -191,7 +192,7 @@
                     {{#text=U denkt zelf dat de oorzaak van uw overgewicht of gewichtstoename is:}}
                     {{#answer.0.item}}
                     {{#text=Patient_question}}
-                    <i class="patient_que">
+                    <i class= 'patient_que '>
                         {{valueInteger}}
                     </i>
                     {{/text=Patient_question}}
@@ -207,19 +208,19 @@
                         <ul>
                             {{#answer.0.item}}
                             {{#valueInteger}}
-                            <div class="row">
-                                <div class="title-subcase-child">
+                            <div class= 'row '>
+                                <div class= 'title-subcase-child '>
                                     {{#valueInteger}}
-                                    <span class="checked-icon"></span>
+                                    <span class= 'checked-icon '></span>
                                     {{/valueInteger}}
                                     {{^valueInteger}}
-                                    <span class="unchecked-icon"></span>
+                                    <span class= 'unchecked-icon '></span>
                                     {{/valueInteger}}
 
 
                                     {{#text=Ik heb medicijnen gekregen voor mijn gewicht}}
                                     {{text}}:
-                                    <ul class="output-list">
+                                    <ul class= 'output-list '>
                                         {{#answer.0.item}}
                                         {{#valueInteger}}
                                         <li>{{text}}</li>
@@ -252,6 +253,14 @@
                     {{/answer.0.item}}
                     {{/text=U wil graag hulp bij:}}
 
+                    {{#text=U wil graag onderstaande wil kwijt omdat u denkt dat het ook relevant is voor de resultaten:}}
+                    {{#answer.0.item}}
+                    {{#text=Additional_info}}
+                    <i>{{valueInteger}}</i>
+                    {{/text=Additional_info}}
+                    {{/answer.0.item}}
+                    {{/text=U wil graag onderstaande wil kwijt omdat u denkt dat het ook relevant is voor de resultaten:}}
+
                     {{/valueInteger}}
                     {{/calculation13.item}}
                 </div>
@@ -260,17 +269,17 @@
         {{/calculation13.value}}
 
 
-        <div class="container">
+        <div class= 'container '>
             <div
-                    style="display: flex; align-items: center; justify-content: space-between; background-color: #F3F7FA; padding: 10px 20px; border-radius: 15px 15px 0px 0px;">
-                <span class="case-title" style="color: #101011;width: 100%;padding: 10px 20px 10px 20px;">MEDICAMENTEUZE OORZAKEN</span>
-                <img alt="food-icon" src="./icon/icon-med.png" style="width: 40px; height: 40px; margin-right: 15px"/>
+                    style= 'display: flex; align-items: center; justify-content: space-between; background-color: #F3F7FA; padding: 10px 20px; border-radius: 15px 15px 0px 0px; '>
+                <span class= 'case-title ' style= 'color: #101011;width: 100%;padding: 10px 20px 10px 20px; '>MEDICAMENTEUZE OORZAKEN</span>
+                <img alt= 'food-icon ' src= './icon/icon-med.png ' style= 'width: 40px; height: 40px; margin-right: 15px '/>
             </div>
 
-            <div class="container-text">
-                <div class="dark-blue-container" style="background-color: #F3F7FA;">
+            <div class= 'container-text '>
+                <div class= 'dark-blue-container ' style= 'background-color: #F3F7FA; '>
 
-                    <div class="subTitle" style="margin-top: 0 !important; padding: 10px 15px">
+                    <div class= 'subTitle ' style= 'margin-top: 0 !important; padding: 10px 15px '>
                         {{#calculation5.value}}
                         <p>Sommige medicijnen kunnen bijdragen aan een toename in gewicht. U gebruikt de volgende
                             medicijnen waarvan bekend is dat ze een gewichtsverhogende bijwerking kunnen hebben:</p>
@@ -288,11 +297,11 @@
                         {{#valueInteger}}
                         <div>
                             {{#answer.0.item}}
-                            <div class="row">
-                                <div class="title-subcase-child" style="padding-top:10px">
+                            <div class= 'row '>
+                                <div class= 'title-subcase-child ' style= 'padding-top:10px '>
                                     {{#valueInteger}}
-                                    <span class="checked-icon"></span>
-                                    <div style="font-weight:600;color:#000">
+                                    <span class= 'checked-icon '></span>
+                                    <div style= 'font-weight:600;color:#000 '>
                                         {{text}}
                                     </div>
                                     {{/valueInteger}}
@@ -301,10 +310,10 @@
 
                             {{#answer.0.item}}
                             <div>
-                                <div class="list-container" style="margin-left: 20px;display:flex">
+                                <div class= 'list-container ' style= 'margin-left: 20px;display:flex '>
                                     {{#valueInteger}}
-                                    <span class="checked-icon"></span>
-                                    <div style="font-weight:normal">
+                                    <span class= 'checked-icon '></span>
+                                    <div style= 'font-weight:normal '>
                                         {{text}}
                                     </div>
                                     {{/valueInteger}}
@@ -317,7 +326,7 @@
                         {{/answer.0.item.length}}
 
                     </div>
-                    <div class="subTitle" style="margin-top: 0 !important; padding: 10px 15px">
+                    <div class= 'subTitle ' style= 'margin-top: 0 !important; padding: 10px 15px '>
                         <p>Het kan zinvol zijn om met uw (huis)arts te bespreken of een van deze medicijnen bij u een rol
                             kan hebben gespeeld bij uw gewicht. En of het mogelijk is deze medicatie af te bouwen of om
                             te zetten in medicatie met een gewichtsneutrale bijwerking. Let op dat u nooit zonder overleg
@@ -330,18 +339,18 @@
         </div>
 
 
-        <div class="container">
+        <div class= 'container '>
             <div
-                    style="display: flex; align-items: center; justify-content: space-between; background-color: #F3F7FA; padding: 10px 20px; border-radius: 15px 15px 0px 0px;">
-                <span class="case-title" style="font-weight: bold;; color: #101011;width: 100%;padding: 10px 20px 10px 20px;">MENTALE EN PSYCHOSOCIALE FACTOREN DIE EEN ROL KUNNEN SPELEN BIJ OVERGEWICHT</span>
-                <img alt="food-icon" src="./icon/icon-brain.png" style="width: 45px; height: 45px; margin-right: 15px;"/>
+                    style= 'display: flex; align-items: center; justify-content: space-between; background-color: #F3F7FA; padding: 10px 20px; border-radius: 15px 15px 0px 0px; '>
+                <span class= 'case-title ' style= 'font-weight: bold;; color: #101011;width: 100%;padding: 10px 20px 10px 20px; '>MENTALE EN PSYCHOSOCIALE FACTOREN DIE EEN ROL KUNNEN SPELEN BIJ OVERGEWICHT</span>
+                <img alt= 'food-icon ' src= './icon/icon-brain.png ' style= 'width: 45px; height: 45px; margin-right: 15px; '/>
             </div>
 
-            <div class="container-text">
-                <div class="dark-blue-container" style="background-color: #F3F7FA;">
+            <div class= 'container-text '>
+                <div class= 'dark-blue-container ' style= 'background-color: #F3F7FA; '>
 
 
-                    <div class="subTitle" style="margin-top: 0 !important; padding: 10px 15px">
+                    <div class= 'subTitle ' style= 'margin-top: 0 !important; padding: 10px 15px '>
                         {{#calculation6.value}}
                         <p>Op basis van uw antwoorden kan het zinvol zijn om met uw (huis)arts te bespreken of u baat
                             heeft bij verder onderzoek naar mentale en psychosociale factoren die een rol spelen bij het
@@ -363,10 +372,10 @@
                         {{#valueInteger}}
                         <ul>
                             {{#answer.0.item}}
-                            <div class="row">
-                                <div class="title-subcase-child">
+                            <div class= 'row '>
+                                <div class= 'title-subcase-child '>
                                     {{#valueInteger}}
-                                    <span class="checked-icon"></span>
+                                    <span class= 'checked-icon '></span>
                                     {{text}}
                                     {{/valueInteger}}
 
@@ -391,20 +400,20 @@
         </div>
 
 
-        <div class="container">
+        <div class= 'container '>
             <div
-                    style="display: flex; align-items: center; justify-content: space-between; background-color: #F3F7FA; padding: 10px 20px; border-radius: 15px 15px 0px 0px;">
-        <span class="case-title"
-              style=" color: #101011;width: 100%;padding: 10px 20px 10px 20px;">LEEFSTIJL FACTOREN</span>
-                <img alt="food-icon" src="./icon/icon-restaurant.png"
-                     style="width: 40px; height: 40px; margin-right: 15px"/>
+                    style= 'display: flex; align-items: center; justify-content: space-between; background-color: #F3F7FA; padding: 10px 20px; border-radius: 15px 15px 0px 0px; '>
+        <span class= 'case-title '
+              style= ' color: #101011;width: 100%;padding: 10px 20px 10px 20px; '>LEEFSTIJL FACTOREN</span>
+                <img alt= 'food-icon ' src= './icon/icon-restaurant.png '
+                     style= 'width: 40px; height: 40px; margin-right: 15px '/>
             </div>
 
-            <div class="container-text">
+            <div class= 'container-text '>
 
-                <div class="dark-blue-container" style="background-color: #F3F7FA;">
+                <div class= 'dark-blue-container ' style= 'background-color: #F3F7FA; '>
 
-                    <div class="subTitle" style="margin-top: 0 !important; padding: 10px 15px">
+                    <div class= 'subTitle ' style= 'margin-top: 0 !important; padding: 10px 15px '>
                         <p>Een ongezonde leefstijl kan een rol spelen bij het ontstaan van obesitas. Ook kunnen leefstijl
                             factoren de kans op bepaalde ziektes verhogen. De volgende factoren die een negatief effect
                             kunnen hebben op uw gezondheid komen bij u uit de vragenlijst: </p>
@@ -421,9 +430,9 @@
                         {{#text=Voeding}}
 
                         {{^valueInteger}}
-                        <div class="title-subcase-child">
-                            <p style="text-decoration: underline">{{text}}</p>
-                            <div class="row" style="margin-left: 20px">
+                        <div class= 'title-subcase-child '>
+                            <p style= 'text-decoration: underline '>{{text}}</p>
+                            <div class= 'row ' style= 'margin-left: 20px '>
                                 <span>Er zijn op het gebied van voeding bij u geen bijzonderheden</span>
                             </div>
                         </div>
@@ -431,9 +440,9 @@
                         {{/text=Voeding}}
                         {{#text=Beweging}}
                         {{^valueInteger}}
-                        <div class="title-subcase-child">
-                            <p style="text-decoration: underline">{{text}}</p>
-                            <div class="row" style="margin-left: 20px">
+                        <div class= 'title-subcase-child '>
+                            <p style= 'text-decoration: underline '>{{text}}</p>
+                            <div class= 'row ' style= 'margin-left: 20px '>
                                             <span>Er zijn op het gebied van beweging bij u geen bijzonderheden, u haalt de wekelijkse
                                             beweegnorm.</span>
                             </div>
@@ -442,9 +451,9 @@
                         {{/text=Beweging}}
                         {{#text=Alcohol}}
                         {{^valueInteger}}
-                        <div class="title-subcase-child">
-                            <p style="text-decoration: underline">{{text}}</p>
-                            <div class="row" style="margin-left: 20px">
+                        <div class= 'title-subcase-child '>
+                            <p style= 'text-decoration: underline '>{{text}}</p>
+                            <div class= 'row ' style= 'margin-left: 20px '>
                                 <span>Er zijn op het gebied van alcohol bij u geen bijzonderheden.</span>
                             </div>
                         </div>
@@ -453,19 +462,19 @@
 
 
                         {{#valueInteger}}
-                        <div class="row">
-                            <div class="title-subcase-child" style="text-decoration: underline">
+                        <div class= 'row '>
+                            <div class= 'title-subcase-child ' style= 'text-decoration: underline '>
                                 {{text}}
                             </div>
                             {{#answer.0.item}}
                             {{#valueInteger}}
-                            <div class="row">
-                                <div class="title-subcase-child">
+                            <div class= 'row '>
+                                <div class= 'title-subcase-child '>
                                     {{#valueInteger}}
-                                    <span class="checked-icon"></span>
+                                    <span class= 'checked-icon '></span>
                                     {{/valueInteger}}
                                     {{^valueInteger}}
-                                    <span class="unchecked-icon"></span>
+                                    <span class= 'unchecked-icon '></span>
                                     {{/valueInteger}}
                                     {{#text=Stress_cause}}
                                     {{formulaResult}}
@@ -478,21 +487,21 @@
                             {{/valueInteger}}
                             {{/answer.0.item}}
                             {{#text=Voeding}}
-                            <div style="font-weight: 400; margin: 10px 0">Meer informatie over gezonde voeding vindt u op:
-                                <a href="https://www.voedingscentrum.nl" target="_blank">www.voedingscentrum.nl</a> en de
+                            <div style= 'font-weight: 400; margin: 10px 0 '>Meer informatie over gezonde voeding vindt u op:
+                                <a href= 'https://www.voedingscentrum.nl ' target= '_blank '>www.voedingscentrum.nl</a> en de
                                 app ‘Kies Ik Gezond?’
                             </div>
                             {{/text=Voeding}}
                             {{#text=Beweging}}
-                            <div style="font-weight: 400; margin: 10px 0">Meer informatie over het inbouwen van beweging in
+                            <div style= 'font-weight: 400; margin: 10px 0 '>Meer informatie over het inbouwen van beweging in
                                 uw dagelijks beweging vindt u op:
                                 <a
-                                        href="https://www.thuisarts.nl/gezond-leven" target="_blank">https://www.thuisarts.nl/gezond-leven</a>
+                                        href= 'https://www.thuisarts.nl/gezond-leven ' target= '_blank '>https://www.thuisarts.nl/gezond-leven</a>
                             </div>
                             {{/text=Beweging}}
                             {{#text=Alcohol}}
-                            <div style="font-weight: 400; margin: 10px 0">Meer informatie over het verminderen van
-                                alcoholgebruik vindt u op: <a href="https://www.allesoverdrinken.nl" target="_blank">www.allesoverdrinken.nl</a>
+                            <div style= 'font-weight: 400; margin: 10px 0 '>Meer informatie over het verminderen van
+                                alcoholgebruik vindt u op: <a href= 'https://www.allesoverdrinken.nl ' target= '_blank '>www.allesoverdrinken.nl</a>
                             </div>
                             {{/text=Alcohol}}
                         </div>
@@ -509,17 +518,17 @@
         </div>
 
 
-        <div class="container">
+        <div class= 'container '>
             <div
-                    style="display: flex; align-items: center; justify-content: space-between; background-color: #F3F7FA; padding: 10px 20px; border-radius: 15px 15px 0px 0px;">
-        <span class="case-title"
-              style="color: #101011;width: 100%;padding: 10px 20px 10px 20px;">HYPOTHALAME OBESITAS</span>
-                <img alt="food-icon" src="./icon/icon-head.png" style="width: 45px; height: 45px; margin-right: 15px"/>
+                    style= 'display: flex; align-items: center; justify-content: space-between; background-color: #F3F7FA; padding: 10px 20px; border-radius: 15px 15px 0px 0px; '>
+        <span class= 'case-title '
+              style= 'color: #101011;width: 100%;padding: 10px 20px 10px 20px; '>HYPOTHALAME OBESITAS</span>
+                <img alt= 'food-icon ' src= './icon/icon-head.png ' style= 'width: 45px; height: 45px; margin-right: 15px '/>
             </div>
 
-            <div class="container-text">
-                <div class="dark-blue-container" style="background-color: #F3F7FA;">
-                    <div class="subTitle" style="margin-top: 0 !important; padding: 10px 15px">
+            <div class= 'container-text '>
+                <div class= 'dark-blue-container ' style= 'background-color: #F3F7FA; '>
+                    <div class= 'subTitle ' style= 'margin-top: 0 !important; padding: 10px 15px '>
                         {{#calchypothalaam.value}}
                         <p>Een hypothalame obesitas is een zeldzame vorm van obesitas. Dit wordt veroor zaakt door schade
                             aan hersengebieden die belangrijk zijn voor honger en verzadiging. Op basis van uw antwoorden
@@ -537,16 +546,16 @@
         </div>
 
 
-        <div class="container">
+        <div class= 'container '>
             <div
-                    style="display: flex; align-items: center; justify-content: space-between; background-color: #F3F7FA; padding: 10px 20px; border-radius: 15px 15px 0px 0px; font-size: 22px;">
-        <span class="case-title"
-              style=" color: #101011;width: 100%;padding: 10px 20px 10px 20px;">GENETISCHE OBESITAS</span>
-                <img alt="food-icon" src="./icon/icon-cell.png" style="width: 40px; height: 40px; margin-right: 15px"/>
+                    style= 'display: flex; align-items: center; justify-content: space-between; background-color: #F3F7FA; padding: 10px 20px; border-radius: 15px 15px 0px 0px; font-size: 22px; '>
+        <span class= 'case-title '
+              style= ' color: #101011;width: 100%;padding: 10px 20px 10px 20px; '>GENETISCHE OBESITAS</span>
+                <img alt= 'food-icon ' src= './icon/icon-cell.png ' style= 'width: 40px; height: 40px; margin-right: 15px '/>
             </div>
-            <div class="container-text">
-                <div class="dark-blue-container" style="background-color: #F3F7FA;">
-                    <div class="subTitle" style="margin-top: 0 !important; padding: 10px 15px">
+            <div class= 'container-text '>
+                <div class= 'dark-blue-container ' style= 'background-color: #F3F7FA; '>
+                    <div class= 'subTitle ' style= 'margin-top: 0 !important; padding: 10px 15px '>
                         {{#calcgenetisch.value}}
                         <p>Een genetische obesitas is een zeldzame vorm van obesitas. Op basis van uw antwoorden kan het
                             zinvol zijn om met uw arts te bespreken of u baat heeft bij verder onderzoek naar een genetische
@@ -562,13 +571,13 @@
                             {{#calcgenetisch.value}}
                             {{#calcgenetisch.item}}
                             {{#valueInteger}}
-                            <div class="row">
-                                <div class="title-subcase-child">
+                            <div class= 'row '>
+                                <div class= 'title-subcase-child '>
                                     {{#valueInteger}}
-                                    <span class="checked-icon"></span>
+                                    <span class= 'checked-icon '></span>
                                     {{/valueInteger}}
                                     {{^valueInteger}}
-                                    <span class="unchecked-icon"></span>
+                                    <span class= 'unchecked-icon '></span>
                                     {{/valueInteger}}
                                     {{text}}
                                 </div>
@@ -584,17 +593,17 @@
 
 
         {{#calculation8.value}}
-        <div class="container">
+        <div class= 'container '>
             <div
-                    style="display: flex; align-items: center; justify-content: space-between; background-color: #F3F7FA; padding: 10px 20px; border-radius: 15px 15px 0px 0px;">
-            <span class="case-title"
-                  style="background-color: #F3F7FA; color: #101011;width: 100%;padding: 10px 20px 10px 20px;">MOGELIJKE GEVOLGEN OVERGEWICHT</span>
+                    style= 'display: flex; align-items: center; justify-content: space-between; background-color: #F3F7FA; padding: 10px 20px; border-radius: 15px 15px 0px 0px; '>
+            <span class= 'case-title '
+                  style= 'background-color: #F3F7FA; color: #101011;width: 100%;padding: 10px 20px 10px 20px; '>MOGELIJKE GEVOLGEN OVERGEWICHT</span>
             </div>
             {{#calculation8.item}}
-            <div class="container-text">
-                <div class="dark-blue-container" style="background-color: #F3F7FA;">
+            <div class= 'container-text '>
+                <div class= 'dark-blue-container ' style= 'background-color: #F3F7FA; '>
 
-                    <div class="subTitle" style="margin-top: 0 !important; padding: 10px 15px">
+                    <div class= 'subTitle ' style= 'margin-top: 0 !important; padding: 10px 15px '>
                         {{subTitle}}
                     </div>
 
@@ -606,36 +615,36 @@
                             {{#answer.0.item}}
                             {{#valueInteger}}
 
-                            <div class="row">
+                            <div class= 'row '>
                                 {{#text=Slaapapneu (OSAS)}}
-                                <div class="title-subcase-child">
-                                    <p style="text-decoration: underline">{{text}}</p>
-                                    <div class="row" style="margin-left: 20px">
+                                <div class= 'title-subcase-child '>
+                                    <p style= 'text-decoration: underline '>{{text}}</p>
+                                    <div class= 'row ' style= 'margin-left: 20px '>
                                         <span>Op basis van de combinatie van uw antwoorden zou de kans op slaapapneu verhoogd kunnen zijn.</span>
                                     </div>
                                 </div>
                                 {{/text=Slaapapneu (OSAS)}}
                                 {{#text=Artose}}
-                                <div class="title-subcase-child">
-                                    <p style="text-decoration: underline">{{text}}</p>
-                                    <div class="row" style="margin-left: 20px">
+                                <div class= 'title-subcase-child '>
+                                    <p style= 'text-decoration: underline '>{{text}}</p>
+                                    <div class= 'row ' style= 'margin-left: 20px '>
                                         <span>Uw antwoorden zouden kunnen passen bij artrose. Bij artrose is sprake van slijtage van een of meerdere gewrichten. Artrose kan een gevolg zijn van obesitas.</span>
                                     </div>
                                 </div>
                                 {{/text=Artose}}
                                 {{^text=Slaapapneu (OSAS)}}
                                 {{^text=Artose}}
-                                <div class="title-subcase-child">
-                                    <p style="text-decoration: underline">{{text}}</p>
+                                <div class= 'title-subcase-child '>
+                                    <p style= 'text-decoration: underline '>{{text}}</p>
                                 </div>
                                 {{#answer.0.item}}
-                                <div class="row" style="margin-left: 20px">
-                                    <div class="title-subcase-child">
+                                <div class= 'row ' style= 'margin-left: 20px '>
+                                    <div class= 'title-subcase-child '>
                                         {{#valueInteger}}
-                                        <span class="checked-icon"></span>
+                                        <span class= 'checked-icon '></span>
                                         {{/valueInteger}}
                                         {{^valueInteger}}
-                                        <span class="unchecked-icon"></span>
+                                        <span class= 'unchecked-icon '></span>
                                         {{/valueInteger}}
                                         {{text}}
                                     </div>
@@ -662,14 +671,14 @@
         {{!
         <div>
       <span
-              style="text-align: left; display: block; font-size: 20px; font-weight: 600; line-height: 36px; background-color: #1d80c1;color: white;width: 100%;padding: 5px; padding-left: 15px;">DISCLAIMER EN VERDERE INFORMATIE</span>
+              style= 'text-align: left; display: block; font-size: 20px; font-weight: 600; line-height: 36px; background-color: #1d80c1;color: white;width: 100%;padding: 5px; padding-left: 15px; '>DISCLAIMER EN VERDERE INFORMATIE</span>
             <div
-                    style="text-align: justify; background-color: #dedede; font-size: 18px; font-weight: 500; margin: 15px 0;overflow: hidden;">
+                    style= 'text-align: justify; background-color: #dedede; font-size: 18px; font-weight: 500; margin: 15px 0;overflow: hidden; '>
                 <div
-                        style="display: block; text-align: left !important; font-weight: 700; padding: 5px; padding-left: 15px; color: #3594bb">
+                        style= 'display: block; text-align: left !important; font-weight: 700; padding: 5px; padding-left: 15px; color: #3594bb '>
                     LET OP
                 </div>
-                <div style="padding-left: 15px; padding-right: 15px">
+                <div style= 'padding-left: 15px; padding-right: 15px '>
                     <p>De uitkomsten van deze vragenlijst geven geen diagnose. De vragenlijst is enkel bedoeld om op basis
                         van de ingevulde informatie een advies te geven bij welke mogelijke onderliggende oorzaken van
                         overgewicht uw combinatie van antwoorden zou kunnen passen. Dit dient verder besproken te worden met
@@ -677,18 +686,18 @@
                 </div>
             </div>
             <div
-                    style="text-align: justify; background-color: #dedede; font-size: 18px; font-weight: 500; margin: 15px 0;overflow: hidden;">
+                    style= 'text-align: justify; background-color: #dedede; font-size: 18px; font-weight: 500; margin: 15px 0;overflow: hidden; '>
                 <div
-                        style="display: block; text-align: left !important; font-weight: 700; padding: 5px; padding-left: 15px; color: #3594bb">
+                        style= 'display: block; text-align: left !important; font-weight: 700; padding: 5px; padding-left: 15px; color: #3594bb '>
                     Voor zorgverleners
                 </div>
-                <div style="padding-left: 15px; padding-right: 15px">
+                <div style= 'padding-left: 15px; padding-right: 15px '>
                     <p>
-                        Deze vragenlijst is te vinden op <a href="https://www.checkoorzakenovergewicht.nl" target="_blank">www.checkoorzakenovergewicht.nl</a>
+                        Deze vragenlijst is te vinden op <a href= 'https://www.checkoorzakenovergewicht.nl ' target= '_blank '>www.checkoorzakenovergewicht.nl</a>
                         De vragenlijst is gebaseerd op wetenschappelijk onderzoek en is gemaakt in samenwerking met
                         professionals met jarenlange ervaring vanuit de klinische praktijk. Meer informatie over behandeling
                         van de verschillende onderliggende oorzaken van obesitas is te vinden op <a
-                            href="https://www.partnerschapovergewicht.nl" target="_blank">www.partnerschapovergewicht.nl</a>
+                            href= 'https://www.partnerschapovergewicht.nl ' target= '_blank '>www.partnerschapovergewicht.nl</a>
                     </p>
                 </div>
             </div>
@@ -697,11 +706,13 @@
         {{! end of cases}}
     </div>
 
-    <h2 style="    font-size: 24px; color: #1399EC; font-weight: bold; text-align: left; margin: 40px 0 8px 20px;">
+    <h2 style= '    font-size: 24px; color: #1399EC; font-weight: bold; text-align: left; margin: 40px 0 8px 20px; '>
         Ingevulde resultaten
     </h2>
 
-    <div style="font-size: 18px; color: #101011; font-weight: 500; margin: 10px 0 16px 20px; text-align: left;">
+    <div style= 'font-size: 18px; color: #101011; font-weight: 500; margin: 10px 0 16px 20px; text-align: left; '>
         Uw <strong>deelname</strong> aan de vragenlijst wordt zeer op prijs gesteld. <strong>Bedankt!</strong>
     </div>
 </div>
+
+"

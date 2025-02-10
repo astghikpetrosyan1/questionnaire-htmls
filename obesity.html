@@ -1,6 +1,7 @@
-<div class="alogaritmh-html">
+"
+<div class='alogaritmh-html '>
     {{! Attention text}}
-    <style type="text/css">
+    <style type='text/css '>
         .title-subcase {
             margin-top: 10px;
         }
@@ -56,14 +57,14 @@
             }
         }
     </style>
-    <div class="header-title-con"
-         style="text-align: justify; width: 100%; background-color: #fff; font-size: 20px; font-weight: 600; overflow: hidden; color: #000000; margin: 15px 0; box-shadow: 1px 2px 9px rgba(0,0,0,0.3); border-radius: 10px; padding: 100px 30px 30px 30px">
-        <div style="color: #1399EC;width: 100%; margin-bottom: 20px;">
-            <h2 style="font-weight: 600">
+    <div class='header-title-con '
+         style='text-align: justify; width: 100%; background-color: #fff; font-size: 20px; font-weight: 600; overflow: hidden; color: #000000; margin: 15px 0; box-shadow: 1px 2px 9px rgba(0,0,0,0.3); border-radius: 10px; padding: 100px 30px 30px 30px '>
+        <div style='color: #1399EC;width: 100%; margin-bottom: 20px; '>
+            <h2 style='font-weight: 600 '>
                 Result checkcausesobesity.com
             </h2>
         </div>
-        <div style="font-size: 19px;width:100%; font-weight: 400; color: #101011; line-height: normal">
+        <div style='font-size: 19px;width:100%; font-weight: 400; color: #101011; line-height: normal '>
             This questionnaire is made for people who are overweight or have severe overweight (obesity). The goal of
             completing the questionnaire is to gain more understanding of the possible causes of your overweight. You
             can share this result with your doctor or healthcare provider. This can help your healthcare provider to
@@ -73,47 +74,47 @@
 
     {{! Samenvatting }}
     <div>
-        <div style="font-size: 30px; color: #0070a8; font-weight: 500; margin: 20px 0; text-align: left">
+        <div style='font-size: 30px; color: #0070a8; font-weight: 500; margin: 20px 0; text-align: left '>
             Summary
         </div>
         {{#bmi}}
         {{#isBMILow}}
-        <div style="display: block; text-align: left; font-size: 18px; margin-bottom: 10px">
+        <div style='display: block; text-align: left; font-size: 18px; margin-bottom: 10px '>
             Your BMI is underweight. This questionnaire does not apply to you.
         </div>
         {{/isBMILow}}
 
         {{#isBMIMidium}}
-        <div style="display: block; text-align: left; font-size: 18px">
-            There is a normal weight <span style="font-weight: bold; margin-left: 0px; margin-right: 0px">(BMI {{#bmi}}{{value}}{{/bmi}}{{^bmi}}-{{/bmi}} kg/m<sup>2</sup>)</span>.
+        <div style='display: block; text-align: left; font-size: 18px '>
+            There is a normal weight <span style='font-weight: bold; margin-left: 0px; margin-right: 0px '>(BMI {{#bmi}}{{value}}{{/bmi}}{{^bmi}}-{{/bmi}} kg/m<sup>2</sup>)</span>.
             The following points of attention are known to increase weight:
         </div>
         {{/isBMIMidium}}
 
         {{#isBMIHigh}}
-        <div style="display: block; text-align: left; font-size: 18px">
-            Based on your <b style="font-weight: bold; margin-left: 5px; margin-right: 5px">BMI ({{#bmi}}{{value}}{{/bmi}}{{^bmi}}-{{/bmi}} kg/m<sup>2</sup>)</b>, you are overweight with the following possible underlying causes
+        <div style='display: block; text-align: left; font-size: 18px '>
+            Based on your <b style='font-weight: bold; margin-left: 5px; margin-right: 5px '>BMI ({{#bmi}}{{value}}{{/bmi}}{{^bmi}}-{{/bmi}} kg/m<sup>2</sup>)</b>, you are overweight with the following possible underlying causes
         </div>
         {{/isBMIHigh}}
 
         {{#isBMIObese}}
-        <div style="display: block; text-align: left; font-size: 18px">
-            Based on your <b style="font-weight: bold; margin-left: 5px; margin-right: 5px">BMI ({{#bmi}}{{value}}{{/bmi}}{{^bmi}}-{{/bmi}} kg/m<sup>2</sup>)</b>, you have obesity  with the following possible underlying causes
+        <div style='display: block; text-align: left; font-size: 18px '>
+            Based on your <b style='font-weight: bold; margin-left: 5px; margin-right: 5px '>BMI ({{#bmi}}{{value}}{{/bmi}}{{^bmi}}-{{/bmi}} kg/m<sup>2</sup>)</b>, you have obesity  with the following possible underlying causes
         </div>
         {{/isBMIObese}}
 
 
         {{^isBMILow}}
         <ul>
-            <li class="normal-text" style="padding-left: 10px;">
+            <li class='normal-text ' style='padding-left: 10px; '>
                 {{#summary.calchormonaal.value}}
-                Hormonal causes: indications that may be consistent with <span class="first-capital" style="display: block;">{{summary.calchormonaal.concatenateValues}}</span>
+                Hormonal causes: indications that may be consistent with <span class='first-capital ' style='display: block; '>{{summary.calchormonaal.concatenateValues}}</span>
                 {{/summary.calchormonaal.value}}
                 {{^summary.calchormonaal.value}}
                 No indications for hormonal causes
                 {{/summary.calchormonaal.value}}
             </li>
-            <li class="normal-text" style="padding-left: 10px">
+            <li class='normal-text ' style='padding-left: 10px '>
                 {{#summary.calculation5.value}}
                 Medication-related causes: use of {{summary.calculation5.concatenateValues}}
                 {{/summary.calculation5.value}}
@@ -121,7 +122,7 @@
                 No indications for medication-related causes
                 {{/summary.calculation5.value}}
             </li>
-            <li class="normal-text" style="padding-left: 10px">
+            <li class='normal-text ' style='padding-left: 10px '>
                 {{#summary.calculation6.value}}
                 Indications for psychological or social causes
                 {{/summary.calculation6.value}}
@@ -129,7 +130,7 @@
                 No indications for psychological or social causes
                 {{/summary.calculation6.value}}
             </li>
-            <li class="normal-text" style="padding-left: 10px">
+            <li class='normal-text ' style='padding-left: 10px '>
                 {{#summary.calculation7.value}}
                 Lifestyle-related causes: in the areas of {{summary.calculation7.concatenateValues}}
                 {{/summary.calculation7.value}}
@@ -137,7 +138,7 @@
                 No indications for lifestyle-related causes
                 {{/summary.calculation7.value}}
             </li>
-            <li class="normal-text" style="padding-left: 10px">
+            <li class='normal-text ' style='padding-left: 10px '>
                 {{#summary.calchypothalaam.value}}
                 Indications for hypothalamic causes
                 {{/summary.calchypothalaam.value}}
@@ -145,7 +146,7 @@
                 No indications for hypothalamic causes
                 {{/summary.calchypothalaam.value}}
             </li>
-            <li class="normal-text" style="padding-left: 10px">
+            <li class='normal-text ' style='padding-left: 10px '>
                 {{#summary.calcgenetisch.value}}
                 Indications for genetic causes
                 {{/summary.calcgenetisch.value}}
@@ -158,13 +159,13 @@
         {{/bmi}}
 
         {{#calculation8.value}}
-        <div style="display: flex; align-items: center; font-size: 18px">
+        <div style='display: flex; align-items: center; font-size: 18px '>
             With the following possible consequences:
         </div>
         <ul>
             {{#calculation8.item.0.item.0.item}}
             {{#value}}
-            <li style="font-size: 18px; padding-left: 10px; font-weight: 400">{{text}}</li>
+            <li style='font-size: 18px; padding-left: 10px; font-weight: 400 '>{{text}}</li>
             {{/value}}
             {{/calculation8.item.0.item.0.item}}
         </ul>
@@ -172,21 +173,21 @@
     </div>
 
     {{! render each case calculations }}
-    <div class="grouped-containers">
+    <div class='grouped-containers '>
         {{#calculation13.value}}
-        <div class="container">
+        <div class='container '>
             <div
-                    style=" background-color: #B4C6E7; display: flex; align-items: center; justify-content: space-between; padding: 10px 20px; border-radius: 15px 15px 0px 0px;">
-            <span class="case-title"
-                  style="color: #101011;width: 100%;padding: 10px 20px 10px 20px;">GENERAL CHARACTERISTICS</span>
+                    style=' background-color: #B4C6E7; display: flex; align-items: center; justify-content: space-between; padding: 10px 20px; border-radius: 15px 15px 0px 0px; '>
+            <span class='case-title '
+                  style='color: #101011;width: 100%;padding: 10px 20px 10px 20px; '>GENERAL CHARACTERISTICS</span>
             </div>
-            <div class="container-text">
-                <div class="dark-blue-container" style="background-color: #F3F7FA;">
+            <div class='container-text '>
+                <div class='dark-blue-container ' style='background-color: #F3F7FA; '>
                     {{#calculation13.item}}
                     {{#valueInteger}}
 
-                    <div class="row">
-                        <div class="title-subcase">
+                    <div class='row '>
+                        <div class='title-subcase '>
                             {{text}}
                         </div>
                     </div>
@@ -195,7 +196,7 @@
                     {{#text=You think that the cause of your excess weight or weight gain is:}}
                     {{#answer.0.item}}
                     {{#text=Patient_question}}
-                    <i class="patient_que">
+                    <i class='patient_que '>
                         {{valueInteger}}
                     </i>
                     {{/text=Patient_question}}
@@ -211,13 +212,13 @@
                         <div>
                             {{#answer.0.item}}
                             {{#valueInteger}}
-                            <div class="row">
-                                <div class="title-subcase-child">
-                                    <span class="checked-icon"></span>
+                            <div class='row '>
+                                <div class='title-subcase-child '>
+                                    <span class='checked-icon '></span>
 
                                     {{#text=I have been given medication for my weight}}
                                     {{text}}:
-                                    <ul class="output-list">
+                                    <ul class='output-list '>
                                         {{#answer.0.item}}
                                         {{#valueInteger}}
                                         <li>{{text}}</li>
@@ -250,6 +251,14 @@
                     {{/answer.0.item}}
                     {{/text=You would like help with:}}
 
+                    {{#text=You would like to share the following, because you think that this is important for the results:}}
+                    {{#answer.0.item}}
+                    {{#text=Additional_info}}
+                    <i>{{valueInteger}}</i>
+                    {{/text=Additional_info}}
+                    {{/answer.0.item}}
+                    {{/text=You would like to share the following, because you think that this is important for the results:}}
+
                     {{/valueInteger}}
                     {{/calculation13.item}}
                 </div>
@@ -258,22 +267,22 @@
         {{/calculation13.value}}
 
         <div>
-            <p style="text-align: left; font-size: 20px; color: #101011; width: 100%; padding: 10px 20px 10px 20px; font-weight: 700 !important; background-color: #B4C6E7;">
+            <p style='text-align: left; font-size: 20px; color: #101011; width: 100%; padding: 10px 20px 10px 20px; font-weight: 700 !important; background-color: #B4C6E7; '>
                 POSSIBLE UNDERLYING CAUSES OF OVERWEIGHT
             </p>
         </div>
 
-        <div class="container">
+        <div class='container '>
             <div
-                    style="display: flex; align-items: center; justify-content: space-between; background-color: #F3F7FA; padding: 10px 20px; border-radius: 15px 15px 0px 0px;">
-            <span class="case-title"
-                  style="color: #101011;width: 100%;padding: 10px 20px 10px 20px; font-weight: 700 !important;">Hormonal causes</span>
-                <img alt="food-icon" src="./icon/icon-hepar.png" style="width: 40px; height: 40px; margin-right: 15px"/>
+                    style='display: flex; align-items: center; justify-content: space-between; background-color: #F3F7FA; padding: 10px 20px; border-radius: 15px 15px 0px 0px; '>
+            <span class='case-title '
+                  style='color: #101011;width: 100%;padding: 10px 20px 10px 20px; font-weight: 700 !important; '>Hormonal causes</span>
+                <img alt='food-icon ' src='./icon/icon-hepar.png ' style='width: 40px; height: 40px; margin-right: 15px '/>
             </div>
-            <div class="container-text">
-                <div class="dark-blue-container" style="background-color: #F3F7FA;">
+            <div class='container-text '>
+                <div class='dark-blue-container ' style='background-color: #F3F7FA; '>
 
-                    <div class="subTitle" style="margin-top: 0 !important; padding: 10px 15px">
+                    <div class='subTitle ' style='margin-top: 0 !important; padding: 10px 15px '>
                         {{#calchormonaal.value}}
                         <p>In general, hormonal causes can play a role in weight gain. Based on your answers, this might
                             be the case. Your answers might be consistent with the following hormonal causes: </p>
@@ -290,8 +299,8 @@
                         <div>
                             {{#calchormonaal.item}}
                             {{#valueInteger}}
-                            <div class="title-subcase-child" style="font-weight: 500">
-                                <span class="checked-icon"></span>
+                            <div class='title-subcase-child ' style='font-weight: 500 '>
+                                <span class='checked-icon '></span>
                                 {{text}}
                             </div>
                             {{/valueInteger}}
@@ -305,17 +314,17 @@
         </div>
 
 
-        <div class="container">
+        <div class='container '>
             <div
-                    style="display: flex; align-items: center; justify-content: space-between; background-color: #F3F7FA; padding: 10px 20px; border-radius: 15px 15px 0px 0px;">
-                <span class="case-title" style="color: #101011;width: 100%;padding: 10px 20px 10px 20px;">Medication-related causes</span>
-                <img alt="food-icon" src="./icon/icon-med.png" style="width: 40px; height: 40px; margin-right: 15px"/>
+                    style='display: flex; align-items: center; justify-content: space-between; background-color: #F3F7FA; padding: 10px 20px; border-radius: 15px 15px 0px 0px; '>
+                <span class='case-title ' style='color: #101011;width: 100%;padding: 10px 20px 10px 20px; '>Medication-related causes</span>
+                <img alt='food-icon ' src='./icon/icon-med.png ' style='width: 40px; height: 40px; margin-right: 15px '/>
             </div>
 
-            <div class="container-text">
-                <div class="dark-blue-container" style="background-color: #F3F7FA;">
+            <div class='container-text '>
+                <div class='dark-blue-container ' style='background-color: #F3F7FA; '>
 
-                    <div class="subTitle" style="margin-top: 0 !important; padding: 10px 15px">
+                    <div class='subTitle ' style='margin-top: 0 !important; padding: 10px 15px '>
                         {{#calculation5.value}}
                         <p>Some medicines can contribute to weight gain. You are taking, or used to take, the following
                             medicines that are known to possibly cause weight gain:</p>
@@ -334,10 +343,10 @@
                         <div>
                             {{#answer.0.item}}
                             {{#valueInteger}}
-                            <div class="row">
-                                <div class="title-subcase-child" style="padding-top:10px">
-                                    <span class="checked-icon"></span>
-                                    <div style="font-weight:600;color:#000">
+                            <div class='row '>
+                                <div class='title-subcase-child ' style='padding-top:10px '>
+                                    <span class='checked-icon '></span>
+                                    <div style='font-weight:600;color:#000 '>
                                         {{text}}
                                     </div>
                                 </div>
@@ -347,9 +356,9 @@
                             {{#answer.0.item}}
                             {{#valueInteger}}
                             <div>
-                                <div class="list-container" style="margin-left: 20px;display:flex">
-                                    <span class="checked-icon"></span>
-                                    <div style="font-weight:normal">
+                                <div class='list-container ' style='margin-left: 20px;display:flex '>
+                                    <span class='checked-icon '></span>
+                                    <div style='font-weight:normal '>
                                         {{text}}
                                     </div>
                                 </div>
@@ -363,7 +372,7 @@
                         {{/answer.0.item.length}}
 
                     </div>
-                    <div class="subTitle" style="margin-top: 0 !important; padding: 10px 15px">
+                    <div class='subTitle ' style='margin-top: 0 !important; padding: 10px 15px '>
                         <p>Please make sure you never change anything about your medication (like the dosage) without
                             talking to your doctor first.</p>
                     </div>
@@ -374,20 +383,20 @@
         </div>
 
 
-        <div class="container">
+        <div class='container '>
             <div
-                    style="display: flex; align-items: center; justify-content: space-between; background-color: #F3F7FA; padding: 10px 20px; border-radius: 15px 15px 0px 0px;">
-                <span class="case-title"
-                      style="font-weight: bold;; color: #101011;width: 100%;padding: 10px 20px 10px 20px;">Mental and psychosocial factors that can play a role in overweight</span>
-                <img alt="food-icon" src="./icon/icon-brain.png"
-                     style="width: 45px; height: 45px; margin-right: 15px;"/>
+                    style='display: flex; align-items: center; justify-content: space-between; background-color: #F3F7FA; padding: 10px 20px; border-radius: 15px 15px 0px 0px; '>
+                <span class='case-title '
+                      style='font-weight: bold;; color: #101011;width: 100%;padding: 10px 20px 10px 20px; '>Mental and psychosocial factors that can play a role in overweight</span>
+                <img alt='food-icon ' src='./icon/icon-brain.png '
+                     style='width: 45px; height: 45px; margin-right: 15px; '/>
             </div>
 
-            <div class="container-text">
-                <div class="dark-blue-container" style="background-color: #F3F7FA;">
+            <div class='container-text '>
+                <div class='dark-blue-container ' style='background-color: #F3F7FA; '>
 
 
-                    <div class="subTitle" style="margin-top: 0 !important; padding: 10px 15px">
+                    <div class='subTitle ' style='margin-top: 0 !important; padding: 10px 15px '>
                         {{#calculation6.value}}
                         <p>Mental and psychosocial factors can play a role in developing obesity. These are the factors
                             you mentioned in the questionnaire:</p>
@@ -407,10 +416,10 @@
                         {{#valueInteger}}
                         <div>
                             {{#answer.0.item}}
-                            <div class="row">
-                                <div class="title-subcase-child">
+                            <div class='row '>
+                                <div class='title-subcase-child '>
                                     {{#valueInteger}}
-                                    <span class="checked-icon"></span>
+                                    <span class='checked-icon '></span>
                                     {{text}}
                                     {{/valueInteger}}
 
@@ -433,20 +442,20 @@
         </div>
 
 
-        <div class="container">
+        <div class='container '>
             <div
-                    style="display: flex; align-items: center; justify-content: space-between; background-color: #F3F7FA; padding: 10px 20px; border-radius: 15px 15px 0px 0px;">
-        <span class="case-title"
-              style=" color: #101011;width: 100%;padding: 10px 20px 10px 20px;">Lifestyle factors</span>
-                <img alt="food-icon" src="./icon/icon-restaurant.png"
-                     style="width: 40px; height: 40px; margin-right: 15px"/>
+                    style='display: flex; align-items: center; justify-content: space-between; background-color: #F3F7FA; padding: 10px 20px; border-radius: 15px 15px 0px 0px; '>
+        <span class='case-title '
+              style=' color: #101011;width: 100%;padding: 10px 20px 10px 20px; '>Lifestyle factors</span>
+                <img alt='food-icon ' src='./icon/icon-restaurant.png '
+                     style='width: 40px; height: 40px; margin-right: 15px '/>
             </div>
 
-            <div class="container-text">
+            <div class='container-text '>
 
-                <div class="dark-blue-container" style="background-color: #F3F7FA;">
+                <div class='dark-blue-container ' style='background-color: #F3F7FA; '>
 
-                    <div class="subTitle" style="margin-top: 0 !important; padding: 10px 15px">
+                    <div class='subTitle ' style='margin-top: 0 !important; padding: 10px 15px '>
                         <p>An unhealthy lifestyle can play a role in developing obesity. Lifestyle factors can also
                             increase the risk of certain diseases. The following factors, which can negatively affect
                             your health, are noted in your questionnaire:</p>
@@ -463,9 +472,9 @@
                         {{#text=Diet}}
 
                         {{^valueInteger}}
-                        <div class="title-subcase-child">
-                            <p style="text-decoration: underline">{{text}}</p>
-                            <div class="row" style="margin-left: 20px">
+                        <div class='title-subcase-child '>
+                            <p style='text-decoration: underline '>{{text}}</p>
+                            <div class='row ' style='margin-left: 20px '>
                                 <span>There are no special dietary requirements for you</span>
                             </div>
                         </div>
@@ -473,9 +482,9 @@
                         {{/text=Diet}}
                         {{#text=Exercise}}
                         {{^valueInteger}}
-                        <div class="title-subcase-child">
-                            <p style="text-decoration: underline">{{text}}</p>
-                            <div class="row" style="margin-left: 20px">
+                        <div class='title-subcase-child '>
+                            <p style='text-decoration: underline '>{{text}}</p>
+                            <div class='row ' style='margin-left: 20px '>
                                 <span>There are no special requirements regarding exercise, you meet the weekly exercise standard.</span>
                             </div>
                         </div>
@@ -483,9 +492,9 @@
                         {{/text=Exercise}}
                         {{#text=Alcohol}}
                         {{^valueInteger}}
-                        <div class="title-subcase-child">
-                            <p style="text-decoration: underline">{{text}}</p>
-                            <div class="row" style="margin-left: 20px">
+                        <div class='title-subcase-child '>
+                            <p style='text-decoration: underline '>{{text}}</p>
+                            <div class='row ' style='margin-left: 20px '>
                                 <span>There are no special circumstances regarding your alcohol consumption.</span>
                             </div>
                         </div>
@@ -494,19 +503,19 @@
 
 
                         {{#valueInteger}}
-                        <div class="row">
-                            <div class="title-subcase-child" style="text-decoration: underline">
+                        <div class='row '>
+                            <div class='title-subcase-child ' style='text-decoration: underline '>
                                 {{text}}
                             </div>
                             {{#answer.0.item}}
                             {{#valueInteger}}
-                            <div class="row">
-                                <div class="title-subcase-child">
+                            <div class='row '>
+                                <div class='title-subcase-child '>
                                     {{#valueInteger}}
-                                    <span class="checked-icon"></span>
+                                    <span class='checked-icon '></span>
                                     {{/valueInteger}}
                                     {{^valueInteger}}
-                                    <span class="unchecked-icon"></span>
+                                    <span class='unchecked-icon '></span>
                                     {{/valueInteger}}
                                     {{#text=Stress_cause}}
                                     {{formulaResult}}
@@ -532,17 +541,17 @@
         </div>
 
 
-        <div class="container">
+        <div class='container '>
             <div
-                    style="display: flex; align-items: center; justify-content: space-between; background-color: #F3F7FA; padding: 10px 20px; border-radius: 15px 15px 0px 0px;">
-        <span class="case-title"
-              style="color: #101011;width: 100%;padding: 10px 20px 10px 20px;">Hypothalamic obesity</span>
-                <img alt="food-icon" src="./icon/icon-head.png" style="width: 45px; height: 45px; margin-right: 15px"/>
+                    style='display: flex; align-items: center; justify-content: space-between; background-color: #F3F7FA; padding: 10px 20px; border-radius: 15px 15px 0px 0px; '>
+        <span class='case-title '
+              style='color: #101011;width: 100%;padding: 10px 20px 10px 20px; '>Hypothalamic obesity</span>
+                <img alt='food-icon ' src='./icon/icon-head.png ' style='width: 45px; height: 45px; margin-right: 15px '/>
             </div>
 
-            <div class="container-text">
-                <div class="dark-blue-container" style="background-color: #F3F7FA;">
-                    <div class="subTitle" style="margin-top: 0 !important; padding: 10px 15px">
+            <div class='container-text '>
+                <div class='dark-blue-container ' style='background-color: #F3F7FA; '>
+                    <div class='subTitle ' style='margin-top: 0 !important; padding: 10px 15px '>
                         {{#calchypothalaam.value}}
                         <p>Hypothalamic obesity is a rare cause of obesity. It is caused by damage to brain areas which
                             are important for hunger and feeling full. Based on your answers, it might be useful to talk
@@ -561,16 +570,16 @@
         </div>
 
 
-        <div class="container">
+        <div class='container '>
             <div
-                    style="display: flex; align-items: center; justify-content: space-between; background-color: #F3F7FA; padding: 10px 20px; border-radius: 15px 15px 0px 0px; font-size: 22px;">
-        <span class="case-title"
-              style=" color: #101011;width: 100%;padding: 10px 20px 10px 20px;">GENETIC OBESITY</span>
-                <img alt="food-icon" src="./icon/icon-cell.png" style="width: 40px; height: 40px; margin-right: 15px"/>
+                    style='display: flex; align-items: center; justify-content: space-between; background-color: #F3F7FA; padding: 10px 20px; border-radius: 15px 15px 0px 0px; font-size: 22px; '>
+        <span class='case-title '
+              style=' color: #101011;width: 100%;padding: 10px 20px 10px 20px; '>GENETIC OBESITY</span>
+                <img alt='food-icon ' src='./icon/icon-cell.png ' style='width: 40px; height: 40px; margin-right: 15px '/>
             </div>
-            <div class="container-text">
-                <div class="dark-blue-container" style="background-color: #F3F7FA;">
-                    <div class="subTitle" style="margin-top: 0 !important; padding: 10px 15px">
+            <div class='container-text '>
+                <div class='dark-blue-container ' style='background-color: #F3F7FA; '>
+                    <div class='subTitle ' style='margin-top: 0 !important; padding: 10px 15px '>
                         {{#calcgenetisch.value}}
                         <p>Genetic obesity is a rare type of obesity. Based on your answers, it might be useful to
                             discuss with your doctor whether you should have further tests for a genetic form of
@@ -585,13 +594,13 @@
                             {{#calcgenetisch.value}}
                             {{#calcgenetisch.item}}
                             {{#valueInteger}}
-                            <div class="row">
-                                <div class="title-subcase-child">
+                            <div class='row '>
+                                <div class='title-subcase-child '>
                                     {{#valueInteger}}
-                                    <span class="checked-icon"></span>
+                                    <span class='checked-icon '></span>
                                     {{/valueInteger}}
                                     {{^valueInteger}}
-                                    <span class="unchecked-icon"></span>
+                                    <span class='unchecked-icon '></span>
                                     {{/valueInteger}}
                                     {{text}}
                                 </div>
@@ -607,17 +616,17 @@
 
 
         {{#calculation8.value}}
-        <div class="container">
+        <div class='container '>
             <div
-                    style="display: flex; align-items: center; justify-content: space-between; background-color: #F3F7FA; padding: 10px 20px; border-radius: 15px 15px 0px 0px;">
-            <span class="case-title"
-                  style="background-color: #F3F7FA; color: #101011;width: 100%;padding: 10px 20px 10px 20px; font-weight: 700 !important;">POSSIBLE CONSEQUENCES OF BEING OVERWEIGHT</span>
+                    style='display: flex; align-items: center; justify-content: space-between; background-color: #F3F7FA; padding: 10px 20px; border-radius: 15px 15px 0px 0px; '>
+            <span class='case-title '
+                  style='background-color: #F3F7FA; color: #101011;width: 100%;padding: 10px 20px 10px 20px; font-weight: 700 !important; '>POSSIBLE CONSEQUENCES OF BEING OVERWEIGHT</span>
             </div>
             {{#calculation8.item}}
-            <div class="container-text">
-                <div class="dark-blue-container" style="background-color: #F3F7FA;">
+            <div class='container-text '>
+                <div class='dark-blue-container ' style='background-color: #F3F7FA; '>
 
-                    <div class="subTitle" style="margin-top: 0 !important; padding: 10px 15px">
+                    <div class='subTitle ' style='margin-top: 0 !important; padding: 10px 15px '>
                         {{subTitle}}
                     </div>
 
@@ -629,36 +638,36 @@
                             {{#answer.0.item}}
                             {{#valueInteger}}
 
-                            <div class="row">
+                            <div class='row '>
                                 {{#text=Sleep apnea (OSA)}}
-                                <div class="title-subcase-child">
-                                    <p style="text-decoration: underline">{{text}}</p>
-                                    <div class="row" style="margin-left: 20px">
+                                <div class='title-subcase-child '>
+                                    <p style='text-decoration: underline '>{{text}}</p>
+                                    <div class='row ' style='margin-left: 20px '>
                                         <span>Based on the combination of your answers, your risk of sleep apnea may be increased.</span>
                                     </div>
                                 </div>
                                 {{/text=Sleep apnea (OSA)}}
                                 {{#text=Osteoarthritis}}
-                                <div class="title-subcase-child">
-                                    <p style="text-decoration: underline">{{text}}</p>
-                                    <div class="row" style="margin-left: 20px">
+                                <div class='title-subcase-child '>
+                                    <p style='text-decoration: underline '>{{text}}</p>
+                                    <div class='row ' style='margin-left: 20px '>
                                         <span>Your answers could fit with osteoarthritis. Osteoarthritis is wear and tear of one or more joints. Osteoarthritis can be a consequence of obesity.</span>
                                     </div>
                                 </div>
                                 {{/text=Osteoarthritis}}
                                 {{^text=Sleep apnea (OSA)}}
                                 {{^text=Osteoarthritis}}
-                                <div class="title-subcase-child">
-                                    <p style="text-decoration: underline">{{text}}</p>
+                                <div class='title-subcase-child '>
+                                    <p style='text-decoration: underline '>{{text}}</p>
                                 </div>
                                 {{#answer.0.item}}
-                                <div class="row" style="margin-left: 20px">
-                                    <div class="title-subcase-child">
+                                <div class='row ' style='margin-left: 20px '>
+                                    <div class='title-subcase-child '>
                                         {{#valueInteger}}
-                                        <span class="checked-icon"></span>
+                                        <span class='checked-icon '></span>
                                         {{/valueInteger}}
                                         {{^valueInteger}}
-                                        <span class="unchecked-icon"></span>
+                                        <span class='unchecked-icon '></span>
                                         {{/valueInteger}}
                                         {{text}}
                                     </div>
@@ -683,14 +692,14 @@
         {{!
         <div>
       <span
-              style="text-align: left; display: block; font-size: 20px; font-weight: 600; line-height: 36px; background-color: #1d80c1;color: white;width: 100%;padding: 5px; padding-left: 15px;">DISCLAIMER AND FURTHER INFORMATION</span>
+              style='text-align: left; display: block; font-size: 20px; font-weight: 600; line-height: 36px; background-color: #1d80c1;color: white;width: 100%;padding: 5px; padding-left: 15px; '>DISCLAIMER AND FURTHER INFORMATION</span>
             <div
-                    style="text-align: justify; background-color: #dedede; font-size: 18px; font-weight: 500; margin: 15px 0;overflow: hidden;">
+                    style='text-align: justify; background-color: #dedede; font-size: 18px; font-weight: 500; margin: 15px 0;overflow: hidden; '>
                 <div
-                        style="display: block; text-align: left !important; font-weight: 700; padding: 5px; padding-left: 15px; color: #3594bb">
+                        style='display: block; text-align: left !important; font-weight: 700; padding: 5px; padding-left: 15px; color: #3594bb '>
                     Note
                 </div>
-                <div style="padding-left: 15px; padding-right: 15px">
+                <div style='padding-left: 15px; padding-right: 15px '>
                     <p>The results of this questionnaire do not provide a diagnosis. The questionnaire is only meant to
                         show which possible underlying causes of overweight your combination of answers might match,
                         based on the information provided. This should be further discussed with your doctor or
@@ -698,12 +707,12 @@
                 </div>
             </div>
             <div
-                    style="text-align: justify; background-color: #dedede; font-size: 18px; font-weight: 500; margin: 15px 0;overflow: hidden;">
+                    style='text-align: justify; background-color: #dedede; font-size: 18px; font-weight: 500; margin: 15px 0;overflow: hidden; '>
                 <div
-                        style="display: block; text-align: left !important; font-weight: 700; padding: 5px; padding-left: 15px; color: #3594bb">
+                        style='display: block; text-align: left !important; font-weight: 700; padding: 5px; padding-left: 15px; color: #3594bb '>
                     For healthcare providers
                 </div>
-                <div style="padding-left: 15px; padding-right: 15px">
+                <div style='padding-left: 15px; padding-right: 15px '>
                     <p>
                         This questionnaire can be found at www.checkcausesobesity.com. The questionnaire is based on
                         scientific research and was developed in collaboration with professionals with years of
@@ -716,11 +725,13 @@
         {{! end of cases}}
     </div>
 
-    <h2 style="    font-size: 24px; color: #1399EC; font-weight: bold; text-align: left; margin: 40px 0 8px 20px;">
+    <h2 style='    font-size: 24px; color: #1399EC; font-weight: bold; text-align: left; margin: 40px 0 8px 20px; '>
         Completed results
     </h2>
 
-    <div style="font-size: 18px; color: #101011; font-weight: 500; margin: 10px 0 16px 20px; text-align: left;">
+    <div style='font-size: 18px; color: #101011; font-weight: 500; margin: 10px 0 16px 20px; text-align: left; '>
         Your <strong>participation</strong> in the survey is greatly appreciated. <strong>Thank you!</strong>
     </div>
 </div>
+
+"
