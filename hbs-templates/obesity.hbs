@@ -1,5 +1,5 @@
-<div class="alogaritmh-html">
-    <style type="text/css">        .title-subcase {
+<div class='alogaritmh-html'>
+    <style type='text/css'>        .title-subcase {
         margin-top: 10px;
     }
 
@@ -46,36 +46,38 @@
         }
     }
     </style>
-    <div class="header-title-con"
-         style="text-align: justify; width: 100%; background-color: #fff; font-size: 20px; font-weight: 600; overflow: hidden; color: #000000; margin: 15px 0; box-shadow: 1px 2px 9px rgba(0,0,0,0.3); border-radius: 10px; padding: 100px 30px 30px 30px">
-        <div style="color: #1399EC;width: 100%; margin-bottom: 20px;"><h2 style="font-weight: 600"> Result
+    <div class='header-title-con'
+         style='text-align: justify; width: 100%; background-color: #fff; font-size: 20px; font-weight: 600; overflow: hidden; color: #000000; margin: 15px 0; box-shadow: 1px 2px 9px rgba(0,0,0,0.3); border-radius: 10px; padding: 100px 30px 30px 30px'>
+        <div style='color: #1399EC;width: 100%; margin-bottom: 20px;'><h2 style='font-weight: 600'> Result
             checkcausesobesity.com </h2></div>
-        <div style="font-size: 19px;width:100%; font-weight: 400; color: #101011; line-height: normal"> This
+        <div style='font-size: 19px;width:100%; font-weight: 400; color: #101011; line-height: normal'> This
             questionnaire is made for people who are overweight or have severe overweight (obesity). The goal of
-            completing the questionnaire is to gain more understanding of the possible causes of your overweight. You
+            completing the questionnaire is to gain more understanding of the possible causes of your overweight.
+            You
             can share this result with your doctor or healthcare provider. This can help your healthcare provider to
             advise and treat you better, and to possibly perform extra tests.
         </div>
     </div>
     <div>
-        <div style="font-size: 30px; color: #0070a8; font-weight: 500; margin: 20px 0; text-align: left"> Summary</div>
+        <div style='font-size: 30px; color: #0070a8; font-weight: 500; margin: 20px 0; text-align: left'> Summary
+        </div>
 
-        {{#if (getValue "5b6f10b6-f886-4fc9-a683-5fe7bb961325")}}
+        {{#if (getValue '5b6f10b6-f886-4fc9-a683-5fe7bb961325')}}
 
             <!--     Is Bmi low               -->
-            {{#if (compare (getValue "5b6f10b6-f886-4fc9-a683-5fe7bb961325") "lt" "18.5")}}
-                <div style="display: block; text-align: left; font-size: 18px; margin-bottom: 10px"> Your BMI is
+            {{#if (compare (getValue '5b6f10b6-f886-4fc9-a683-5fe7bb961325') 'lt' '18.5')}}
+                <div style='display: block; text-align: left; font-size: 18px; margin-bottom: 10px'> Your BMI is
                     underweight.
                     This questionnaire does not apply to you.
                 </div>
             {{/if}}
 
             <!--     Is Bmi medium               -->
-            {{#if (compare (getValue "5b6f10b6-f886-4fc9-a683-5fe7bb961325") 'ge' "18.5")}}
-                {{#if (compare (getValue "5b6f10b6-f886-4fc9-a683-5fe7bb961325") 'le' "24.9")}}
-                    <div style="display: block; text-align: left; font-size: 18px"> There is a normal weight <span
-                            style="font-weight: bold; margin-left: 0px; margin-right: 0px">
-                        (BMI {{getValue "5b6f10b6-f886-4fc9-a683-5fe7bb961325"}} kg/m<sup>2</sup>)</span>. The following
+            {{#if (compare (getValue '5b6f10b6-f886-4fc9-a683-5fe7bb961325') 'ge' '18.5')}}
+                {{#if (compare (getValue '5b6f10b6-f886-4fc9-a683-5fe7bb961325') 'le' '24.9')}}
+                    <div style='display: block; text-align: left; font-size: 18px'> There is a normal weight <span
+                            style='font-weight: bold; margin-left: 0px; margin-right: 0px'>
+                        (BMI {{getValue '5b6f10b6-f886-4fc9-a683-5fe7bb961325'}} kg/m<sup>2</sup>)</span>. The following
                         points of
                         attention are
                         known to increase weight:
@@ -84,10 +86,12 @@
             {{/if}}
 
             <!--     Is Bmi high               -->
-            {{#if (compare (getValue "5b6f10b6-f886-4fc9-a683-5fe7bb961325") 'ge' "25")}}
-                {{#if  (compare (getValue "5b6f10b6-f886-4fc9-a683-5fe7bb961325") 'le' "30")}}
-                    <div style="display: block; text-align: left; font-size: 18px"> Based on your <b
-                            style="font-weight: bold; margin-left: 5px; margin-right: 5px">BMI {{getValue "5b6f10b6-f886-4fc9-a683-5fe7bb961325"}} kg/m<sup>2</sup>)</b>, you are overweight with the
+            {{#if (compare (getValue '5b6f10b6-f886-4fc9-a683-5fe7bb961325') 'ge' '25')}}
+                {{#if  (compare (getValue '5b6f10b6-f886-4fc9-a683-5fe7bb961325') 'le' '30')}}
+                    <div style='display: block; text-align: left; font-size: 18px'> Based on your <b
+                            style='font-weight: bold; margin-left: 5px; margin-right: 5px'>BMI {{getValue
+                            '5b6f10b6-f886-4fc9-a683-5fe7bb961325'}} kg/m<sup>2</sup>)</b>, you are overweight with
+                        the
                         following
                         possible underlying causes
                     </div>
@@ -95,53 +99,56 @@
             {{/if}}
 
             <!--     Is Bmi obese               -->
-            {{#if (compare (getValue "5b6f10b6-f886-4fc9-a683-5fe7bb961325") 'ge' "30")}}
-                <div style="display: block; text-align: left; font-size: 18px"> Based on your <b
-                        style="font-weight: bold; margin-left: 5px; margin-right: 5px">BMI ({{getValue
-                        "5b6f10b6-f886-4fc9-a683-5fe7bb961325"}} kg/m<sup>2</sup>)</b>, you have obesity with the
+            {{#if (compare (getValue '5b6f10b6-f886-4fc9-a683-5fe7bb961325') 'ge' '30')}}
+                <div style='display: block; text-align: left; font-size: 18px'> Based on your <b
+                        style='font-weight: bold; margin-left: 5px; margin-right: 5px'>BMI ({{getValue
+                        '5b6f10b6-f886-4fc9-a683-5fe7bb961325'}} kg/m<sup>2</sup>)</b>, you have obesity with the
                     following
                     possible underlying causes
                 </div>
             {{/if}}
 
             <ul>
-                <li class="normal-text" style="padding-left: 10px;">
-                    {{#if getValue ""}}
-                        Hormonal causes: indications that may be consistent with <span class="first-capital" style="display: block;">{{summary.calchormonaal.concatenateValues}}</span>
+                <li class='normal-text' style='padding-left: 10px;'>
+                    {{#if getValue 'd072921e-0c09-49e7-8cd0-77cb29252632'}}
+                        Hormonal causes: indications that may be consistent with <span class='first-capital'
+                                                                                       style='display: block;'>
+                        {{getValue 'd072921e-0c09-49e7-8cd0-77cb29252632'}}
+                    </span>
                     {{else}}
                         No indications for hormonal causes
                     {{/if}}
                 </li>
-                <li class="normal-text" style="padding-left: 10px">
-                    {{#if getValue ""}}
-                        Medication-related causes: use of {{getValue ""}}
+                <li class='normal-text' style='padding-left: 10px'>
+                    {{#if getValue '2c46d10c-2a5a-4c0f-f7af-ec69afee30e7'}}
+                        Medication-related causes: use of {{getValue '2c46d10c-2a5a-4c0f-f7af-ec69afee30e7'}}
                     {{else}}
                         No indications for medication-related causes
                     {{/if}}
                 </li>
-                <li class="normal-text" style="padding-left: 10px">
-                    {{#if getValue ""}}
+                <li class='normal-text' style='padding-left: 10px'>
+                    {{#if getValue 'dfdeaefb-783c-4498-815e-276ca2acfd85'}}
                         Indications for psychological or social causes
                     {{else}}
                         No indications for psychological or social causes
                     {{/if}}
                 </li>
-                <li class="normal-text" style="padding-left: 10px">
-                    {{#if getValue ""}}
-                        Lifestyle-related causes: in the areas of {{getValue ""}}
+                <li class='normal-text' style='padding-left: 10px'>
+                    {{#if getValue '0888139e-a1eb-47df-87a7-1eca6392c2df'}}
+                        Lifestyle-related causes: in the areas of {{getValue '0888139e-a1eb-47df-87a7-1eca6392c2df'}}
                     {{else}}
                         No indications for lifestyle-related causes
                     {{/if}}
                 </li>
-                <li class="normal-text" style="padding-left: 10px">
-                    {{#if getValue ""}}
+                <li class='normal-text' style='padding-left: 10px'>
+                    {{#if getValue '3ebc8b6b-3ca0-4482-9d95-1925d0ffcfac'}}
                         Indications for hypothalamic causes
                     {{else}}
                         No indications for hypothalamic causes
                     {{/if}}
                 </li>
-                <li class="normal-text" style="padding-left: 10px">
-                    {{#if getValue ""}}
+                <li class='normal-text' style='padding-left: 10px'>
+                    {{#if getValue '484080fe-420a-4061-bf9b-a72d1e573c9f'}}
                         Indications for genetic causes
                     {{else}}
                         No indications for genetic causes
@@ -149,5 +156,179 @@
                 </li>
             </ul>
         {{/if}}
+
+        {{#if getValue '169e21f9-13ee-43e8-8e0f-f435e692b5eb'}}
+            <div style='display: flex; align-items: center; font-size: 18px '>
+                With the following possible consequences:
+            </div>
+            <ul>
+                {{#if getValue '8d76e02e-6e19-48ec-86f7-c53ef268c293'}}
+                    <li style='font-size: 18px; padding-left: 10px; font-weight: 400 '>Type 2 diabetes</li>
+                {{/if}}
+                {{#if getValue '24e50623-736d-48cc-f114-bca477fea89c'}}
+                    <li style='font-size: 18px; padding-left: 10px; font-weight: 400 '>Sleep apnea (OSA)</li>
+                {{/if}}
+                {{#if getValue 'b014c0b9-ec96-4b79-d87f-1478ec7eb787'}}
+                    <li style='font-size: 18px; padding-left: 10px; font-weight: 400 '>Osteoarthritis</li>
+                {{/if}}
+                {{#if getValue 'c3c22d52-b8c1-4e5a-87d2-0f53ccf96248'}}
+                    <li style='font-size: 18px; padding-left: 10px; font-weight: 400 '>Angstklachten</li>
+                {{/if}}
+            </ul>
+        {{/if}}
+    </div>
+
+    <div class='grouped-containers '>
+        {{#if getValue '6e62b484-401b-468a-97e4-50f2ed7b7334'}}
+            <div class='container'>
+                <div
+                        style=' background-color: #B4C6E7; display: flex; align-items: center; justify-content: space-between; padding: 10px 20px; border-radius: 15px 15px 0px 0px; '>
+                <span class='case-title '
+                      style='color: #101011;width: 100%;padding: 10px 20px 10px 20px; '>GENERAL CHARACTERISTICS</span>
+                </div>
+                <div class='container-text'>
+                    <div class='dark-blue-container' style='background-color: #F3F7FA; '>
+                        {{#if getValue "6e62b484-401b-468a-97e4-50f2ed7b7334"}}
+                            <div class='subTitle ' style='margin-top: 0 !important; padding: 10px 15px '>
+                                {{#if getValue "d072921e-0c09-49e7-8cd0-77cb29252632"}}
+                                    <p>In general, hormonal causes can play a role in weight gain. Based on your answers, this might
+                                        be the case. Your answers might be consistent with the following hormonal causes: </p>
+                                {{else}}
+                                    <p>In general, hormonal causes can play a role in weight gain. Based on your answers, there are
+                                        no signs pointing to a hormonal cause.</p>
+                                {{/if}}
+                            </div>
+
+                            <div>
+                                <div>
+                                    {{#if getValue "04696b50-38f7-462e-8f0f-b95355823949"}}
+                                        <div class='title-subcase-child ' style='font-weight: 500 '>
+                                            <span class='checked-icon '></span>
+                                            Hypothyroidism (= underactive thyroid gland
+                                        </div>
+                                    {{/if}}
+                                </div>
+
+                                <div>
+                                    {{#if getValue "3e943ed6-d8cc-4aa3-8101-dac3f9b71906"}}
+                                        <div class='title-subcase-child ' style='font-weight: 500 '>
+                                            <span class='checked-icon '></span>
+                                            Hypogonadism (= too little male sex hormone in men)
+                                        </div>
+                                    {{/if}}
+                                </div>
+
+                                <div>
+                                    {{#if getValue "2b058f12-0f46-430d-819a-5211d871de01"}}
+                                        <div class='title-subcase-child ' style='font-weight: 500 '>
+                                            <span class='checked-icon '></span>
+                                            Polycystic ovary syndrome (PCOS)/hyperandrogenism (= too much male sex hormone in women)
+                                        </div>
+                                    {{/if}}
+                                </div>
+
+                                <div>
+                                    {{#if getValue "b7f019ae-1ba8-441f-8b1a-bf92f22ff94e"}}
+                                        <div class='title-subcase-child ' style='font-weight: 500 '>
+                                            <span class='checked-icon '></span>
+                                            Cushing's syndrome or disease (= excessive presence of the stress hormone cortisol)
+                                        </div>
+                                    {{/if}}
+                                </div>
+                            </div>
+                        {{/if}}
+                    </div>
+                </div>
+            </div>
+        {{/if}}
+
+        <div>
+            <p style='text-align: left; font-size: 20px; color: #101011; width: 100%; padding: 10px 20px 10px 20px; font-weight: 700 !important; background-color: #B4C6E7; '>
+                POSSIBLE UNDERLYING CAUSES OF OVERWEIGHT
+            </p>
+        </div>
+
+        <div class='container '>
+            <div
+                    style='display: flex; align-items: center; justify-content: space-between; background-color: #F3F7FA; padding: 10px 20px; border-radius: 15px 15px 0px 0px; '>
+                <span class='case-title '
+                      style='color: #101011;width: 100%;padding: 10px 20px 10px 20px; font-weight: 700 !important; '>Hormonal causes</span>
+                    <img alt='food-icon ' src='./icon/icon-hepar.png ' style='width: 40px; height: 40px; margin-right: 15px '/>
+            </div>
+            <div class='container-text'>
+                <div class='dark-blue-container ' style='background-color: #F3F7FA; '>
+
+                    <div class='subTitle ' style='margin-top: 0 !important; padding: 10px 15px '>
+                        {{#if getValue "d072921e-0c09-49e7-8cd0-77cb29252632"}}
+                            <p>In general, hormonal causes can play a role in weight gain. Based on your answers, this might
+                                be the case. Your answers might be consistent with the following hormonal causes: </p>
+                        {{else}}
+                            <p>In general, hormonal causes can play a role in weight gain. Based on your answers, there are
+                                no signs pointing to a hormonal cause.</p>
+                        {{/if}}
+                    </div>
+
+                    {{#if getValue "d072921e-0c09-49e7-8cd0-77cb29252632"}}
+                        <div>
+                            <div>
+                                {{#if getValue "04696b50-38f7-462e-8f0f-b95355823949"}}
+                                    <div class='title-subcase-child' style='font-weight: 500 '>
+                                        <span class='checked-icon '></span>
+                                        Hypothyroidism (= underactive thyroid gland)
+                                    </div>
+                                {{/if}}
+
+                                {{#if getValue "3e943ed6-d8cc-4aa3-8101-dac3f9b71906"}}
+                                    <div class='title-subcase-child' style='font-weight: 500 '>
+                                        <span class='checked-icon '></span>
+                                        Hypogonadism (= too little male sex hormone in men)
+                                    </div>
+                                {{/if}}
+
+                                {{#if getValue "2b058f12-0f46-430d-819a-5211d871de01"}}
+                                    <div class='title-subcase-child' style='font-weight: 500 '>
+                                        <span class='checked-icon '></span>
+                                        Polycystic ovary syndrome (PCOS)/hyperandrogenism (= too much male sex hormone in women)
+                                    </div>
+                                {{/if}}
+
+                                {{#if getValue "b7f019ae-1ba8-441f-8b1a-bf92f22ff94e"}}
+                                    <div class='title-subcase-child' style='font-weight: 500 '>
+                                        <span class='checked-icon '></span>
+                                        Cushing's syndrome or disease (= excessive presence of the stress hormone cortisol)
+                                    </div>
+                                {{/if}}
+                            </div>
+                        </div>
+                    {{/if}}
+
+
+                </div>
+            </div>
+        </div>
+
+        <div class='container '>
+            <div
+                    style='display: flex; align-items: center; justify-content: space-between; background-color: #F3F7FA; padding: 10px 20px; border-radius: 15px 15px 0px 0px; '>
+                <span class='case-title ' style='color: #101011;width: 100%;padding: 10px 20px 10px 20px; '>Medication-related causes</span>
+                <img alt='food-icon ' src='./icon/icon-med.png ' style='width: 40px; height: 40px; margin-right: 15px '/>
+            </div>
+
+            <div class='container-text '>
+                <div class='dark-blue-container ' style='background-color: #F3F7FA; '>
+                    {{#if getValue "2c46d10c-2a5a-4c0f-f7af-ec69afee30e"}}
+                        <p>Some medicines can contribute to weight gain. You are taking, or used to take, the following
+                            medicines that are known to possibly cause weight gain:</p>
+                    {{else}}
+                        <p>Some medicines can contribute to weight gain. You have not listed any medicines known to
+                            cause weight gain.</p>
+                    {{/if}}
+                </div>
+
+                <div>
+                    <!--                    MEDICATION SECTION                          -->
+                </div>
+            </div>
+        </div>
     </div>
 </div>
