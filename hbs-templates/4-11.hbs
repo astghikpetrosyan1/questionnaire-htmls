@@ -49,62 +49,64 @@
             Samenvatting
         </div>
 
-        {{#with questionnaireResponse}}
-            {{#if item.[654].answer.[0].valueString}}
-                <div style="display: block; text-align: left; font-size: 18px">
-                    Er is sprake van {{item.[654].subTitle}} met de volgende mogelijke onderliggende oorzaken of bijdragende factoren:
-                </div>
-            {{else}}
-                <div style="display: block; text-align: left; font-size: 18px">
-                    Er kan geen uitspraak gedaan worden of uw kind overgewicht of obesitas heeft, omdat u niet heeft aangegeven of uw kind een jongen of meisje is. Als uw kind overgewicht of obesitas heeft, is er sprake van de volgende mogelijke onderliggende oorzaken of bijdragende factoren:
-                </div>
-            {{/if}}
+        {{#if (getValue "calcsamenvatting")}}
+            {{#each (getValue "calcsamenvatting.item")}}
+                {{#if value}}
+                    <div style="display: block; text-align: left; font-size: 18px">
+                        Er is sprake van {{subTitle}} met de volgende mogelijke onderliggende oorzaken of bijdragende factoren:
+                    </div>
+                {{/if}}
+            {{/each}}
+        {{else}}
+            <div style="display: block; text-align: left; font-size: 18px">
+                Er kan geen uitspraak gedaan worden of uw kind overgewicht of obesitas heeft, omdat u niet heeft aangegeven of uw kind een jongen of meisje is. Als uw kind overgewicht of obesitas heeft, is er sprake van de volgende mogelijke onderliggende oorzaken of bijdragende factoren:
+            </div>
+        {{/if}}
 
-            <ul>
-                <li style="font-size: 18px; padding-left: 10px; font-weight: 400">
-                    {{#if item.[660].answer.[0].valueBoolean}}
-                        Hormonale oorzaken {{item.[660].concatenateValues}}
-                    {{else}}
-                        Geen aanwijzingen voor hormonale oorzaken
-                    {{/if}}
-                </li>
-                <li style="font-size: 18px; padding-left: 10px; font-weight: 400">
-                    {{#if item.[670].answer.[0].valueBoolean}}
-                        Medicamenteuze oorzaken: gebruik van {{item.[670].concatenateValues}}
-                    {{else}}
-                        Geen aanwijzingen voor medicamenteuze oorzaken
-                    {{/if}}
-                </li>
-                <li style="font-size: 18px; padding-left: 10px; font-weight: 400">
-                    {{#if item.[680].answer.[0].valueBoolean}}
-                        Mentale en psychosociale oorzaken
-                    {{else}}
-                        Geen aanwijzingen voor mentale en psychosociale oorzaken
-                    {{/if}}
-                </li>
-                <li style="font-size: 18px; padding-left: 10px; font-weight: 400">
-                    {{#if item.[690].answer.[0].valueBoolean}}
-                        Leefstijl-gerelateerde oorzaken: op het gebied van {{item.[690].concatenateValues}}
-                    {{else}}
-                        Geen aanwijzingen voor leefstijl-gerelateerde oorzaken
-                    {{/if}}
-                </li>
-                <li style="font-size: 18px; padding-left: 10px; font-weight: 400">
-                    {{#if item.[700].answer.[0].valueBoolean}}
-                        Hypothalame oorzaken
-                    {{else}}
-                        Geen aanwijzingen voor hypothalame oorzaken
-                    {{/if}}
-                </li>
-                <li style="font-size: 18px; padding-left: 10px; font-weight: 400">
-                    {{#if item.[710].answer.[0].valueBoolean}}
-                        Genetische oorzaken
-                    {{else}}
-                        Geen aanwijzingen voor genetische oorzaken
-                    {{/if}}
-                </li>
-            </ul>
-        {{/with}}
+        <ul>
+            <li style="font-size: 18px; padding-left: 10px; font-weight: 400">
+                {{#if (getValue "d072921e-0c09-49e7-8cd0-77cb29252632")}}
+                    Hormonale oorzaken {{getValue "d072921e-0c09-49e7-8cd0-77cb29252632"}}
+                {{else}}
+                    Geen aanwijzingen voor hormonale oorzaken
+                {{/if}}
+            </li>
+            <li style="font-size: 18px; padding-left: 10px; font-weight: 400">
+                {{#if (getValue "2c46d10c-2a5a-4c0f-f7af-ec69afee30e7")}}
+                    Medicamenteuze oorzaken: gebruik van {{getValue "2c46d10c-2a5a-4c0f-f7af-ec69afee30e7"}}
+                {{else}}
+                    Geen aanwijzingen voor medicamenteuze oorzaken
+                {{/if}}
+            </li>
+            <li style="font-size: 18px; padding-left: 10px; font-weight: 400">
+                {{#if (getValue "dfdeaefb-783c-4498-815e-276ca2acfd85")}}
+                    Mentale en psychosociale oorzaken
+                {{else}}
+                    Geen aanwijzingen voor mentale en psychosociale oorzaken
+                {{/if}}
+            </li>
+            <li style="font-size: 18px; padding-left: 10px; font-weight: 400">
+                {{#if (getValue "0888139e-a1eb-47df-87a7-1eca6392c2df")}}
+                    Leefstijl-gerelateerde oorzaken: op het gebied van {{getValue "0888139e-a1eb-47df-87a7-1eca6392c2df"}}
+                {{else}}
+                    Geen aanwijzingen voor leefstijl-gerelateerde oorzaken
+                {{/if}}
+            </li>
+            <li style="font-size: 18px; padding-left: 10px; font-weight: 400">
+                {{#if (getValue "3ebc8b6b-3ca0-4482-9d95-1925d0ffcfac")}}
+                    Hypothalame oorzaken
+                {{else}}
+                    Geen aanwijzingen voor hypothalame oorzaken
+                {{/if}}
+            </li>
+            <li style="font-size: 18px; padding-left: 10px; font-weight: 400">
+                {{#if (getValue "484080fe-420a-4061-bf9b-a72d1e573c9f")}}
+                    Genetische oorzaken
+                {{else}}
+                    Geen aanwijzingen voor genetische oorzaken
+                {{/if}}
+            </li>
+        </ul>
     </div>
 
     <div style="font-size: 30px; color: #0070a8; font-weight: 500; margin: 20px 0; text-align: left">
@@ -112,62 +114,353 @@
     </div>
 
     {{! General characteristics section }}
+    {{#if (getValue "6e62b484-401b-468a-97e4-50f2ed7b7334")}}
+        <div class="container">
+            <div class="case-title-wrapper">
+                <span class="case-title">ALGEMENE KENMERKEN</span>
+            </div>
+            <div style="">
+                <div class="dark-blue-container" style="background-color: #F3F7FA;">
+                    {{#each (getValue "6e62b484-401b-468a-97e4-50f2ed7b7334.item")}}
+                        {{#if valueInteger}}
+                            <div class="row">
+                                <div class="title-subcase">
+                                    {{text}}
+                                </div>
+                            </div>
+
+                            {{#if (eq text "U denkt zelf dat de oorzaak van het overgewicht of gewichtstoename van uw kind is:")}}
+                                {{#if valueInteger}}
+                                    <div>
+                                        {{#if answer.0.item.length}}
+                                            <ul>
+                                                {{#each answer.0.item}}
+                                                    {{#if valueInteger}}
+                                                        <div class="row">
+                                                            <div class="title-subcase-child">
+                                                                <span class="checked-icon"></span>
+                                                                {{text}}
+                                                                {{#if (eq text "Anders:")}}
+                                                                    {{#each ../answer.0.item}}
+                                                                        {{#if (eq text "Weightgain_cause_other")}}
+                                                                            <i>{{valueInteger}}</i>
+                                                                        {{/if}}
+                                                                    {{/each}}
+                                                                {{/if}}
+                                                            </div>
+                                                        </div>
+                                                    {{/if}}
+                                                {{/each}}
+                                            </ul>
+                                        {{/if}}
+                                    </div>
+                                {{/if}}
+                            {{/if}}
+
+                            {{! Weight loss attempts section }}
+                            {{#if (eq text "Uw kind heeft tot nu toe het volgende geprobeerd om af te vallen:")}}
+                                {{#if valueInteger}}
+                                    <div>
+                                        {{#if answer.0.item.length}}
+                                            <ul>
+                                                {{#each answer.0.item}}
+                                                    {{#if valueInteger}}
+                                                        <div class="row">
+                                                            <div class="title-subcase-child" style="display: flex; flex-direction: column; align-items: flex-start">
+                                                                <div><span class="checked-icon"></span> {{text}}:</div>
+                                                                {{#if (eq text "Mijn kind heeft medicijnen gekregen voor het gewicht")}}
+                                                                    <ul class="output-list">
+                                                                        {{#each answer.0.item}}
+                                                                            {{#if valueInteger}}
+                                                                                <li>-{{text}}</li>
+                                                                            {{/if}}
+                                                                        {{/each}}
+                                                                    </ul>
+                                                                {{/if}}
+                                                            </div>
+                                                        </div>
+                                                    {{/if}}
+                                                {{/each}}
+                                            </ul>
+                                        {{/if}}
+                                    </div>
+                                {{/if}}
+                            {{/if}}
+
+                            {{#if (eq text "U wilt graag hulp hebben voor uw kind bij")}}
+                                {{#each answer.0.item}}
+                                    {{#if (eq text "Patient_question")}}
+                                        <i>{{valueInteger}}</i>
+                                    {{/if}}
+                                {{/each}}
+                            {{/if}}
+                        {{/if}}
+                    {{/each}}
+                </div>
+            </div>
+        </div>
+    {{/if}}
+
+    {{! Mental and psychosocial factors section }}
     <div class="container">
         <div class="case-title-wrapper">
-            <span class="case-title">ALGEMENE KENMERKEN</span>
+            <span class="case-title">MENTALE EN PSYCHOSOCIALE FACTOREN DIE EEN ROL KUNNEN SPELEN BIJ OVERGEWICHT</span>
+            <img alt="food-icon" src="./icon/icon-brain.png" style="width: 45px; height: 45px; margin-right: 15px;" />
         </div>
+
         <div style="">
             <div class="dark-blue-container" style="background-color: #F3F7FA;">
-                {{#with questionnaireResponse}}
-                    {{#each item}}
-                        {{#if (lookup this "text")}}
-                            {{#if (lookup this "answer")}}
-                                <div class="row">
-                                    <div class="title-subcase">
-                                        {{text}}
-                                    </div>
-                                </div>
+                <div class="subTitle" style="margin-top: 0 !important; padding: 10px 15px">
+                    {{#if (getValue "dfdeaefb-783c-4498-815e-276ca2acfd85")}}
+                        <p>Mentale en psychosociale factoren kunnen een rol spelen bij het ontstaan van obesitas. Dit zijn factoren die u in de vragenlijst heeft aangegeven die bij uw kind aanwezig zijn:</p>
+                    {{else}}
+                        <p>Op basis van uw antwoorden zijn er geen bijzonderheden op het gebied van mentale en psychosociale factoren bij uw kind</p>
+                    {{/if}}
+                </div>
 
-                                {{#if (lookup answer.[0] "item")}}
-                                    <div>
-                                        {{#each answer.[0].item}}
-                                            {{#if valueBoolean}}
+                {{#each (getValue "dfdeaefb-783c-4498-815e-276ca2acfd85.item")}}
+                    <div>
+                        {{#if answer.0.item.length}}
+                            <ul>
+                                {{#each answer.0.item}}
+                                    <div class="row">
+                                        <div class="title-subcase-child">
+                                            {{#if valueInteger}}
+                                                <span class="checked-icon"></span>
+                                                {{#if (eq text "Stress_cause")}}
+                                                    {{formulaResult}}
+                                                {{else}}
+                                                    {{text}}
+                                                {{/if}}
+                                                {{#if (eq text "Uw kind heeft vaak stress, U denkt zelf dat de oorzaak/oorzaken hiervan zijn:")}}
+                                                    {{#each answer.0.item}}
+                                                        {{#if (eq text "Stress_cause")}}
+                                                            <i class="patient_que">{{valueInteger}}</i>
+                                                        {{/if}}
+                                                    {{/each}}
+                                                {{/if}}
+                                            {{/if}}
+                                        </div>
+                                    </div>
+                                {{/each}}
+                            </ul>
+                        {{/if}}
+                    </div>
+                {{/each}}
+            </div>
+        </div>
+    </div>
+
+    {{! Medication causes section }}
+    <div class="container">
+        <div class="case-title-wrapper">
+            <span class="case-title">MEDICAMENTEUZE OORZAKEN</span>
+            <img alt="food-icon" src="./icon/icon-med.png" style="width: 40px; height: 40px; margin-right: 15px" />
+        </div>
+
+        <div style="">
+            <div class="dark-blue-container" style="background-color: #F3F7FA;">
+                <div class="subTitle" style="margin-top: 0 !important; padding: 10px 15px">
+                    {{#if (getValue "2c46d10c-2a5a-4c0f-f7af-ec69afee30e7")}}
+                        <p>Let op dat u nooit zonder overleg met de arts iets aan de medicatie van uw kind (zoals de dosering) wijzigt.</p>
+                    {{else}}
+                        <p>Sommige medicijnen kunnen bijdragen aan een toename in gewicht. U heeft geen medicijnen voor uw kind genoteerd waarvan bekend is dat die een gewicht verhogende bijwerking kunnen hebben.</p>
+                    {{/if}}
+                </div>
+
+                {{#each (getValue "2c46d10c-2a5a-4c0f-f7af-ec69afee30e7.item")}}
+                    <div>
+                        {{#if answer.0.item.length}}
+                            <ul>
+                                {{#each answer.0.item}}
+                                    <div class="row">
+                                        <div class="title-subcase-child" style="padding-top:10px">
+                                            {{#if valueInteger}}
+                                                <span class="checked-icon"></span>
+                                                <div style="font-weight:600;color:#000">{{text}}</div>
+                                            {{/if}}
+                                        </div>
+                                    </div>
+
+                                    {{#each answer.0.item}}
+                                        <div>
+                                            <div class="list-container" style="margin-left: 20px;display:flex">
+                                                {{#if valueInteger}}
+                                                    <span class="checked-icon"></span>
+                                                    <div style="font-weight:normal">{{text}}</div>
+                                                {{/if}}
+                                            </div>
+                                        </div>
+                                    {{/each}}
+                                {{/each}}
+                            </ul>
+                        {{/if}}
+                    </div>
+                {{/each}}
+            </div>
+        </div>
+    </div>
+
+    {{! Lifestyle factors section }}
+    <div class="container">
+        <div class="case-title-wrapper">
+            <span class="case-title">LEEFSTIJLFACTOREN</span>
+            <img alt="food-icon" src="./icon/icon-restaurant.png" style="width: 40px; height: 40px; margin-right: 15px" />
+        </div>
+
+        <div style="">
+            <div class="dark-blue-container" style="background-color: #F3F7FA;">
+                <div class="subTitle" style="margin-top: 0 !important; padding: 10px 15px">
+                    {{#if (getValue "0888139e-a1eb-47df-87a7-1eca6392c2df")}}
+                        <p>Een ongezonde leefstijl kan een rol spelen bij het ontstaan van obesitas. Ook kunnen leefstijlfactoren de kans op bepaalde ziektes verhogen. De volgende factoren die een negatief effect kunnen hebben op de gezondheid van uw kind komen uit de vragenlijst:</p>
+                    {{else}}
+                        <p>Een ongezonde leefstijl kan een rol spelen bij het ontstaan van obesitas. Ook kunnen leefstijlfactoren de kans op bepaalde ziektes verhogen. Op basis van uw ingevulde antwoorden in de vragenlijst komen er geen leefstijlfactoren naar voren die een negatief effect kunnen hebben op de gezondheid van uw kind.</p>
+                    {{/if}}
+                </div>
+
+                {{#each (getValue "0888139e-a1eb-47df-87a7-1eca6392c2df.item")}}
+                    <div>
+                        {{#if answer.0.item.length}}
+                            {{#each answer.0.item}}
+                                {{#if valueInteger}}
+                                    <div class="row">
+                                        <div class="title-subcase-child" style="text-decoration: underline">
+                                            {{text}}
+                                        </div>
+                                        {{#each answer.0.item}}
+                                            {{#if valueInteger}}
                                                 <div class="row">
                                                     <div class="title-subcase-child">
-                                                        <span class="checked-icon"></span>
-                                                        {{text}}
-                                                        {{#if (lookup text "Anders:")}}
-                                                            {{#each answer.[0].item}}
-                                                                {{#if (lookup text "Weightgain_cause_other")}}
-                                                                    <i>{{valueInteger}}</i>
-                                                                {{/if}}
-                                                            {{/each}}
-                                                        {{/if}}
-                                                        {{#if (lookup text "Medicatie:")}}
-                                                            {{#each answer.[0].item}}
-                                                                {{#if (lookup text "Weightgain_cause_medication")}}
-                                                                    <i>{{valueInteger}}</i>
-                                                                {{/if}}
-                                                            {{/each}}
-                                                        {{/if}}
+                                                        <span class="checked-icon"></span>{{text}}
                                                     </div>
                                                 </div>
                                             {{/if}}
                                         {{/each}}
                                     </div>
                                 {{/if}}
-                            {{/if}}
+                            {{/each}}
                         {{/if}}
-                    {{/each}}
-                {{/with}}
+                    </div>
+                {{/each}}
             </div>
         </div>
     </div>
 
-    {{! Would you like me to continue with the remaining sections? }}
+    {{! Hypothalamic obesity section }}
+    <div class="container">
+        <div class="case-title-wrapper">
+            <span class="case-title">HYPOTHALAME OBESITAS</span>
+        </div>
+
+        <div style="">
+            <div class="dark-blue-container" style="background-color: #F3F7FA;">
+                <div class="subTitle" style="margin-top: 0 !important; padding: 10px 15px">
+                    {{#if (getValue "3ebc8b6b-3ca0-4482-9d95-1925d0ffcfac")}}
+                        <p>Een hypothalame obesitas is een zeldzame vorm van obesitas. Dit wordt veroorzaakt door schade aan hersengebieden die belangrijk zijn voor honger en verzadiging. Op basis van uw antwoorden kan het zinvol zijn om met de arts van uw kind te bespreken of uw kind baat heeft bij verder onderzoek naar een hypothalame oorzaak van obesitas.</p>
+                    {{else}}
+                        <p>Op basis van uw antwoorden zijn er geen aanwijzingen dat er sprake is van een hypothalame oorzaak van obesitas (= een vorm van obesitas als gevolg van schade aan een gebied in de hersenen) bij uw kind.</p>
+                    {{/if}}
+                </div>
+
+                <div>
+                    {{#if (getValue "3ebc8b6b-3ca0-4482-9d95-1925d0ffcfac.item.length")}}
+                        <ul>
+                            {{#each (getValue "3ebc8b6b-3ca0-4482-9d95-1925d0ffcfac.item")}}
+                                {{#if valueInteger}}
+                                    <div class="row">
+                                        <div class="title-subcase-child">
+                                            <p style="text-decoration: underline">{{text}}</p>
+                                        </div>
+                                    </div>
+                                {{/if}}
+                            {{/each}}
+                        </ul>
+                    {{/if}}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {{! Genetic obesity section }}
+    <div class="container">
+        <div style="display: flex; align-items: center; justify-content: space-between; background-color: #EAF2F8; padding: 10px 20px; border-radius: 15px 15px 0px 0px; font-size: 22px;">
+            <span class="case-title" style="color: #101011;width: 100%;padding: 10px 20px 10px 20px;">GENETISCHE OBESITAS</span>
+            <img alt="food-icon" src="./icon/icon-cell.png" style="width: 40px; height: 40px; margin-right: 15px" />
+        </div>
+        <div style="">
+            <div class="dark-blue-container" style="background-color: #F3F7FA;">
+                <div class="subTitle" style="margin-top: 0 !important; padding: 10px 15px">
+                    {{#if (getValue "484080fe-420a-4061-bf9b-a72d1e573c9f")}}
+                        <p>Een genetische obesitas is een zeldzame vorm van obesitas. Op basis van uw antwoorden kan het zinvol zijn om met de arts van uw kind te bespreken of uw kind baat heeft bij verder onderzoek naar een genetische vorm van obesitas. Bij uw kind kunnen de volgende kenmerken passen bij een genetische obesitas:</p>
+                    {{else}}
+                        <p>Op basis van uw antwoorden zijn er geen aanwijzingen dat er sprake is van een genetische vorm van obesitas.</p>
+                    {{/if}}
+                </div>
+                <div>
+                    <ul>
+                        {{#if (getValue "484080fe-420a-4061-bf9b-a72d1e573c9f")}}
+                            {{#each (getValue "484080fe-420a-4061-bf9b-a72d1e573c9f.item")}}
+                                {{#if valueInteger}}
+                                    <div class="row">
+                                        <div class="title-subcase-child">
+                                            <span class="checked-icon"></span>
+                                            {{text}}
+                                        </div>
+                                    </div>
+                                {{/if}}
+                            {{/each}}
+                        {{/if}}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {{! Possible consequences section }}
+    <div class="container">
+        <div class="case-title-wrapper">
+            <span class="case-title">MOGELIJKE GEVOLGEN OVERGEWICHT</span>
+        </div>
+
+        <div style="">
+            <div class="dark-blue-container" style="background-color: #F3F7FA;">
+                <div class="subTitle" style="margin-top: 0 !important; padding: 10px 15px">
+                    {{#if (getValue "169e21f9-13ee-43e8-8e0f-f435e692b5eb")}}
+                        {{getValue "169e21f9-13ee-43e8-8e0f-f435e692b5eb.subTitle"}}
+                    {{else}}
+                        <p>Op basis van uw antwoorden kunnen we geen aanwijzingen voor mogelijke gevolgen van het overgewicht signaleren.</p>
+                        <p>De uitkomsten van deze vragenlijst geven geen diagnose. De vragenlijst is alleen bedoeld om op basis van de ingevulde informatie te laten zien bij welke mogelijke onderliggende oorzaken van overgewicht bij uw kind uw combinatie van antwoorden zou kunnen passen. Dit dient verder besproken te worden met de arts/zorgverlener van uw kind. Stop nooit zonder overleg met de arts van uw kind met zijn/haar medicatie. Erasmus MC verstrekt op geen enkele wijze expliciete of impliciete garanties dat de vragenlijst, delen of inhoud hiervan volledig, nauwkeurig zijn, of geschikt zijn voor bepaalde doeleinden of voor het behalen van bepaalde resultaten, of dat de vragenlijst, delen of inhoud hiervan geen inbreuk maken op de rechten van de derden. Erasmus MC is op geen enkele wijze verantwoordelijk of aansprakelijk voor het gebruik van de vragenlijst door een organisatie of een instelling en/of voor de geschiktheid, volledigheid of nauwkeurigheid van de informatie, resultaten of data verkregen door het gebruik maken van de vragenlijst.</p>
+                    {{/if}}
+                </div>
+
+                <div>
+                    {{#if (getValue "169e21f9-13ee-43e8-8e0f-f435e692b5eb.item.length")}}
+                        {{#each (getValue "169e21f9-13ee-43e8-8e0f-f435e692b5eb.item")}}
+                            {{#if valueInteger}}
+                                <div class="row">
+                                    <div class="title-subcase-child">
+                                        <p style="text-decoration: underline">{{text}}</p>
+                                    </div>
+                                    {{#each answer.0.item}}
+                                        <div class="row" style="margin-left: 20px">
+                                            <div class="title-subcase-child">
+                                                {{#if valueInteger}}
+                                                    <span class="checked-icon"></span>
+                                                {{/if}}
+                                                {{text}}
+                                            </div>
+                                        </div>
+                                    {{/each}}
+                                </div>
+                            {{/if}}
+                        {{/each}}
+                    {{/if}}
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
-{{#each questionnaireResponse.item}}
-    {{answer.[0].valueNumber}} - {{answer.[0].valueString}} - {{answer.[0].valueBoolean}} - {{text}} - {{@key}} - {{@index}}
-    <hr>
-{{/each}} 
+<div style="font-size: 30px; color: #0070a8; font-weight: 500; margin: 20px 0; text-align: left">
+    Ingevulde resultaten:
+</div>

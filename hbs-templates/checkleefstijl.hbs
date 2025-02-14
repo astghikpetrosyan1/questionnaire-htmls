@@ -68,67 +68,67 @@
             Samenvatting
         </div>
 
-        {{#with questionnaireResponse}}
-            {{#if item.[336].answer.[0].valueNumber}}
-                {{#if (lt item.[336].answer.[0].valueNumber 18.5)}}
-                    <div style="display: block; text-align: left; font-size: 18px; margin-bottom: 10px">
-                        Er is sprake van ondergewicht
-                    </div>
-                {{else if (lt item.[336].answer.[0].valueNumber 25)}}
-                    <div style="display: block; text-align: left; font-size: 18px">
-                        Er is sprake van een gezond gewicht
-                    </div>
-                {{else if (lt item.[336].answer.[0].valueNumber 30)}}
-                    <div style="display: block; text-align: left; font-size: 18px">
-                        Er is sprake van overgewicht
-                    </div>
-                {{else}}
-                    <div style="display: block; text-align: left; font-size: 18px">
-                        Er is sprake van obesitas
-                    </div>
+        {{#if (getValue "bmi.isBMILow")}}
+            <div style="display: block; text-align: left; font-size: 18px; margin-bottom: 10px">
+                Er is sprake van ondergewicht
+            </div>
+        {{else if (getValue "bmi.isBMIMidium")}}
+            <div style="display: block; text-align: left; font-size: 18px">
+                Er is sprake van een gezond gewicht
+            </div>
+        {{else if (getValue "bmi.isBMIHigh")}}
+            <div style="display: block; text-align: left; font-size: 18px">
+                Er is sprake van overgewicht
+            </div>
+        {{else if (getValue "bmi.isBMIObese")}}
+            <div style="display: block; text-align: left; font-size: 18px">
+                Er is sprake van obesitas
+            </div>
+        {{/if}}
+
+        {{#unless (getValue "bmi.isBMILow")}}
+            <ul>
+                {{#if (getValue "isoverwheighshow.value")}}
+                    {{#if (getValue "summary.calchormonaal.value")}}
+                        <li style="font-size: 18px; padding-left: 10px; font-weight: 400">
+                            Hormonale oorzaken: aanwijzingen die kunnen passen bij {{getValue "summary.calchormonaal.concatenateValues"}}
+                        </li>
+                    {{/if}}
+
+                    {{#if (getValue "summary.calculation5.value")}}
+                        <li style="font-size: 18px; padding-left: 10px; font-weight: 400">
+                            Medicamenteuze oorzaken: gebruik van {{getValue "summary.calculation5.concatenateValues"}}
+                        </li>
+                    {{/if}}
                 {{/if}}
 
-                {{#unless (lt item.[336].answer.[0].valueNumber 18.5)}}
-                    <ul>
-                        {{#if item.[660].answer.[0].valueBoolean}}
-                            <li style="font-size: 18px; padding-left: 10px; font-weight: 400">
-                                Hormonale oorzaken: aanwijzingen die kunnen passen bij {{item.[660].concatenateValues}}
-                            </li>
-                        {{/if}}
+                {{#if (getValue "summary.calculation6.value")}}
+                    <li style="font-size: 18px; padding-left: 10px; font-weight: 400">
+                        Psychische of sociale oorzaken: aanwijzingen voor:
+                    </li>
+                {{/if}}
 
-                        {{#if item.[670].answer.[0].valueBoolean}}
-                            <li style="font-size: 18px; padding-left: 10px; font-weight: 400">
-                                Medicamenteuze oorzaken: gebruik van {{item.[670].concatenateValues}}
-                            </li>
-                        {{/if}}
+                {{#if (getValue "summary.calculation7.value")}}
+                    <li style="font-size: 18px; padding-left: 10px; font-weight: 400">
+                        Leefstijl-gerelateerde oorzaken: op het gebied van {{getValue "summary.calculation7.concatenateValues"}}
+                    </li>
+                {{/if}}
 
-                        {{#if item.[680].answer.[0].valueBoolean}}
-                            <li style="font-size: 18px; padding-left: 10px; font-weight: 400">
-                                Psychische of sociale oorzaken: aanwijzingen voor:
-                            </li>
-                        {{/if}}
+                {{#if (getValue "isoverwheighshow.value")}}
+                    {{#if (getValue "summary.calchypothalaam.value")}}
+                        <li style="font-size: 18px; padding-left: 10px; font-weight: 400">
+                            Hypothalame oorzaken
+                        </li>
+                    {{/if}}
 
-                        {{#if item.[690].answer.[0].valueBoolean}}
-                            <li style="font-size: 18px; padding-left: 10px; font-weight: 400">
-                                Leefstijl-gerelateerde oorzaken: op het gebied van {{item.[690].concatenateValues}}
-                            </li>
-                        {{/if}}
-
-                        {{#if item.[700].answer.[0].valueBoolean}}
-                            <li style="font-size: 18px; padding-left: 10px; font-weight: 400">
-                                Hypothalame oorzaken
-                            </li>
-                        {{/if}}
-
-                        {{#if item.[710].answer.[0].valueBoolean}}
-                            <li style="font-size: 18px; padding-left: 10px; font-weight: 400">
-                                Genetische oorzaken
-                            </li>
-                        {{/if}}
-                    </ul>
-                {{/unless}}
-            {{/if}}
-        {{/with}}
+                    {{#if (getValue "summary.calcgenetisch.value")}}
+                        <li style="font-size: 18px; padding-left: 10px; font-weight: 400">
+                            Genetische oorzaken
+                        </li>
+                    {{/if}}
+                {{/if}}
+            </ul>
+        {{/unless}}
     </div>
 
     {{! Lifestyle factors section }}
@@ -147,87 +147,54 @@
                             kunnen hebben op uw gezondheid komen bij u uit de vragenlijst: </p>
                     </div>
 
-                    {{#with questionnaireResponse}}
-                        {{#each item}}
-                            {{#if (lookup this "text")}}
-                                {{#if (lookup this "answer")}}
-                                    {{#each answer.[0].item}}
-                                        {{#if (lookup text "Voeding")}}
-                                            {{^valueInteger}}
-                                                <div class="title-subcase-child">
-                                                    <p style="text-decoration: underline">{{text}}</p>
-                                                    <div class="row" style="margin-left: 20px">
-                                                        <span>Er zijn op het gebied van voeding bij u geen bijzonderheden</span>
-                                                    </div>
-                                                </div>
-                                            {{/if}}
+                    {{#each (getValue "lifestyle.items")}}
+                        {{#if text}}
+                            <div class="title-subcase-child">
+                                <p style="text-decoration: underline">{{text}}</p>
+                                {{#unless valueInteger}}
+                                    <div class="row" style="margin-left: 20px">
+                                        {{#if (eq text "Voeding")}}
+                                            <span>Er zijn op het gebied van voeding bij u geen bijzonderheden</span>
+                                        {{else if (eq text "Beweging")}}
+                                            <span>Er zijn op het gebied van beweging bij u geen bijzonderheden, u haalt de wekelijkse beweegnorm.</span>
+                                        {{else if (eq text "Alcohol")}}
+                                            <span>Er zijn op het gebied van alcohol bij u geen bijzonderheden.</span>
                                         {{/if}}
+                                    </div>
+                                {{/unless}}
 
-                                        {{#if (lookup text "Beweging")}}
-                                            {{^valueInteger}}
-                                                <div class="title-subcase-child">
-                                                    <p style="text-decoration: underline">{{text}}</p>
-                                                    <div class="row" style="margin-left: 20px">
-                                                        <span>Er zijn op het gebied van beweging bij u geen bijzonderheden, u haalt de wekelijkse beweegnorm.</span>
-                                                    </div>
-                                                </div>
-                                            {{/if}}
-                                        {{/if}}
-
-                                        {{#if (lookup text "Alcohol")}}
-                                            {{^valueInteger}}
-                                                <div class="title-subcase-child">
-                                                    <p style="text-decoration: underline">{{text}}</p>
-                                                    <div class="row" style="margin-left: 20px">
-                                                        <span>Er zijn op het gebied van alcohol bij u geen bijzonderheden.</span>
-                                                    </div>
-                                                </div>
-                                            {{/if}}
-                                        {{/if}}
-
+                                {{#if valueInteger}}
+                                    {{#each (getValue (concat "lifestyle." text ".items"))}}
                                         {{#if valueInteger}}
                                             <div class="row">
-                                                <div class="title-subcase-child" style="text-decoration: underline">
+                                                <div class="title-subcase-child">
+                                                    <span class="checked-icon"></span>
                                                     {{text}}
                                                 </div>
-                                                {{#each answer.[0].item}}
-                                                    {{#if valueInteger}}
-                                                        <div class="row">
-                                                            <div class="title-subcase-child">
-                                                                <span class="checked-icon"></span>
-                                                                {{text}}
-                                                            </div>
-                                                        </div>
-                                                    {{/if}}
-                                                {{/each}}
-
-                                                {{#if (lookup text "Voeding")}}
-                                                    <div style="font-weight: 400; margin: 10px 0">
-                                                        Meer informatie over gezonde voeding vindt u op:
-                                                        <a href="https://www.voedingscentrum.nl" target="_blank">www.voedingscentrum.nl</a> en de app 'Kies Ik Gezond?'
-                                                    </div>
-                                                {{/if}}
-
-                                                {{#if (lookup text "Beweging")}}
-                                                    <div style="font-weight: 400; margin: 10px 0">
-                                                        Meer informatie over het inbouwen van beweging in uw dagelijks beweging vindt u op:
-                                                        <a href="https://www.thuisarts.nl/gezond-leven" target="_blank">www.thuisarts.nl/gezond-leven</a>
-                                                    </div>
-                                                {{/if}}
-
-                                                {{#if (lookup text "Alcohol")}}
-                                                    <div style="font-weight: 400; margin: 10px 0">
-                                                        Meer informatie over het verminderen van alcoholgebruik vindt u op:
-                                                        <a href="https://www.allesoverdrinken.nl" target="_blank">www.allesoverdrinken.nl</a>
-                                                    </div>
-                                                {{/if}}
                                             </div>
                                         {{/if}}
                                     {{/each}}
+
+                                    {{#if (eq text "Voeding")}}
+                                        <div style="font-weight: 400; margin: 10px 0">
+                                            Meer informatie over gezonde voeding vindt u op:
+                                            <a href="https://www.voedingscentrum.nl" target="_blank">www.voedingscentrum.nl</a> en de app 'Kies Ik Gezond?'
+                                        </div>
+                                    {{else if (eq text "Beweging")}}
+                                        <div style="font-weight: 400; margin: 10px 0">
+                                            Meer informatie over het inbouwen van beweging in uw dagelijks beweging vindt u op:
+                                            <a href="https://www.thuisarts.nl/gezond-leven" target="_blank">www.thuisarts.nl/gezond-leven</a>
+                                        </div>
+                                    {{else if (eq text "Alcohol")}}
+                                        <div style="font-weight: 400; margin: 10px 0">
+                                            Meer informatie over het verminderen van alcoholgebruik vindt u op:
+                                            <a href="https://www.allesoverdrinken.nl" target="_blank">www.allesoverdrinken.nl</a>
+                                        </div>
+                                    {{/if}}
                                 {{/if}}
-                            {{/if}}
-                        {{/each}}
-                    {{/with}}
+                            </div>
+                        {{/if}}
+                    {{/each}}
                 </div>
             </div>
         </div>
@@ -242,35 +209,95 @@
             <div class="container-text">
                 <div class="dark-blue-container" style="background-color: #F3F7FA;">
                     <div class="subTitle" style="margin-top: 0 !important; padding: 10px 15px">
-                        {{#with questionnaireResponse}}
-                            {{#if item.[680].answer.[0].valueBoolean}}
-                                <p>Mentale en psychosociale factoren kunnen uw dagelijks leven beïnvloeden. En ook een rol
-                                    spelen bij toename in gewicht. Dit zijn factoren die u in de vragenlijst heeft
-                                    aangegeven:</p>
-                            {{else}}
-                                <p>Op basis van uw antwoorden zijn er geen bijzonderheden op het gebied van mentale en
-                                    psychosociale factoren </p>
-                            {{/if}}
-                        {{/with}}
+                        {{#if (getValue "680.answer.0.valueBoolean")}}
+                            <p>Mentale en psychosociale factoren kunnen uw dagelijks leven beïnvloeden. En ook een rol
+                                spelen bij toename in gewicht. Dit zijn factoren die u in de vragenlijst heeft
+                                aangegeven:</p>
+                        {{else}}
+                            <p>Op basis van uw antwoorden zijn er geen bijzonderheden op het gebied van mentale en
+                                psychosociale factoren </p>
+                        {{/if}}
                     </div>
 
-                    {{#with questionnaireResponse}}
-                        {{#if item.[680].answer.[0].valueBoolean}}
-                            {{#each item.[680].item}}
-                                {{#if valueInteger}}
-                                    <div class="row">
-                                        <div class="title-subcase-child">
-                                            <span class="checked-icon"></span>
-                                            {{text}}
-                                        </div>
+                    {{#if (getValue "680.answer.0.valueBoolean")}}
+                        {{#each (getValue "680.item")}}
+                            {{#if valueInteger}}
+                                <div class="row">
+                                    <div class="title-subcase-child">
+                                        <span class="checked-icon"></span>
+                                        {{text}}
                                     </div>
-                                {{/if}}
-                            {{/each}}
-                        {{/if}}
-                    {{/with}}
+                                </div>
+                            {{/if}}
+                        {{/each}}
+                    {{/if}}
                 </div>
             </div>
         </div>
+
+        {{! Possible consequences section }}
+        {{#if (getValue "calculation8.value")}}
+            <div class="container">
+                <div style="display: flex; align-items: center; justify-content: space-between; background-color: #F3F7FA; padding: 10px 20px; border-radius: 15px 15px 0px 0px;">
+                    <span class="case-title" style="background-color: #F3F7FA; color: #101011;width: 100%;padding: 10px 20px 10px 20px;">MOGELIJKE GEVOLGEN OVERGEWICHT</span>
+                </div>
+                {{#each (getValue "calculation8.item")}}
+                    <div class="container-text">
+                        <div class="dark-blue-container" style="background-color: #F3F7FA;">
+                            <div class="subTitle" style="margin-top: 0 !important; padding: 10px 15px">
+                                {{subTitle}}
+                            </div>
+
+                            <div>
+                                {{#if answer.0.item.length}}
+                                    {{#if valueInteger}}
+                                        <div>
+                                            {{#each answer.0.item}}
+                                                {{#if valueInteger}}
+                                                    <div class="row">
+                                                        {{#if (eq text "Slaapapneu (OSAS)")}}
+                                                            <div class="title-subcase-child">
+                                                                <p style="text-decoration: underline">{{text}}</p>
+                                                                <div class="row" style="margin-left: 20px">
+                                                                    <span>Op basis van de combinatie van uw antwoorden zou de kans op slaapapneu verhoogd kunnen zijn.</span>
+                                                                </div>
+                                                            </div>
+                                                        {{else if (eq text "Artose")}}
+                                                            <div class="title-subcase-child">
+                                                                <p style="text-decoration: underline">{{text}}</p>
+                                                                <div class="row" style="margin-left: 20px">
+                                                                    <span>Uw antwoorden zouden kunnen passen bij artrose. Bij artrose is sprake van slijtage van een of meerdere gewrichten. Artrose kan een gevolg zijn van obesitas.</span>
+                                                                </div>
+                                                            </div>
+                                                        {{else}}
+                                                            <div class="title-subcase-child">
+                                                                <p style="text-decoration: underline">{{text}}</p>
+                                                            </div>
+                                                            {{#each answer.0.item}}
+                                                                <div class="row" style="margin-left: 20px">
+                                                                    <div class="title-subcase-child">
+                                                                        {{#if valueInteger}}
+                                                                            <span class="checked-icon"></span>
+                                                                        {{else}}
+                                                                            <span class="unchecked-icon"></span>
+                                                                        {{/if}}
+                                                                        {{text}}
+                                                                    </div>
+                                                                </div>
+                                                            {{/each}}
+                                                        {{/if}}
+                                                    </div>
+                                                {{/if}}
+                                            {{/each}}
+                                        </div>
+                                    {{/if}}
+                                {{/if}}
+                            </div>
+                        </div>
+                    </div>
+                {{/each}}
+            </div>
+        {{/if}}
     </div>
 
     {{! Completed results section }}
@@ -281,9 +308,4 @@
     <div style="font-size: 18px; color: #101011; font-weight: 500; margin: 10px 0 16px 20px; text-align: left;">
         Uw <strong>deelname</strong> aan de vragenlijst wordt zeer op prijs gesteld. <strong>Bedankt!</strong>
     </div>
-</div>
-
-{{#each questionnaireResponse.item}}
-    {{answer.[0].valueNumber}} - {{answer.[0].valueString}} - {{answer.[0].valueBoolean}} - {{text}} - {{@key}} - {{@index}}
-    <hr>
-{{/each}} 
+</div> 

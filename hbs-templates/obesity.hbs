@@ -1,50 +1,50 @@
 <div class='alogaritmh-html'>
     <style type='text/css'>        .title-subcase {
-        margin-top: 10px;
-    }
-
-    .page_refero__component_group > div {
-        padding-bottom: 5px;
-        border-bottom: 1px solid #E1E1E1;
-    }
-
-    .output-list li {
-        padding: 0px !important;
-        font-size: 14px !important;
-    }
-
-    .grouped-containers {
-        display: flex;
-        gap: 24px;
-        flex-direction: column;
-    }
-
-    .container {
-        margin-bottom: unset !important;
-        min-height: 200px;
-        display: flex;
-    }
-
-    .container-text {
-        display: flex;
-        flex: 1;
-    }
-
-    .formSection {
-        background: rgb(255, 255, 255) !important;
-    }
-
-    @media only screen and (max-width: 900px) {
-        .grouped-containers {
-            grid-template-columns: repeat(2, minmax(0, 1fr));
+            margin-top: 10px;
         }
-    }
 
-    @media only screen and (max-width: 670px) {
-        .grouped-containers {
-            grid-template-columns: repeat(1, minmax(0, 1fr));
+        .page_refero__component_group > div {
+            padding-bottom: 5px;
+            border-bottom: 1px solid #E1E1E1;
         }
-    }
+
+        .output-list li {
+            padding: 0px !important;
+            font-size: 14px !important;
+        }
+
+        .grouped-containers {
+            display: flex;
+            gap: 24px;
+            flex-direction: column;
+        }
+
+        .container {
+            margin-bottom: unset !important;
+            min-height: 200px;
+            display: flex;
+        }
+
+        .container-text {
+            display: flex;
+            flex: 1;
+        }
+
+        .formSection {
+            background: rgb(255, 255, 255) !important;
+        }
+
+        @media only screen and (max-width: 900px) {
+            .grouped-containers {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        @media only screen and (max-width: 670px) {
+            .grouped-containers {
+                grid-template-columns: repeat(1, minmax(0, 1fr));
+            }
+        }
     </style>
     <div class='header-title-con'
          style='text-align: justify; width: 100%; background-color: #fff; font-size: 20px; font-weight: 600; overflow: hidden; color: #000000; margin: 15px 0; box-shadow: 1px 2px 9px rgba(0,0,0,0.3); border-radius: 10px; padding: 100px 30px 30px 30px'>
@@ -64,41 +64,41 @@
 
         {{#if (getValue '5b6f10b6-f886-4fc9-a683-5fe7bb961325')}}
 
-            <!--     Is Bmi low               -->
-            {{#if (compare (getValue '5b6f10b6-f886-4fc9-a683-5fe7bb961325') 'lt' '18.5')}}
-                <div style='display: block; text-align: left; font-size: 18px; margin-bottom: 10px'> Your BMI is
-                    underweight.
-                    This questionnaire does not apply to you.
-                </div>
-            {{/if}}
+                    <!--     Is Bmi low               -->
+                    {{#if (compare (getValue '5b6f10b6-f886-4fc9-a683-5fe7bb961325') 'lt' '18.5')}}
+                        <div style='display: block; text-align: left; font-size: 18px; margin-bottom: 10px'> Your BMI is
+                            underweight.
+                            This questionnaire does not apply to you.
+                        </div>
+                    {{/if}}
 
-            <!--     Is Bmi medium               -->
-            {{#if (compare (getValue '5b6f10b6-f886-4fc9-a683-5fe7bb961325') 'ge' '18.5')}}
-                {{#if (compare (getValue '5b6f10b6-f886-4fc9-a683-5fe7bb961325') 'le' '24.9')}}
-                    <div style='display: block; text-align: left; font-size: 18px'> There is a normal weight <span
-                            style='font-weight: bold; margin-left: 0px; margin-right: 0px'>
-                        (BMI {{getValue '5b6f10b6-f886-4fc9-a683-5fe7bb961325'}} kg/m<sup>2</sup>)</span>. The following
-                        points of
-                        attention are
-                        known to increase weight:
-                    </div>
-                {{/if}}
-            {{/if}}
+                    <!--     Is Bmi medium               -->
+                    {{#if (compare (getValue '5b6f10b6-f886-4fc9-a683-5fe7bb961325') 'ge' '18.5')}}
+                        {{#if (compare (getValue '5b6f10b6-f886-4fc9-a683-5fe7bb961325') 'le' '24.9')}}
+                            <div style='display: block; text-align: left; font-size: 18px'> There is a normal weight <span
+                                    style='font-weight: bold; margin-left: 0px; margin-right: 0px'>
+                                (BMI {{getValue '5b6f10b6-f886-4fc9-a683-5fe7bb961325'}} kg/m<sup>2</sup>)</span>. The following
+                                points of
+                                attention are
+                                known to increase weight:
+                            </div>
+                        {{/if}}
+                    {{/if}}
 
-            <!--     Is Bmi high               -->
-            {{#if (compare (getValue '5b6f10b6-f886-4fc9-a683-5fe7bb961325') 'ge' '25')}}
-                {{#if  (compare (getValue '5b6f10b6-f886-4fc9-a683-5fe7bb961325') 'le' '30')}}
-                    <div style='display: block; text-align: left; font-size: 18px'> Based on your <b
+                    <!--     Is Bmi high               -->
+                    {{#if (compare (getValue '5b6f10b6-f886-4fc9-a683-5fe7bb961325') 'ge' '25')}}
+                        {{#if  (compare (getValue '5b6f10b6-f886-4fc9-a683-5fe7bb961325') 'le' '30')}}
+                            <div style='display: block; text-align: left; font-size: 18px'> Based on your <b
                             style='font-weight: bold; margin-left: 5px; margin-right: 5px'>BMI {{getValue
                             '5b6f10b6-f886-4fc9-a683-5fe7bb961325'}} kg/m<sup>2</sup>)</b>, you are overweight with
                         the
                         following
                         possible underlying causes
-                    </div>
-                {{/if}}
-            {{/if}}
+                            </div>
+                        {{/if}}
+                    {{/if}}
 
-            <!--     Is Bmi obese               -->
+                    <!--     Is Bmi obese               -->
             {{#if (compare (getValue '5b6f10b6-f886-4fc9-a683-5fe7bb961325') 'ge' '30')}}
                 <div style='display: block; text-align: left; font-size: 18px'> Based on your <b
                         style='font-weight: bold; margin-left: 5px; margin-right: 5px'>BMI ({{getValue
@@ -326,9 +326,153 @@
                 </div>
 
                 <div>
-                    <!--                    MEDICATION SECTION                          -->
+                    {{#if (getValue "calculation5")}}
+                        {{#if (getValue "calculation5.item")}}
+                            <div>
+                                {{#if (getValue "answer.0.item.length")}}
+                                    <div>
+                                        {{#each answer.0.item}}
+                                            <div class='row'>
+                                                <div class='title-subcase-child' style='padding-top:10px'>
+                                                    <span class='checked-icon'></span>
+                                                    <div style='font-weight:600;color:#000'>
+                                                        {{getValue "text"}}
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            {{#if (getValue "answer.0.item")}}
+                                                <div>
+                                                    <div class='list-container' style='margin-left: 20px;display:flex'>
+                                                        <span class='checked-icon'></span>
+                                                        <div style='font-weight:normal'>
+                                                            {{getValue "text"}}
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            {{/if}}
+                                            
+                                        {{/each}}
+                                    </div>
+                                {{/if}}
+                            </div>
+                            <div class='subTitle' style='margin-top: 0 !important; padding: 10px 15px'>
+                                <p>Please make sure you never change anything about your medication (like the dosage) without
+                                    talking to your doctor first.</p>
+                            </div>
+                        {{/if}}
+                    {{/if}}
                 </div>
             </div>
         </div>
+
+        {{! Hypothalamic obesity section }}
+        <div class='container'>
+            <div style='display: flex; align-items: center; justify-content: space-between; background-color: #F3F7FA; padding: 10px 20px; border-radius: 15px 15px 0px 0px;'>
+                <span class='case-title' style='color: #101011;width: 100%;padding: 10px 20px 10px 20px;'>Hypothalamic obesity</span>
+                <img alt='food-icon' src='./icon/icon-head.png' style='width: 45px; height: 45px; margin-right: 15px'/>
+            </div>
+
+            <div class='container-text'>
+                <div class='dark-blue-container' style='background-color: #F3F7FA;'>
+                    <div class='subTitle' style='margin-top: 0 !important; padding: 10px 15px'>
+                        {{#if (getValue "calchypothalaam")}}
+                            <p>Hypothalamic obesity is a rare cause of obesity. It is caused by damage to brain areas which
+                                are important for hunger and feeling full. Based on your answers, it might be useful to talk
+                                to your doctor about whether you should have further tests to check for a hypothalamic cause
+                                of obesity.</p>
+                        {{else}}
+                            <p>Based on your answers, there are no signs of a hypothalamic cause of obesity (a type of
+                                obesity due to damage to an area in the brain).</p>
+                {{/if}}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        {{! Genetic obesity section }}
+        <div class='container'>
+            <div style='display: flex; align-items: center; justify-content: space-between; background-color: #F3F7FA; padding: 10px 20px; border-radius: 15px 15px 0px 0px; font-size: 22px;'>
+                <span class='case-title' style='color: #101011;width: 100%;padding: 10px 20px 10px 20px;'>GENETIC OBESITY</span>
+                <img alt='food-icon' src='./icon/icon-cell.png' style='width: 40px; height: 40px; margin-right: 15px'/>
+            </div>
+            <div class='container-text'>
+                <div class='dark-blue-container' style='background-color: #F3F7FA;'>
+                    <div class='subTitle' style='margin-top: 0 !important; padding: 10px 15px'>
+                        {{#if (getValue "calcgenetisch")}}
+                            <p>Genetic obesity is a rare type of obesity. Based on your answers, it might be useful to
+                                discuss with your doctor whether you should have further tests for a genetic form of
+                                obesity. The following features may fit with genetic obesity:</p>
+                        {{else}}
+                            <p>Based on your answers, there are no signs of a genetic type of obesity.</p>
+                        {{/if}}
+                    </div>
+                    <div>
+                        {{#if (getValue "calcgenetisch")}}
+                            {{#if (getValue "calcgenetisch.item")}}
+                                <div class='row'>
+                                    <div class='title-subcase-child'>
+                                        <span class='checked-icon'></span>
+                                        {{getValue "calcgenetisch.text"}}
+                                    </div>
+                                </div>
+                            {{/if}}
+                        {{/if}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {{! Possible consequences section }}
+    {{#if (getValue "calculation8")}}
+        <div class='container'>
+            <div style='display: flex; align-items: center; justify-content: space-between; background-color: #F3F7FA; padding: 10px 20px; border-radius: 15px 15px 0px 0px;'>
+                <span class='case-title' style='background-color: #F3F7FA; color: #101011;width: 100%;padding: 10px 20px 10px 20px; font-weight: 700 !important;'>POSSIBLE CONSEQUENCES OF BEING OVERWEIGHT</span>
+            </div>
+            <div class='container-text'>
+                <div class='dark-blue-container' style='background-color: #F3F7FA;'>
+                    <div class='subTitle' style='margin-top: 0 !important; padding: 10px 15px'>
+                        {{getValue "subTitle"}}
+                    </div>
+
+                    <div>
+                        {{#if (getValue "answer.0.item.length")}}
+                            <div>
+                                {{#if (getValue "answer.0.item")}}
+                                    <div class='row'>
+                                        {{#if (getValue "text=Sleep apnea (OSA)")}}
+                                            <div class='title-subcase-child'>
+                                                <p style='text-decoration: underline'>{{getValue "text"}}</p>
+                                                <div class='row' style='margin-left: 20px'>
+                                                    <span>Based on the combination of your answers, your risk of sleep apnea may be increased.</span>
+                                                </div>
+                                            </div>
+                                        {{/if}}
+                                        {{#if (getValue "text=Osteoarthritis")}}
+                                            <div class='title-subcase-child'>
+                                                <p style='text-decoration: underline'>{{getValue "text"}}</p>
+                                                <div class='row' style='margin-left: 20px'>
+                                                    <span>Your answers could fit with osteoarthritis. Osteoarthritis is wear and tear of one or more joints. Osteoarthritis can be a consequence of obesity.</span>
+                                                </div>
+                                            </div>
+                                        {{/if}}
+                                    </div>
+                                {{/if}}
+                            </div>
+                        {{/if}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    {{/if}}
+
+    {{! Completed results section }}
+    <h2 style='font-size: 24px; color: #1399EC; font-weight: bold; text-align: left; margin: 40px 0 8px 20px;'>
+        Completed results
+    </h2>
+
+    <div style='font-size: 18px; color: #101011; font-weight: 500; margin: 10px 0 16px 20px; text-align: left;'>
+        Your <strong>participation</strong> in the survey is greatly appreciated. <strong>Thank you!</strong>
     </div>
 </div>

@@ -1,9 +1,10 @@
 <div class="alogaritmh-html">
+    {{! Attention text}}
     <style type="text/css">
         // ... existing styles ...
     </style>
-    <div class="header-title-con"
-         style="text-align: justify; width: 100%; background-color: #fff; font-size: 20px; font-weight: 600; overflow: hidden; color: #000000; margin: 15px 0; box-shadow: 1px 2px 9px rgba(0,0,0,0.3); border-radius: 10px; padding: 100px 30px 30px 30px">
+
+    <div class="header-title-con" style="text-align: justify; width: 100%; background-color: #fff; font-size: 20px; font-weight: 600; overflow: hidden; color: #000000; margin: 15px 0; box-shadow: 1px 2px 9px rgba(0,0,0,0.3); border-radius: 10px; padding: 100px 30px 30px 30px">
         <div style="color: #1399EC;width: 100%; margin-bottom: 20px;">
             <h2 style="font-weight: 600">
                 Uitslag checkoorzakenovergewicht.nl
@@ -16,83 +17,108 @@
         </div>
     </div>
 
-    {{! render each case calculations }}
+    {{! General characteristics section }}
     <div class="grouped-containers">
-        {{#with questionnaireResponse}}
-            {{#each item}}
-                {{#if (lookup this "text")}}
-                    {{#if (lookup this "answer")}}
-                        <div class="container">
-                            <div style="display: flex; align-items: center; justify-content: space-between; background-color: #92b7db; padding: 10px 20px; border-radius: 15px 15px 0px 0px;">
-                                <span class="case-title" style="color: #101011;width: 100%;padding: 10px 20px 10px 20px;">ALGEMENE KENMERKEN</span>
-                            </div>
-                            <div class="container-text">
-                                <div class="dark-blue-container" style="background-color: #F3F7FA;">
-                                    {{#each item}}
-                                        {{#if valueInteger}}
-                                            <div class="row">
-                                                <div class="title-subcase">
-                                                    {{text}}
-                                                </div>
-                                            </div>
+        {{#if (getValue "6e62b484-401b-468a-97e4-50f2ed7b7334")}}
+            <div class="container">
+                <div style="display: flex; align-items: center; justify-content: space-between; background-color: #92b7db; padding: 10px 20px; border-radius: 15px 15px 0px 0px;">
+                    <span class="case-title" style="color: #101011;width: 100%;padding: 10px 20px 10px 20px;">ALGEMENE KENMERKEN</span>
+                </div>
+                <div class="container-text">
+                    <div class="dark-blue-container" style="background-color: #F3F7FA;">
+                        {{#each (getValue "6e62b484-401b-468a-97e4-50f2ed7b7334.item")}}
+                            {{#if valueInteger}}
+                                <div class="row">
+                                    <div class="title-subcase">
+                                        {{text}}
+                                    </div>
+                                </div>
 
-                                            {{#if (lookup answer.[0] "item")}}
-                                                <div>
-                                                    {{#each answer.[0].item}}
-                                                        {{#if valueInteger}}
-                                                            <div class="row">
-                                                                <div>
-                                                                    {{#if text}}
-                                                                        <p class="title-subcase-child">
-                                                                            <span class="checked-icon"></span>
-                                                                            {{text}}:
-                                                                        </p>
-                                                                        <ul class="output-list">
-                                                                            {{#each answer.[0].item}}
-                                                                                {{#if valueInteger}}
-                                                                                    <li>{{text}}</li>
-                                                                                    <ul>
-                                                                                        {{#each answer.[0].item}}
-                                                                                            {{#if valueInteger}}
-                                                                                                <li style="color: gray; font-weight: 400;">{{text}} <strong>{{value}}</strong> {{subTitle}}</li>
-                                                                                            {{/if}}
-                                                                                        {{/each}}
-                                                                                    </ul>
-                                                                                {{/if}}
-                                                                            {{/each}}
-                                                                        </ul>
-                                                                    {{else}}
-                                                                        <div>
+                                {{#if (eq text "U bent de volgende behandeling gestart om af te vallen, of u heeft zelf het volgende geprobeerd om af te vallen:")}}
+                                    {{#if valueInteger}}
+                                        <div>
+                                            {{#if answer.0.item.length}}
+                                                {{#if valueInteger}}
+                                                    <div>
+                                                        {{#each answer.0.item}}
+                                                            {{#if valueInteger}}
+                                                                <div class="row">
+                                                                    <div>
+                                                                        {{#if (eq text "U heeft medicijnen gekregen voor uw gewicht")}}
                                                                             <p class="title-subcase-child">
                                                                                 <span class="checked-icon"></span>
                                                                                 {{text}}:
                                                                             </p>
                                                                             <ul class="output-list">
-                                                                                {{#each answer.[0].item}}
+                                                                                {{#each answer.0.item}}
                                                                                     {{#if valueInteger}}
-                                                                                        <li>
-                                                                                            {{text}} {{value}}
-                                                                                        </li>
+                                                                                        <li>{{text}}</li>
+                                                                                        <ul>
+                                                                                            {{#each answer.0.item}}
+                                                                                                {{#if valueInteger}}
+                                                                                                    <li style="color: gray; font-weight: 400;">{{text}} <strong>{{value}}</strong> {{subTitle}}</li>
+                                                                                                {{/if}}
+                                                                                            {{/each}}
+                                                                                        </ul>
                                                                                     {{/if}}
                                                                                 {{/each}}
                                                                             </ul>
-                                                                        </div>
-                                                                    {{/if}}
+                                                                        {{/if}}
+
+                                                                        {{#if (eq text "U heeft een maagoperatie gehad")}}
+                                                                            <p class="title-subcase-child">
+                                                                                <span class="checked-icon"></span>
+                                                                                {{text}}:
+                                                                            </p>
+                                                                            <ul class="output-list">
+                                                                                {{#each answer.0.item}}
+                                                                                    {{#if valueInteger}}
+                                                                                        <li>{{text}}</li>
+                                                                                        <ul>
+                                                                                            {{#each answer.0.item}}
+                                                                                                {{#if valueInteger}}
+                                                                                                    <li style="color: gray; font-weight: 400;">{{text}} <strong>{{value}}</strong> {{subTitle}}</li>
+                                                                                                {{/if}}
+                                                                                            {{/each}}
+                                                                                        </ul>
+                                                                                    {{/if}}
+                                                                                {{/each}}
+                                                                            </ul>
+                                                                        {{/if}}
+
+                                                                        {{#unless (or (eq text "U heeft medicijnen gekregen voor uw gewicht") (eq text "U heeft een maagoperatie gehad"))}}
+                                                                            <div>
+                                                                                <p class="title-subcase-child">
+                                                                                    <span class="checked-icon"></span>
+                                                                                    {{text}}:
+                                                                                </p>
+                                                                                <ul class="output-list">
+                                                                                    {{#each answer.0.item}}
+                                                                                        {{#if valueInteger}}
+                                                                                            <li>
+                                                                                                {{text}} {{value}}
+                                                                                            </li>
+                                                                                        {{/if}}
+                                                                                    {{/each}}
+                                                                                </ul>
+                                                                            </div>
+                                                                        {{/unless}}
+                                                                    </div>
                                                                 </div>
-                                                            </div>
-                                                        {{/if}}
-                                                    {{/each}}
-                                                </div>
+                                                            {{/if}}
+                                                        {{/each}}
+                                                    </div>
+                                                {{/if}}
                                             {{/if}}
-                                        {{/if}}
-                                    {{/each}}
-                                </div>
-                            </div>
-                        </div>
-                    {{/if}}
-                {{/if}}
-            {{/each}}
-        {{/with}}
+                                        </div>
+                                    {{/if}}
+                                {{/if}}
+                            {{/if}}
+                        {{/each}}
+                    </div>
+                </div>
+            </div>
+        {{/if}}
 
         <div>
             <p style="color: #000; border-radius: 13px; background-color: #92b7db; padding: 10px; font-size: 24px; font-weight: bold; text-align: left;">
