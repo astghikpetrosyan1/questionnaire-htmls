@@ -5,8 +5,8 @@
   "title": "HBS Check Causes Obesity",
   "status": "draft",
   "meta": {
-    "versionId": "81",
-    "lastUpdated": "2025-02-12T15:27:39.685+00:00",
+    "versionId": "188",
+    "lastUpdated": "2025-02-20T12:24:17.939+00:00",
     "profile": [
       "http://ehelse.no/fhir/StructureDefinition/sdf-Questionnaire"
     ],
@@ -75,16 +75,20 @@
       "valueBoolean": true
     },
     {
-      "url": "https://fhir.medlix.org/fhir/StructureDefinition/questionnaire-is-hbs",
-      "valueBoolean": true
-    },
-    {
-      "url": "https://fhir.medlix.org/fhir/StructureDefinition/questionnaire-addons-export-pdf-template",
-      "valueString": "<div class=\"alogaritmh-html\">    <style type=\"text/css\">        .title-subcase {            margin-top: 10px;        }        .page_refero__component_group > div {            padding-bottom: 5px;            border-bottom: 1px solid #E1E1E1;        }        .output-list li {            padding: 0px !important;            font-size: 14px !important;        }        .grouped-containers {            display: flex;            gap: 24px;            flex-direction: column;        }        .container {            margin-bottom: unset !important;            min-height: 200px;            display: flex;        }        .container-text {            display: flex;            flex: 1;        }        .formSection {            background: rgb(255, 255, 255) !important;        }        @media only screen and (max-width: 900px) {            .grouped-containers {                grid-template-columns: repeat(2, minmax(0, 1fr));            }        }        @media only screen and (max-width: 670px) {            .grouped-containers {                grid-template-columns: repeat(1, minmax(0, 1fr));            }        }    </style>    <div class=\"header-title-con\"         style=\"text-align: justify; width: 100%; background-color: #fff; font-size: 20px; font-weight: 600; overflow: hidden; color: #000000; margin: 15px 0; box-shadow: 1px 2px 9px rgba(0,0,0,0.3); border-radius: 10px; padding: 100px 30px 30px 30px\">        <div style=\"color: #1399EC;width: 100%; margin-bottom: 20px;\">            <h2 style=\"font-weight: 600\">                Result checkcausesobesity.com            </h2>        </div>        <div style=\"font-size: 19px;width:100%; font-weight: 400; color: #101011; line-height: normal\">            This questionnaire is made for people who are overweight or have severe overweight (obesity). The goal of            completing the questionnaire is to gain more understanding of the possible causes of your overweight. You            can share this result with your doctor or healthcare provider. This can help your healthcare provider to            advise and treat you better, and to possibly perform extra tests.        </div>    </div>    <div>        <div style=\"font-size: 30px; color: #0070a8; font-weight: 500; margin: 20px 0; text-align: left\">            Summary        </div>        <div>            <div>                {{#if questionnaireResponse.item.[336].answer.[0].valueString}}                    <!--     Is Bmi low               -->                    {{#if (compare (toNumber questionnaireResponse.item.[336].answer.[0].valueString) 'lt' 18.5)}}                        <div style=\"display: block; text-align: left; font-size: 18px; margin-bottom: 10px\">                            Your BMI is underweight. This questionnaire does not apply to you.                        </div>                    {{/if}}                    <!--     Is Bmi medium               -->                    {{#if (compare (toNumber questionnaireResponse.item.[336].answer.[0].valueString) 'ge' 18.5)}}                        {{#if (compare (toNumber questionnaireResponse.item.[336].answer.[0].valueString) 'le' 24.9)}}                            <div style=\"display: block; text-align: left; font-size: 18px\">                                There is a normal weight <span style=\"font-weight: bold; margin-left: 0px; margin-right: 0px\">(BMI {{questionnaireResponse.item.[336].answer.[0].valueString}} kg/m<sup>2</sup>)</span>.                                The following points of attention are known to increase weight:                            </div>                        {{/if}}                    {{/if}}                    <!--     Is Bmi high               -->                    {{#if (compare (toNumber questionnaireResponse.item.[336].answer.[0].valueString) 'ge' 25)}}                        {{#if (compare (toNumber questionnaireResponse.item.[336].answer.[0].valueString) 'le' 30)}}                            <div style=\"display: block; text-align: left; font-size: 18px\">                                Based on your <b style=\"font-weight: bold; margin-left: 5px; margin-right: 5px\">BMI {{questionnaireResponse.item.[336].answer.[0].valueString}} kg/m<sup>2</sup>)</b>, you are overweight with the following possible underlying causes                            </div>                        {{/if}}                    {{/if}}                    <!--     Is Bmi obese               -->                    {{#if (compare (toNumber questionnaireResponse.item.[336].answer.[0].valueString) 'ge' 30)}}                        <div style=\"display: block; text-align: left; font-size: 18px\">                            Based on your <b style=\"font-weight: bold; margin-left: 5px; margin-right: 5px\">BMI ({{questionnaireResponse.item.[336].answer.[0].valueString}} kg/m<sup>2</sup>)</b>, you have obesity  with the following possible underlying causes                        </div>                    {{/if}}                {{/if}}            </div>        </div>        {{#each questionnaireResponse.item}}        {{answer.[0].valueNumber}} - {{answer.[0].valueString}} - {{answer.[0].valueBoolean}} - {{text}} - {{@key}} - {{@index}}        <hr>        {{/each}}    </div></div>"
+      "url": "https://fhir.medlix.org/fhir/StructureDefinition/questionnaire-addons-theme",
+      "valueString": "\".headerText {\\n    color: #45658A\\n  }\\n  \\n  .stepper {\\n    background-color: #F3F7FA !important\\n  }\\n  \\n  .stepperSidebar {\\n    background-color: #FFFFFF\\n  }\\n  \\n  .header-logo {\\n    width: 130px;\\n    height: 80px;\\n    background: url('https://cockpit.medlix-dev.org/questionnaire-portal/images/coo.svg');\\n    background-size: contain;\\n  }\\n  \\n  .result-background {\\n    background-color: #1399EC\\n  }\\n\\n\\n\\n       .first-capital::first-letter {\\n            text-transform: uppercase;\\n        }\\n\\n        .first-capital:first-letter {\\n            text-transform: uppercase;\\n        }\\n.\\n\""
     },
     {
       "url": "https://fhir.medlix.org/fhir/StructureDefinition/questionnaire-output-template",
-      "valueString": "<div class=\"alogaritmh-html\">    <style type=\"text/css\">        .title-subcase {            margin-top: 10px;        }        .page_refero__component_group > div {            padding-bottom: 5px;            border-bottom: 1px solid #E1E1E1;        }        .output-list li {            padding: 0px !important;            font-size: 14px !important;        }        .grouped-containers {            display: flex;            gap: 24px;            flex-direction: column;        }        .container {            margin-bottom: unset !important;            min-height: 200px;            display: flex;        }        .container-text {            display: flex;            flex: 1;        }        .formSection {            background: rgb(255, 255, 255) !important;        }        @media only screen and (max-width: 900px) {            .grouped-containers {                grid-template-columns: repeat(2, minmax(0, 1fr));            }        }        @media only screen and (max-width: 670px) {            .grouped-containers {                grid-template-columns: repeat(1, minmax(0, 1fr));            }        }    </style>    <div class=\"header-title-con\"         style=\"text-align: justify; width: 100%; background-color: #fff; font-size: 20px; font-weight: 600; overflow: hidden; color: #000000; margin: 15px 0; box-shadow: 1px 2px 9px rgba(0,0,0,0.3); border-radius: 10px; padding: 100px 30px 30px 30px\">        <div style=\"color: #1399EC;width: 100%; margin-bottom: 20px;\">            <h2 style=\"font-weight: 600\">                Result checkcausesobesity.com            </h2>        </div>        <div style=\"font-size: 19px;width:100%; font-weight: 400; color: #101011; line-height: normal\">            This questionnaire is made for people who are overweight or have severe overweight (obesity). The goal of            completing the questionnaire is to gain more understanding of the possible causes of your overweight. You            can share this result with your doctor or healthcare provider. This can help your healthcare provider to            advise and treat you better, and to possibly perform extra tests.        </div>    </div>    <div>        <div style=\"font-size: 30px; color: #0070a8; font-weight: 500; margin: 20px 0; text-align: left\">            Summary        </div>        {{#if (getValue \"5b6f10b6-f886-4fc9-a683-5fe7bb961325\")}}            <!--     Is Bmi low               -->            {{#if (compare (getValue \"5b6f10b6-f886-4fc9-a683-5fe7bb961325\") \"lt\" \"18.5\")}}                <div style=\"display: block; text-align: left; font-size: 18px; margin-bottom: 10px\">                    Your BMI is underweight. This questionnaire does not apply to you.                </div>            {{/if}}            <!--     Is Bmi medium               -->            {{#if (compare (getValue \"5b6f10b6-f886-4fc9-a683-5fe7bb961325\") 'ge' \"18.5\")}}                {{#if (compare (getValue \"5b6f10b6-f886-4fc9-a683-5fe7bb961325\") 'le' \"24.9\")}}                    <div style=\"display: block; text-align: left; font-size: 18px\">                        There is a normal weight <span style=\"font-weight: bold; margin-left: 0px; margin-right: 0px\">(BMI {{getValue \"5b6f10b6-f886-4fc9-a683-5fe7bb961325\"}} kg/m<sup>2</sup>)</span>.                        The following points of attention are known to increase weight:                    </div>                {{/if}}            {{/if}}            <!--     Is Bmi high               -->            {{#if (compare (getValue \"5b6f10b6-f886-4fc9-a683-5fe7bb961325\") 'ge' \"25\")}}                {{#if (compare (getValue \"5b6f10b6-f886-4fc9-a683-5fe7bb961325\") 'le' \"30\")}}                    <div style=\"display: block; text-align: left; font-size: 18px\">                        Based on your <b style=\"font-weight: bold; margin-left: 5px; margin-right: 5px\">BMI {{getValue \"5b6f10b6-f886-4fc9-a683-5fe7bb961325\"}} kg/m<sup>2</sup>)</b>, you are overweight with the following possible underlying causes                    </div>                {{/if}}            {{/if}}            <!--     Is Bmi obese               -->            {{#if (compare (getValue \"5b6f10b6-f886-4fc9-a683-5fe7bb961325\") 'ge' \"30\")}}                <div style=\"display: block; text-align: left; font-size: 18px\">                    Based on your <b style=\"font-weight: bold; margin-left: 5px; margin-right: 5px\">BMI ({{getValue \"5b6f10b6-f886-4fc9-a683-5fe7bb961325\"}} kg/m<sup>2</sup>)</b>, you have obesity  with the following possible underlying causes                </div>            {{/if}}        {{/if}}    </div></div>"
+      "valueString": "<div class='alogaritmh-html'>    <style type='text/css'>        .title-subcase {            margin-top: 10px;        }        .page_refero__component_group > div {            padding-bottom: 5px;            border-bottom: 1px solid #E1E1E1;        }        .output-list li {            padding: 0px !important;            font-size: 14px !important;        }        .grouped-containers {            display: flex;            gap: 24px;            flex-direction: column;        }        .container {            margin-bottom: unset !important;            min-height: 200px;            display: flex;        }        .container-text {            display: flex;            flex: 1;        }        .formSection {            background: rgb(255, 255, 255) !important;        }        @media only screen and (max-width: 900px) {            .grouped-containers {                grid-template-columns: repeat(2, minmax(0, 1fr));            }        }        @media only screen and (max-width: 670px) {            .grouped-containers {                grid-template-columns: repeat(1, minmax(0, 1fr));            }        }    </style>    <div class='header-title-con'         style='text-align: justify; width: 100%; background-color: #fff; font-size: 20px; font-weight: 600; overflow: hidden; color: #000000; margin: 15px 0; box-shadow: 1px 2px 9px rgba(0,0,0,0.3); border-radius: 10px; padding: 100px 30px 30px 30px'>        <div style='color: #1399EC;width: 100%; margin-bottom: 20px;'><h2 style='font-weight: 600'> Result            checkcausesobesity.com </h2></div>        <div style='font-size: 19px;width:100%; font-weight: 400; color: #101011; line-height: normal'> This            questionnaire is made for people who are overweight or have severe overweight (obesity). The goal of            completing the questionnaire is to gain more understanding of the possible causes of your overweight.            You            can share this result with your doctor or healthcare provider. This can help your healthcare provider to            advise and treat you better, and to possibly perform extra tests.        </div>    </div>    <div>        <div style=\"font-size: 30px; color: #0070a8; font-weight: 500; margin: 20px 0; text-align: left\">            Summary        </div>        {{! BMI conditions }}        {{#if (getValueByCode \"bmi\")}}            {{#if (compare (getValueByCode \"bmi\") 'lt' '18.5')}}                <div style=\"display: block; text-align: left; font-size: 18px; margin-bottom: 10px\">                    Regarding your BMI, you are underweight. This questionnaire is not applicable to you.                </div>            {{/if}}            {{#if (compare (getValueByCode \"bmi\") 'ge' '18.5')}}                {{#if (compare (getValueByCode \"bmi\") 'le' '24.9')}}                    <div style='display: block; text-align: left; font-size: 18px'>                         There is a normal weight <span style='font-weight: bold; margin-left: 0px; margin-right: 0px'>                        (BMI {{getValueByCode \"bmi\"}} kg/m<sup>2</sup>)</span>. The following points of attention are known to increase weight:                    </div>                {{/if}}            {{/if}}            {{#if (compare (getValueByCode \"bmi\") 'ge' '25')}}                {{#if (compare (getValueByCode \"bmi\") 'le' '30')}}                    <div style='display: block; text-align: left; font-size: 18px'>                         Based on your <b style='font-weight: bold; margin-left: 5px; margin-right: 5px'>BMI {{getValueByCode \"bmi\"}} kg/m<sup>2</sup>)</b>,                         you are overweight with the following possible underlying causes                    </div>                {{/if}}            {{/if}}            {{#if (compare (getValueByCode \"bmi\") 'ge' '30')}}                <div style='display: block; text-align: left; font-size: 18px'>                     Based on your <b style='font-weight: bold; margin-left: 5px; margin-right: 5px'>BMI ({{getValueByCode \"bmi\"}} kg/m<sup>2</sup>)</b>,                     you have obesity with the following possible underlying causes                </div>            {{/if}}        {{/if}}        {{! Summary list }}        <ul>            <li class='normal-text ' style='padding-left: 10px; '>                {{#if (getValueByCode 'calchormonaal')}}                    Hormonal causes: indications that may be consistent with <span class='first-capital ' style='display: block; '>{{getValueByCode \"calchormonaal\"}}</span>                {{else}}                    No indications for hormonal causes                {{/if}}            </li>            <li class='normal-text ' style='padding-left: 10px '>                {{#if (getValueByCode \"calculation-5\")}}                    Medication-related causes: use of {{getValueByCode \"calculation-5\"}}                {{else}}                    No indications for medication-related causes                {{/if}}            </li>            <li class='normal-text ' style='padding-left: 10px '>                {{#if (getValueByCode \"calculation6\")}}                    Indications for psychological or social causes                {{else}}                    No indications for psychological or social causes                {{/if}}            </li>            <li class='normal-text ' style='padding-left: 10px '>                {{#if (getValueByCode \"calculation7\")}}                    Lifestyle-related causes: in the areas of {{getValueByCode \"calculation7\"}}                {{else}}                    No indications for lifestyle-related causes                {{/if}}            </li>            <li class='normal-text ' style='padding-left: 10px '>                {{#if (getValueByCode \"calchypothalaam\")}}                    Indications for hypothalamic causes                {{else}}                    No indications for hypothalamic causes                {{/if}}            </li>            <li class='normal-text ' style='padding-left: 10px '>                {{#if (getValueByCode \"calcgenetisch\")}}                    Indications for genetic causes                {{else}}                    No indications for genetic causes                {{/if}}            </li>        </ul>    </div>    {{! Completed results section }}    <h2 style='font-size: 24px; color: #1399EC; font-weight: bold; text-align: left; margin: 40px 0 8px 20px;'>        Completed results    </h2>    <div style='font-size: 18px; color: #101011; font-weight: 500; margin: 10px 0 16px 20px; text-align: left;'>        Your <strong>participation</strong> in the survey is greatly appreciated. <strong>Thank you!</strong>    </div>    {{! Possible consequences section }}    <div class=\"container\">        <div style=\"display: flex; align-items: center; justify-content: space-between; background-color: #F3F7FA; padding: 10px 20px; border-radius: 15px 15px 0px 0px;\">            <span class=\"case-title\" style=\"background-color: #F3F7FA; color: #101011;width: 100%;padding: 10px 20px 10px 20px; font-weight: 700 !important;\">POSSIBLE CONSEQUENCES OF BEING OVERWEIGHT</span>        </div>        {{#getChildItemsByCode \"calculation8\"}}            {{#each this}}                <div class=\"container-text\">                    <div class=\"dark-blue-container\" style=\"background-color: #F3F7FA;\">                        <div class=\"subTitle\" style=\"margin-top: 0 !important; padding: 10px 15px\">                            {{subTitle}}                        </div>                        {{#if (getValue LinkId)}}                            <div class=\"row\">                                {{#if (eq text \"Sleep apnea (OSA)\")}}                                    <div class=\"title-subcase-child\">                                        <p style=\"text-decoration: underline\">{{text}}</p>                                        <div class=\"row\" style=\"margin-left: 20px\">                                            <span>Based on the combination of your answers, your risk of sleep apnea may be increased.</span>                                        </div>                                    </div>                                {{else}}                                    <div class=\"title-subcase-child\">                                        <span class=\"checked-icon\"></span>                                        {{text}}                                    </div>                                {{/if}}                            </div>                        {{/if}}                    </div>                </div>            {{/each}}        {{/getChildItemsByCode}}    </div>    {{! Lifestyle factors section }}    <div class=\"container\">        <div style=\"display: flex; align-items: center; justify-content: space-between; background-color: #F3F7FA; padding: 10px 20px; border-radius: 15px 15px 0px 0px;\">            <span class=\"case-title\" style=\"color: #101011;width: 100%;padding: 10px 20px 10px 20px;\">LIFESTYLE FACTORS</span>            <img alt=\"food-icon\" src=\"./icon/icon-restaurant.png\" style=\"width: 40px; height: 40px; margin-right: 15px\"/>        </div>        <div class=\"container-text\">            <div class=\"dark-blue-container\" style=\"background-color: #F3F7FA;\">                <div class=\"subTitle\" style=\"margin-top: 0 !important; padding: 10px 15px\">                    <p>An unhealthy lifestyle can play a role in developing obesity. Lifestyle factors can also increase the risk of certain diseases. The following factors that can negatively affect your health come from your questionnaire:</p>                </div>                {{#getChildItemsByCode \"calculation7\"}}                    {{#each this}}                        <div class=\"title-subcase-child\">                            <p style=\"text-decoration: underline\">{{text}}</p>                            {{#unless (getValue LinkId)}}                                <div class=\"row\" style=\"margin-left: 20px\">                                    {{#if (eq text \"Diet\")}}                                        <span>There are no special dietary requirements for you</span>                                    {{else if (eq text \"Exercise\")}}                                        <span>There are no special requirements regarding exercise, you meet the weekly exercise standard.</span>                                    {{else if (eq text \"Alcohol\")}}                                        <span>There are no special circumstances regarding your alcohol consumption.</span>                                    {{/if}}                                </div>                            {{/unless}}                            {{#if (getValue LinkId)}}                                {{#if item}}                                    {{#each item}}                                        {{#if (getValue LinkId)}}                                            <div class=\"row\">                                                <div class=\"title-subcase-child\">                                                    <span class=\"checked-icon\"></span>                                                    {{text}}                                                </div>                                            </div>                                        {{/if}}                                    {{/each}}                                {{/if}}                                {{#if (eq text \"Diet\")}}                                    <div style=\"font-weight: 400; margin: 10px 0\">                                        More information about healthy eating can be found at:                                        <a href=\"https://www.voedingscentrum.nl\" target=\"_blank\">www.voedingscentrum.nl</a>                                    </div>                                {{/if}}                            {{/if}}                        </div>                    {{/each}}                {{/getChildItemsByCode}}            </div>        </div>    </div>    {{! Hormonal causes section }}    <div class=\"container\">        <div style=\"display: flex; align-items: center; justify-content: space-between; background-color: #F3F7FA; padding: 10px 20px; border-radius: 15px 15px 0px 0px;\">            <span class=\"case-title\" style=\"color: #101011;width: 100%;padding: 10px 20px 10px 20px;\">HORMONAL CAUSES</span>            <img alt=\"food-icon\" src=\"./icon/icon-hormonal.png\" style=\"width: 40px; height: 40px; margin-right: 15px\"/>        </div>        <div class=\"container-text\">            <div class=\"dark-blue-container\" style=\"background-color: #F3F7FA;\">                <div class=\"subTitle\" style=\"margin-top: 0 !important; padding: 10px 15px\">                    {{#if (getValueByCode \"calchormonaal\")}}                        <p>Based on your answers, the following hormonal causes may play a role in your overweight:</p>                    {{else}}                        <p>Based on your answers, there are no indications for hormonal causes of overweight.</p>                    {{/if}}                </div>                {{#getChildItemsByCode \"calchormonaal\"}}                    {{#each this}}                        {{#if (getValue LinkId)}}                            <div class=\"row\">                                <div class=\"title-subcase-child\">                                    <span class=\"checked-icon\"></span>                                    {{text}}                                </div>                            </div>                        {{/if}}                    {{/each}}                {{/getChildItemsByCode}}            </div>        </div>    </div>    {{! Medication causes section }}    <div class=\"container\">        <div style=\"display: flex; align-items: center; justify-content: space-between; background-color: #F3F7FA; padding: 10px 20px; border-radius: 15px 15px 0px 0px;\">            <span class=\"case-title\" style=\"color: #101011;width: 100%;padding: 10px 20px 10px 20px;\">MEDICATION-RELATED CAUSES</span>            <img alt=\"food-icon\" src=\"./icon/icon-med.png\" style=\"width: 40px; height: 40px; margin-right: 15px\"/>        </div>        <div class=\"container-text\">            <div class=\"dark-blue-container\" style=\"background-color: #F3F7FA;\">                <div class=\"subTitle\" style=\"margin-top: 0 !important; padding: 10px 15px\">                    {{#if (getValueByCode \"calculation-5\")}}                        <p>Some medications can contribute to weight gain. You use the following medications that are known to have a weight-increasing side effect:</p>                    {{else}}                        <p>Some medications can contribute to weight gain. You have not noted any medications that are known to have a weight-increasing side effect.</p>                    {{/if}}                </div>                {{#getChildItemsByCode \"calculation-5\"}}                    {{#each this}}                        {{#if (getValue LinkId)}}                            <div class=\"row\">                                <div class=\"title-subcase-child\" style=\"padding-top:10px\">                                    <span class=\"checked-icon\"></span>                                    <div style=\"font-weight:600;color:#000\">{{text}}</div>                                    {{#if item}}                                        {{#each item}}                                            {{#if (getValue LinkId)}}                                                <div class=\"list-container\" style=\"margin-left: 20px;display:flex\">                                                    <span class=\"checked-icon\"></span>                                                    <div style=\"font-weight:normal\">{{text}}</div>                                                </div>                                            {{/if}}                                        {{/each}}                                    {{/if}}                                </div>                            </div>                        {{/if}}                    {{/each}}                {{/getChildItemsByCode}}            </div>        </div>    </div>    {{! Mental and psychosocial factors section }}    <div class=\"container\">        <div style=\"display: flex; align-items: center; justify-content: space-between; background-color: #F3F7FA; padding: 10px 20px; border-radius: 15px 15px 0px 0px;\">            <span class=\"case-title\" style=\"font-weight: bold; color: #101011;width: 100%;padding: 10px 20px 10px 20px;\">MENTAL AND PSYCHOSOCIAL FACTORS</span>            <img alt=\"food-icon\" src=\"./icon/icon-brain.png\" style=\"width: 45px; height: 45px; margin-right: 15px;\"/>        </div>        <div class=\"container-text\">            <div class=\"dark-blue-container\" style=\"background-color: #F3F7FA;\">                <div class=\"subTitle\" style=\"margin-top: 0 !important; padding: 10px 15px\">                    {{#if (getValueByCode \"calculation6\")}}                        <p>Mental and psychosocial factors can play a role in the development of obesity. These are factors that you have indicated in the questionnaire that are present in your case:</p>                    {{else}}                        <p>Based on your answers, there are no special circumstances regarding mental and psychosocial factors.</p>                    {{/if}}                </div>                {{#getChildItemsByCode \"calculation6\"}}                    {{#each this}}                        {{#if (getValue LinkId)}}                            <div class=\"row\">                                <div class=\"title-subcase-child\">                                    <span class=\"checked-icon\"></span>                                    {{text}}                                    {{#if Item}}                                        {{#each Item}}                                            {{#if (getValue LinkId)}}                                                {{#if (eq text \"Stress_cause\")}}                                                    {{value}}                                                {{/if}}                                            {{/if}}                                        {{/each}}                                    {{/if}}                                </div>                            </div>                        {{/if}}                    {{/each}}                {{/getChildItemsByCode}}            </div>        </div>    </div>    {{! Hypothalamic causes section }}    <div class=\"container\">        <div style=\"display: flex; align-items: center; justify-content: space-between; background-color: #F3F7FA; padding: 10px 20px; border-radius: 15px 15px 0px 0px;\">            <span class=\"case-title\" style=\"color: #101011;width: 100%;padding: 10px 20px 10px 20px;\">HYPOTHALAMIC OBESITY</span>            <img alt=\"food-icon\" src=\"./icon/icon-brain.png\" style=\"width: 40px; height: 40px; margin-right: 15px\"/>        </div>        <div class=\"container-text\">            <div class=\"dark-blue-container\" style=\"background-color: #F3F7FA;\">                <div class=\"subTitle\" style=\"margin-top: 0 !important; padding: 10px 15px\">                    {{#if (getValueByCode \"calchypothalaam\")}}                        <p>Based on your answers, it might be useful to discuss with your doctor whether you should have further tests for hypothalamic obesity. The following features may fit with hypothalamic obesity:</p>                    {{else}}                        <p>Based on your answers, there are no signs of hypothalamic obesity.</p>                    {{/if}}                </div>                {{#getChildItemsByCode \"calchypothalaam\"}}                    {{#each this}}                        {{#if (getValue LinkId)}}                            <div class=\"row\">                                <div class=\"title-subcase-child\">                                    <span class=\"checked-icon\"></span>                                    {{text}}                                </div>                            </div>                        {{/if}}                    {{/each}}                {{/getChildItemsByCode}}            </div>        </div>    </div>    {{! Genetic causes section }}    <div class=\"container\">        <div style=\"display: flex; align-items: center; justify-content: space-between; background-color: #F3F7FA; padding: 10px 20px; border-radius: 15px 15px 0px 0px;\">            <span class=\"case-title\" style=\"color: #101011;width: 100%;padding: 10px 20px 10px 20px;\">GENETIC OBESITY</span>            <img alt=\"food-icon\" src=\"./icon/icon-cell.png\" style=\"width: 40px; height: 40px; margin-right: 15px\"/>        </div>        <div class=\"container-text\">            <div class=\"dark-blue-container\" style=\"background-color: #F3F7FA;\">                <div class=\"subTitle\" style=\"margin-top: 0 !important; padding: 10px 15px\">                    {{#if (getValueByCode \"calcgenetisch\")}}                        <p>Genetic obesity is a rare type of obesity. Based on your answers, it might be useful to discuss with your doctor whether you should have further tests for a genetic form of obesity. The following features may fit with genetic obesity:</p>                    {{else}}                        <p>Based on your answers, there are no signs of a genetic type of obesity.</p>                    {{/if}}                </div>                {{#getChildItemsByCode \"calcgenetisch\"}}                    {{#each this}}                        {{#if (getValue LinkId)}}                            <div class=\"row\">                                <div class=\"title-subcase-child\">                                    <span class=\"checked-icon\"></span>                                    {{text}}                                </div>                            </div>                        {{/if}}                    {{/each}}                {{/getChildItemsByCode}}            </div>        </div>    </div></div>"
+    },
+    {
+      "url": "https://fhir.medlix.org/fhir/StructureDefinition/questionnaire-addons-export-pdf-template",
+      "valueString": "<div class='alogaritmh-html'>    <style type='text/css'>        .title-subcase {            margin-top: 10px;        }        .page_refero__component_group > div {            padding-bottom: 5px;            border-bottom: 1px solid #E1E1E1;        }        .output-list li {            padding: 0px !important;            font-size: 14px !important;        }        .grouped-containers {            display: flex;            gap: 24px;            flex-direction: column;        }        .container {            margin-bottom: unset !important;            min-height: 200px;            display: flex;        }        .container-text {            display: flex;            flex: 1;        }        .formSection {            background: rgb(255, 255, 255) !important;        }        @media only screen and (max-width: 900px) {            .grouped-containers {                grid-template-columns: repeat(2, minmax(0, 1fr));            }        }        @media only screen and (max-width: 670px) {            .grouped-containers {                grid-template-columns: repeat(1, minmax(0, 1fr));            }        }    </style>    <div class='header-title-con'         style='text-align: justify; width: 100%; background-color: #fff; font-size: 20px; font-weight: 600; overflow: hidden; color: #000000; margin: 15px 0; box-shadow: 1px 2px 9px rgba(0,0,0,0.3); border-radius: 10px; padding: 100px 30px 30px 30px'>        <div style='color: #1399EC;width: 100%; margin-bottom: 20px;'><h2 style='font-weight: 600'> Result            checkcausesobesity.com </h2></div>        <div style='font-size: 19px;width:100%; font-weight: 400; color: #101011; line-height: normal'> This            questionnaire is made for people who are overweight or have severe overweight (obesity). The goal of            completing the questionnaire is to gain more understanding of the possible causes of your overweight.            You            can share this result with your doctor or healthcare provider. This can help your healthcare provider to            advise and treat you better, and to possibly perform extra tests.        </div>    </div>    <div>        <div style=\"font-size: 30px; color: #0070a8; font-weight: 500; margin: 20px 0; text-align: left\">            Summary        </div>        {{! BMI conditions }}        {{#if (getValueByCode \"bmi\")}}            {{#if (compare (getValueByCode \"bmi\") 'lt' '18.5')}}                <div style=\"display: block; text-align: left; font-size: 18px; margin-bottom: 10px\">                    Regarding your BMI, you are underweight. This questionnaire is not applicable to you.                </div>            {{/if}}            {{#if (compare (getValueByCode \"bmi\") 'ge' '18.5')}}                {{#if (compare (getValueByCode \"bmi\") 'le' '24.9')}}                    <div style='display: block; text-align: left; font-size: 18px'>                         There is a normal weight <span style='font-weight: bold; margin-left: 0px; margin-right: 0px'>                        (BMI {{getValueByCode \"bmi\"}} kg/m<sup>2</sup>)</span>. The following points of attention are known to increase weight:                    </div>                {{/if}}            {{/if}}            {{#if (compare (getValueByCode \"bmi\") 'ge' '25')}}                {{#if (compare (getValueByCode \"bmi\") 'le' '30')}}                    <div style='display: block; text-align: left; font-size: 18px'>                         Based on your <b style='font-weight: bold; margin-left: 5px; margin-right: 5px'>BMI {{getValueByCode \"bmi\"}} kg/m<sup>2</sup>)</b>,                         you are overweight with the following possible underlying causes                    </div>                {{/if}}            {{/if}}            {{#if (compare (getValueByCode \"bmi\") 'ge' '30')}}                <div style='display: block; text-align: left; font-size: 18px'>                     Based on your <b style='font-weight: bold; margin-left: 5px; margin-right: 5px'>BMI ({{getValueByCode \"bmi\"}} kg/m<sup>2</sup>)</b>,                     you have obesity with the following possible underlying causes                </div>            {{/if}}        {{/if}}        {{! Summary list }}        <ul>            <li class='normal-text ' style='padding-left: 10px; '>                {{#if (getValueByCode 'calchormonaal')}}                    Hormonal causes: indications that may be consistent with <span class='first-capital ' style='display: block; '>{{getValueByCode \"calchormonaal\"}}</span>                {{else}}                    No indications for hormonal causes                {{/if}}            </li>            <li class='normal-text ' style='padding-left: 10px '>                {{#if (getValueByCode \"calculation-5\")}}                    Medication-related causes: use of {{getValueByCode \"calculation-5\"}}                {{else}}                    No indications for medication-related causes                {{/if}}            </li>            <li class='normal-text ' style='padding-left: 10px '>                {{#if (getValueByCode \"calculation6\")}}                    Indications for psychological or social causes                {{else}}                    No indications for psychological or social causes                {{/if}}            </li>            <li class='normal-text ' style='padding-left: 10px '>                {{#if (getValueByCode \"calculation7\")}}                    Lifestyle-related causes: in the areas of {{getValueByCode \"calculation7\"}}                {{else}}                    No indications for lifestyle-related causes                {{/if}}            </li>            <li class='normal-text ' style='padding-left: 10px '>                {{#if (getValueByCode \"calchypothalaam\")}}                    Indications for hypothalamic causes                {{else}}                    No indications for hypothalamic causes                {{/if}}            </li>            <li class='normal-text ' style='padding-left: 10px '>                {{#if (getValueByCode \"calcgenetisch\")}}                    Indications for genetic causes                {{else}}                    No indications for genetic causes                {{/if}}            </li>        </ul>    </div>    {{! Completed results section }}    <h2 style='font-size: 24px; color: #1399EC; font-weight: bold; text-align: left; margin: 40px 0 8px 20px;'>        Completed results    </h2>    <div style='font-size: 18px; color: #101011; font-weight: 500; margin: 10px 0 16px 20px; text-align: left;'>        Your <strong>participation</strong> in the survey is greatly appreciated. <strong>Thank you!</strong>    </div>    {{! Possible consequences section }}    <div class=\"container\">        <div style=\"display: flex; align-items: center; justify-content: space-between; background-color: #F3F7FA; padding: 10px 20px; border-radius: 15px 15px 0px 0px;\">            <span class=\"case-title\" style=\"background-color: #F3F7FA; color: #101011;width: 100%;padding: 10px 20px 10px 20px; font-weight: 700 !important;\">POSSIBLE CONSEQUENCES OF BEING OVERWEIGHT</span>        </div>        {{#getChildItemsByCode \"calculation8\"}}            {{#each this}}                <div class=\"container-text\">                    <div class=\"dark-blue-container\" style=\"background-color: #F3F7FA;\">                        <div class=\"subTitle\" style=\"margin-top: 0 !important; padding: 10px 15px\">                            {{subTitle}}                        </div>                        {{#if (getValue LinkId)}}                            <div class=\"row\">                                {{#if (eq text \"Sleep apnea (OSA)\")}}                                    <div class=\"title-subcase-child\">                                        <p style=\"text-decoration: underline\">{{text}}</p>                                        <div class=\"row\" style=\"margin-left: 20px\">                                            <span>Based on the combination of your answers, your risk of sleep apnea may be increased.</span>                                        </div>                                    </div>                                {{else}}                                    <div class=\"title-subcase-child\">                                        <span class=\"checked-icon\"></span>                                        {{text}}                                    </div>                                {{/if}}                            </div>                        {{/if}}                    </div>                </div>            {{/each}}        {{/getChildItemsByCode}}    </div>    {{! Lifestyle factors section }}    <div class=\"container\">        <div style=\"display: flex; align-items: center; justify-content: space-between; background-color: #F3F7FA; padding: 10px 20px; border-radius: 15px 15px 0px 0px;\">            <span class=\"case-title\" style=\"color: #101011;width: 100%;padding: 10px 20px 10px 20px;\">LIFESTYLE FACTORS</span>            <img alt=\"food-icon\" src=\"./icon/icon-restaurant.png\" style=\"width: 40px; height: 40px; margin-right: 15px\"/>        </div>        <div class=\"container-text\">            <div class=\"dark-blue-container\" style=\"background-color: #F3F7FA;\">                <div class=\"subTitle\" style=\"margin-top: 0 !important; padding: 10px 15px\">                    <p>An unhealthy lifestyle can play a role in developing obesity. Lifestyle factors can also increase the risk of certain diseases. The following factors that can negatively affect your health come from your questionnaire:</p>                </div>                {{#getChildItemsByCode \"calculation7\"}}                    {{#each this}}                        <div class=\"title-subcase-child\">                            <p style=\"text-decoration: underline\">{{text}}</p>                            {{#unless (getValue LinkId)}}                                <div class=\"row\" style=\"margin-left: 20px\">                                    {{#if (eq text \"Diet\")}}                                        <span>There are no special dietary requirements for you</span>                                    {{else if (eq text \"Exercise\")}}                                        <span>There are no special requirements regarding exercise, you meet the weekly exercise standard.</span>                                    {{else if (eq text \"Alcohol\")}}                                        <span>There are no special circumstances regarding your alcohol consumption.</span>                                    {{/if}}                                </div>                            {{/unless}}                            {{#if (getValue LinkId)}}                                {{#if item}}                                    {{#each item}}                                        {{#if (getValue LinkId)}}                                            <div class=\"row\">                                                <div class=\"title-subcase-child\">                                                    <span class=\"checked-icon\"></span>                                                    {{text}}                                                </div>                                            </div>                                        {{/if}}                                    {{/each}}                                {{/if}}                                {{#if (eq text \"Diet\")}}                                    <div style=\"font-weight: 400; margin: 10px 0\">                                        More information about healthy eating can be found at:                                        <a href=\"https://www.voedingscentrum.nl\" target=\"_blank\">www.voedingscentrum.nl</a>                                    </div>                                {{/if}}                            {{/if}}                        </div>                    {{/each}}                {{/getChildItemsByCode}}            </div>        </div>    </div>    {{! Hormonal causes section }}    <div class=\"container\">        <div style=\"display: flex; align-items: center; justify-content: space-between; background-color: #F3F7FA; padding: 10px 20px; border-radius: 15px 15px 0px 0px;\">            <span class=\"case-title\" style=\"color: #101011;width: 100%;padding: 10px 20px 10px 20px;\">HORMONAL CAUSES</span>            <img alt=\"food-icon\" src=\"./icon/icon-hormonal.png\" style=\"width: 40px; height: 40px; margin-right: 15px\"/>        </div>        <div class=\"container-text\">            <div class=\"dark-blue-container\" style=\"background-color: #F3F7FA;\">                <div class=\"subTitle\" style=\"margin-top: 0 !important; padding: 10px 15px\">                    {{#if (getValueByCode \"calchormonaal\")}}                        <p>Based on your answers, the following hormonal causes may play a role in your overweight:</p>                    {{else}}                        <p>Based on your answers, there are no indications for hormonal causes of overweight.</p>                    {{/if}}                </div>                {{#getChildItemsByCode \"calchormonaal\"}}                    {{#each this}}                        {{#if (getValue LinkId)}}                            <div class=\"row\">                                <div class=\"title-subcase-child\">                                    <span class=\"checked-icon\"></span>                                    {{text}}                                </div>                            </div>                        {{/if}}                    {{/each}}                {{/getChildItemsByCode}}            </div>        </div>    </div>    {{! Medication causes section }}    <div class=\"container\">        <div style=\"display: flex; align-items: center; justify-content: space-between; background-color: #F3F7FA; padding: 10px 20px; border-radius: 15px 15px 0px 0px;\">            <span class=\"case-title\" style=\"color: #101011;width: 100%;padding: 10px 20px 10px 20px;\">MEDICATION-RELATED CAUSES</span>            <img alt=\"food-icon\" src=\"./icon/icon-med.png\" style=\"width: 40px; height: 40px; margin-right: 15px\"/>        </div>        <div class=\"container-text\">            <div class=\"dark-blue-container\" style=\"background-color: #F3F7FA;\">                <div class=\"subTitle\" style=\"margin-top: 0 !important; padding: 10px 15px\">                    {{#if (getValueByCode \"calculation-5\")}}                        <p>Some medications can contribute to weight gain. You use the following medications that are known to have a weight-increasing side effect:</p>                    {{else}}                        <p>Some medications can contribute to weight gain. You have not noted any medications that are known to have a weight-increasing side effect.</p>                    {{/if}}                </div>                {{#getChildItemsByCode \"calculation-5\"}}                    {{#each this}}                        {{#if (getValue LinkId)}}                            <div class=\"row\">                                <div class=\"title-subcase-child\" style=\"padding-top:10px\">                                    <span class=\"checked-icon\"></span>                                    <div style=\"font-weight:600;color:#000\">{{text}}</div>                                    {{#if item}}                                        {{#each item}}                                            {{#if (getValue LinkId)}}                                                <div class=\"list-container\" style=\"margin-left: 20px;display:flex\">                                                    <span class=\"checked-icon\"></span>                                                    <div style=\"font-weight:normal\">{{text}}</div>                                                </div>                                            {{/if}}                                        {{/each}}                                    {{/if}}                                </div>                            </div>                        {{/if}}                    {{/each}}                {{/getChildItemsByCode}}            </div>        </div>    </div>    {{! Mental and psychosocial factors section }}    <div class=\"container\">        <div style=\"display: flex; align-items: center; justify-content: space-between; background-color: #F3F7FA; padding: 10px 20px; border-radius: 15px 15px 0px 0px;\">            <span class=\"case-title\" style=\"font-weight: bold; color: #101011;width: 100%;padding: 10px 20px 10px 20px;\">MENTAL AND PSYCHOSOCIAL FACTORS</span>            <img alt=\"food-icon\" src=\"./icon/icon-brain.png\" style=\"width: 45px; height: 45px; margin-right: 15px;\"/>        </div>        <div class=\"container-text\">            <div class=\"dark-blue-container\" style=\"background-color: #F3F7FA;\">                <div class=\"subTitle\" style=\"margin-top: 0 !important; padding: 10px 15px\">                    {{#if (getValueByCode \"calculation6\")}}                        <p>Mental and psychosocial factors can play a role in the development of obesity. These are factors that you have indicated in the questionnaire that are present in your case:</p>                    {{else}}                        <p>Based on your answers, there are no special circumstances regarding mental and psychosocial factors.</p>                    {{/if}}                </div>                {{#getChildItemsByCode \"calculation6\"}}                    {{#each this}}                        {{#if (getValue LinkId)}}                            <div class=\"row\">                                <div class=\"title-subcase-child\">                                    <span class=\"checked-icon\"></span>                                    {{text}}                                    {{#if Item}}                                        {{#each Item}}                                            {{#if (getValue LinkId)}}                                                {{#if (eq text \"Stress_cause\")}}                                                    {{value}}                                                {{/if}}                                            {{/if}}                                        {{/each}}                                    {{/if}}                                </div>                            </div>                        {{/if}}                    {{/each}}                {{/getChildItemsByCode}}            </div>        </div>    </div>    {{! Hypothalamic causes section }}    <div class=\"container\">        <div style=\"display: flex; align-items: center; justify-content: space-between; background-color: #F3F7FA; padding: 10px 20px; border-radius: 15px 15px 0px 0px;\">            <span class=\"case-title\" style=\"color: #101011;width: 100%;padding: 10px 20px 10px 20px;\">HYPOTHALAMIC OBESITY</span>            <img alt=\"food-icon\" src=\"./icon/icon-brain.png\" style=\"width: 40px; height: 40px; margin-right: 15px\"/>        </div>        <div class=\"container-text\">            <div class=\"dark-blue-container\" style=\"background-color: #F3F7FA;\">                <div class=\"subTitle\" style=\"margin-top: 0 !important; padding: 10px 15px\">                    {{#if (getValueByCode \"calchypothalaam\")}}                        <p>Based on your answers, it might be useful to discuss with your doctor whether you should have further tests for hypothalamic obesity. The following features may fit with hypothalamic obesity:</p>                    {{else}}                        <p>Based on your answers, there are no signs of hypothalamic obesity.</p>                    {{/if}}                </div>                {{#getChildItemsByCode \"calchypothalaam\"}}                    {{#each this}}                        {{#if (getValue LinkId)}}                            <div class=\"row\">                                <div class=\"title-subcase-child\">                                    <span class=\"checked-icon\"></span>                                    {{text}}                                </div>                            </div>                        {{/if}}                    {{/each}}                {{/getChildItemsByCode}}            </div>        </div>    </div>    {{! Genetic causes section }}    <div class=\"container\">        <div style=\"display: flex; align-items: center; justify-content: space-between; background-color: #F3F7FA; padding: 10px 20px; border-radius: 15px 15px 0px 0px;\">            <span class=\"case-title\" style=\"color: #101011;width: 100%;padding: 10px 20px 10px 20px;\">GENETIC OBESITY</span>            <img alt=\"food-icon\" src=\"./icon/icon-cell.png\" style=\"width: 40px; height: 40px; margin-right: 15px\"/>        </div>        <div class=\"container-text\">            <div class=\"dark-blue-container\" style=\"background-color: #F3F7FA;\">                <div class=\"subTitle\" style=\"margin-top: 0 !important; padding: 10px 15px\">                    {{#if (getValueByCode \"calcgenetisch\")}}                        <p>Genetic obesity is a rare type of obesity. Based on your answers, it might be useful to discuss with your doctor whether you should have further tests for a genetic form of obesity. The following features may fit with genetic obesity:</p>                    {{else}}                        <p>Based on your answers, there are no signs of a genetic type of obesity.</p>                    {{/if}}                </div>                {{#getChildItemsByCode \"calcgenetisch\"}}                    {{#each this}}                        {{#if (getValue LinkId)}}                            <div class=\"row\">                                <div class=\"title-subcase-child\">                                    <span class=\"checked-icon\"></span>                                    {{text}}                                </div>                            </div>                        {{/if}}                    {{/each}}                {{/getChildItemsByCode}}            </div>        </div>    </div></div>"
+    },
+    {
+      "url": "https://fhir.medlix.org/fhir/StructureDefinition/questionnaire-is-hbs",
+      "valueBoolean": true
     }
   ],
   "copyright": "© Copyright 2024. All rights reserved.\n\nErasmus University Medical Center Rotterdam",
@@ -435,7 +439,7 @@
               "display": "AoO"
             }
           ],
-          "text": "How old were you when you became overweight, approximately?",
+          "text": "Approximately how old were you when you became overweight?",
           "type": "integer",
           "required": true
         },
@@ -488,7 +492,7 @@
               "extension": [
                 {
                   "url": "http://helsenorge.no/fhir/StructureDefinition/sdf-sublabel",
-                  "valueMarkdown": "Think for instance about specific medication, stress, living independently of pregnancy"
+                  "valueMarkdown": "Think for instance about specific medication, stress, living independently or pregnancy"
                 }
               ],
               "linkId": "8dadacff-4247-4b58-d4b6-976852826c8a",
@@ -519,7 +523,7 @@
               "extension": [
                 {
                   "url": "http://helsenorge.no/fhir/StructureDefinition/sdf-sublabel",
-                  "valueMarkdown": "Think for instance about specific medication, stress, living independently of pregnancy"
+                  "valueMarkdown": "Think for instance about specific medication, stress, living independently or pregnancy"
                 }
               ],
               "linkId": "fe43718e-7a81-4207-8426-a0df3e0f02ec",
@@ -608,7 +612,7 @@
                 "id": "63c23f52-f7ad-4686-b9ec-6a3844c3211a",
                 "system": "urn:uuid:a2b0961b-ff24-4337-9372-f6fd70d1a524",
                 "code": "2",
-                "display": "I started eating fewer calories."
+                "display": "I started eating fewer calories"
               }
             },
             {
@@ -672,7 +676,7 @@
                 "id": "4cd0dc14-a850-474a-8a44-d7bb0a5d3f6b",
                 "system": "urn:uuid:a2b0961b-ff24-4337-9372-f6fd70d1a524",
                 "code": "10",
-                "display": "I had stomatch surgery"
+                "display": "I had stomach surgery"
               }
             },
             {
@@ -824,6 +828,13 @@
                 },
                 {
                   "valueCoding": {
+                    "id": "f4c76be2-519a-4082-863c-8fd26104ee38",
+                    "system": "urn:uuid:d2028410-494d-4d1a-86eb-bdc5ca7248d5",
+                    "display": "Tirzepatide max 15 mg (Mounjaro ®)"
+                  }
+                },
+                {
+                  "valueCoding": {
                     "id": "ad0089a4-c909-4114-b7d2-3c05e45f0e61",
                     "system": "urn:uuid:d2028410-494d-4d1a-86eb-bdc5ca7248d5",
                     "code": "11",
@@ -899,7 +910,7 @@
             "extension": [
               {
                 "url": "http://hl7.org/fhir/StructureDefinition/rendering-markdown",
-                "valueMarkdown": "##### The following questions are about you as a child."
+                "valueMarkdown": "#### The following questions are about you as a child."
               }
             ]
           },
@@ -1027,7 +1038,7 @@
             "extension": [
               {
                 "url": "http://hl7.org/fhir/StructureDefinition/rendering-markdown",
-                "valueMarkdown": "##### You will now be asked questions about your development as a child."
+                "valueMarkdown": "#### You will now be asked questions about your development as a child."
               }
             ]
           },
@@ -1290,7 +1301,7 @@
           "item": [
             {
               "linkId": "1b29be64-4e9a-432e-a765-67a75c5ec127",
-              "text": "namely?",
+              "text": "Can you explain this?",
               "type": "string",
               "enableWhen": [
                 {
@@ -1308,12 +1319,12 @@
         },
         {
           "linkId": "0cf0e3eb-4b23-40a5-8b13-81e809ae0727",
-          "text": "**You will now be asked questions about your childhood family. By your family we mean your father, mother, brothers and sisters.**",
+          "text": "You will now be asked questions about your childhood family. By your family we mean your father, mother, brothers and sisters.",
           "_text": {
             "extension": [
               {
                 "url": "http://hl7.org/fhir/StructureDefinition/rendering-markdown",
-                "valueMarkdown": "**You will now be asked questions about your childhood family. By your family\nwe mean your father, mother, brothers and sisters.**"
+                "valueMarkdown": "#### You will now be asked questions about your childhood family. By your family we mean your father, mother, brothers and sisters."
               }
             ]
           },
@@ -1529,7 +1540,7 @@
           "item": [
             {
               "linkId": "9524aed5-60a5-4b73-ddbe-28bd30fbf58a",
-              "text": "Welke gezinsleden hadden obesitas?",
+              "text": "Which family members suffered from obesity?",
               "type": "display",
               "enableWhen": [
                 {
@@ -2001,27 +2012,45 @@
           "required": true,
           "answerOption": [
             {
+              "extension": [
+                {
+                  "url": "https://hl7.org/fhir/StructureDefinition/ordinalValue",
+                  "valueDecimal": 0
+                }
+              ],
               "valueCoding": {
                 "id": "9bb2e666-be00-4553-cb6f-fc00ae1f6d90",
                 "system": "urn:uuid:0ce5c08b-1a3e-43cc-8df7-677e9d0d0a69",
                 "code": "1",
-                "display": "I have a lower appetite for food than others."
+                "display": "I have a lower appetite for food than others"
               }
             },
             {
+              "extension": [
+                {
+                  "url": "https://hl7.org/fhir/StructureDefinition/ordinalValue",
+                  "valueDecimal": 0
+                }
+              ],
               "valueCoding": {
                 "id": "ac410def-1d5e-49c3-8b2f-c74e0bacfd0c",
                 "system": "urn:uuid:0ce5c08b-1a3e-43cc-8df7-677e9d0d0a69",
                 "code": "2",
-                "display": "I have the same appetite for food as others."
+                "display": "I have the same appetite for food as others"
               }
             },
             {
+              "extension": [
+                {
+                  "url": "https://hl7.org/fhir/StructureDefinition/ordinalValue",
+                  "valueDecimal": 0.5
+                }
+              ],
               "valueCoding": {
                 "id": "2c38163b-deca-4fa8-d310-3745c587fc64",
                 "system": "urn:uuid:0ce5c08b-1a3e-43cc-8df7-677e9d0d0a69",
                 "code": "3",
-                "display": "I have a higher appetite for food than others."
+                "display": "I have a higher appetite for food than others"
               }
             }
           ]
@@ -2054,6 +2083,12 @@
           "required": true,
           "answerOption": [
             {
+              "extension": [
+                {
+                  "url": "https://hl7.org/fhir/StructureDefinition/ordinalValue",
+                  "valueDecimal": 1
+                }
+              ],
               "valueCoding": {
                 "id": "c67c24b2-1ddb-4d6b-9bcd-62b8da730908",
                 "system": "urn:uuid:6304d846-5033-4122-8f4b-fb03f6fbb67c",
@@ -2099,6 +2134,12 @@
           "required": true,
           "answerOption": [
             {
+              "extension": [
+                {
+                  "url": "https://hl7.org/fhir/StructureDefinition/ordinalValue",
+                  "valueDecimal": 1
+                }
+              ],
               "valueCoding": {
                 "id": "5b2268eb-ec35-44a3-ea9c-d51df5686aac",
                 "system": "urn:uuid:9e745b02-e240-4bcd-8b0a-9b8000667b1d",
@@ -2176,6 +2217,12 @@
               }
             },
             {
+              "extension": [
+                {
+                  "url": "https://hl7.org/fhir/StructureDefinition/ordinalValue",
+                  "valueDecimal": 1
+                }
+              ],
               "valueCoding": {
                 "id": "ee7f3c45-4737-41c6-8f1a-fc2521f075b2",
                 "system": "urn:uuid:d66425c3-899a-4735-d4b4-64018ba459b6",
@@ -2184,6 +2231,12 @@
               }
             },
             {
+              "extension": [
+                {
+                  "url": "https://hl7.org/fhir/StructureDefinition/ordinalValue",
+                  "valueDecimal": 1
+                }
+              ],
               "valueCoding": {
                 "id": "b3f85df7-c201-4258-8b3b-defe0c627080",
                 "system": "urn:uuid:d66425c3-899a-4735-d4b4-64018ba459b6",
@@ -2192,6 +2245,12 @@
               }
             },
             {
+              "extension": [
+                {
+                  "url": "https://hl7.org/fhir/StructureDefinition/ordinalValue",
+                  "valueDecimal": 1
+                }
+              ],
               "valueCoding": {
                 "id": "7f7a7cff-13ed-4228-b08b-620701637468",
                 "system": "urn:uuid:d66425c3-899a-4735-d4b4-64018ba459b6",
@@ -2237,6 +2296,12 @@
               }
             },
             {
+              "extension": [
+                {
+                  "url": "https://hl7.org/fhir/StructureDefinition/ordinalValue",
+                  "valueDecimal": 1
+                }
+              ],
               "valueCoding": {
                 "id": "20e06841-8622-47ec-8d27-92cf00f16447",
                 "system": "urn:uuid:2e01da65-98cf-436a-826e-411d05a6021f",
@@ -2658,7 +2723,7 @@
               "extension": [
                 {
                   "url": "http://helsenorge.no/fhir/StructureDefinition/sdf-sublabel",
-                  "valueMarkdown": "Light soft drinks do not count."
+                  "valueMarkdown": "Light soft drinks do not count"
                 }
               ],
               "linkId": "0e314198-c5e9-490d-8ee9-6f2dd21fd473",
@@ -3720,16 +3785,16 @@
               "valueInteger": 50
             },
             {
-              "url": "http://ehelse.no/fhir/StructureDefinition/validationtext",
-              "valueString": "Ongeldige waarde"
-            },
-            {
               "url": "http://hl7.org/fhir/StructureDefinition/maxValue",
               "valueInteger": 500
             },
             {
               "url": "http://helsenorge.no/fhir/StructureDefinition/sdf-sublabel",
-              "valueMarkdown": "In kilogram"
+              "valueMarkdown": "In kilograms"
+            },
+            {
+              "url": "http://ehelse.no/fhir/StructureDefinition/validationtext",
+              "valueString": "Invalid weight"
             }
           ],
           "linkId": "891561c6-f3f3-49c8-9d2d-457cc75ee83d",
@@ -3741,15 +3806,787 @@
               "display": "Weight"
             }
           ],
-          "text": "What is your bodyweight?",
+          "text": "What is your body weight?",
           "type": "integer",
           "required": true
         },
         {
           "extension": [
             {
+              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+              "valueCodeableConcept": {
+                "coding": [
+                  {
+                    "system": "http://hl7.org/fhir/ValueSet/questionnaire-item-control",
+                    "code": "drop-down"
+                  }
+                ]
+              }
+            }
+          ],
+          "linkId": "0e8e0ddd-cc95-49c5-8263-c2cff428dc72",
+          "code": [
+            {
+              "id": "9daea175-bfdb-49b6-9e27-f3facb743b91",
+              "system": "urn:uuid:0041d643-3661-44bb-ee43-165688a984bf",
+              "code": "Country",
+              "display": "Country"
+            }
+          ],
+          "text": "Which country do you live in?",
+          "type": "choice",
+          "required": false,
+          "answerOption": [
+            {
+              "extension": [
+                {
+                  "url": "https://hl7.org/fhir/StructureDefinition/ordinalValue",
+                  "valueDecimal": 0
+                }
+              ],
+              "valueCoding": {
+                "id": "f56921a1-ad79-4956-951c-f877e25c2e93",
+                "system": "urn:uuid:1b2c6e57-bf4f-4555-deb6-57ce03d3c200",
+                "code": "1",
+                "display": "Albania"
+              }
+            },
+            {
+              "valueCoding": {
+                "id": "7789e59d-a318-4d21-8903-1f26d500b9b9",
+                "system": "urn:uuid:1b2c6e57-bf4f-4555-deb6-57ce03d3c200",
+                "code": "2",
+                "display": "Andorra"
+              }
+            },
+            {
+              "extension": [
+                {
+                  "url": "https://hl7.org/fhir/StructureDefinition/ordinalValue",
+                  "valueDecimal": 0
+                }
+              ],
+              "valueCoding": {
+                "id": "27da19e0-2882-474f-abab-366ae037b58b",
+                "system": "urn:uuid:1b2c6e57-bf4f-4555-deb6-57ce03d3c200",
+                "code": "3",
+                "display": "Armenia"
+              }
+            },
+            {
+              "extension": [
+                {
+                  "url": "https://hl7.org/fhir/StructureDefinition/ordinalValue",
+                  "valueDecimal": 0
+                }
+              ],
+              "valueCoding": {
+                "id": "aed5f40e-e29b-4e6e-ecb7-72bb6e40948c",
+                "system": "urn:uuid:1b2c6e57-bf4f-4555-deb6-57ce03d3c200",
+                "code": "4",
+                "display": "Austria"
+              }
+            },
+            {
+              "extension": [
+                {
+                  "url": "https://hl7.org/fhir/StructureDefinition/ordinalValue",
+                  "valueDecimal": 0
+                }
+              ],
+              "valueCoding": {
+                "id": "2c35deb8-2cea-41fe-ec25-9f692a4fa3ec",
+                "system": "urn:uuid:1b2c6e57-bf4f-4555-deb6-57ce03d3c200",
+                "code": "5",
+                "display": "Azerbaijan"
+              }
+            },
+            {
+              "extension": [
+                {
+                  "url": "https://hl7.org/fhir/StructureDefinition/ordinalValue",
+                  "valueDecimal": 0
+                }
+              ],
+              "valueCoding": {
+                "id": "4e99fb84-8561-4f90-8290-862a0a96b930",
+                "system": "urn:uuid:1b2c6e57-bf4f-4555-deb6-57ce03d3c200",
+                "code": "6",
+                "display": "Belarus"
+              }
+            },
+            {
+              "extension": [
+                {
+                  "url": "https://hl7.org/fhir/StructureDefinition/ordinalValue",
+                  "valueDecimal": 0
+                }
+              ],
+              "valueCoding": {
+                "id": "92497b63-9835-4f96-8cec-562aee6c3820",
+                "system": "urn:uuid:1b2c6e57-bf4f-4555-deb6-57ce03d3c200",
+                "code": "7",
+                "display": "Belgium"
+              }
+            },
+            {
+              "extension": [
+                {
+                  "url": "https://hl7.org/fhir/StructureDefinition/ordinalValue",
+                  "valueDecimal": 0
+                }
+              ],
+              "valueCoding": {
+                "id": "9b375653-febd-48f4-9476-34a71d33c81e",
+                "system": "urn:uuid:1b2c6e57-bf4f-4555-deb6-57ce03d3c200",
+                "code": "8",
+                "display": "Bosnia and Herzegovina"
+              }
+            },
+            {
+              "extension": [
+                {
+                  "url": "https://hl7.org/fhir/StructureDefinition/ordinalValue",
+                  "valueDecimal": 0
+                }
+              ],
+              "valueCoding": {
+                "id": "ee79abdf-bcd0-4200-8b93-5c5a934a45e0",
+                "system": "urn:uuid:1b2c6e57-bf4f-4555-deb6-57ce03d3c200",
+                "code": "9",
+                "display": "Bulgaria"
+              }
+            },
+            {
+              "extension": [
+                {
+                  "url": "https://hl7.org/fhir/StructureDefinition/ordinalValue",
+                  "valueDecimal": 0
+                }
+              ],
+              "valueCoding": {
+                "id": "0fabf948-40ab-4545-b555-53eee83aeefe",
+                "system": "urn:uuid:1b2c6e57-bf4f-4555-deb6-57ce03d3c200",
+                "code": "10",
+                "display": "Canada"
+              }
+            },
+            {
+              "extension": [
+                {
+                  "url": "https://hl7.org/fhir/StructureDefinition/ordinalValue",
+                  "valueDecimal": 0
+                }
+              ],
+              "valueCoding": {
+                "id": "8637bf3d-8fa1-4dc7-8e83-be90901ad3c1",
+                "system": "urn:uuid:1b2c6e57-bf4f-4555-deb6-57ce03d3c200",
+                "code": "11",
+                "display": "Croatia"
+              }
+            },
+            {
+              "extension": [
+                {
+                  "url": "https://hl7.org/fhir/StructureDefinition/ordinalValue",
+                  "valueDecimal": 0
+                }
+              ],
+              "valueCoding": {
+                "id": "b24f7f16-b042-4a7e-f600-33ff744f8f5f",
+                "system": "urn:uuid:1b2c6e57-bf4f-4555-deb6-57ce03d3c200",
+                "code": "12",
+                "display": "Cyprus"
+              }
+            },
+            {
+              "extension": [
+                {
+                  "url": "https://hl7.org/fhir/StructureDefinition/ordinalValue",
+                  "valueDecimal": 0
+                }
+              ],
+              "valueCoding": {
+                "id": "4bc00830-7ac9-49ab-f20f-d622d28f0acc",
+                "system": "urn:uuid:1b2c6e57-bf4f-4555-deb6-57ce03d3c200",
+                "code": "13",
+                "display": "Czech Republic"
+              }
+            },
+            {
+              "extension": [
+                {
+                  "url": "https://hl7.org/fhir/StructureDefinition/ordinalValue",
+                  "valueDecimal": 0
+                }
+              ],
+              "valueCoding": {
+                "id": "7476462c-a614-431a-8cce-660a9b5fec2c",
+                "system": "urn:uuid:1b2c6e57-bf4f-4555-deb6-57ce03d3c200",
+                "code": "14",
+                "display": "Denmark"
+              }
+            },
+            {
+              "extension": [
+                {
+                  "url": "https://hl7.org/fhir/StructureDefinition/ordinalValue",
+                  "valueDecimal": 0
+                }
+              ],
+              "valueCoding": {
+                "id": "d74f8748-9bca-4ab8-8ecf-f4ffb1c01a34",
+                "system": "urn:uuid:1b2c6e57-bf4f-4555-deb6-57ce03d3c200",
+                "code": "15",
+                "display": "Dubai"
+              }
+            },
+            {
+              "valueCoding": {
+                "id": "c866319b-e1ca-4d9c-ebb1-dd0940c42dfc",
+                "system": "urn:uuid:1b2c6e57-bf4f-4555-deb6-57ce03d3c200",
+                "code": "16",
+                "display": "Estonia"
+              }
+            },
+            {
+              "extension": [
+                {
+                  "url": "https://hl7.org/fhir/StructureDefinition/ordinalValue",
+                  "valueDecimal": 0
+                }
+              ],
+              "valueCoding": {
+                "id": "4d2fb708-197a-486b-fd61-87af24da3992",
+                "system": "urn:uuid:1b2c6e57-bf4f-4555-deb6-57ce03d3c200",
+                "code": "17",
+                "display": "Finland"
+              }
+            },
+            {
+              "extension": [
+                {
+                  "url": "https://hl7.org/fhir/StructureDefinition/ordinalValue",
+                  "valueDecimal": 0
+                }
+              ],
+              "valueCoding": {
+                "id": "3078be25-4fba-4422-92d6-ba5227fc4dbd",
+                "system": "urn:uuid:1b2c6e57-bf4f-4555-deb6-57ce03d3c200",
+                "code": "18",
+                "display": "France"
+              }
+            },
+            {
+              "extension": [
+                {
+                  "url": "https://hl7.org/fhir/StructureDefinition/ordinalValue",
+                  "valueDecimal": 0
+                }
+              ],
+              "valueCoding": {
+                "id": "1dabe470-3ce6-4f56-82d8-43b9078876df",
+                "system": "urn:uuid:1b2c6e57-bf4f-4555-deb6-57ce03d3c200",
+                "code": "19",
+                "display": "Georgia"
+              }
+            },
+            {
+              "extension": [
+                {
+                  "url": "https://hl7.org/fhir/StructureDefinition/ordinalValue",
+                  "valueDecimal": 0
+                }
+              ],
+              "valueCoding": {
+                "id": "d37b16d0-5ecd-48f4-996c-6d5b1a3dffbd",
+                "system": "urn:uuid:1b2c6e57-bf4f-4555-deb6-57ce03d3c200",
+                "code": "20",
+                "display": "Germany"
+              }
+            },
+            {
+              "extension": [
+                {
+                  "url": "https://hl7.org/fhir/StructureDefinition/ordinalValue",
+                  "valueDecimal": 0
+                }
+              ],
+              "valueCoding": {
+                "id": "c777e292-977b-4a4c-817f-debbef35cf5e",
+                "system": "urn:uuid:1b2c6e57-bf4f-4555-deb6-57ce03d3c200",
+                "code": "21",
+                "display": "Greece"
+              }
+            },
+            {
+              "extension": [
+                {
+                  "url": "https://hl7.org/fhir/StructureDefinition/ordinalValue",
+                  "valueDecimal": 0
+                }
+              ],
+              "valueCoding": {
+                "id": "f133e9b1-2c7d-46a5-9c85-76771f26be20",
+                "system": "urn:uuid:1b2c6e57-bf4f-4555-deb6-57ce03d3c200",
+                "code": "22",
+                "display": "Hungary"
+              }
+            },
+            {
+              "extension": [
+                {
+                  "url": "https://hl7.org/fhir/StructureDefinition/ordinalValue",
+                  "valueDecimal": 0
+                }
+              ],
+              "valueCoding": {
+                "id": "1be54fd5-5b80-48c2-9d21-9b36c7644651",
+                "system": "urn:uuid:1b2c6e57-bf4f-4555-deb6-57ce03d3c200",
+                "code": "23",
+                "display": "Iceland"
+              }
+            },
+            {
+              "extension": [
+                {
+                  "url": "https://hl7.org/fhir/StructureDefinition/ordinalValue",
+                  "valueDecimal": 0
+                }
+              ],
+              "valueCoding": {
+                "id": "54667024-75e0-4f61-fc7b-68e66a355f87",
+                "system": "urn:uuid:1b2c6e57-bf4f-4555-deb6-57ce03d3c200",
+                "code": "24",
+                "display": "Ireland"
+              }
+            },
+            {
+              "extension": [
+                {
+                  "url": "https://hl7.org/fhir/StructureDefinition/ordinalValue",
+                  "valueDecimal": 0
+                }
+              ],
+              "valueCoding": {
+                "id": "52aa3293-9f97-4b95-82df-281f1f048541",
+                "system": "urn:uuid:1b2c6e57-bf4f-4555-deb6-57ce03d3c200",
+                "code": "25",
+                "display": "Italy"
+              }
+            },
+            {
+              "extension": [
+                {
+                  "url": "https://hl7.org/fhir/StructureDefinition/ordinalValue",
+                  "valueDecimal": 0
+                }
+              ],
+              "valueCoding": {
+                "id": "cd5daec4-4b0b-42c1-8fdc-70d14f4b8bc1",
+                "system": "urn:uuid:1b2c6e57-bf4f-4555-deb6-57ce03d3c200",
+                "code": "26",
+                "display": "Kazakhstan"
+              }
+            },
+            {
+              "extension": [
+                {
+                  "url": "https://hl7.org/fhir/StructureDefinition/ordinalValue",
+                  "valueDecimal": 0
+                }
+              ],
+              "valueCoding": {
+                "id": "7ab73812-cdf6-474f-8967-116994180b0f",
+                "system": "urn:uuid:1b2c6e57-bf4f-4555-deb6-57ce03d3c200",
+                "code": "27",
+                "display": "Kosovo"
+              }
+            },
+            {
+              "extension": [
+                {
+                  "url": "https://hl7.org/fhir/StructureDefinition/ordinalValue",
+                  "valueDecimal": 0
+                }
+              ],
+              "valueCoding": {
+                "id": "6743e9c7-6053-4bc1-b755-8423d92df84c",
+                "system": "urn:uuid:1b2c6e57-bf4f-4555-deb6-57ce03d3c200",
+                "code": "28",
+                "display": "Latvia"
+              }
+            },
+            {
+              "valueCoding": {
+                "id": "2fda8c34-953c-4ae0-80cd-5075c0fdcccc",
+                "system": "urn:uuid:1b2c6e57-bf4f-4555-deb6-57ce03d3c200",
+                "code": "29",
+                "display": "Liechtenstein"
+              }
+            },
+            {
+              "extension": [
+                {
+                  "url": "https://hl7.org/fhir/StructureDefinition/ordinalValue",
+                  "valueDecimal": 0
+                }
+              ],
+              "valueCoding": {
+                "id": "25e002dc-7853-4222-9c5e-14cbb903f3c8",
+                "system": "urn:uuid:1b2c6e57-bf4f-4555-deb6-57ce03d3c200",
+                "code": "30",
+                "display": "Lithuania"
+              }
+            },
+            {
+              "extension": [
+                {
+                  "url": "https://hl7.org/fhir/StructureDefinition/ordinalValue",
+                  "valueDecimal": 0
+                }
+              ],
+              "valueCoding": {
+                "id": "116f4ab3-37b2-4cac-8f8d-f8971e16f533",
+                "system": "urn:uuid:1b2c6e57-bf4f-4555-deb6-57ce03d3c200",
+                "code": "31",
+                "display": "Luxembourg"
+              }
+            },
+            {
+              "extension": [
+                {
+                  "url": "https://hl7.org/fhir/StructureDefinition/ordinalValue",
+                  "valueDecimal": 0
+                }
+              ],
+              "valueCoding": {
+                "id": "da4c0fce-cdb2-4ddd-9854-5c1674d8a8ce",
+                "system": "urn:uuid:1b2c6e57-bf4f-4555-deb6-57ce03d3c200",
+                "code": "32",
+                "display": "Malta"
+              }
+            },
+            {
+              "extension": [
+                {
+                  "url": "https://hl7.org/fhir/StructureDefinition/ordinalValue",
+                  "valueDecimal": 0
+                }
+              ],
+              "valueCoding": {
+                "id": "98480067-8097-4071-893e-647f242a0fd0",
+                "system": "urn:uuid:1b2c6e57-bf4f-4555-deb6-57ce03d3c200",
+                "code": "33",
+                "display": "Moldova"
+              }
+            },
+            {
+              "extension": [
+                {
+                  "url": "https://hl7.org/fhir/StructureDefinition/ordinalValue",
+                  "valueDecimal": 0
+                }
+              ],
+              "valueCoding": {
+                "id": "f77103fb-b18a-4aac-90bb-10723782c04e",
+                "system": "urn:uuid:1b2c6e57-bf4f-4555-deb6-57ce03d3c200",
+                "code": "34",
+                "display": "Monaco"
+              }
+            },
+            {
+              "extension": [
+                {
+                  "url": "https://hl7.org/fhir/StructureDefinition/ordinalValue",
+                  "valueDecimal": 0
+                }
+              ],
+              "valueCoding": {
+                "id": "62bcd92c-dc33-4894-cf2a-3130467992ca",
+                "system": "urn:uuid:1b2c6e57-bf4f-4555-deb6-57ce03d3c200",
+                "code": "35",
+                "display": "Montenegro"
+              }
+            },
+            {
+              "extension": [
+                {
+                  "url": "https://hl7.org/fhir/StructureDefinition/ordinalValue",
+                  "valueDecimal": 0
+                }
+              ],
+              "valueCoding": {
+                "id": "03639358-d314-4cbd-8588-e8b3369b9df2",
+                "system": "urn:uuid:1b2c6e57-bf4f-4555-deb6-57ce03d3c200",
+                "code": "36",
+                "display": "Netherlands"
+              }
+            },
+            {
+              "extension": [
+                {
+                  "url": "https://hl7.org/fhir/StructureDefinition/ordinalValue",
+                  "valueDecimal": 0
+                }
+              ],
+              "valueCoding": {
+                "id": "9e03e7db-6d77-4a20-8fd8-d04a351797d9",
+                "system": "urn:uuid:1b2c6e57-bf4f-4555-deb6-57ce03d3c200",
+                "code": "37",
+                "display": "North Macedonia"
+              }
+            },
+            {
+              "extension": [
+                {
+                  "url": "https://hl7.org/fhir/StructureDefinition/ordinalValue",
+                  "valueDecimal": 0
+                }
+              ],
+              "valueCoding": {
+                "id": "4f251372-3f8f-4b33-8f14-64fda1ba0bbc",
+                "system": "urn:uuid:1b2c6e57-bf4f-4555-deb6-57ce03d3c200",
+                "code": "38",
+                "display": "Norway"
+              }
+            },
+            {
+              "extension": [
+                {
+                  "url": "https://hl7.org/fhir/StructureDefinition/ordinalValue",
+                  "valueDecimal": 0
+                }
+              ],
+              "valueCoding": {
+                "id": "2e8b3e9c-f2f5-4c90-9791-20c5028ddcaa",
+                "system": "urn:uuid:1b2c6e57-bf4f-4555-deb6-57ce03d3c200",
+                "code": "39",
+                "display": "Poland"
+              }
+            },
+            {
+              "extension": [
+                {
+                  "url": "https://hl7.org/fhir/StructureDefinition/ordinalValue",
+                  "valueDecimal": 0
+                }
+              ],
+              "valueCoding": {
+                "id": "2da997a7-d947-4a8c-f26b-8cc304c89b3e",
+                "system": "urn:uuid:1b2c6e57-bf4f-4555-deb6-57ce03d3c200",
+                "code": "40",
+                "display": "Portugal"
+              }
+            },
+            {
+              "extension": [
+                {
+                  "url": "https://hl7.org/fhir/StructureDefinition/ordinalValue",
+                  "valueDecimal": 0
+                }
+              ],
+              "valueCoding": {
+                "id": "6d3378c1-bc65-4ed9-9248-dd2dce5ebd74",
+                "system": "urn:uuid:1b2c6e57-bf4f-4555-deb6-57ce03d3c200",
+                "code": "41",
+                "display": "Romania"
+              }
+            },
+            {
+              "extension": [
+                {
+                  "url": "https://hl7.org/fhir/StructureDefinition/ordinalValue",
+                  "valueDecimal": 0
+                }
+              ],
+              "valueCoding": {
+                "id": "326caf1b-2dff-4714-95a9-60fa9b8f5bd1",
+                "system": "urn:uuid:1b2c6e57-bf4f-4555-deb6-57ce03d3c200",
+                "code": "42",
+                "display": "Russia"
+              }
+            },
+            {
+              "extension": [
+                {
+                  "url": "https://hl7.org/fhir/StructureDefinition/ordinalValue",
+                  "valueDecimal": 0
+                }
+              ],
+              "valueCoding": {
+                "id": "cbb1a93a-092d-41d5-8aee-f957291ed58c",
+                "system": "urn:uuid:1b2c6e57-bf4f-4555-deb6-57ce03d3c200",
+                "code": "43",
+                "display": "San Marino"
+              }
+            },
+            {
+              "valueCoding": {
+                "id": "41d752e5-ad75-4b59-93be-3fc3ea77eb94",
+                "system": "urn:uuid:1b2c6e57-bf4f-4555-deb6-57ce03d3c200",
+                "code": "44",
+                "display": "Serbia"
+              }
+            },
+            {
+              "extension": [
+                {
+                  "url": "https://hl7.org/fhir/StructureDefinition/ordinalValue",
+                  "valueDecimal": 0
+                }
+              ],
+              "valueCoding": {
+                "id": "e74426d0-f44d-4af8-8d0d-b3370ed1f1a7",
+                "system": "urn:uuid:1b2c6e57-bf4f-4555-deb6-57ce03d3c200",
+                "code": "45",
+                "display": "Slovakia"
+              }
+            },
+            {
+              "extension": [
+                {
+                  "url": "https://hl7.org/fhir/StructureDefinition/ordinalValue",
+                  "valueDecimal": 0
+                }
+              ],
+              "valueCoding": {
+                "id": "161b862a-ab8f-4527-8e21-f84dc00b46c5",
+                "system": "urn:uuid:1b2c6e57-bf4f-4555-deb6-57ce03d3c200",
+                "code": "46",
+                "display": "Slovenia"
+              }
+            },
+            {
+              "extension": [
+                {
+                  "url": "https://hl7.org/fhir/StructureDefinition/ordinalValue",
+                  "valueDecimal": 0
+                }
+              ],
+              "valueCoding": {
+                "id": "5f1ccee8-98c6-4afc-e030-1a06b90c139c",
+                "system": "urn:uuid:1b2c6e57-bf4f-4555-deb6-57ce03d3c200",
+                "code": "47",
+                "display": "Spain"
+              }
+            },
+            {
+              "extension": [
+                {
+                  "url": "https://hl7.org/fhir/StructureDefinition/ordinalValue",
+                  "valueDecimal": 0
+                }
+              ],
+              "valueCoding": {
+                "id": "c44367d8-7908-4b15-8456-57b7c74abd5b",
+                "system": "urn:uuid:1b2c6e57-bf4f-4555-deb6-57ce03d3c200",
+                "code": "48",
+                "display": "Sweden"
+              }
+            },
+            {
+              "extension": [
+                {
+                  "url": "https://hl7.org/fhir/StructureDefinition/ordinalValue",
+                  "valueDecimal": 0
+                }
+              ],
+              "valueCoding": {
+                "id": "cbce2ec9-0a13-4fba-b09b-815134583689",
+                "system": "urn:uuid:1b2c6e57-bf4f-4555-deb6-57ce03d3c200",
+                "code": "49",
+                "display": "Switzerland"
+              }
+            },
+            {
+              "extension": [
+                {
+                  "url": "https://hl7.org/fhir/StructureDefinition/ordinalValue",
+                  "valueDecimal": 0
+                }
+              ],
+              "valueCoding": {
+                "id": "b4f71ed3-19ab-4a45-92d0-c9248b0cdc07",
+                "system": "urn:uuid:1b2c6e57-bf4f-4555-deb6-57ce03d3c200",
+                "code": "50",
+                "display": "Turkey"
+              }
+            },
+            {
+              "extension": [
+                {
+                  "url": "https://hl7.org/fhir/StructureDefinition/ordinalValue",
+                  "valueDecimal": 0
+                }
+              ],
+              "valueCoding": {
+                "id": "18e64bfd-e254-4c17-f356-69535a1a9cc4",
+                "system": "urn:uuid:1b2c6e57-bf4f-4555-deb6-57ce03d3c200",
+                "code": "51",
+                "display": "Ukraine"
+              }
+            },
+            {
+              "extension": [
+                {
+                  "url": "https://hl7.org/fhir/StructureDefinition/ordinalValue",
+                  "valueDecimal": 0
+                }
+              ],
+              "valueCoding": {
+                "id": "df975c69-d608-43de-9cbd-4836e3f22ec0",
+                "system": "urn:uuid:1b2c6e57-bf4f-4555-deb6-57ce03d3c200",
+                "code": "52",
+                "display": "United Kingdom"
+              }
+            },
+            {
+              "valueCoding": {
+                "id": "8c61b16e-17e0-4313-cc18-0e8448ba8c37",
+                "system": "urn:uuid:1b2c6e57-bf4f-4555-deb6-57ce03d3c200",
+                "code": "53",
+                "display": "United States of America"
+              }
+            },
+            {
+              "extension": [
+                {
+                  "url": "https://hl7.org/fhir/StructureDefinition/ordinalValue",
+                  "valueDecimal": 0
+                }
+              ],
+              "valueCoding": {
+                "id": "55c4b785-5060-4177-8c65-8403c88aa320",
+                "system": "urn:uuid:1b2c6e57-bf4f-4555-deb6-57ce03d3c200",
+                "code": "54",
+                "display": "Vatican City"
+              }
+            },
+            {
+              "valueCoding": {
+                "id": "227c995b-4c02-43f8-d76b-7720b35b6146",
+                "system": "urn:uuid:1b2c6e57-bf4f-4555-deb6-57ce03d3c200",
+                "code": "55",
+                "display": "I live in another country"
+              }
+            }
+          ],
+          "item": [
+            {
+              "linkId": "66dbae86-3f21-4363-9946-2e14eee22bcd",
+              "text": "In case your country was not in the list: can you specify in which country you live?",
+              "type": "string",
+              "required": false,
+              "maxLength": 30
+            }
+          ]
+        },
+        {
+          "extension": [
+            {
               "url": "http://helsenorge.no/fhir/StructureDefinition/sdf-sublabel",
-              "valueMarkdown": "Only the numbers are sufficient, for example 1234"
+              "valueMarkdown": "This question is not mandatory"
             }
           ],
           "linkId": "0d4544ba-cfe0-443a-8928-c41b06ea10ce",
@@ -3999,12 +4836,12 @@
       "item": [
         {
           "linkId": "b4b7eba8-6bc8-441e-ca1f-242eb9630e63",
-          "text": "**You will now be asked questions about your health. And whether you have any special characteristics. These can sometimes be related to certain causes of obesity**",
+          "text": "You will now be asked questions about your health and whether you have any special characteristics. These can sometimes be related to certain causes of obesity",
           "_text": {
             "extension": [
               {
                 "url": "http://hl7.org/fhir/StructureDefinition/rendering-markdown",
-                "valueMarkdown": "**You will now be asked questions about your health.\nAnd whether you have any special characteristics. These can sometimes be\nrelated to certain causes of obesity**"
+                "valueMarkdown": "**You will now be asked questions about your health and whether you have any special characteristics. These can sometimes be related to certain causes of obesity**"
               }
             ]
           },
@@ -4047,6 +4884,12 @@
               }
             },
             {
+              "extension": [
+                {
+                  "url": "https://hl7.org/fhir/StructureDefinition/ordinalValue",
+                  "valueDecimal": 1
+                }
+              ],
               "valueCoding": {
                 "id": "c57fef9d-87c6-40d5-8f34-802c70fd83e4",
                 "system": "urn:uuid:7b5c50e4-e7ef-4549-8635-4fe800fab7ef",
@@ -4092,6 +4935,12 @@
               }
             },
             {
+              "extension": [
+                {
+                  "url": "https://hl7.org/fhir/StructureDefinition/ordinalValue",
+                  "valueDecimal": 1
+                }
+              ],
               "valueCoding": {
                 "id": "af783434-df82-47b0-c542-ca3d05937db6",
                 "system": "urn:uuid:b0366067-4842-4fde-8f3e-e7a3007cdc10",
@@ -4155,6 +5004,12 @@
               }
             },
             {
+              "extension": [
+                {
+                  "url": "https://hl7.org/fhir/StructureDefinition/ordinalValue",
+                  "valueDecimal": 1
+                }
+              ],
               "valueCoding": {
                 "id": "2b301c4e-79e0-4d73-912b-dbfba86ba982",
                 "system": "urn:uuid:6dbf97dd-7df8-4dfc-db01-37dccb1cb421",
@@ -4200,6 +5055,12 @@
               }
             },
             {
+              "extension": [
+                {
+                  "url": "https://hl7.org/fhir/StructureDefinition/ordinalValue",
+                  "valueDecimal": 1
+                }
+              ],
               "valueCoding": {
                 "id": "d7256022-84e0-4c39-81f9-eceb09fc7715",
                 "system": "urn:uuid:a0085a86-238e-4fc2-9438-f5f472239567",
@@ -4245,6 +5106,12 @@
               }
             },
             {
+              "extension": [
+                {
+                  "url": "https://hl7.org/fhir/StructureDefinition/ordinalValue",
+                  "valueDecimal": 1
+                }
+              ],
               "valueCoding": {
                 "id": "ed7ae93d-eb05-44bd-84bb-2619804623cc",
                 "system": "urn:uuid:8024f187-8ec0-4bbf-ae7a-3e08d110317c",
@@ -4285,6 +5152,12 @@
               }
             },
             {
+              "extension": [
+                {
+                  "url": "https://hl7.org/fhir/StructureDefinition/ordinalValue",
+                  "valueDecimal": 1
+                }
+              ],
               "valueCoding": {
                 "id": "a3e96ba5-cd1a-441d-e82a-1133dec0e015",
                 "system": "urn:uuid:72ee1c5c-5f8b-4a75-8373-2eb1de66ddec",
@@ -4465,12 +5338,12 @@
             },
             {
               "linkId": "a649c86f-2ac7-4ca0-f77c-39e4fbdfa51e",
-              "text": "Did you answer 'yes' at least once? Then also complete these questions:",
+              "text": "In case you ever had one of the above mentioned problems:",
               "_text": {
                 "extension": [
                   {
                     "url": "http://hl7.org/fhir/StructureDefinition/rendering-markdown",
-                    "valueMarkdown": "###### Did you answer 'yes' at least once? Then also complete these questions:"
+                    "valueMarkdown": "###### In case you ever had one of the above mentioned problems:"
                   }
                 ]
               },
@@ -4533,16 +5406,16 @@
                       }
                     }
                   ],
-                  "linkId": "ba0c7314-4daf-4efd-d4e4-08badc6fb0ce",
+                  "linkId": "c67b40b3-3276-4825-88ba-1ac70b0e489d",
                   "code": [
                     {
                       "id": "9a6eb000-e1b1-4ff8-8a6b-c9f694efb3a1",
                       "system": "urn:uuid:ef4ed891-97a1-4e8b-8b9f-d59af2c0df64",
-                      "code": "Head_injury_appetite",
-                      "display": "Head_injury_appetite"
+                      "code": "Head_injury_weightgain",
+                      "display": "Head_injury_weightgain"
                     }
                   ],
-                  "text": "Have you developed extra cravings for food since then?",
+                  "text": "Have you put on a lot of weight since then?",
                   "type": "choice",
                   "required": true,
                   "answerOption": [
@@ -4623,16 +5496,16 @@
                       }
                     }
                   ],
-                  "linkId": "c67b40b3-3276-4825-88ba-1ac70b0e489d",
+                  "linkId": "ba0c7314-4daf-4efd-d4e4-08badc6fb0ce",
                   "code": [
                     {
                       "id": "9a6eb000-e1b1-4ff8-8a6b-c9f694efb3a1",
                       "system": "urn:uuid:ef4ed891-97a1-4e8b-8b9f-d59af2c0df64",
-                      "code": "Head_injury_weightgain",
-                      "display": "Head_injury_weightgain"
+                      "code": "Head_injury_appetite",
+                      "display": "Head_injury_appetite"
                     }
                   ],
-                  "text": "Have you put on a lot of weight since then?",
+                  "text": "Have you developed extra cravings for food since then?",
                   "type": "choice",
                   "required": true,
                   "answerOption": [
@@ -4694,6 +5567,12 @@
               }
             },
             {
+              "extension": [
+                {
+                  "url": "https://hl7.org/fhir/StructureDefinition/ordinalValue",
+                  "valueDecimal": 1
+                }
+              ],
               "valueCoding": {
                 "id": "28ad3def-3076-4531-831b-abd2667acddd",
                 "system": "urn:uuid:d08eb0d8-5d7c-4d01-f756-46e802148228",
@@ -4739,6 +5618,12 @@
               }
             },
             {
+              "extension": [
+                {
+                  "url": "https://hl7.org/fhir/StructureDefinition/ordinalValue",
+                  "valueDecimal": 1
+                }
+              ],
               "valueCoding": {
                 "id": "28ad3def-3076-4531-831b-abd2667acddd",
                 "system": "urn:uuid:d08eb0d8-5d7c-4d01-f756-46e802148228",
@@ -4784,6 +5669,12 @@
               }
             },
             {
+              "extension": [
+                {
+                  "url": "https://hl7.org/fhir/StructureDefinition/ordinalValue",
+                  "valueDecimal": 1
+                }
+              ],
               "valueCoding": {
                 "id": "28ad3def-3076-4531-831b-abd2667acddd",
                 "system": "urn:uuid:d08eb0d8-5d7c-4d01-f756-46e802148228",
@@ -4829,6 +5720,12 @@
               }
             },
             {
+              "extension": [
+                {
+                  "url": "https://hl7.org/fhir/StructureDefinition/ordinalValue",
+                  "valueDecimal": 1
+                }
+              ],
               "valueCoding": {
                 "id": "28ad3def-3076-4531-831b-abd2667acddd",
                 "system": "urn:uuid:d08eb0d8-5d7c-4d01-f756-46e802148228",
@@ -4853,7 +5750,7 @@
             },
             {
               "url": "http://helsenorge.no/fhir/StructureDefinition/sdf-sublabel",
-              "valueMarkdown": "These are also known as stretch marks."
+              "valueMarkdown": "These are also known as stretch marks"
             }
           ],
           "linkId": "a3e7fa96-3ddf-46a9-8d63-783af75044c0",
@@ -5426,51 +6323,6 @@
                   }
                 ]
               }
-            }
-          ],
-          "linkId": "6547dad4-171b-44a8-8c34-4ef8ff3bdab6",
-          "code": [
-            {
-              "id": "1f38d178-adec-45bb-8be7-ecdd4a6def8d",
-              "system": "urn:uuid:6846730f-131a-46a2-faaf-1f0483d1dca3",
-              "code": "KneeHipPain",
-              "display": "KneeHipPain"
-            }
-          ],
-          "text": "Do you have any joint pain? Like your hip, knee, shoulder or elbow?",
-          "type": "choice",
-          "required": true,
-          "answerOption": [
-            {
-              "valueCoding": {
-                "id": "a40e69e4-50dc-4b38-81ff-4970c36498f1",
-                "system": "urn:uuid:c3a09fc9-a3a0-4735-c8f5-3a2f6b50b081",
-                "code": "0",
-                "display": "No"
-              }
-            },
-            {
-              "valueCoding": {
-                "id": "30484a83-3850-4b2b-c5a0-17fa2f3726e2",
-                "system": "urn:uuid:c3a09fc9-a3a0-4735-c8f5-3a2f6b50b081",
-                "code": "1",
-                "display": "Yes"
-              }
-            }
-          ]
-        },
-        {
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-              "valueCodeableConcept": {
-                "coding": [
-                  {
-                    "system": "http://hl7.org/fhir/ValueSet/questionnaire-item-control",
-                    "code": "radio-button"
-                  }
-                ]
-              }
             },
             {
               "url": "http://helsenorge.no/fhir/StructureDefinition/sdf-sublabel",
@@ -5482,8 +6334,8 @@
             {
               "id": "1f38d178-adec-45bb-8be7-ecdd4a6def8d",
               "system": "urn:uuid:6846730f-131a-46a2-faaf-1f0483d1dca3",
-              "code": "Morningstiffness",
-              "display": "Morningstiffness"
+              "code": "KneeHipPain",
+              "display": "KneeHipPain"
             }
           ],
           "text": "Do you have pain in your knee or hip while moving?",
@@ -5526,20 +6378,6 @@
               "extension": [
                 {
                   "url": "https://hl7.org/fhir/StructureDefinition/ordinalValue",
-                  "valueDecimal": 1
-                }
-              ],
-              "valueCoding": {
-                "id": "901cae42-def0-46ed-918b-a9e86eb569da",
-                "system": "urn:uuid:8c72bffb-de2b-480b-84b3-eec5604d31be",
-                "code": "1",
-                "display": "Yes"
-              }
-            },
-            {
-              "extension": [
-                {
-                  "url": "https://hl7.org/fhir/StructureDefinition/ordinalValue",
                   "valueDecimal": 0
                 }
               ],
@@ -5548,6 +6386,20 @@
                 "system": "urn:uuid:8c72bffb-de2b-480b-84b3-eec5604d31be",
                 "code": "0",
                 "display": "No"
+              }
+            },
+            {
+              "extension": [
+                {
+                  "url": "https://hl7.org/fhir/StructureDefinition/ordinalValue",
+                  "valueDecimal": 1
+                }
+              ],
+              "valueCoding": {
+                "id": "901cae42-def0-46ed-918b-a9e86eb569da",
+                "system": "urn:uuid:8c72bffb-de2b-480b-84b3-eec5604d31be",
+                "code": "1",
+                "display": "Yes"
               }
             }
           ],
@@ -5802,7 +6654,7 @@
                     "id": "12e97320-eaa8-4fb1-8f32-d3561ec80d09",
                     "system": "urn:uuid:94baee52-94ad-4895-cb57-35463a1ec197",
                     "code": "1",
-                    "display": "birth control pill"
+                    "display": "Birth control pill"
                   }
                 },
                 {
@@ -5810,7 +6662,7 @@
                     "id": "86bbc27c-1582-4991-e920-e1b7c290a6ec",
                     "system": "urn:uuid:94baee52-94ad-4895-cb57-35463a1ec197",
                     "code": "2",
-                    "display": "hormone IUD"
+                    "display": "Hormone IUD"
                   }
                 },
                 {
@@ -5818,16 +6670,56 @@
                     "id": "1da1f4d1-a33c-4a19-9aff-275cafe2febc",
                     "system": "urn:uuid:94baee52-94ad-4895-cb57-35463a1ec197",
                     "code": "3",
-                    "display": "contraceptive injection"
+                    "display": "Contraceptive injection"
                   }
                 },
                 {
+                  "extension": [
+                    {
+                      "url": "https://hl7.org/fhir/StructureDefinition/ordinalValue",
+                      "valueDecimal": 0
+                    }
+                  ],
                   "valueCoding": {
                     "id": "e1b76036-6cbf-42c3-b420-c9a197631506",
                     "system": "urn:uuid:94baee52-94ad-4895-cb57-35463a1ec197",
                     "code": "4",
-                    "display": "contraceptive implant in the arm"
+                    "display": "Contraceptive implant in the arm"
                   }
+                },
+                {
+                  "valueCoding": {
+                    "id": "d3e7cd23-02db-4219-8528-5747062b4d65",
+                    "system": "urn:uuid:94baee52-94ad-4895-cb57-35463a1ec197",
+                    "code": "5",
+                    "display": "Other"
+                  }
+                }
+              ],
+              "item": [
+                {
+                  "linkId": "eb70810c-8834-4191-c481-8edba78779b0",
+                  "code": [
+                    {
+                      "id": "32dc11dd-d9f1-44d8-9f12-e4586345be63",
+                      "system": "urn:uuid:daf76463-83f5-48e8-a4f6-075e7554ba8c",
+                      "code": "Contraception_type_other",
+                      "display": "Contraception_type_other"
+                    }
+                  ],
+                  "text": "What type of other birth control do you use?",
+                  "type": "string",
+                  "enableWhen": [
+                    {
+                      "question": "3238d231-e3a9-4b6a-83c3-296cb644349a",
+                      "operator": "=",
+                      "answerCoding": {
+                        "system": "urn:uuid:94baee52-94ad-4895-cb57-35463a1ec197",
+                        "code": "5"
+                      }
+                    }
+                  ],
+                  "required": false
                 }
               ]
             }
@@ -5878,20 +6770,6 @@
               "extension": [
                 {
                   "url": "https://hl7.org/fhir/StructureDefinition/ordinalValue",
-                  "valueDecimal": 0
-                }
-              ],
-              "valueCoding": {
-                "id": "b2390bd3-98c6-49e7-8839-2b5a9962aaae",
-                "system": "urn:uuid:41c93e7a-122b-4a83-8a24-409487cfd346",
-                "code": "1",
-                "display": "Yes"
-              }
-            },
-            {
-              "extension": [
-                {
-                  "url": "https://hl7.org/fhir/StructureDefinition/ordinalValue",
                   "valueDecimal": 1
                 }
               ],
@@ -5900,6 +6778,20 @@
                 "system": "urn:uuid:41c93e7a-122b-4a83-8a24-409487cfd346",
                 "code": "2",
                 "display": "No"
+              }
+            },
+            {
+              "extension": [
+                {
+                  "url": "https://hl7.org/fhir/StructureDefinition/ordinalValue",
+                  "valueDecimal": 0
+                }
+              ],
+              "valueCoding": {
+                "id": "b2390bd3-98c6-49e7-8839-2b5a9962aaae",
+                "system": "urn:uuid:41c93e7a-122b-4a83-8a24-409487cfd346",
+                "code": "1",
+                "display": "Yes"
               }
             },
             {
@@ -6087,6 +6979,20 @@
       "required": false,
       "item": [
         {
+          "linkId": "1352477d-4ac8-4632-8af0-a85ee4974a86",
+          "text": "You will now be asked questions about your mental health.",
+          "_text": {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/rendering-markdown",
+                "valueMarkdown": "**You will now be asked questions about your mental health.**"
+              }
+            ]
+          },
+          "type": "display",
+          "required": false
+        },
+        {
           "extension": [
             {
               "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
@@ -6109,7 +7015,7 @@
               "display": "Somberness"
             }
           ],
-          "text": "Do you often feel down?",
+          "text": "Do you ever feel down?",
           "type": "choice",
           "required": true,
           "answerOption": [
@@ -6122,11 +7028,25 @@
               }
             },
             {
+              "extension": [
+                {
+                  "url": "https://hl7.org/fhir/StructureDefinition/ordinalValue",
+                  "valueDecimal": 0
+                }
+              ],
               "valueCoding": {
                 "id": "2f6a0f5c-c097-43b0-c941-a58240eb75da",
                 "system": "urn:uuid:78a57256-a310-4bfa-805c-4d001131f372",
+                "code": "2",
+                "display": "Yes, sometimes"
+              }
+            },
+            {
+              "valueCoding": {
+                "id": "c0650790-a3cc-41d0-8d61-920067c4d71c",
+                "system": "urn:uuid:78a57256-a310-4bfa-805c-4d001131f372",
                 "code": "1",
-                "display": "Yes"
+                "display": "Yes, often"
               }
             }
           ]
@@ -6141,7 +7061,7 @@
               "display": "Anxiety"
             }
           ],
-          "text": "Do you often feel very frightened?",
+          "text": "Do you ever feel very frightened?",
           "type": "choice",
           "required": true,
           "answerOption": [
@@ -6154,11 +7074,31 @@
               }
             },
             {
+              "extension": [
+                {
+                  "url": "https://hl7.org/fhir/StructureDefinition/ordinalValue",
+                  "valueDecimal": 0
+                }
+              ],
               "valueCoding": {
                 "id": "49332f8a-02f8-4aef-84cf-24f30e5a17a1",
                 "system": "urn:uuid:20770940-140c-49a4-8e27-fbfbaad11c51",
+                "code": "2",
+                "display": "Yes, sometimes"
+              }
+            },
+            {
+              "extension": [
+                {
+                  "url": "https://hl7.org/fhir/StructureDefinition/ordinalValue",
+                  "valueDecimal": 1
+                }
+              ],
+              "valueCoding": {
+                "id": "866c7150-9889-4ea3-979b-b4a7de6d7d43",
+                "system": "urn:uuid:20770940-140c-49a4-8e27-fbfbaad11c51",
                 "code": "1",
-                "display": "Yes"
+                "display": "Yes, often"
               }
             }
           ]
@@ -6186,7 +7126,7 @@
               "display": "Stress"
             }
           ],
-          "text": "Do you often experience stress?",
+          "text": "Do you experience stress?",
           "type": "choice",
           "required": true,
           "answerOption": [
@@ -6199,11 +7139,31 @@
               }
             },
             {
+              "extension": [
+                {
+                  "url": "https://hl7.org/fhir/StructureDefinition/ordinalValue",
+                  "valueDecimal": 0
+                }
+              ],
               "valueCoding": {
                 "id": "2f6a0f5c-c097-43b0-c941-a58240eb75da",
                 "system": "urn:uuid:78a57256-a310-4bfa-805c-4d001131f372",
+                "code": "2",
+                "display": "Yes, sometimes"
+              }
+            },
+            {
+              "extension": [
+                {
+                  "url": "https://hl7.org/fhir/StructureDefinition/ordinalValue",
+                  "valueDecimal": 1
+                }
+              ],
+              "valueCoding": {
+                "id": "bcdad0a8-9ba6-4833-8980-0630898a5c76",
+                "system": "urn:uuid:78a57256-a310-4bfa-805c-4d001131f372",
                 "code": "1",
-                "display": "yes"
+                "display": "Yes, often"
               }
             }
           ],
@@ -6590,8 +7550,22 @@
               "valueCoding": {
                 "id": "1c9dd7bd-6130-4993-8ecf-12533699892a",
                 "system": "urn:uuid:39879bb1-e6c9-4723-9d0e-17235a2e5a64",
+                "code": "2",
+                "display": "Yes, sometimes"
+              }
+            },
+            {
+              "extension": [
+                {
+                  "url": "https://hl7.org/fhir/StructureDefinition/ordinalValue",
+                  "valueDecimal": 1
+                }
+              ],
+              "valueCoding": {
+                "id": "9bed5f50-012b-46b1-8e86-93773d74c271",
+                "system": "urn:uuid:39879bb1-e6c9-4723-9d0e-17235a2e5a64",
                 "code": "1",
-                "display": "Yes"
+                "display": "Yes, often"
               }
             }
           ]
@@ -7956,7 +8930,7 @@
                       "operator": "=",
                       "answerCoding": {
                         "system": "urn:uuid:6ebb4807-5719-47cb-8ec3-1638b768485b",
-                        "code": "16"
+                        "code": "9"
                       }
                     }
                   ],
@@ -8244,7 +9218,7 @@
                     "id": "e47e93b2-52fd-45ee-834c-a131483cf96f",
                     "system": "urn:uuid:6ebb4807-5719-47cb-8ec3-1638b768485b",
                     "code": "1",
-                    "display": "Insuline"
+                    "display": "Insulin"
                   }
                 },
                 {
@@ -8307,7 +9281,7 @@
                 },
                 {
                   "linkId": "116dbdb4-a5eb-46a3-d386-73ec70de8ec6",
-                  "text": "What other medication are you taking?",
+                  "text": "How long have you been using Insulin?",
                   "type": "choice",
                   "enableWhen": [
                     {
@@ -8527,7 +9501,7 @@
                   "display": "Drug_antihypertensiva_type"
                 }
               ],
-              "text": "Gebruikt u nu of gebruikte u vroeger 1 van onderstaande middelen?",
+              "text": "Do you currently use or have you previously used any of the following substances?",
               "type": "choice",
               "enableWhen": [
                 {
@@ -8847,7 +9821,7 @@
                     "id": "e47e93b2-52fd-45ee-834c-a131483cf96f",
                     "system": "urn:uuid:6ebb4807-5719-47cb-8ec3-1638b768485b",
                     "code": "1",
-                    "display": "Lansoprazol (Lansoprazol OR Prezal)"
+                    "display": "Lansoprazole (Lansoprazole OR Prezal)"
                   }
                 },
                 {
@@ -8855,7 +9829,7 @@
                     "id": "6ca93831-ada2-49e2-87ad-39ddb3016600",
                     "system": "urn:uuid:6ebb4807-5719-47cb-8ec3-1638b768485b",
                     "code": "2",
-                    "display": "Omeprazol (Losec OR Losecosan OR Omecat OR Omeprazol OR Pedippi)"
+                    "display": "Omeprazole (Losec OR Losecosan OR Omecat OR Omeprazole OR Pedippi)"
                   }
                 },
                 {
@@ -8863,7 +9837,7 @@
                     "id": "cc20fa85-f58b-4b35-8e84-db2f7e5c3166",
                     "system": "urn:uuid:6ebb4807-5719-47cb-8ec3-1638b768485b",
                     "code": "3",
-                    "display": "Rabeprazol (Pariet OR Rabeprazol)"
+                    "display": "Rabeprazole (Pariet OR Rabeprazole)"
                   }
                 },
                 {
@@ -9054,7 +10028,7 @@
                   "display": "Drug_painkiller_type"
                 }
               ],
-              "text": "Do you use any of the following products?",
+              "text": "Do you currently use or have you previously used any of the following substances?",
               "type": "choice",
               "enableWhen": [
                 {
@@ -9404,7 +10378,7 @@
             },
             {
               "url": "http://helsenorge.no/fhir/StructureDefinition/sdf-sublabel",
-              "valueMarkdown": "Denk hierbij ook aan anticonceptie of vitamine supplementen"
+              "valueMarkdown": "Such as anticonceptives or vitamin supplements"
             }
           ],
           "linkId": "395faf6d-5087-4990-8a89-4833242c8855",
@@ -9611,94 +10585,30 @@
               "display": "Patient_question"
             }
           ],
-          "text": "Would you like help with anything? Then you can write that down here:",
+          "text": "Would you like help with anything? If so,  you can write that down here:",
           "type": "string",
           "required": true
-        }
-      ]
-    },
-    {
-      "linkId": "e7051fbc-8070-4487-8bc4-e59d856ff6a7",
-      "text": "Data storage",
-      "type": "group",
-      "required": false,
-      "item": [
+        },
         {
           "extension": [
             {
-              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-              "valueCodeableConcept": {
-                "coding": [
-                  {
-                    "system": "http://hl7.org/fhir/ValueSet/questionnaire-item-control",
-                    "code": "radio-button"
-                  }
-                ]
-              }
-            },
-            {
               "url": "http://helsenorge.no/fhir/StructureDefinition/sdf-sublabel",
-              "valueMarkdown": "If you agree to the storage of your data, we will ask you for your e-mail address. This will only be used to retrieve your information later if you decide you no longer want your information stored."
+              "valueMarkdown": "If there is anything else you would like to share that you were unable to indicate in the questionnaire, please write it down here:"
             }
           ],
-          "linkId": "decfe1e1-4585-4da5-8858-96c9e4e640bf",
-          "text": "Do you agree to the storage of your data? Your data may then be used for scientific research in the future. More information about data storage can be found here: Information storage data Information storage data for incapacitated adults",
-          "_text": {
-            "extension": [
-              {
-                "url": "http://hl7.org/fhir/StructureDefinition/rendering-markdown",
-                "valueMarkdown": "Do you agree to the storage of your data? Your data may then be used for scientific research in the future. More information about data storage can be found here:\n\n<p><a href=\"https://cms.medlix-prod.org/assets/27A100AD-342A-4F93-8C60-2371781CA747 \" target=\"_blank\" >Storing information data</a></p>\n<p> <a href=\"https://cms.medlix-prod.org/assets/389D1979-12DF-4DEA-AD8C-C2F69353AC89\" target=\"_blank\">Storing information given to incapacitated adults</a></p>"
-              }
-            ]
-          },
-          "type": "choice",
-          "required": true,
-          "answerOption": [
+          "linkId": "0689e869-eadf-4ec9-8339-01f688309f6f",
+          "code": [
             {
-              "valueCoding": {
-                "id": "04bf53c6-ec29-4cc0-916d-156fc01c2a88",
-                "system": "urn:uuid:f3e4ad7d-aadd-49da-8543-31ab335d0562",
-                "code": "1",
-                "display": "Yes, I agree"
-              }
-            },
-            {
-              "valueCoding": {
-                "id": "6325dc57-1789-4de4-8bce-4933c6c02a68",
-                "system": "urn:uuid:f3e4ad7d-aadd-49da-8543-31ab335d0562",
-                "code": "0",
-                "display": "No, I do not agree"
-              }
+              "id": "2574b65d-f6e0-4d5e-8000-6acac0d27d03",
+              "system": "urn:uuid:efe54a8f-91d4-43d4-9b42-f32821903735",
+              "code": "Additional_info",
+              "display": "Additional_info"
             }
           ],
-          "item": [
-            {
-              "extension": [
-                {
-                  "url": "http://hl7.org/fhir/StructureDefinition/regex",
-                  "valueString": "^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$"
-                },
-                {
-                  "url": "http://ehelse.no/fhir/StructureDefinition/validationtext",
-                  "valueString": "Incorrect email address"
-                }
-              ],
-              "linkId": "fb36b76f-16fc-4b94-a9c7-a63cee4f28ba",
-              "text": "email address",
-              "type": "string",
-              "enableWhen": [
-                {
-                  "question": "decfe1e1-4585-4da5-8858-96c9e4e640bf",
-                  "operator": "=",
-                  "answerCoding": {
-                    "system": "urn:uuid:f3e4ad7d-aadd-49da-8543-31ab335d0562",
-                    "code": "1"
-                  }
-                }
-              ],
-              "required": true
-            }
-          ]
+          "text": "Is there anything else you would like to express?",
+          "type": "text",
+          "required": false,
+          "maxLength": 300
         }
       ]
     },
@@ -9709,7 +10619,7 @@
         "extension": [
           {
             "url": "http://hl7.org/fhir/StructureDefinition/rendering-markdown",
-            "valueMarkdown": "Naar de uitslag + feedback op de vragenlijst"
+            "valueMarkdown": "To the results + feedback on the questionnaire"
           }
         ]
       },
@@ -9718,12 +10628,12 @@
       "item": [
         {
           "linkId": "5809ce0b-673f-4669-edb9-bd3bd1707a4b",
-          "text": "Feedback on the questionnaire will be highly appreciated. In case you would like to provide us with feedback, you can contact us via email: COO@erasmusmc.nl Thankyou!",
+          "text": "Feedback on the questionnaire will be highly appreciated. In case you would like to provide us with feedback, you can contact us via email: COO@erasmusmc.nl Thank you!",
           "_text": {
             "extension": [
               {
                 "url": "http://hl7.org/fhir/StructureDefinition/rendering-markdown",
-                "valueMarkdown": "Feedback on the questionnaire will be highly appreciated. In case you would like to provide us with feedback, you can contact us via email: [COO@erasmusmc.nl](mailto:COO@erasmusmc.nl)\n\nThankyou!"
+                "valueMarkdown": "Feedback on the questionnaire will be highly appreciated. In case you would like to provide us with feedback, you can contact us via email: [COO@erasmusmc.nl](mailto:COO@erasmusmc.nl)\n\nThank you!"
               }
             ]
           },
@@ -9857,7 +10767,7 @@
             },
             {
               "url": "http://ehelse.no/fhir/StructureDefinition/sdf-calculatedExpression",
-              "valueString": "( answerScore('Hairgrowth') + answerScore('Acne') + answerScore('Menstruation') + answerScore('PCOS') >= 2 )"
+              "valueString": "( answerScore('Hairgrowth') + answerScore('Acne') + answerScore('Menstruation')  >= 2 ) or answerScore('PCOS') = '1'"
             }
           ],
           "linkId": "2b058f12-0f46-430d-819a-5211d871de01",
@@ -9898,6 +10808,14 @@
             }
           ],
           "text": "Cushing's syndrome or disease (= excessive presence of the stress hormone cortisol)",
+          "_text": {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/rendering-markdown",
+                "valueMarkdown": "<span style=\"text-transform: uppercase;\">C</span>ushing's syndrome or disease (= excessive presence of the stress hormone cortisol)"
+              }
+            ]
+          },
           "type": "integer",
           "required": true
         }
@@ -9915,7 +10833,7 @@
         },
         {
           "url": "http://ehelse.no/fhir/StructureDefinition/sdf-calculatedExpression",
-          "valueString": "answerScore('Head_injury') >= 1  and (answer('Head_injury_appetite') = '1' or answer('Head_injury_lesssatiety') = '1' or answer('Head_injury_weightgain') = '1')"
+          "valueString": "(answer('Head_injury_appetite') = '1' or answer('Head_injury_lesssatiety') = '1' or answer('Head_injury_weightgain') = '1')"
         }
       ],
       "linkId": "3ebc8b6b-3ca0-4482-9d95-1925d0ffcfac",
@@ -10516,7 +11434,7 @@
                   "display": "main_validation_anti_epileptica"
                 }
               ],
-              "text": "Anti epileptica",
+              "text": "Antiepileptics",
               "type": "integer",
               "required": true,
               "item": [
@@ -10544,7 +11462,7 @@
                       "display": "anti_epileptica_1"
                     }
                   ],
-                  "text": "Gabapentine",
+                  "text": "Gabapentin",
                   "type": "integer",
                   "required": true
                 },
@@ -10572,7 +11490,7 @@
                       "display": "anti_epileptica_1"
                     }
                   ],
-                  "text": "Pregabaline",
+                  "text": "Pregabalin",
                   "type": "integer",
                   "required": true
                 },
@@ -10600,7 +11518,7 @@
                       "display": "anti_epileptica_1"
                     }
                   ],
-                  "text": "Valproinezur",
+                  "text": "Valproic acid",
                   "type": "integer",
                   "required": true
                 }
@@ -10630,7 +11548,7 @@
                   "display": "main_validation_anti_epileptica"
                 }
               ],
-              "text": "Antidepressiva",
+              "text": "Antidepressants",
               "type": "integer",
               "required": true,
               "item": [
@@ -11052,7 +11970,7 @@
                   "display": "main_validation_anti_epileptica"
                 }
               ],
-              "text": "Antihistaminica",
+              "text": "Antihistamines",
               "type": "integer",
               "required": true,
               "item": [
@@ -11166,7 +12084,7 @@
                   "display": "main_validation_anti_epileptica"
                 }
               ],
-              "text": "Antipsychotica",
+              "text": "Antipsychotics",
               "type": "integer",
               "required": true,
               "item": [
@@ -11278,7 +12196,7 @@
                       "display": "anti_epileptica_1"
                     }
                   ],
-                  "text": "Olanzapine",
+                  "text": "Olanzapin",
                   "type": "integer",
                   "required": true
                 },
@@ -11306,7 +12224,7 @@
                       "display": "anti_epileptica_1"
                     }
                   ],
-                  "text": "Paliperidon",
+                  "text": "Paliperidone",
                   "type": "integer",
                   "required": true
                 },
@@ -11420,7 +12338,7 @@
                   "display": "main_validation_anti_epileptica"
                 }
               ],
-              "text": "Antidiabetica",
+              "text": "Antidiabetics",
               "type": "integer",
               "required": true,
               "item": [
@@ -11646,7 +12564,7 @@
                   "display": "main_validation_anti_epileptica"
                 }
               ],
-              "text": "Antihypertensiva",
+              "text": "Antihypertensives",
               "type": "integer",
               "required": true,
               "item": [
@@ -11844,7 +12762,7 @@
                   "display": "main_validation_anti_epileptica"
                 }
               ],
-              "text": "Maagzuurremmers",
+              "text": "Antacids",
               "type": "integer",
               "required": true,
               "item": [
@@ -11872,7 +12790,7 @@
                       "display": "anti_epileptica_1"
                     }
                   ],
-                  "text": "Lansoprazol",
+                  "text": "Lansoprazole",
                   "type": "integer",
                   "required": true
                 },
@@ -11900,7 +12818,7 @@
                       "display": "anti_epileptica_1"
                     }
                   ],
-                  "text": "Omeprazol",
+                  "text": "Omeprazole",
                   "type": "integer",
                   "required": true
                 },
@@ -11928,7 +12846,7 @@
                       "display": "anti_epileptica_1"
                     }
                   ],
-                  "text": "Rabeprazol",
+                  "text": "Rabeprazole",
                   "type": "integer",
                   "required": true
                 }
@@ -11958,7 +12876,7 @@
                   "display": "main_validation_anti_epileptica"
                 }
               ],
-              "text": "Pijnstillers",
+              "text": "Painkillers",
               "type": "integer",
               "required": true,
               "item": [
@@ -11986,7 +12904,7 @@
                       "display": "anti_epileptica_1"
                     }
                   ],
-                  "text": "Gabapentine",
+                  "text": "Gabapentin",
                   "type": "integer",
                   "required": true
                 },
@@ -12014,7 +12932,7 @@
                       "display": "anti_epileptica_1"
                     }
                   ],
-                  "text": "Pregabaline",
+                  "text": "Pregabalin",
                   "type": "integer",
                   "required": true
                 },
@@ -12072,7 +12990,7 @@
                   "display": "main_validation_anti_epileptica"
                 }
               ],
-              "text": "Corticosteroïden",
+              "text": "Corticosteroids",
               "type": "integer",
               "required": true,
               "item": [
@@ -12096,7 +13014,7 @@
                       "display": "anti_epileptica_1"
                     }
                   ],
-                  "text": "Andere corticosteroïden",
+                  "text": "Other corticosteroids",
                   "type": "integer",
                   "required": true
                 },
@@ -12120,7 +13038,7 @@
                       "display": "anti_epileptica_1"
                     }
                   ],
-                  "text": "Corticosteroïden: crème",
+                  "text": "Corticosteroids: creams",
                   "type": "integer",
                   "required": true
                 },
@@ -12144,7 +13062,7 @@
                       "display": "anti_epileptica_1"
                     }
                   ],
-                  "text": "Corticosteroïden: neusspray",
+                  "text": "Corticosteroids: nasal spray",
                   "type": "integer",
                   "required": true
                 },
@@ -12168,7 +13086,7 @@
                       "display": "anti_epileptica_1"
                     }
                   ],
-                  "text": "Corticosteroïden: infuus",
+                  "text": "Corticosteroids: IV infusion",
                   "type": "integer",
                   "required": true
                 },
@@ -12192,7 +13110,7 @@
                       "display": "anti_epileptica_1"
                     }
                   ],
-                  "text": "Corticosteroïden: tabletten",
+                  "text": "Corticosteroids: tablets",
                   "type": "integer",
                   "required": true
                 },
@@ -12216,7 +13134,7 @@
                       "display": "anti_epileptica_1"
                     }
                   ],
-                  "text": "Corticosteroïden: injecties (bijvoorbeeld voor in het gewricht of litteken)",
+                  "text": "Corticosteroids: injections (e.g. for joint or scar)",
                   "type": "integer",
                   "required": true
                 },
@@ -12240,7 +13158,7 @@
                       "display": "anti_epileptica_1"
                     }
                   ],
-                  "text": "Corticosteroïden: puffers / longinhalatiemiddelen",
+                  "text": "Corticosteroids: puffers/lung inhalants",
                   "type": "integer",
                   "required": true
                 }
@@ -12708,7 +13626,7 @@
                       "display": "Validation-Gewichtstoename"
                     }
                   ],
-                  "text": "You drink more than the recommended amount of alcohol per week.\n\nMore information about reducing alcohol consumption can be found at: www.allesoverdrinken.nl",
+                  "text": "You drink more than the recommended amount of alcohol per week.",
                   "type": "integer",
                   "required": true
                 }
@@ -12834,7 +13752,7 @@
                   "display": "Validation-Gewichtstoename"
                 }
               ],
-              "text": "Regelmaat",
+              "text": "Regularity",
               "type": "integer",
               "required": true,
               "item": [
@@ -13438,7 +14356,7 @@
                   "display": "calculation8_artose"
                 }
               ],
-              "text": "Angstklachten",
+              "text": "Anxiety",
               "type": "integer",
               "required": true,
               "item": [
@@ -14620,7 +15538,7 @@
             },
             {
               "url": "http://ehelse.no/fhir/StructureDefinition/sdf-calculatedExpression",
-              "valueString": "answer('Patient_question')"
+              "valueString": "answer('Treatment')"
             }
           ],
           "linkId": "b1b43366-1ce1-4e24-8ead-b8d5f385c91b",
@@ -14648,7 +15566,7 @@
                 },
                 {
                   "url": "http://ehelse.no/fhir/StructureDefinition/sdf-calculatedExpression",
-                  "valueString": "( answer('Treatment') ).contains('1')"
+                  "valueString": "( answer('Treatment') ) contains '1'"
                 }
               ],
               "linkId": "ea9551e6-61da-4cf5-8031-1f36c69f1582",
@@ -15236,6 +16154,34 @@
                     },
                     {
                       "url": "http://ehelse.no/fhir/StructureDefinition/sdf-calculatedExpression",
+                      "valueString": "( answer('Treatment_pharmacotherapy_type') ) contains '12'"
+                    }
+                  ],
+                  "linkId": "8edd1bc1-3ba8-4ff0-a76a-74f29465e90a",
+                  "code": [
+                    {
+                      "id": "5721026c-3792-4308-8381-59b06d4aac56",
+                      "system": "urn:uuid:b35aee40-db9b-4e9e-af01-a89289af83c3",
+                      "code": "validation_hyperphagie",
+                      "display": "validation_hyperphagie"
+                    }
+                  ],
+                  "text": "Tirzepatide max 15 mg (Mounjaro ®)",
+                  "type": "integer",
+                  "required": false
+                },
+                {
+                  "extension": [
+                    {
+                      "url": "https://fhir.medlix.org/fhir/StructureDefinition/questionnaire-addons-calculation",
+                      "valueBoolean": true
+                    },
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                      "valueBoolean": true
+                    },
+                    {
+                      "url": "http://ehelse.no/fhir/StructureDefinition/sdf-calculatedExpression",
                       "valueString": "( answer('Treatment_pharmacotherapy_type') ) contains '11'"
                     }
                   ],
@@ -15248,7 +16194,7 @@
                       "display": "validation_hyperphagie"
                     }
                   ],
-                  "text": "Other way",
+                  "text": "Something else",
                   "type": "integer",
                   "required": false,
                   "item": [
@@ -15392,7 +16338,7 @@
                   "display": "validation_hyperphagie"
                 }
               ],
-              "text": "Other way",
+              "text": "I tried something else",
               "type": "integer",
               "required": false,
               "item": [
@@ -15577,114 +16523,247 @@
             {
               "url": "http://ehelse.no/fhir/StructureDefinition/validationtext",
               "valueString": "Invalid value"
-            },
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
-              "valueBoolean": true
-            },
-            {
-              "url": "http://ehelse.no/fhir/StructureDefinition/sdf-calculatedExpression",
-              "valueString": "answer('BMI') < 18.5"
             }
           ],
           "linkId": "1c1eebb0-01fc-4549-b1c1-2c551536c52c",
-          "code": [
-            {
-              "id": "c41a2627-8191-400b-f26b-2937a502b129",
-              "system": "urn:uuid:b33cee74-ae28-4f57-fdc6-1ddac7cf5594",
-              "code": "isBMILow",
-              "display": "isBMILow"
-            }
-          ],
-          "text": "isBMILow",
-          "type": "integer",
-          "required": false
-        },
-        {
-          "extension": [
-            {
-              "url": "http://ehelse.no/fhir/StructureDefinition/validationtext",
-              "valueString": "Invalid value"
-            },
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
-              "valueBoolean": true
-            },
-            {
-              "url": "http://ehelse.no/fhir/StructureDefinition/sdf-calculatedExpression",
-              "valueString": "answer('BMI') >= 18.5 and answer('BMI') <= 24.9"
-            }
-          ],
-          "linkId": "da0c581a-1573-47a4-84e7-19b04f23d00e",
-          "code": [
-            {
-              "id": "c41a2627-8191-400b-f26b-2937a502b129",
-              "system": "urn:uuid:b33cee74-ae28-4f57-fdc6-1ddac7cf5594",
-              "code": "isBMIMidium",
-              "display": "isBMIMidium"
-            }
-          ],
-          "text": "isBMIMidium",
-          "type": "integer",
-          "required": false
-        },
-        {
-          "extension": [
-            {
-              "url": "http://ehelse.no/fhir/StructureDefinition/validationtext",
-              "valueString": "Invalid value"
-            },
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
-              "valueBoolean": true
-            },
-            {
-              "url": "http://ehelse.no/fhir/StructureDefinition/sdf-calculatedExpression",
-              "valueString": "answer('BMI') >= 25 and answer('BMI') <= 30"
-            }
-          ],
-          "linkId": "112cc74e-df9c-4c43-9385-9825b3896d38",
-          "code": [
-            {
-              "id": "c41a2627-8191-400b-f26b-2937a502b129",
-              "system": "urn:uuid:b33cee74-ae28-4f57-fdc6-1ddac7cf5594",
-              "code": "isBMIHigh",
-              "display": "isBMIHigh"
-            }
-          ],
-          "text": "isBMIHigh",
-          "type": "integer",
-          "required": false
-        },
-        {
-          "extension": [
-            {
-              "url": "http://ehelse.no/fhir/StructureDefinition/validationtext",
-              "valueString": "Invalid value"
-            },
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
-              "valueBoolean": true
-            },
-            {
-              "url": "http://ehelse.no/fhir/StructureDefinition/sdf-calculatedExpression",
-              "valueString": "answer('BMI') >= 30"
-            }
-          ],
-          "linkId": "7b497e92-d3d7-4f8e-9e05-da98fa046290",
-          "code": [
-            {
-              "id": "c41a2627-8191-400b-f26b-2937a502b129",
-              "system": "urn:uuid:b33cee74-ae28-4f57-fdc6-1ddac7cf5594",
-              "code": "isBMIObese",
-              "display": "isBMIObese"
-            }
-          ],
-          "text": "isBMIObese",
+          "text": "test 01",
           "type": "integer",
           "required": false
         }
       ]
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+          "valueBoolean": true
+        },
+        {
+          "url": "http://helsenorge.no/fhir/StructureDefinition/sdf-sublabel",
+          "valueMarkdown": "Red flag of Welke soorten pasta, rijst, bulgur of couscous eet u meestal"
+        },
+        {
+          "url": "http://ehelse.no/fhir/StructureDefinition/sdf-calculatedExpression",
+          "valueString": "answer('Diet_starch') = '3'"
+        }
+      ],
+      "linkId": "0ef99271-66d5-4795-8597-b1e032d9ac44",
+      "code": [
+        {
+          "id": "8a1c4b0e-5a44-4de4-8643-46f562cf41fb",
+          "system": "urn:uuid:79f0471b-1d9b-4e28-8590-517361c4cc69",
+          "code": "isdietstarch",
+          "display": "isdietstarch"
+        }
+      ],
+      "text": "isdietstarch",
+      "type": "integer"
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+          "valueBoolean": true
+        },
+        {
+          "url": "http://ehelse.no/fhir/StructureDefinition/sdf-calculatedExpression",
+          "valueString": "answer('Diet_vegetables') = '1'"
+        },
+        {
+          "url": "http://helsenorge.no/fhir/StructureDefinition/sdf-sublabel",
+          "valueMarkdown": "red flag of Hoeveel dagen per week eet u groente?"
+        }
+      ],
+      "linkId": "c23c306d-b198-411b-8373-c843a8e74dc0",
+      "text": "isdietvegetables",
+      "type": "integer",
+      "required": false
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+          "valueBoolean": true
+        },
+        {
+          "url": "http://ehelse.no/fhir/StructureDefinition/sdf-calculatedExpression",
+          "valueString": "answer('Diet_fruit') = '1'"
+        },
+        {
+          "url": "http://helsenorge.no/fhir/StructureDefinition/sdf-sublabel",
+          "valueMarkdown": "red flag of Hoeveel dagen per week eet u minstens 1 stuk fruit?"
+        }
+      ],
+      "linkId": "80a15dd3-8ce7-4248-8484-24c65a6cad78",
+      "text": "isdietfruit",
+      "type": "integer",
+      "required": false
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+          "valueBoolean": true
+        },
+        {
+          "url": "http://helsenorge.no/fhir/StructureDefinition/sdf-sublabel",
+          "valueMarkdown": "Red flag of Hoeveel dagen per week drinkt u vruchtensap, vruchtendrank, (aanmaak)limonade, frisdrank of energiedrank? Of koffie of thee met suiker?"
+        },
+        {
+          "url": "http://ehelse.no/fhir/StructureDefinition/sdf-calculatedExpression",
+          "valueString": "answer('Diet_beverages') = '4'"
+        }
+      ],
+      "linkId": "e8be74fd-5ba8-4a4e-8533-5992bd7e464c",
+      "text": "isdietbeverages",
+      "type": "integer",
+      "required": false
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+          "valueBoolean": true
+        },
+        {
+          "url": "http://helsenorge.no/fhir/StructureDefinition/sdf-sublabel",
+          "valueMarkdown": "Red flag of Hoeveel dagen per week eet u hartige of gefrituurde snacks?"
+        },
+        {
+          "url": "http://ehelse.no/fhir/StructureDefinition/sdf-calculatedExpression",
+          "valueString": "answer('Diet_savory') = '3'"
+        }
+      ],
+      "linkId": "ed5bfc14-d8c9-470f-8bb7-a0d9d633583a",
+      "text": "isdietsavory",
+      "type": "integer",
+      "required": false
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+          "valueBoolean": true
+        },
+        {
+          "url": "http://ehelse.no/fhir/StructureDefinition/sdf-calculatedExpression",
+          "valueString": "answer('Diet_chips') = '4'"
+        },
+        {
+          "url": "http://helsenorge.no/fhir/StructureDefinition/sdf-sublabel",
+          "valueMarkdown": "Red flag of Hoeveel dagen per week eet u chips of zoutjes?"
+        }
+      ],
+      "linkId": "48057427-35e7-4a64-97ea-954d7d9edd4b",
+      "code": [
+        {
+          "id": "0ee0d4dd-67b1-4695-891e-2f04a0ceded8",
+          "system": "urn:uuid:c8befe58-eb1f-4585-a856-d4b897f1d2f0"
+        }
+      ],
+      "text": "isdietchips",
+      "type": "integer",
+      "required": false
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+          "valueBoolean": true
+        },
+        {
+          "url": "http://helsenorge.no/fhir/StructureDefinition/sdf-sublabel",
+          "valueMarkdown": "Red flag of Hoeveel dagen per week eet u een portie koekjes, chocolade, bonbons, cake of taart?"
+        },
+        {
+          "url": "http://ehelse.no/fhir/StructureDefinition/sdf-calculatedExpression",
+          "valueString": "answer('Diet_sweets') = '4'"
+        }
+      ],
+      "linkId": "958b995b-1ac2-4870-ced4-98d911fff2a2",
+      "text": "isdietsweets",
+      "type": "integer",
+      "required": false
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+          "valueBoolean": true
+        },
+        {
+          "url": "http://helsenorge.no/fhir/StructureDefinition/sdf-sublabel",
+          "valueMarkdown": "Red flag of HOeveel uur beweegt u per week"
+        },
+        {
+          "url": "http://ehelse.no/fhir/StructureDefinition/sdf-calculatedExpression",
+          "valueString": "answer('PA') = '0'"
+        }
+      ],
+      "linkId": "11d1da35-6aa6-4af1-8768-00e486bc3008",
+      "text": "ispa",
+      "type": "integer",
+      "required": false
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+          "valueBoolean": true
+        },
+        {
+          "url": "http://ehelse.no/fhir/StructureDefinition/sdf-calculatedExpression",
+          "valueString": "answer('Diet_starch') = '3' or answer('Diet_vegetables') = '1' or answer('Diet_fruit') = '1' or answer('Diet_beverages') = '4' or answer('Diet_savory') = '3' or answer('Diet_chips') = '4' or answer('Diet_sweets') = '4'"
+        },
+        {
+          "url": "http://helsenorge.no/fhir/StructureDefinition/sdf-sublabel",
+          "valueMarkdown": "check if ther is voeding red flag"
+        }
+      ],
+      "linkId": "5951791d-750c-4fd4-89cf-4d4cd0aa8df2",
+      "text": "isvoeding",
+      "type": "integer",
+      "required": false
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+          "valueBoolean": true
+        },
+        {
+          "url": "http://ehelse.no/fhir/StructureDefinition/sdf-calculatedExpression",
+          "valueString": "answerScore('PA_muscle') < 2"
+        },
+        {
+          "url": "http://helsenorge.no/fhir/StructureDefinition/sdf-sublabel",
+          "valueMarkdown": "Red flag of Hoeveel keer per week doet u spierversterkende oefeningen? Bijvoorbeeld met krachttraining?"
+        }
+      ],
+      "linkId": "e281fb01-3e14-4249-86e4-da77080fa1d5",
+      "text": "ispamuscle",
+      "type": "integer",
+      "required": false
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+          "valueBoolean": true
+        },
+        {
+          "url": "http://ehelse.no/fhir/StructureDefinition/sdf-calculatedExpression",
+          "valueString": "answer('PA') = '0' or answerScore('PA_muscle') < 2"
+        },
+        {
+          "url": "http://helsenorge.no/fhir/StructureDefinition/sdf-sublabel",
+          "valueMarkdown": "red flag of  Beweging section message"
+        }
+      ],
+      "linkId": "7b8fb83c-aac1-49ea-8004-34579151d45b",
+      "text": "isbeweging",
+      "type": "integer",
+      "required": false
     }
   ]
 }

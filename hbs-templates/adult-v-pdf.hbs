@@ -1,0 +1,434 @@
+{{! Supported helper:
+- date: get today date with format (DD-MM-YYYY)
+}}
+
+{{! Supported data object:
+- data.calchormonaal => Hormonale oorzaken
+- data.calchypothalaam => Hyphothalam
+- data.calcgenetisch => Syndromale obesitas
+- data.calculation5 => Medicamentus
+- data.calculation6 => PSYCHISCH
+- data.calculation7 => LEEFSTIJL GERELATEERD
+- data.calculation8 => Mogelijke
+}}
+
+<style type="text/css">
+    .normal-text {
+        font-size: 18px
+    }
+
+    .header-text {
+        font-weight: 700;
+        font-size: 20px;
+        margin-top: 20px;
+        letter-spacing: 0.01px;
+        background-color: #EAF2F8;
+        padding: 10px 20px;
+    }
+
+    .header-text,
+    .summary-container {
+        page-break-inside: avoid;
+    }
+
+    .summary-container {
+        background-color: #F3F7FA;
+        padding: 10px 20px;
+        font-weight: 500;
+        width: 100%;
+        overflow: visible !important;
+        font-size: 18px
+    }
+
+    .list-container {
+        display: flex;
+        flex: 1;
+        flex-direction: row;
+        width: 100%;
+        gap: 5px;
+        align-items: flex-start;
+        font-size: 18px;
+    }
+
+    .list-container > img {
+        margin-top: 2px;
+        display: block;
+        page-break-inside: avoid;
+    }
+
+    table {
+        width: 100%;
+    }
+
+    th,
+    td {
+        padding: 8px;
+        border: 0.5px solid black;
+        font-weight: 500;
+    }
+
+    tr {
+        page-break-inside: avoid;
+        break-inside: avoid;
+    }
+
+    thead tr {
+        page-break-inside: avoid;
+        break-inside: avoid;
+    }
+
+    .questions-table tr {
+        page-break-inside: avoid;
+    }
+</style>
+
+<div style="display: flex; justify-content:flex-end">
+    <b>Ingevuld op: {{#helper}}{{date}}{{/helper}}</b>
+</div>
+
+{{! Header section }}
+<div style="display: flex; flex-direction: row; justify-content: center; padding: 0 20px; overflow: hidden; flex-wrap: wrap; letter-spacing: 0.01px;">
+    <div style="display: flex; flex: 0.3;min-width: 200px; max-width: 280px; align-items: center; justify-content: flex-start;">
+        <img src="images/coo_new.png" alt="coologo" style="max-width: 100%; height: auto; padding: 20px" />
+    </div>
+    <div style="display: flex; flex: 1.7; flex-direction: column; align-items: flex-start; justify-content: center; padding-left: 10px; flex-wrap: wrap;width:100%;">
+        <div style="font-size: 26px; color: #0070a8; font-weight: 600; word-wrap: break-word; overflow-wrap: break-word; white-space: normal;width:100%;text-align: left;">
+            UITSLAG CheckOorzakenOvergewicht.nl
+        </div>
+    </div>
+</div>
+
+{{! Body paragraph }}
+<div style="text-align: left; margin-top: 20px; letter-spacing: 0.01px; font-family: sans-serif;">
+    <div style="font-size: 18px">
+        Deze vragenlijst is gemaakt voor mensen met overgewicht of ernstig overgewicht (obesitas). Het doel van het invullen van de vragenlijst is om meer inzicht te krijgen in de mogelijke onderliggende oorzaken van uw overgewicht. De uitslag kunt u delen met uw arts/zorgverlener. Dit kan uw zorgverlener helpen om de juiste diagnose te stellen en u daarbij van het juiste advies te voorzien.
+        <br /><br />
+        Het kan zijn dat in deze PDF tekst op de pagina overgang soms slechts deels leesbaar is. Dit is een bekend probleem en hier wordt aan gewerkt.
+    </div>
+
+    {{! Horizontal line }}
+    <div style="border-top: 1px solid #0070a8; width: 100%; margin: 40px 0" />
+</div>
+
+{{! Summary section }}
+<div style="font-size: 30px; color: #0070a8; font-weight: 500; margin: 20px 0">
+    Samenvatting
+</div>
+
+{{#if (getValueByCode "bmi")}}
+    {{#if (compare (getValueByCode "bmi") 'lt' '18.5')}}
+        <div style="display: flex; align-items: center; font-size: 18px">
+            Er is wat betreft uw BMI sprake van ondergewicht. Deze vragenlijst is voor u niet van toepassing.
+        </div>
+    {{/if}}
+
+    {{#if (compare (getValueByCode "bmi") 'ge' '18.5')}}
+        {{#if (compare (getValueByCode "bmi") 'le' '24.9')}}
+            <div style="display: flex; align-items: center; font-size: 18px">
+                Er is sprake van een normaal gewicht <strong>(BMI {{getValueByCode "bmi"}} kg/m2)</strong>. Er zijn de volgende aandachtspunten waarvan bekend is dat ze het gewicht kunnen verhogen:
+            </div>
+        {{/if}}
+    {{/if}}
+
+    {{#if (compare (getValueByCode "bmi") 'ge' '25')}}
+        {{#if (compare (getValueByCode "bmi") 'le' '30')}}
+            <div style="display: flex; align-items: center; font-size: 18px">
+                Er is sprake van <span style="font-weight: bold; margin-left: 5px; margin-right: 5px">overgewicht (BMI {{getValueByCode "bmi"}} kg/m2)</span> met de volgende <span style="margin-left: 5px; margin-right: 5px; font-weight:bold;">mogelijke</span> onderliggende oorzaken:
+            </div>
+        {{/if}}
+    {{/if}}
+
+    {{#if (compare (getValueByCode "bmi") 'ge' '30')}}
+        <div style="display: flex; align-items: center; font-size: 18px">
+            Er is sprake van <b style="font-weight: bold; margin-left: 5px; margin-right: 5px">obesitas (BMI {{getValueByCode "bmi"}} kg/m<sup>2</sup>)</b> met de volgende mogelijke onderliggende oorzaken:
+        </div>
+    {{/if}}
+
+    {{#unless (compare (getValueByCode "bmi") 'lt' '18.5')}}
+        <ul>
+            <li style="font-size: 18px; padding-left: 10px; font-weight: 400">
+                {{#if (getValueByCode "calchormonaal")}}
+                    Hormonale oorzaken: aanwijzingen die kunnen passen bij {{getValueByCode "calchormonaal.concatenateValues"}}
+                {{else}}
+                    Geen aanwijzingen voor hormonale oorzaken
+                {{/if}}
+            </li>
+            <li style="font-size: 18px; padding-left: 10px; font-weight: 400">
+                {{#if (getValueByCode "calculation5")}}
+                    Medicamenteuze oorzaken: gebruik van {{getValueByCode "calculation5.concatenateValues"}}
+                {{else}}
+                    Geen aanwijzingen voor medicamenteuze oorzaken
+                {{/if}}
+            </li>
+            <li style="font-size: 18px; padding-left: 10px; font-weight: 400">
+                {{#if (getValueByCode "calculation6")}}
+                    Psychische of sociale oorzaken: aanwijzingen voor:
+                {{/if}}
+                {{#if (getValueByCode "calculation6.item")}}
+                    {{#each (getValueByCode "calculation6.item")}}
+                        {{#if (getValue LinkId)}}
+                            <div class="list-container">
+                                <img src="images/rightIconSvg.png" alt="check"/>
+                                <div>
+                                    {{text}}
+                                    {{#if (eq text "Stress_cause")}}
+                                        {{value}}
+                                    {{/if}}
+                                </div>
+                            </div>
+                        {{/if}}
+                    {{/each}}
+                {{else}}
+                    Geen aanwijzingen voor psychische of sociale oorzaken
+                {{/if}}
+            </li>
+            <li style="font-size: 18px; padding-left: 10px; font-weight: 400">
+                {{#if (getValueByCode "calculation7")}}
+                    Leefstijl-gerelateerde oorzaken: op het gebied van {{getValueByCode "calculation7.concatenateValues"}}
+                {{/if}}
+                {{#if (getValueByCode "calculation7.item")}}
+                    {{#each (getValueByCode "calculation7.item")}}
+                        {{#if (getValue LinkId)}}
+                            <div class="list-container">
+                                <img src="images/rightIconSvg.png" alt="check"/>
+                                <div>{{text}}</div>
+                            </div>
+                        {{/if}}
+                    {{/each}}
+                {{else}}
+                    Geen aanwijzingen voor leefstijl-gerelateerde oorzaken
+                {{/if}}
+            </li>
+        </ul>
+    {{/unless}}
+{{/if}}
+
+{{! Hormonal causes section }}
+<div class="grouped-containers">
+    <div class="header-text" style="display: flex; align-items: center; justify-content: space-between;">
+        <span>HORMONALE OORZAKEN</span>
+        <img alt="thyroid-icon" src="icon/icon-thyroid.png" style="width: 40px; height: 40px; margin-right: 15px"/>
+    </div>
+    <div class="summary-container">
+        {{#if (getValueByCode "calchormonaal")}}
+            <p>Een traag werkende schildklier is zelden de oorzaak van gewichtstoename. Soms kan het toch zinvol zijn om hierop te testen. Op basis van uw antwoorden zou dit bij u zinvol kunnen zijn.</p>
+            {{#getChildItemsByCode "calchormonaal"}}
+                {{#each this}}
+                    {{#if (getValue LinkId)}}
+                        <div class="list-container">
+                            <img src="images/rightIconSvg.png" alt="check"/>
+                            <div>{{text}}</div>
+                        </div>
+                    {{/if}}
+                {{/each}}
+            {{/getChildItemsByCode}}
+        {{else}}
+            <p>Op basis van uw antwoorden zijn er geen aanwijzingen dat een traag werkende schildklier de oorzaak is van uw gewichtstoename.</p>
+        {{/if}}
+    </div>
+
+    {{! Medication causes section }}
+    <div class="header-text" style="display: flex; align-items: center; justify-content: space-between;">
+        <span>MEDICAMENTEUZE OORZAKEN</span>
+        <img alt="medication-icon" src="icon/icon-med.png" style="width: 40px; height: 40px; margin-right: 15px"/>
+    </div>
+    <div class="summary-container">
+        {{#if (getValueByCode "calculation5")}}
+            <p>Sommige medicijnen kunnen bijdragen aan gewichtstoename. U heeft aangegeven dat u de volgende medicijnen gebruikt(e) waarvan bekend is dat ze een gewichtsverhogende bijwerking hebben:</p>
+            {{#getChildItemsByCode "calculation5"}}
+                {{#each this}}
+                    {{#if (getValue LinkId)}}
+                        <div class="list-container">
+                            <img src="images/rightIconSvg.png" alt="check"/>
+                            <div>{{text}}</div>
+                        </div>
+                    {{/if}}
+                {{/each}}
+            {{/getChildItemsByCode}}
+        {{else}}
+            <p>Sommige medicijnen kunnen bijdragen aan gewichtstoename. U heeft geen medicijnen genoemd waarvan bekend is dat ze een gewichtsverhogende bijwerking hebben.</p>
+        {{/if}}
+    </div>
+
+    {{! Mental and psychosocial factors section }}
+    <div class="header-text" style="display: flex; align-items: center; justify-content: space-between;">
+        <span>PSYCHISCHE EN SOCIALE FACTOREN</span>
+        <img alt="brain-icon" src="icon/icon-brain.png" style="width: 45px; height: 45px; margin-right: 15px"/>
+    </div>
+    <div class="summary-container">
+        {{#if (getValueByCode "calculation6")}}
+            <p>Psychische en sociale factoren kunnen het dagelijks leven beïnvloeden. En ook een rol spelen bij gewichtstoename. Dit zijn factoren die u in de vragenlijst heeft aangegeven:</p>
+            {{#getChildItemsByCode "calculation6"}}
+                {{#each this}}
+                    {{#if (getValue LinkId)}}
+                        <div class="list-container">
+                            <img src="images/rightIconSvg.png" alt="check"/>
+                            <div>
+                                {{text}}
+                                {{#if (eq text "Stress_cause")}}
+                                    {{value}}
+                                {{/if}}
+                            </div>
+                        </div>
+                    {{/if}}
+                {{/each}}
+            {{/getChildItemsByCode}}
+        {{else}}
+            <p>Op basis van uw antwoorden zijn er geen bijzonderheden op het gebied van psychische en sociale factoren.</p>
+        {{/if}}
+    </div>
+
+    {{! Lifestyle factors section }}
+    <div class="header-text" style="display: flex; align-items: center; justify-content: space-between;">
+        <span>LEEFSTIJL FACTOREN</span>
+        <img alt="lifestyle-icon" src="icon/icon-restaurant.png" style="width: 40px; height: 40px; margin-right: 15px"/>
+    </div>
+    <div class="summary-container">
+        {{#if (getValueByCode "calculation7")}}
+            <p>Een ongezonde leefstijl kan een rol spelen bij het ontstaan van obesitas. Ook kunnen leefstijl factoren de kans op bepaalde ziektes verhogen. De volgende factoren die een negatief effect kunnen hebben op uw gezondheid komen uit de vragenlijst:</p>
+            {{#getChildItemsByCode "calculation7"}}
+                {{#each this}}
+                    {{#if (getValue LinkId)}}
+                        <div class="list-container">
+                            <img src="images/rightIconSvg.png" alt="check"/>
+                            <div>{{text}}</div>
+                        </div>
+                    {{/if}}
+                {{/each}}
+            {{/getChildItemsByCode}}
+        {{else}}
+            <p>Op basis van uw ingevulde antwoorden in de vragenlijst komen er geen leefstijl factoren naar voren die een negatief effect zouden kunnen hebben op uw gezondheid.</p>
+        {{/if}}
+    </div>
+
+    {{! Genetic obesity section }}
+    <div class="header-text" style="display: flex; align-items: center; justify-content: space-between;">
+        <span>GENETISCHE OBESITAS</span>
+        <img alt="genetic-icon" src="icon/icon-cell.png" style="width: 40px; height: 40px; margin-right: 15px"/>
+    </div>
+    <div class="summary-container">
+        {{#if (getValueByCode "calcgenetisch")}}
+            <p>Genetische obesitas is een zeldzame vorm van obesitas. Op basis van uw antwoorden zou het zinvol kunnen zijn om met uw arts te bespreken of er verder onderzoek nodig is naar een genetische vorm van obesitas. De volgende kenmerken zouden kunnen passen bij genetische obesitas:</p>
+            {{#getChildItemsByCode "calcgenetisch"}}
+                {{#each this}}
+                    {{#if (getValue LinkId)}}
+                        <div class="list-container">
+                            <img src="images/rightIconSvg.png" alt="check"/>
+                            <div>{{text}}</div>
+                        </div>
+                    {{/if}}
+                {{/each}}
+            {{/getChildItemsByCode}}
+        {{else}}
+            <p>Op basis van uw antwoorden zijn er geen aanwijzingen voor een genetische vorm van obesitas.</p>
+        {{/if}}
+    </div>
+</div>
+
+{{! Possible consequences section }}
+{{#if (getValueByCode "calculation8")}}
+    <div class="header-text">MOGELIJKE GEVOLGEN OVERGEWICHT</div>
+    {{#getChildItemsByCode "calculation8"}}
+        {{#each this}}
+            <div class="summary-container">
+                <div style="margin-top: 0 !important;">
+                    {{subTitle}}
+                </div>
+
+                {{#if (getValue LinkId)}}
+                    <div>
+                        <p style="text-decoration: underline">{{text}}</p>
+                        {{#if (eq text "Slaapapneu (OSAS)")}}
+                            <div style="margin-left: 20px">
+                                <span>Op basis van de combinatie van uw antwoorden zou de kans op slaapapneu bij u verhoogd kunnen zijn.</span>
+                            </div>
+                        {{else if (eq text "Artrose")}}
+                            <div style="margin-left: 20px">
+                                <span>Uw antwoorden zouden kunnen passen bij artrose. Bij artrose is sprake van slijtage van een of meerdere gewrichten. Artrose kan een gevolg zijn van obesitas.</span>
+                            </div>
+                        {{else}}
+                            {{#each item}}
+                                {{#if (getValue LinkId)}}
+                                    <div class="list-container" style="margin-left: 20px">
+                                        <img src="images/rightIconSvg.png" alt="check"/>
+                                        <div>{{text}}</div>
+                                    </div>
+                                {{/if}}
+                            {{/each}}
+                        {{/if}}
+                    </div>
+                {{/if}}
+            </div>
+        {{/each}}
+    {{/getChildItemsByCode}}
+{{/if}}
+
+{{! Questions section }}
+{{#each questionnaireResponse.item}}
+    {{#if (getValue LinkId)}}
+        <p class="header-text">{{question}}</p>
+        <div class="questions-table">
+            <table style="width: 100%;">
+                <tbody>
+                    <tr>
+                        <th style="padding: 8px; font-weight: 500; width: 300px; max-width: 300px;">
+                            {{question}}
+                        </th>
+                        <td style="padding: 8px;">
+                            {{#if (getValue LinkId)}}
+                                {{answer}}
+                            {{else}}
+                                N/A
+                            {{/if}}
+                        </td>
+                    </tr>
+                    {{#item}}
+                        {{#if (getValue LinkId)}}
+                            <tr>
+                                <th style="padding: 8px; font-weight: 500; width: 300px; max-width: 300px;">
+                                    <div style="margin-left: 20px; border-left: 1px solid gray; padding-left: 5px;">
+                                        {{question}}
+                                    </div>
+                                </th>
+                                <td style="padding: 8px;">
+                                    {{#if (getValue LinkId)}}
+                                        {{answer}}
+                                    {{else}}
+                                        N/A
+                                    {{/if}}
+                                </td>
+                            </tr>
+                            {{#item}}
+                                {{#if (getValue LinkId)}}
+                                    <tr>
+                                        <th style="padding: 8px; font-weight: 500; width: 300px; max-width: 300px">
+                                            <div style="margin-left: 40px; border-left: 1px solid gray; padding-left: 5px;">
+                                                {{question}}
+                                            </div>
+                                        </th>
+                                        <td style="padding: 8px;">
+                                                    {{#if (getValue LinkId)}}
+                                                        {{answer}}
+                                                    {{else}}
+                                                        N/A
+                                                    {{/if}}
+                                                </td>
+                                            </tr>
+                                        {{/if}}
+                                    {{/item}}
+                                {{/if}}
+                            </tr>
+                        {{/item}}
+                    {{/each}}
+                </tbody>
+            </table>
+        </div>
+    {{/if}}
+{{/each}}
+
+{{! Disclaimer section }}
+<div style="border-bottom:1px solid; width:100%; margin-top: 20px"></div>
+<div style="padding: 10px; font-size:20px; font-weight: 500; width: 100%;">
+    <span style="font-weight:700">Disclaimer:</span>
+    <span style="font-size:18px;">De uitkomsten van deze vragenlijst geven geen diagnose. De vragenlijst is alleen bedoeld om op basis van de ingevulde informatie te laten zien bij welke mogelijke onderliggende oorzaken van overgewicht uw combinatie van antwoorden zou kunnen passen. Dit dient verder besproken te worden met uw arts/zorgverlener. Stop nooit zonder overleg met uw arts met medicatie. Erasmus MC verstrekt op geen enkele wijze expliciete of impliciete garanties dat de vragenlijst, delen of inhoud hiervan volledig, nauwkeurig zijn, of geschikt zijn voor bepaalde doeleinden of voor het behalen van bepaalde resultaten, of dat de vragenlijst, delen of inhoud hiervan geen inbreuk maken op de rechten van de derden. Erasmus MC is op geen enkele wijze verantwoordelijk of aansprakelijk voor het gebruik van de vragenlijst door een organisatie of een instelling en/of voor de geschiktheid, volledigheid of nauwkeurigheid van de informatie, resultaten of data verkregen door het gebruik maken van de vragenlijst.</span>
+</div> 

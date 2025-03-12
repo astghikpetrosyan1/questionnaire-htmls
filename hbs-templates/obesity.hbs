@@ -59,413 +59,90 @@
         </div>
     </div>
     <div>
-        <div style='font-size: 30px; color: #0070a8; font-weight: 500; margin: 20px 0; text-align: left'> Summary
+        <div style="font-size: 30px; color: #0070a8; font-weight: 500; margin: 20px 0; text-align: left">
+            Summary
         </div>
 
-        {{#if (getValue '5b6f10b6-f886-4fc9-a683-5fe7bb961325')}}
-
-                    <!--     Is Bmi low               -->
-                    {{#if (compare (getValue '5b6f10b6-f886-4fc9-a683-5fe7bb961325') 'lt' '18.5')}}
-                        <div style='display: block; text-align: left; font-size: 18px; margin-bottom: 10px'> Your BMI is
-                            underweight.
-                            This questionnaire does not apply to you.
-                        </div>
-                    {{/if}}
-
-                    <!--     Is Bmi medium               -->
-                    {{#if (compare (getValue '5b6f10b6-f886-4fc9-a683-5fe7bb961325') 'ge' '18.5')}}
-                        {{#if (compare (getValue '5b6f10b6-f886-4fc9-a683-5fe7bb961325') 'le' '24.9')}}
-                            <div style='display: block; text-align: left; font-size: 18px'> There is a normal weight <span
-                                    style='font-weight: bold; margin-left: 0px; margin-right: 0px'>
-                                (BMI {{getValue '5b6f10b6-f886-4fc9-a683-5fe7bb961325'}} kg/m<sup>2</sup>)</span>. The following
-                                points of
-                                attention are
-                                known to increase weight:
-                            </div>
-                        {{/if}}
-                    {{/if}}
-
-                    <!--     Is Bmi high               -->
-                    {{#if (compare (getValue '5b6f10b6-f886-4fc9-a683-5fe7bb961325') 'ge' '25')}}
-                        {{#if  (compare (getValue '5b6f10b6-f886-4fc9-a683-5fe7bb961325') 'le' '30')}}
-                            <div style='display: block; text-align: left; font-size: 18px'> Based on your <b
-                            style='font-weight: bold; margin-left: 5px; margin-right: 5px'>BMI {{getValue
-                            '5b6f10b6-f886-4fc9-a683-5fe7bb961325'}} kg/m<sup>2</sup>)</b>, you are overweight with
-                        the
-                        following
-                        possible underlying causes
-                            </div>
-                        {{/if}}
-                    {{/if}}
-
-                    <!--     Is Bmi obese               -->
-            {{#if (compare (getValue '5b6f10b6-f886-4fc9-a683-5fe7bb961325') 'ge' '30')}}
-                <div style='display: block; text-align: left; font-size: 18px'> Based on your <b
-                        style='font-weight: bold; margin-left: 5px; margin-right: 5px'>BMI ({{getValue
-                        '5b6f10b6-f886-4fc9-a683-5fe7bb961325'}} kg/m<sup>2</sup>)</b>, you have obesity with the
-                    following
-                    possible underlying causes
+        {{! BMI conditions }}
+        {{#if (getValueByCode "bmi")}}
+            {{#if (compare (getValueByCode "bmi") 'lt' '18.5')}}
+                <div style="display: block; text-align: left; font-size: 18px; margin-bottom: 10px">
+                    Regarding your BMI, you are underweight. This questionnaire is not applicable to you.
                 </div>
             {{/if}}
 
-            <ul>
-                <li class='normal-text' style='padding-left: 10px;'>
-                    {{#if getValue 'd072921e-0c09-49e7-8cd0-77cb29252632'}}
-                        Hormonal causes: indications that may be consistent with <span class='first-capital'
-                                                                                       style='display: block;'>
-                        {{getValue 'd072921e-0c09-49e7-8cd0-77cb29252632'}}
-                    </span>
-                    {{else}}
-                        No indications for hormonal causes
-                    {{/if}}
-                </li>
-                <li class='normal-text' style='padding-left: 10px'>
-                    {{#if getValue '2c46d10c-2a5a-4c0f-f7af-ec69afee30e7'}}
-                        Medication-related causes: use of {{getValue '2c46d10c-2a5a-4c0f-f7af-ec69afee30e7'}}
-                    {{else}}
-                        No indications for medication-related causes
-                    {{/if}}
-                </li>
-                <li class='normal-text' style='padding-left: 10px'>
-                    {{#if getValue 'dfdeaefb-783c-4498-815e-276ca2acfd85'}}
-                        Indications for psychological or social causes
-                    {{else}}
-                        No indications for psychological or social causes
-                    {{/if}}
-                </li>
-                <li class='normal-text' style='padding-left: 10px'>
-                    {{#if getValue '0888139e-a1eb-47df-87a7-1eca6392c2df'}}
-                        Lifestyle-related causes: in the areas of {{getValue '0888139e-a1eb-47df-87a7-1eca6392c2df'}}
-                    {{else}}
-                        No indications for lifestyle-related causes
-                    {{/if}}
-                </li>
-                <li class='normal-text' style='padding-left: 10px'>
-                    {{#if getValue '3ebc8b6b-3ca0-4482-9d95-1925d0ffcfac'}}
-                        Indications for hypothalamic causes
-                    {{else}}
-                        No indications for hypothalamic causes
-                    {{/if}}
-                </li>
-                <li class='normal-text' style='padding-left: 10px'>
-                    {{#if getValue '484080fe-420a-4061-bf9b-a72d1e573c9f'}}
-                        Indications for genetic causes
-                    {{else}}
-                        No indications for genetic causes
-                    {{/if}}
-                </li>
-            </ul>
+            {{#if (compare (getValueByCode "bmi") 'ge' '18.5')}}
+                {{#if (compare (getValueByCode "bmi") 'le' '24.9')}}
+                    <div style='display: block; text-align: left; font-size: 18px'> 
+                        There is a normal weight <span style='font-weight: bold; margin-left: 0px; margin-right: 0px'>
+                        (BMI {{getValueByCode "bmi"}} kg/m<sup>2</sup>)</span>. The following points of attention are known to increase weight:
+                    </div>
+                {{/if}}
+            {{/if}}
+
+            {{#if (compare (getValueByCode "bmi") 'ge' '25')}}
+                {{#if (compare (getValueByCode "bmi") 'le' '30')}}
+                    <div style='display: block; text-align: left; font-size: 18px'> 
+                        Based on your <b style='font-weight: bold; margin-left: 5px; margin-right: 5px'>BMI {{getValueByCode "bmi"}} kg/m<sup>2</sup>)</b>, 
+                        you are overweight with the following possible underlying causes
+                    </div>
+                {{/if}}
+            {{/if}}
+
+            {{#if (compare (getValueByCode "bmi") 'ge' '30')}}
+                <div style='display: block; text-align: left; font-size: 18px'> 
+                    Based on your <b style='font-weight: bold; margin-left: 5px; margin-right: 5px'>BMI ({{getValueByCode "bmi"}} kg/m<sup>2</sup>)</b>, 
+                    you have obesity with the following possible underlying causes
+                </div>
+            {{/if}}
         {{/if}}
 
-        {{#if getValue '169e21f9-13ee-43e8-8e0f-f435e692b5eb'}}
-            <div style='display: flex; align-items: center; font-size: 18px '>
-                With the following possible consequences:
-            </div>
-            <ul>
-                {{#if getValue '8d76e02e-6e19-48ec-86f7-c53ef268c293'}}
-                    <li style='font-size: 18px; padding-left: 10px; font-weight: 400 '>Type 2 diabetes</li>
+        {{! Summary list }}
+        <ul>
+            <li class='normal-text ' style='padding-left: 10px; '>
+                {{#if (getValueByCode 'calchormonaal')}}
+                    Hormonal causes: indications that may be consistent with <span class='first-capital ' style='display: block; '>{{getValueByCode "calchormonaal"}}</span>
+                {{else}}
+                    No indications for hormonal causes
                 {{/if}}
-                {{#if getValue '24e50623-736d-48cc-f114-bca477fea89c'}}
-                    <li style='font-size: 18px; padding-left: 10px; font-weight: 400 '>Sleep apnea (OSA)</li>
+            </li>
+            <li class='normal-text ' style='padding-left: 10px '>
+                {{#if (getValueByCode "calculation-5")}}
+                    Medication-related causes: use of {{getValueByCode "calculation-5"}}
+                {{else}}
+                    No indications for medication-related causes
                 {{/if}}
-                {{#if getValue 'b014c0b9-ec96-4b79-d87f-1478ec7eb787'}}
-                    <li style='font-size: 18px; padding-left: 10px; font-weight: 400 '>Osteoarthritis</li>
+            </li>
+            <li class='normal-text ' style='padding-left: 10px '>
+                {{#if (getValueByCode "calculation6")}}
+                    Indications for psychological or social causes
+                {{else}}
+                    No indications for psychological or social causes
                 {{/if}}
-                {{#if getValue 'c3c22d52-b8c1-4e5a-87d2-0f53ccf96248'}}
-                    <li style='font-size: 18px; padding-left: 10px; font-weight: 400 '>Angstklachten</li>
+            </li>
+            <li class='normal-text ' style='padding-left: 10px '>
+                {{#if (getValueByCode "calculation7")}}
+                    Lifestyle-related causes: in the areas of {{getValueByCode "calculation7"}}
+                {{else}}
+                    No indications for lifestyle-related causes
                 {{/if}}
-            </ul>
-        {{/if}}
+            </li>
+            <li class='normal-text ' style='padding-left: 10px '>
+                {{#if (getValueByCode "calchypothalaam")}}
+                    Indications for hypothalamic causes
+                {{else}}
+                    No indications for hypothalamic causes
+                {{/if}}
+            </li>
+            <li class='normal-text ' style='padding-left: 10px '>
+                {{#if (getValueByCode "calcgenetisch")}}
+                    Indications for genetic causes
+                {{else}}
+                    No indications for genetic causes
+                {{/if}}
+            </li>
+        </ul>
     </div>
-
-    <div class='grouped-containers '>
-        {{#if getValue '6e62b484-401b-468a-97e4-50f2ed7b7334'}}
-            <div class='container'>
-                <div
-                        style=' background-color: #B4C6E7; display: flex; align-items: center; justify-content: space-between; padding: 10px 20px; border-radius: 15px 15px 0px 0px; '>
-                <span class='case-title '
-                      style='color: #101011;width: 100%;padding: 10px 20px 10px 20px; '>GENERAL CHARACTERISTICS</span>
-                </div>
-                <div class='container-text'>
-                    <div class='dark-blue-container' style='background-color: #F3F7FA; '>
-                        {{#if getValue "6e62b484-401b-468a-97e4-50f2ed7b7334"}}
-                            <div class='subTitle ' style='margin-top: 0 !important; padding: 10px 15px '>
-                                {{#if getValue "d072921e-0c09-49e7-8cd0-77cb29252632"}}
-                                    <p>In general, hormonal causes can play a role in weight gain. Based on your answers, this might
-                                        be the case. Your answers might be consistent with the following hormonal causes: </p>
-                                {{else}}
-                                    <p>In general, hormonal causes can play a role in weight gain. Based on your answers, there are
-                                        no signs pointing to a hormonal cause.</p>
-                                {{/if}}
-                            </div>
-
-                            <div>
-                                <div>
-                                    {{#if getValue "04696b50-38f7-462e-8f0f-b95355823949"}}
-                                        <div class='title-subcase-child ' style='font-weight: 500 '>
-                                            <span class='checked-icon '></span>
-                                            Hypothyroidism (= underactive thyroid gland
-                                        </div>
-                                    {{/if}}
-                                </div>
-
-                                <div>
-                                    {{#if getValue "3e943ed6-d8cc-4aa3-8101-dac3f9b71906"}}
-                                        <div class='title-subcase-child ' style='font-weight: 500 '>
-                                            <span class='checked-icon '></span>
-                                            Hypogonadism (= too little male sex hormone in men)
-                                        </div>
-                                    {{/if}}
-                                </div>
-
-                                <div>
-                                    {{#if getValue "2b058f12-0f46-430d-819a-5211d871de01"}}
-                                        <div class='title-subcase-child ' style='font-weight: 500 '>
-                                            <span class='checked-icon '></span>
-                                            Polycystic ovary syndrome (PCOS)/hyperandrogenism (= too much male sex hormone in women)
-                                        </div>
-                                    {{/if}}
-                                </div>
-
-                                <div>
-                                    {{#if getValue "b7f019ae-1ba8-441f-8b1a-bf92f22ff94e"}}
-                                        <div class='title-subcase-child ' style='font-weight: 500 '>
-                                            <span class='checked-icon '></span>
-                                            Cushing's syndrome or disease (= excessive presence of the stress hormone cortisol)
-                                        </div>
-                                    {{/if}}
-                                </div>
-                            </div>
-                        {{/if}}
-                    </div>
-                </div>
-            </div>
-        {{/if}}
-
-        <div>
-            <p style='text-align: left; font-size: 20px; color: #101011; width: 100%; padding: 10px 20px 10px 20px; font-weight: 700 !important; background-color: #B4C6E7; '>
-                POSSIBLE UNDERLYING CAUSES OF OVERWEIGHT
-            </p>
-        </div>
-
-        <div class='container '>
-            <div
-                    style='display: flex; align-items: center; justify-content: space-between; background-color: #F3F7FA; padding: 10px 20px; border-radius: 15px 15px 0px 0px; '>
-                <span class='case-title '
-                      style='color: #101011;width: 100%;padding: 10px 20px 10px 20px; font-weight: 700 !important; '>Hormonal causes</span>
-                    <img alt='food-icon ' src='./icon/icon-hepar.png ' style='width: 40px; height: 40px; margin-right: 15px '/>
-            </div>
-            <div class='container-text'>
-                <div class='dark-blue-container ' style='background-color: #F3F7FA; '>
-
-                    <div class='subTitle ' style='margin-top: 0 !important; padding: 10px 15px '>
-                        {{#if getValue "d072921e-0c09-49e7-8cd0-77cb29252632"}}
-                            <p>In general, hormonal causes can play a role in weight gain. Based on your answers, this might
-                                be the case. Your answers might be consistent with the following hormonal causes: </p>
-                        {{else}}
-                            <p>In general, hormonal causes can play a role in weight gain. Based on your answers, there are
-                                no signs pointing to a hormonal cause.</p>
-                        {{/if}}
-                    </div>
-
-                    {{#if getValue "d072921e-0c09-49e7-8cd0-77cb29252632"}}
-                        <div>
-                            <div>
-                                {{#if getValue "04696b50-38f7-462e-8f0f-b95355823949"}}
-                                    <div class='title-subcase-child' style='font-weight: 500 '>
-                                        <span class='checked-icon '></span>
-                                        Hypothyroidism (= underactive thyroid gland)
-                                    </div>
-                                {{/if}}
-
-                                {{#if getValue "3e943ed6-d8cc-4aa3-8101-dac3f9b71906"}}
-                                    <div class='title-subcase-child' style='font-weight: 500 '>
-                                        <span class='checked-icon '></span>
-                                        Hypogonadism (= too little male sex hormone in men)
-                                    </div>
-                                {{/if}}
-
-                                {{#if getValue "2b058f12-0f46-430d-819a-5211d871de01"}}
-                                    <div class='title-subcase-child' style='font-weight: 500 '>
-                                        <span class='checked-icon '></span>
-                                        Polycystic ovary syndrome (PCOS)/hyperandrogenism (= too much male sex hormone in women)
-                                    </div>
-                                {{/if}}
-
-                                {{#if getValue "b7f019ae-1ba8-441f-8b1a-bf92f22ff94e"}}
-                                    <div class='title-subcase-child' style='font-weight: 500 '>
-                                        <span class='checked-icon '></span>
-                                        Cushing's syndrome or disease (= excessive presence of the stress hormone cortisol)
-                                    </div>
-                                {{/if}}
-                            </div>
-                        </div>
-                    {{/if}}
-
-
-                </div>
-            </div>
-        </div>
-
-        <div class='container '>
-            <div
-                    style='display: flex; align-items: center; justify-content: space-between; background-color: #F3F7FA; padding: 10px 20px; border-radius: 15px 15px 0px 0px; '>
-                <span class='case-title ' style='color: #101011;width: 100%;padding: 10px 20px 10px 20px; '>Medication-related causes</span>
-                <img alt='food-icon ' src='./icon/icon-med.png ' style='width: 40px; height: 40px; margin-right: 15px '/>
-            </div>
-
-            <div class='container-text '>
-                <div class='dark-blue-container ' style='background-color: #F3F7FA; '>
-                    {{#if getValue "2c46d10c-2a5a-4c0f-f7af-ec69afee30e"}}
-                        <p>Some medicines can contribute to weight gain. You are taking, or used to take, the following
-                            medicines that are known to possibly cause weight gain:</p>
-                    {{else}}
-                        <p>Some medicines can contribute to weight gain. You have not listed any medicines known to
-                            cause weight gain.</p>
-                    {{/if}}
-                </div>
-
-                <div>
-                    {{#if (getValue "calculation5")}}
-                        {{#if (getValue "calculation5.item")}}
-                            <div>
-                                {{#if (getValue "answer.0.item.length")}}
-                                    <div>
-                                        {{#each answer.0.item}}
-                                            <div class='row'>
-                                                <div class='title-subcase-child' style='padding-top:10px'>
-                                                    <span class='checked-icon'></span>
-                                                    <div style='font-weight:600;color:#000'>
-                                                        {{getValue "text"}}
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            {{#if (getValue "answer.0.item")}}
-                                                <div>
-                                                    <div class='list-container' style='margin-left: 20px;display:flex'>
-                                                        <span class='checked-icon'></span>
-                                                        <div style='font-weight:normal'>
-                                                            {{getValue "text"}}
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            {{/if}}
-                                            
-                                        {{/each}}
-                                    </div>
-                                {{/if}}
-                            </div>
-                            <div class='subTitle' style='margin-top: 0 !important; padding: 10px 15px'>
-                                <p>Please make sure you never change anything about your medication (like the dosage) without
-                                    talking to your doctor first.</p>
-                            </div>
-                        {{/if}}
-                    {{/if}}
-                </div>
-            </div>
-        </div>
-
-        {{! Hypothalamic obesity section }}
-        <div class='container'>
-            <div style='display: flex; align-items: center; justify-content: space-between; background-color: #F3F7FA; padding: 10px 20px; border-radius: 15px 15px 0px 0px;'>
-                <span class='case-title' style='color: #101011;width: 100%;padding: 10px 20px 10px 20px;'>Hypothalamic obesity</span>
-                <img alt='food-icon' src='./icon/icon-head.png' style='width: 45px; height: 45px; margin-right: 15px'/>
-            </div>
-
-            <div class='container-text'>
-                <div class='dark-blue-container' style='background-color: #F3F7FA;'>
-                    <div class='subTitle' style='margin-top: 0 !important; padding: 10px 15px'>
-                        {{#if (getValue "calchypothalaam")}}
-                            <p>Hypothalamic obesity is a rare cause of obesity. It is caused by damage to brain areas which
-                                are important for hunger and feeling full. Based on your answers, it might be useful to talk
-                                to your doctor about whether you should have further tests to check for a hypothalamic cause
-                                of obesity.</p>
-                        {{else}}
-                            <p>Based on your answers, there are no signs of a hypothalamic cause of obesity (a type of
-                                obesity due to damage to an area in the brain).</p>
-                {{/if}}
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        {{! Genetic obesity section }}
-        <div class='container'>
-            <div style='display: flex; align-items: center; justify-content: space-between; background-color: #F3F7FA; padding: 10px 20px; border-radius: 15px 15px 0px 0px; font-size: 22px;'>
-                <span class='case-title' style='color: #101011;width: 100%;padding: 10px 20px 10px 20px;'>GENETIC OBESITY</span>
-                <img alt='food-icon' src='./icon/icon-cell.png' style='width: 40px; height: 40px; margin-right: 15px'/>
-            </div>
-            <div class='container-text'>
-                <div class='dark-blue-container' style='background-color: #F3F7FA;'>
-                    <div class='subTitle' style='margin-top: 0 !important; padding: 10px 15px'>
-                        {{#if (getValue "calcgenetisch")}}
-                            <p>Genetic obesity is a rare type of obesity. Based on your answers, it might be useful to
-                                discuss with your doctor whether you should have further tests for a genetic form of
-                                obesity. The following features may fit with genetic obesity:</p>
-                        {{else}}
-                            <p>Based on your answers, there are no signs of a genetic type of obesity.</p>
-                        {{/if}}
-                    </div>
-                    <div>
-                        {{#if (getValue "calcgenetisch")}}
-                            {{#if (getValue "calcgenetisch.item")}}
-                                <div class='row'>
-                                    <div class='title-subcase-child'>
-                                        <span class='checked-icon'></span>
-                                        {{getValue "calcgenetisch.text"}}
-                                    </div>
-                                </div>
-                            {{/if}}
-                        {{/if}}
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    {{! Possible consequences section }}
-    {{#if (getValue "calculation8")}}
-        <div class='container'>
-            <div style='display: flex; align-items: center; justify-content: space-between; background-color: #F3F7FA; padding: 10px 20px; border-radius: 15px 15px 0px 0px;'>
-                <span class='case-title' style='background-color: #F3F7FA; color: #101011;width: 100%;padding: 10px 20px 10px 20px; font-weight: 700 !important;'>POSSIBLE CONSEQUENCES OF BEING OVERWEIGHT</span>
-            </div>
-            <div class='container-text'>
-                <div class='dark-blue-container' style='background-color: #F3F7FA;'>
-                    <div class='subTitle' style='margin-top: 0 !important; padding: 10px 15px'>
-                        {{getValue "subTitle"}}
-                    </div>
-
-                    <div>
-                        {{#if (getValue "answer.0.item.length")}}
-                            <div>
-                                {{#if (getValue "answer.0.item")}}
-                                    <div class='row'>
-                                        {{#if (getValue "text=Sleep apnea (OSA)")}}
-                                            <div class='title-subcase-child'>
-                                                <p style='text-decoration: underline'>{{getValue "text"}}</p>
-                                                <div class='row' style='margin-left: 20px'>
-                                                    <span>Based on the combination of your answers, your risk of sleep apnea may be increased.</span>
-                                                </div>
-                                            </div>
-                                        {{/if}}
-                                        {{#if (getValue "text=Osteoarthritis")}}
-                                            <div class='title-subcase-child'>
-                                                <p style='text-decoration: underline'>{{getValue "text"}}</p>
-                                                <div class='row' style='margin-left: 20px'>
-                                                    <span>Your answers could fit with osteoarthritis. Osteoarthritis is wear and tear of one or more joints. Osteoarthritis can be a consequence of obesity.</span>
-                                                </div>
-                                            </div>
-                                        {{/if}}
-                                    </div>
-                                {{/if}}
-                            </div>
-                        {{/if}}
-                    </div>
-                </div>
-            </div>
-        </div>
-    {{/if}}
 
     {{! Completed results section }}
     <h2 style='font-size: 24px; color: #1399EC; font-weight: bold; text-align: left; margin: 40px 0 8px 20px;'>
@@ -474,5 +151,279 @@
 
     <div style='font-size: 18px; color: #101011; font-weight: 500; margin: 10px 0 16px 20px; text-align: left;'>
         Your <strong>participation</strong> in the survey is greatly appreciated. <strong>Thank you!</strong>
+    </div>
+
+    {{! Possible consequences section }}
+    <div class="container">
+        <div style="display: flex; align-items: center; justify-content: space-between; background-color: #F3F7FA; padding: 10px 20px; border-radius: 15px 15px 0px 0px;">
+            <span class="case-title" style="background-color: #F3F7FA; color: #101011;width: 100%;padding: 10px 20px 10px 20px; font-weight: 700 !important;">POSSIBLE CONSEQUENCES OF BEING OVERWEIGHT</span>
+        </div>
+
+        {{#getChildItemsByCode "calculation8"}}
+            {{#each this}}
+                <div class="container-text">
+                    <div class="dark-blue-container" style="background-color: #F3F7FA;">
+                        <div class="subTitle" style="margin-top: 0 !important; padding: 10px 15px">
+                            {{subTitle}}
+                        </div>
+
+                        {{#if (getValue LinkId)}}
+                            <div class="row">
+                                {{#if (eq text "Sleep apnea (OSA)")}}
+                                    <div class="title-subcase-child">
+                                        <p style="text-decoration: underline">{{text}}</p>
+                                        <div class="row" style="margin-left: 20px">
+                                            <span>Based on the combination of your answers, your risk of sleep apnea may be increased.</span>
+                                        </div>
+                                    </div>
+                                {{else}}
+                                    <div class="title-subcase-child">
+                                        <span class="checked-icon"></span>
+                                        {{text}}
+                                    </div>
+                                {{/if}}
+                            </div>
+                        {{/if}}
+                    </div>
+                </div>
+            {{/each}}
+        {{/getChildItemsByCode}}
+    </div>
+
+    {{! Lifestyle factors section }}
+    <div class="container">
+        <div style="display: flex; align-items: center; justify-content: space-between; background-color: #F3F7FA; padding: 10px 20px; border-radius: 15px 15px 0px 0px;">
+            <span class="case-title" style="color: #101011;width: 100%;padding: 10px 20px 10px 20px;">LIFESTYLE FACTORS</span>
+            <img alt="food-icon" src="./icon/icon-restaurant.png" style="width: 40px; height: 40px; margin-right: 15px"/>
+        </div>
+
+        <div class="container-text">
+            <div class="dark-blue-container" style="background-color: #F3F7FA;">
+                <div class="subTitle" style="margin-top: 0 !important; padding: 10px 15px">
+                    <p>An unhealthy lifestyle can play a role in developing obesity. Lifestyle factors can also increase the risk of certain diseases. The following factors that can negatively affect your health come from your questionnaire:</p>
+                </div>
+
+                {{#getChildItemsByCode "lifeStyleFactors"}}
+                    {{#each this}}
+                        <div class="title-subcase-child">
+                            <p style="text-decoration: underline">{{text}}</p>
+                            {{#unless (getValue LinkId)}}
+                                <div class="row" style="margin-left: 20px">
+                                    {{#if (eq text "Diet")}}
+                                        <span>There are no special dietary requirements for you</span>
+                                    {{else if (eq text "Exercise")}}
+                                        <span>There are no special requirements regarding exercise, you meet the weekly exercise standard.</span>
+                                    {{else if (eq text "Alcohol")}}
+                                        <span>There are no special circumstances regarding your alcohol consumption.</span>
+                                    {{/if}}
+                                </div>
+                            {{/unless}}
+
+                            {{#if (getValue LinkId)}}
+                                {{#if item}}
+                                    {{#each item}}
+                                        {{#if (getValue LinkId)}}
+                                            <div class="row">
+                                                <div class="title-subcase-child">
+                                                    <span class="checked-icon"></span>
+                                                    {{text}}
+                                                </div>
+                                            </div>
+                                        {{/if}}
+                                    {{/each}}
+                                {{/if}}
+
+                                {{#if (eq text "Diet")}}
+                                    <div style="font-weight: 400; margin: 10px 0">
+                                        More information about healthy eating can be found at:
+                                        <a href="https://www.voedingscentrum.nl" target="_blank">www.voedingscentrum.nl</a>
+                                    </div>
+                                {{/if}}
+                            {{/if}}
+                        </div>
+                    {{/each}}
+                {{/getChildItemsByCode}}
+            </div>
+        </div>
+    </div>
+
+    {{! Hormonal causes section }}
+    <div class="container">
+        <div style="display: flex; align-items: center; justify-content: space-between; background-color: #F3F7FA; padding: 10px 20px; border-radius: 15px 15px 0px 0px;">
+            <span class="case-title" style="color: #101011;width: 100%;padding: 10px 20px 10px 20px;">HORMONAL CAUSES</span>
+            <img alt="food-icon" src="./icon/icon-hormonal.png" style="width: 40px; height: 40px; margin-right: 15px"/>
+        </div>
+        <div class="container-text">
+            <div class="dark-blue-container" style="background-color: #F3F7FA;">
+                <div class="subTitle" style="margin-top: 0 !important; padding: 10px 15px">
+                    {{#if (getValueByCode "calchormonaal")}}
+                        <p>Based on your answers, the following hormonal causes may play a role in your overweight:</p>
+                    {{else}}
+                        <p>Based on your answers, there are no indications for hormonal causes of overweight.</p>
+                    {{/if}}
+                </div>
+
+                {{#getChildItemsByCode "calchormonaal"}}
+                    {{#each this}}
+                        {{#if (getValue LinkId)}}
+                            <div class="row">
+                                <div class="title-subcase-child">
+                                    <span class="checked-icon"></span>
+                                    {{text}}
+                                </div>
+                            </div>
+                        {{/if}}
+                    {{/each}}
+                {{/getChildItemsByCode}}
+            </div>
+        </div>
+    </div>
+
+    {{! Medication causes section }}
+    <div class="container">
+        <div style="display: flex; align-items: center; justify-content: space-between; background-color: #F3F7FA; padding: 10px 20px; border-radius: 15px 15px 0px 0px;">
+            <span class="case-title" style="color: #101011;width: 100%;padding: 10px 20px 10px 20px;">MEDICATION-RELATED CAUSES</span>
+            <img alt="food-icon" src="./icon/icon-med.png" style="width: 40px; height: 40px; margin-right: 15px"/>
+        </div>
+        <div class="container-text">
+            <div class="dark-blue-container" style="background-color: #F3F7FA;">
+                <div class="subTitle" style="margin-top: 0 !important; padding: 10px 15px">
+                    {{#if (getValueByCode "calculation-5")}}
+                        <p>Some medications can contribute to weight gain. You use the following medications that are known to have a weight-increasing side effect:</p>
+                    {{else}}
+                        <p>Some medications can contribute to weight gain. You have not noted any medications that are known to have a weight-increasing side effect.</p>
+                    {{/if}}
+                </div>
+
+                {{#getChildItemsByCode "calculation-5"}}
+                    {{#each this}}
+                        {{#if (getValue LinkId)}}
+                            <div class="row">
+                                <div class="title-subcase-child" style="padding-top:10px">
+                                    <span class="checked-icon"></span>
+                                    <div style="font-weight:600;color:#000">{{text}}</div>
+                                    {{#if item}}
+                                        {{#each item}}
+                                            {{#if (getValue LinkId)}}
+                                                <div class="list-container" style="margin-left: 20px;display:flex">
+                                                    <span class="checked-icon"></span>
+                                                    <div style="font-weight:normal">{{text}}</div>
+                                                </div>
+                                            {{/if}}
+                                        {{/each}}
+                                    {{/if}}
+                                </div>
+                            </div>
+                        {{/if}}
+                    {{/each}}
+                {{/getChildItemsByCode}}
+            </div>
+        </div>
+    </div>
+
+    {{! Mental and psychosocial factors section }}
+    <div class="container">
+        <div style="display: flex; align-items: center; justify-content: space-between; background-color: #F3F7FA; padding: 10px 20px; border-radius: 15px 15px 0px 0px;">
+            <span class="case-title" style="font-weight: bold; color: #101011;width: 100%;padding: 10px 20px 10px 20px;">MENTAL AND PSYCHOSOCIAL FACTORS</span>
+            <img alt="food-icon" src="./icon/icon-brain.png" style="width: 45px; height: 45px; margin-right: 15px;"/>
+        </div>
+
+        <div class="container-text">
+            <div class="dark-blue-container" style="background-color: #F3F7FA;">
+                <div class="subTitle" style="margin-top: 0 !important; padding: 10px 15px">
+                    {{#if (getValueByCode "calculation6")}}
+                        <p>Mental and psychosocial factors can play a role in the development of obesity. These are factors that you have indicated in the questionnaire that are present in your case:</p>
+                    {{else}}
+                        <p>Based on your answers, there are no special circumstances regarding mental and psychosocial factors.</p>
+                    {{/if}}
+                </div>
+
+                {{#getChildItemsByCode "calculation6"}}
+                    {{#each this}}
+                        {{#if (getValue LinkId)}}
+                            <div class="row">
+                                <div class="title-subcase-child">
+                                    <span class="checked-icon"></span>
+                                    {{text}}
+                                    {{#if Item}}
+                                        {{#each Item}}
+                                            {{#if (getValue LinkId)}}
+                                                {{#if (eq text "Stress_cause")}}
+                                                    {{value}}
+                                                {{/if}}
+                                            {{/if}}
+                                        {{/each}}
+                                    {{/if}}
+                                </div>
+                            </div>
+                        {{/if}}
+                    {{/each}}
+                {{/getChildItemsByCode}}
+            </div>
+        </div>
+    </div>
+
+    {{! Hypothalamic causes section }}
+    <div class="container">
+        <div style="display: flex; align-items: center; justify-content: space-between; background-color: #F3F7FA; padding: 10px 20px; border-radius: 15px 15px 0px 0px;">
+            <span class="case-title" style="color: #101011;width: 100%;padding: 10px 20px 10px 20px;">HYPOTHALAMIC OBESITY</span>
+            <img alt="food-icon" src="./icon/icon-brain.png" style="width: 40px; height: 40px; margin-right: 15px"/>
+        </div>
+        <div class="container-text">
+            <div class="dark-blue-container" style="background-color: #F3F7FA;">
+                <div class="subTitle" style="margin-top: 0 !important; padding: 10px 15px">
+                    {{#if (getValueByCode "calchypothalaam")}}
+                        <p>Based on your answers, it might be useful to discuss with your doctor whether you should have further tests for hypothalamic obesity. The following features may fit with hypothalamic obesity:</p>
+                    {{else}}
+                        <p>Based on your answers, there are no signs of hypothalamic obesity.</p>
+                    {{/if}}
+                </div>
+
+                {{#getChildItemsByCode "calchypothalaam"}}
+                    {{#each this}}
+                        {{#if (getValue LinkId)}}
+                            <div class="row">
+                                <div class="title-subcase-child">
+                                    <span class="checked-icon"></span>
+                                    {{text}}
+                                </div>
+                            </div>
+                        {{/if}}
+                    {{/each}}
+                {{/getChildItemsByCode}}
+            </div>
+        </div>
+    </div>
+
+    {{! Genetic causes section }}
+    <div class="container">
+        <div style="display: flex; align-items: center; justify-content: space-between; background-color: #F3F7FA; padding: 10px 20px; border-radius: 15px 15px 0px 0px;">
+            <span class="case-title" style="color: #101011;width: 100%;padding: 10px 20px 10px 20px;">GENETIC OBESITY</span>
+            <img alt="food-icon" src="./icon/icon-cell.png" style="width: 40px; height: 40px; margin-right: 15px"/>
+        </div>
+        <div class="container-text">
+            <div class="dark-blue-container" style="background-color: #F3F7FA;">
+                <div class="subTitle" style="margin-top: 0 !important; padding: 10px 15px">
+                    {{#if (getValueByCode "calcgenetisch")}}
+                        <p>Genetic obesity is a rare type of obesity. Based on your answers, it might be useful to discuss with your doctor whether you should have further tests for a genetic form of obesity. The following features may fit with genetic obesity:</p>
+                    {{else}}
+                        <p>Based on your answers, there are no signs of a genetic type of obesity.</p>
+                    {{/if}}
+                </div>
+
+                {{#getChildItemsByCode "calcgenetisch"}}
+                    {{#each this}}
+                        {{#if (getValue LinkId)}}
+                            <div class="row">
+                                <div class="title-subcase-child">
+                                    <span class="checked-icon"></span>
+                                    {{text}}
+                                </div>
+                            </div>
+                        {{/if}}
+                    {{/each}}
+                {{/getChildItemsByCode}}
+            </div>
+        </div>
     </div>
 </div>
