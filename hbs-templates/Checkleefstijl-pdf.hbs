@@ -56,22 +56,6 @@
         page-break-inside: avoid;
     }
 
-    .questions-table table {
-        width: 100%;
-    }
-
-    .questions-table th,
-    .questions-table td {
-        padding: 8px;
-        border: 0.5px solid black;
-        font-weight: 500;
-    }
-
-    .questions-table tr {
-        page-break-inside: avoid;
-        break-inside: avoid;
-    }
-
     .title-subcase {
         margin-top: 10px;
     }
@@ -81,6 +65,41 @@
         display: flex;
         align-items: center;
         gap: 5px;
+    }
+
+    table {
+        width: 100%;
+        margin-top: 30px;
+    }
+
+    th, td {
+        padding: 8px;
+        border: 1px solid black;
+        text-align: left;
+        font-weight: 500;
+    }
+
+    th .title {
+        width: 300px !important;
+    }
+
+    tr {
+        page-break-inside: avoid;
+        break-inside: avoid;
+    }
+
+    thead tr {
+        page-break-inside: avoid;
+        break-inside: avoid;
+    }
+
+    .questions-table tr {
+        page-break-inside: avoid;
+    }
+
+    table, th, td {
+        border: 1px solid black;
+        border-collapse: collapse;
     }
 </style>
 
@@ -439,14 +458,16 @@
 {{#each questionnaireResponse.item}}
     {{#if (getValue LinkId)}}
         <p class="header-text">{{question}}</p>
-        <div class="questions-table">
-            <table style="width: 100%;">
+        <div>
+            <table class="questions-table">
                 <tbody>
                     <tr>
-                        <th style="padding: 8px; font-weight: 500; width: 300px; max-width: 300px;">
-                            {{question}}
+                        <th style="padding: 8px; font-weight: 500; width: 300px; max-width: 300px">
+                            <div>
+                                {{question}}
+                            </div>
                         </th>
-                        <td style="padding: 8px;">
+                        <td>
                             {{#if (getValue LinkId)}}
                                 {{answer}}
                             {{else}}
@@ -457,12 +478,12 @@
                     {{#item}}
                         {{#if (getValue LinkId)}}
                             <tr>
-                                <th style="padding: 8px; font-weight: 500; width: 300px; max-width: 300px;">
+                                <th style="padding: 8px; font-weight: 500; width: 300px; max-width: 300px">
                                     <div style="margin-left: 20px; border-left: 1px solid gray; padding-left: 5px;">
                                         {{question}}
                                     </div>
                                 </th>
-                                <td style="padding: 8px;">
+                                <td>
                                     {{#if (getValue LinkId)}}
                                         {{answer}}
                                     {{else}}
@@ -478,7 +499,7 @@
                                                 {{question}}
                                             </div>
                                         </th>
-                                        <td style="padding: 8px;">
+                                        <td>
                                             {{#if (getValue LinkId)}}
                                                 {{answer}}
                                             {{else}}

@@ -58,13 +58,19 @@
 
     table {
         width: 100%;
+        margin-top: 30px;
     }
 
     th,
     td {
         padding: 8px;
-        border: 0.5px solid black;
+        border: 1px solid black;
+        text-align: left;
         font-weight: 500;
+    }
+
+    th .title {
+        width: 300px !important;
     }
 
     tr {
@@ -79,6 +85,11 @@
 
     .questions-table tr {
         page-break-inside: avoid;
+    }
+
+    table, th, td {
+        border: 1px solid black;
+        border-collapse: collapse;
     }
 </style>
 
@@ -351,37 +362,66 @@
         {{/if}}
 
         {{! Questions section }}
-        {{#if questions}}
-            {{#each questions}}
-                <p class="header-text">{{question}}</p>
-                {{#if item}}
-                    <div class="questions-table">
-                        <table>
-                            <tbody>
-                                {{#each item}}
-                                    <tr>
-                                        <th style="width: 300px; max-width: 300px;">{{question}}</th>
-                                        <td>{{#if answer}}{{answer}}{{else}}N/A{{/if}}</td>
-                                    </tr>
-                                    {{#if item}}
-                                        {{#each item}}
-                                            <tr>
-                                                <th style="width: 300px; max-width: 300px;">
-                                                    <div style="margin-left: 20px; border-left: 1px solid gray; padding-left: 5px;">
-                                                        {{question}}
-                                                    </div>
-                                                </th>
-                                                <td>{{#if answer}}{{answer}}{{else}}N/A{{/if}}</td>
-                                            </tr>
-                                        {{/each}}
+         {{#each questionnaireResponse.item}}
+        {{#if LinkId}}
+            {{#if (getValue LinkId)}}
+                <table class="questions-table">
+                    <tbody>
+                        <tr>
+                            <th style="padding: 8px; font-weight: 500; width: 300px; max-width: 300px">
+                                <div>
+                                    {{text}}
+                                </div>
+                            </th>
+                            <td>
+                                {{#if (getValue LinkId)}}
+                                    {{getValue LinkId}}
+                                {{else}}
+                                    N/A
+                                {{/if}}
+                            </td>
+                        </tr>
+                        {{#item}}
+                            {{#if (getValue LinkId)}}
+                                <tr>
+                                <th style="padding: 8px; font-weight: 500; width: 300px; max-width: 300px">
+                                        <div style="margin-left: 20px;">
+                                            {{text}}
+                                        </div>
+                                    </th>
+                                    <td style="padding: 8px;">
+                                        {{#if (getValue LinkId)}}
+                                            {{getValue LinkId}}
+                                        {{else}}
+                                            N/A
+                                        {{/if}}
+                                    </td>
+                                </tr>
+                                {{#item}}
+                                    {{#if (getValue LinkId)}}
+                                        <tr>
+                                            <th style="padding: 8px; font-weight: 500; width: 300px; max-width: 300px">
+                                                <div style="margin-left: 40px;">
+                                                    {{text}}
+                                                </div>
+                                            </th>
+                                            <td>
+                                                {{#if (getValue LinkId)}}
+                                                    {{getValue LinkId}}
+                                                {{else}}
+                                                    N/A
+                                                {{/if}}
+                                            </td>
+                                        </tr>
                                     {{/if}}
-                                {{/each}}
-                            </tbody>
-                        </table>
-                    </div>
-                {{/if}}
-            {{/each}}
+                                {{/item}}
+                            {{/if}}
+                        {{/item}}
+                    </tbody>
+                </table>
+            {{/if}}
         {{/if}}
+    {{/each}}
 
         {{! Disclaimer section }}
         <div style="border-bottom:1px solid; width:100%; margin-top: 20px"></div>
